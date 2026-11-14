@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Refugios de Lemuy & Chiloé | Terrenos y Fundos Exclusivos en Venta Directa</title>
   <meta name="description" content="Venta directa de parcelas y fundos en Isla Lemuy y Chiloé. Propiedades exclusivas de 5.000 m², 5 hectáreas y 17 hectáreas con bosque nativo, borde costero y rol propio.">
   
@@ -16,55 +16,88 @@
 </head>
 <body>
 
-  <!-- Barra Superior de Confianza Legal -->
+  <!-- Barra Superior de Confianza Legal (Compacta & Elegante) -->
   <div class="top-notice">
     <div class="container top-notice-content">
-      <div>
+      <div class="top-notice-left">
         <span class="top-notice-badge">VENTA DIRECTA</span>
-        <span>Títulos saneados y Rol Propio inscritos en el Conservador de Bienes Raíces de Castro. Sin comisiones de corretaje.</span>
+        <span>Títulos saneados y Rol Propio CBR Castro • Sin comisión de corretaje</span>
       </div>
       <div>
-        <a href="#contacto" style="color: var(--color-accent); font-weight: 600; text-decoration: underline;">
-          Coordinar visita privada &rarr;
+        <a href="#contacto" class="top-notice-link">
+          Coordinar visita privada con el dueño &rarr;
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Encabezado Principal y Navegación -->
+  <!-- Encabezado Principal y Navegación (Sleek Desktop & Mobile) -->
   <header class="main-header">
     <div class="container navbar">
       <a href="#" class="brand-logo" aria-label="Inicio Santuario Lemuy">
         <div class="brand-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M3 20h18L12 4z"/>
             <path d="M12 4v16"/>
           </svg>
         </div>
-        <div>
-          <div class="brand-text-name">Santuario Lemuy</div>
-          <div class="brand-text-sub">Refugios & Tierras en Chiloé</div>
+        <div class="brand-text-block">
+          <span class="brand-text-name">Santuario Lemuy</span>
+          <span class="brand-text-sub">Tierras & Refugios en Chiloé</span>
         </div>
       </a>
 
+      <!-- Menú Escritorio -->
       <nav>
         <ul class="nav-menu">
           <li><a href="#propiedades" class="nav-link">Las 3 Propiedades</a></li>
-          <li><a href="#videos" class="nav-link">Recorridos en Video 4K</a></li>
+          <li><a href="#videos" class="nav-link">Recorridos 4K</a></li>
+          <li><a href="#reel-movil" class="nav-link">Reel Celular</a></li>
           <li><a href="#isla-lemuy" class="nav-link">Por qué Lemuy</a></li>
           <li><a href="#conectividad" class="nav-link">Cómo Llegar</a></li>
-          <li><a href="#preguntas" class="nav-link">Preguntas Frecuentes</a></li>
+          <li><a href="#preguntas" class="nav-link">Preguntas</a></li>
         </ul>
       </nav>
 
+      <!-- Botón de Acción y Disparador Móvil -->
       <div class="header-cta-group">
-        <a href="#contacto" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="#contacto" class="btn btn-primary btn-header-cta">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Hablar con el Dueño
         </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button class="mobile-nav-toggle" aria-label="Abrir Menú de Navegación">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Menú Desplegable Pantalla Completa para Móviles (Drawer) -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true">
+    <ul class="mobile-drawer-links">
+      <li><a href="#propiedades" class="mobile-drawer-link">Las 3 Propiedades <span>&rarr;</span></a></li>
+      <li><a href="#videos" class="mobile-drawer-link">Videos Aéreos 4K <span>&rarr;</span></a></li>
+      <li><a href="#reel-movil" class="mobile-drawer-link">Reel en Formato Celular <span>&rarr;</span></a></li>
+      <li><a href="#isla-lemuy" class="mobile-drawer-link">Por qué Isla Lemuy <span>&rarr;</span></a></li>
+      <li><a href="#conectividad" class="mobile-drawer-link">Cómo Llegar <span>&rarr;</span></a></li>
+      <li><a href="#preguntas" class="mobile-drawer-link">Preguntas Frecuentes <span>&rarr;</span></a></li>
+      <li><a href="#contacto" class="mobile-drawer-link">Contacto Directo <span>&rarr;</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-cta-box">
+      <a href="https://wa.me/56976228383?text=Hola,%20quisiera%20consultar%20por%20los%20terrenos%20en%20Isla%20Lemuy" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        WhatsApp Directo con Propietario
+      </a>
+      <a href="tel:+56976228383" class="btn btn-outline-white btn-lg" style="width: 100%;">
+        Llamar por Teléfono (+56 9 7622 8383)
+      </a>
+    </div>
+  </div>
 
   <!-- Hero Section con Video Aéreo de Fondo -->
   <section class="hero-section">
@@ -77,7 +110,7 @@
 
     <div class="container hero-content">
       <div class="eyebrow-badge dark">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 8 8 12 12 16 12 8"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 8 8 12 12 16 12 8"/></svg>
         Patrimonio Natural Único en el Sur de Chile
       </div>
 
@@ -89,13 +122,15 @@
 
       <div class="hero-actions">
         <a href="#propiedades" class="btn btn-accent btn-lg">
-          Ver las 3 Propiedades Disponibles
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          Ver las 3 Propiedades
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
-        <a href="#videos" class="btn btn-outline-white btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Ver Videos Aéreos 4K
-        </a>
+
+        <!-- Botón YouTube 4K Oficial -->
+        <button type="button" class="btn btn-youtube btn-lg btn-play-youtube" data-youtube-id="UyUsmi38UsI">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Ver Video en YouTube en 4K Ultra HD
+        </button>
       </div>
 
       <!-- Barra Didáctica de Datos Clave para Adultos / Inversionistas -->
@@ -134,7 +169,9 @@
         </div>
       </div>
       <div>
-        <a href="#videos" class="btn btn-outline">Explorar Grabaciones</a>
+        <button type="button" class="btn btn-outline btn-play-youtube" data-youtube-id="UyUsmi38UsI">
+          Ver Producción Completa 4K
+        </button>
       </div>
     </div>
   </section>
@@ -144,12 +181,12 @@
     <div class="container">
       <div class="section-header text-center">
         <div class="eyebrow-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
           Experiencia Audiovisual Interactiva
         </div>
         <h2 class="section-title">Sobrevele los Terrenos desde su Pantalla</h2>
         <p class="section-desc">
-          Pase el cursor sobre cualquiera de los videos para iniciar la reproducción automática previa. Haga clic para abrir la vista completa en alta definición con audio.
+          Pase el cursor sobre cualquiera de los videos para iniciar la reproducción previa automática. Haga clic en cualquiera de ellos para abrir la vista completa en alta definición.
         </p>
         <div class="hover-tip-banner">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 15l-3 3-3-3"/><path d="M12 9v9"/><path d="M12 3a9 9 0 1 0 9 9"/></svg>
@@ -158,12 +195,12 @@
       </div>
 
       <div class="video-grid">
-        <!-- Tarjeta de Video 1: 16_9_ISLA_LEMUY.mp4 -->
-        <div class="video-card">
-          <div class="video-card-media" title="Haz clic para ver en pantalla completa">
-            <span class="video-badge-top">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Panorámica Aérea
+        <!-- Tarjeta de Video 1: 16_9_ISLA_LEMUY.mp4 (Conexión YouTube 4K) -->
+        <div class="video-card" data-youtube-id="UyUsmi38UsI">
+          <div class="video-card-media" title="Haz clic para ver en 4K en YouTube">
+            <span class="video-badge-top" style="background: rgba(230, 33, 23, 0.85);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              YouTube 4K Ultra HD
             </span>
             <div class="video-hover-hint">Pasa el cursor</div>
             <div class="play-watermark-icon">
@@ -174,17 +211,17 @@
             </video>
           </div>
           <div class="video-card-body">
-            <h3 class="video-card-title">Isla Lemuy Panorámica</h3>
+            <h3 class="video-card-title">Isla Lemuy Panorámica (4K)</h3>
             <p class="video-card-desc">
               Vuelo de reconocimiento general: canales interiores del mar de Chiloé, geografía protegida, campos ondulados y la atmósfera de paz insular.
             </p>
             <div class="video-card-footer">
-              <span class="video-duration">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Resolución 4K UHD
+              <span class="video-duration" style="color: #e62117; font-weight: 700;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                Disponible en YouTube 4K
               </span>
-              <button class="btn-video-expand" type="button">
-                Ver completo &rarr;
+              <button class="btn-video-expand btn-play-youtube" data-youtube-id="UyUsmi38UsI" type="button">
+                Ver en 4K &rarr;
               </button>
             </div>
           </div>
@@ -253,36 +290,90 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Tarjeta de Video 4: REEL_ISLA_LEMUY.mp4 (Formato Vertical / Reel) -->
-        <div class="video-card">
-          <div class="video-card-media" title="Haz clic para ver en pantalla completa">
-            <span class="video-badge-top">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Edición Reel / Dinámica
-            </span>
-            <div class="video-hover-hint">Pasa el cursor</div>
-            <div class="play-watermark-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+  <!-- SECCIÓN REEL EN FORMATO CELULAR (SMARTPHONE MOCKUP VERTICAL) -->
+  <section id="reel-movil" class="section-padding reel-showcase-section">
+    <div class="container">
+      <div class="reel-showcase-grid">
+        <!-- Columna 1: El Teléfono Celular Interactivo -->
+        <div class="smartphone-col">
+          <div class="smartphone-frame">
+            <!-- Isla Dinámica Superior -->
+            <div class="smartphone-notch"></div>
+
+            <div class="smartphone-screen" title="Toca para pausar o reproducir">
+              <video id="smartphoneReelVideo" class="smartphone-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80">
+                <source src="https://github.com/iLyCoNs/austral-drones/releases/download/videos/REEL_ISLA_LEMUY.mp4" type="video/mp4">
+              </video>
+
+              <!-- UI Overlay Estilo Reel -->
+              <div class="reel-ui-overlay">
+                <div class="reel-top-bar">
+                  <span class="reel-badge-tag">REEL 4K</span>
+                  <button type="button" id="reelAudioToggle" class="reel-audio-btn" aria-label="Activar sonido">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                  </button>
+                </div>
+
+                <div class="reel-bottom-info">
+                  <div class="reel-author-row">
+                    <div class="reel-author-avatar">AD</div>
+                    <span class="reel-author-name">australdrone.cl</span>
+                  </div>
+                  <p class="reel-caption-text">
+                    Volando sobre Isla Lemuy, Chiloé. Frente costero y bosque nativo en venta directa.
+                  </p>
+                  <div class="reel-tap-hint">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                    Toca la pantalla para pausar/reanudar
+                  </div>
+                </div>
+              </div>
             </div>
-            <video preload="metadata" muted playsinline loop poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80">
-              <source src="https://github.com/iLyCoNs/austral-drones/releases/download/videos/REEL_ISLA_LEMUY.mp4" type="video/mp4">
-            </video>
           </div>
-          <div class="video-card-body">
-            <h3 class="video-card-title">Recorrido Dinámico Austral</h3>
-            <p class="video-card-desc">
-              Toma aérea continua en formato cinematográfico que resume la geografía, el borde costero y el silencio de Isla Lemuy.
-            </p>
-            <div class="video-card-footer">
-              <span class="video-duration">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Edición Australdrone
-              </span>
-              <button class="btn-video-expand" type="button">
-                Ver completo &rarr;
-              </button>
-            </div>
+        </div>
+
+        <!-- Columna 2: Explicación y Acciones -->
+        <div class="reel-info-col">
+          <div class="eyebrow-badge dark">Formato Vertical Cinematográfico</div>
+          <h2 class="serif-font">La Experiencia Austral en la Palma de su Mano</h2>
+          <p style="color: #c9ded0; font-size: 1.1rem; line-height: 1.8;">
+            Filmado especialmente con drones de alta precisión en encuadre vertical continuo. Esta perspectiva en primera persona le permite apreciar la escala real de los lomajes, el suave oleaje del canal y la inmensidad del bosque nativo tal como si estuviera caminando por el terreno.
+          </p>
+
+          <ul class="reel-features-list">
+            <li class="reel-feature-item">
+              <div class="reel-feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <div>
+                <div class="reel-feature-title">Optimizado para Dispositivos Móviles</div>
+                <p class="reel-feature-desc">Visualización vertical sin barras negras, perfecta para ver desde su smartphone o tablet.</p>
+              </div>
+            </li>
+            <li class="reel-feature-item">
+              <div class="reel-feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              </div>
+              <div>
+                <div class="reel-feature-title">Fácil de Compartir en Familia</div>
+                <p class="reel-feature-desc">Envíe este recorrido directo por WhatsApp a su cónyuge, hijos o socios para evaluar la propiedad juntos.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="reel-action-buttons">
+            <button type="button" id="btnExpandReel" class="btn btn-accent btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              Ver Reel en Pantalla Completa
+            </button>
+            <a href="https://wa.me/?text=Mira%20este%20video%20aéreo%20en%20Isla%20Lemuy,%20Chiloé:%20https://youtu.be/UyUsmi38UsI" target="_blank" class="btn btn-outline-white btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              Compartir Reel por WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -668,6 +759,7 @@
             <li><a href="#propiedades">Fundo de 5 Hectáreas</a></li>
             <li><a href="#propiedades">Gran Fundo Costero 17 Has</a></li>
             <li><a href="#videos">Videos Aéreos 4K</a></li>
+            <li><a href="#reel-movil">Reel Formato Celular</a></li>
             <li><a href="#isla-lemuy">Por qué Isla Lemuy</a></li>
           </ul>
         </div>
@@ -698,21 +790,27 @@
   <!-- Botón Flotante de WhatsApp para Contacto Instantáneo -->
   <a href="https://wa.me/56976228383?text=Hola,%20vi%20la%20página%20de%20los%20terrenos%20en%20Isla%20Lemuy%20y%20me%20gustaría%20recibir%20más%20información." target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
     <span class="floating-whatsapp-tooltip">¿Desea consultar por WhatsApp?</span>
-    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
   </a>
 
-  <!-- Modal Lightbox Cinematográfico de Video a Pantalla Completa -->
+  <!-- Modal Lightbox Cinematográfico de Video a Pantalla Completa (Soporta MP4 y YouTube 4K) -->
   <div id="videoModal" class="video-modal-backdrop" role="dialog" aria-modal="true" aria-label="Reproductor de video cinematográfico">
     <div class="video-modal-box">
       <button class="video-modal-close" aria-label="Cerrar video">&times;</button>
+      
+      <!-- Video Nativo MP4 -->
       <video class="modal-video-element" controls playsinline></video>
+      
+      <!-- Video Incrustado de YouTube en 4K -->
+      <iframe class="modal-iframe-element" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      
       <div class="modal-video-footer">
         <div>
-          <h4 id="modalVideoTitle" style="color: #fff; font-size: 1.2rem; margin-bottom: 0.2rem;">Video Aéreo</h4>
-          <p id="modalVideoDesc" style="color: #a0b2a5; font-size: 0.9rem; margin: 0;">Isla Lemuy, Chiloé</p>
+          <h4 id="modalVideoTitle" style="color: #fff; font-size: 1.15rem; margin-bottom: 0.2rem;">Video Aéreo</h4>
+          <p id="modalVideoDesc" style="color: #a0b2a5; font-size: 0.85rem; margin: 0;">Isla Lemuy, Chiloé</p>
         </div>
         <div>
-          <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase;">Australdrone 4K</span>
+          <span style="font-size: 0.825rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase;">Australdrone 4K Ultra HD</span>
         </div>
       </div>
     </div>

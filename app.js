@@ -1,11 +1,14 @@
 /**
  * SANTUARIO LEMUY & CHILOÉ - INTERACTIVE CONTROLLER
  * Especialmente diseñado para la reproducción interactiva en hover,
- * visualizador de propiedades, modal cinematográfico y conexión directa WhatsApp.
+ * visualizador de propiedades, modal cinematográfico (Video local + YouTube 4K),
+ * showcase de Reel en formato celular y menú móvil responsivo.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initMobileNav();
   initHoverVideos();
+  initSmartphoneReel();
   initPropertyTabs();
   initVideoModal();
   initFaqAccordion();
@@ -14,7 +17,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. SISTEMA DE REPRODUCCIÓN AUTOMÁTICA AL PASAR EL CURSOR (HOVER TO PLAY)
+   1. MENÚ MÓVIL Y NAVEGACIÓN RESPONSIVA
+   ========================================================================== */
+function initMobileNav() {
+  const toggleBtn = document.querySelector('.mobile-nav-toggle');
+  const drawer = document.querySelector('.mobile-nav-drawer');
+  if (!toggleBtn || !drawer) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = drawer.classList.contains('is-open');
+    if (isOpen) {
+      closeMobileDrawer();
+    } else {
+      openMobileDrawer();
+    }
+  });
+
+  // Cerrar al hacer clic en cualquier enlace del menú móvil
+  drawer.querySelectorAll('.mobile-drawer-link, .btn').forEach(link => {
+    link.addEventListener('click', closeMobileDrawer);
+  });
+
+  function openMobileDrawer() {
+    toggleBtn.classList.add('is-active');
+    drawer.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileDrawer() {
+    toggleBtn.classList.remove('is-active');
+    drawer.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+}
+
+/* ==========================================================================
+   2. SISTEMA DE REPRODUCCIÓN AUTOMÁTICA AL PASAR EL CURSOR (HOVER TO PLAY)
    ========================================================================== */
 function initHoverVideos() {
   const videoCards = document.querySelectorAll('.video-card');
@@ -24,13 +62,11 @@ function initHoverVideos() {
     const mediaContainer = card.querySelector('.video-card-media');
     if (!video) return;
 
-    // Asegurar que el video esté silenciado por política de autoplay de navegadores
     video.muted = true;
     video.playsInline = true;
 
-    // 1. Hover en Desktop: Reproducir al entrar el cursor
+    // Hover Desktop: reproducir
     mediaContainer.addEventListener('mouseenter', () => {
-      // Manejar la promesa de reproducción para evitar advertencias en consola
       const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise
@@ -43,33 +79,43 @@ function initHoverVideos() {
       }
     });
 
-    // 2. Hover en Desktop: Pausar al salir el cursor
+    // Hover Desktop: pausar
     mediaContainer.addEventListener('mouseleave', () => {
       video.pause();
       card.classList.remove('is-playing');
     });
 
-    // 3. Clic: Abrir el video en el reproductor completo (Modal con audio)
-    mediaContainer.addEventListener('click', (e) => {
+    // Clic: Abrir en reproductor modal
+    mediaContainer.addEventListener('click', () => {
+      const isYoutube = card.getAttribute('data-youtube-id');
+      if (isYoutube) {
+        openVideoModal(isYoutube, 'Isla Lemuy en 4K Ultra HD', 'Producción aérea oficial Australdrone', true);
+        return;
+      }
       const videoSrc = video.getAttribute('data-full-src') || video.currentSrc || video.querySelector('source')?.src;
       const title = card.querySelector('.video-card-title')?.textContent || 'Video Aéreo';
       const desc = card.querySelector('.video-card-desc')?.textContent || '';
-      openVideoModal(videoSrc, title, desc);
+      openVideoModal(videoSrc, title, desc, false);
     });
 
     const expandBtn = card.querySelector('.btn-video-expand');
     if (expandBtn) {
       expandBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        const isYoutube = card.getAttribute('data-youtube-id');
+        if (isYoutube) {
+          openVideoModal(isYoutube, 'Isla Lemuy en 4K Ultra HD', 'Producción aérea oficial Australdrone', true);
+          return;
+        }
         const videoSrc = video.getAttribute('data-full-src') || video.currentSrc || video.querySelector('source')?.src;
         const title = card.querySelector('.video-card-title')?.textContent || 'Video Aéreo';
         const desc = card.querySelector('.video-card-desc')?.textContent || '';
-        openVideoModal(videoSrc, title, desc);
+        openVideoModal(videoSrc, title, desc, false);
       });
     }
   });
 
-  // Soporte móvil: Si la pantalla es táctil, usar IntersectionObserver para reproducción suave en viewport
+  // Soporte táctil en móviles mediante IntersectionObserver
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -90,22 +136,80 @@ function initHoverVideos() {
 }
 
 /* ==========================================================================
-   2. REPRODUCTOR CINEMATOGRÁFICO EN MODAL (PANTALLA COMPLETA CON AUDIO)
+   3. SMARTPHONE REEL SHOWCASE (Formato Celular Vertical)
    ========================================================================== */
-let modalBackdrop, modalVideo, modalTitle, modalDesc, modalCloseBtn;
+function initSmartphoneReel() {
+  const reelVideo = document.getElementById('smartphoneReelVideo');
+  const audioBtn = document.getElementById('reelAudioToggle');
+  const screen = document.querySelector('.smartphone-screen');
+  const expandReelBtn = document.getElementById('btnExpandReel');
+
+  if (reelVideo) {
+    reelVideo.muted = true;
+    reelVideo.playsInline = true;
+    reelVideo.play().catch(() => {});
+
+    // Alternar audio al pulsar el botón del celular
+    if (audioBtn) {
+      audioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        reelVideo.muted = !reelVideo.muted;
+        if (reelVideo.muted) {
+          audioBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`;
+        } else {
+          audioBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`;
+        }
+      });
+    }
+
+    // Tocar la pantalla del celular pausa o reanuda
+    if (screen) {
+      screen.addEventListener('click', () => {
+        if (reelVideo.paused) {
+          reelVideo.play().catch(() => {});
+        } else {
+          reelVideo.pause();
+        }
+      });
+    }
+
+    // Expandir en pantalla completa
+    if (expandReelBtn) {
+      expandReelBtn.addEventListener('click', () => {
+        const src = reelVideo.currentSrc || reelVideo.querySelector('source')?.src;
+        openVideoModal(src, 'Recorrido en Formato Celular', 'Isla Lemuy • Tomas dinámicas verticales Australdrone', false);
+      });
+    }
+  }
+
+  // Botones para ver en YouTube 4K
+  document.querySelectorAll('.btn-play-youtube').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const ytId = btn.getAttribute('data-youtube-id') || 'UyUsmi38UsI';
+      openVideoModal(ytId, 'Isla Lemuy en 4K Ultra HD (YouTube)', 'Producción Cinematográfica Aérea por Australdrone.cl', true);
+    });
+  });
+}
+
+/* ==========================================================================
+   4. REPRODUCTOR CINEMATOGRÁFICO EN MODAL (Video MP4 o YouTube 4K)
+   ========================================================================== */
+let modalBackdrop, modalVideo, modalIframe, modalTitle, modalDesc, modalCloseBtn;
 
 function initVideoModal() {
   modalBackdrop = document.getElementById('videoModal');
   if (!modalBackdrop) return;
 
   modalVideo = modalBackdrop.querySelector('.modal-video-element');
+  modalIframe = modalBackdrop.querySelector('.modal-iframe-element');
   modalTitle = modalBackdrop.querySelector('#modalVideoTitle');
   modalDesc = modalBackdrop.querySelector('#modalVideoDesc');
   modalCloseBtn = modalBackdrop.querySelector('.video-modal-close');
 
   modalCloseBtn.addEventListener('click', closeVideoModal);
 
-  // Cerrar al hacer clic en el fondo oscuro exterior
+  // Cerrar al hacer clic en el fondo exterior
   modalBackdrop.addEventListener('click', (e) => {
     if (e.target === modalBackdrop) {
       closeVideoModal();
@@ -120,33 +224,73 @@ function initVideoModal() {
   });
 }
 
-function openVideoModal(src, title, desc) {
-  if (!modalBackdrop || !modalVideo) return;
+function openVideoModal(src, title, desc, isYoutube = false) {
+  if (!modalBackdrop) return;
 
-  modalVideo.src = src;
-  modalVideo.muted = false; // Permitir audio en vista completa
-  modalVideo.controls = true;
+  const isYtUrl = isYoutube || (typeof src === 'string' && (src.includes('youtube.com') || src.includes('youtu.be') || src === 'UyUsmi38UsI'));
+
+  if (isYtUrl) {
+    // Modo YouTube en 4K
+    let videoId = src;
+    if (typeof src === 'string') {
+      if (src.includes('youtu.be/')) {
+        videoId = src.split('youtu.be/')[1].split('?')[0];
+      } else if (src.includes('watch?v=')) {
+        videoId = src.split('watch?v=')[1].split('&')[0];
+      }
+    }
+
+    if (modalVideo) {
+      modalVideo.pause();
+      modalVideo.style.display = 'none';
+      modalVideo.src = '';
+    }
+    if (modalIframe) {
+      modalIframe.style.display = 'block';
+      modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    }
+  } else {
+    // Modo Video MP4 local/remoto
+    if (modalIframe) {
+      modalIframe.src = '';
+      modalIframe.style.display = 'none';
+    }
+    if (modalVideo) {
+      modalVideo.style.display = 'block';
+      modalVideo.src = src;
+      modalVideo.muted = false;
+      modalVideo.controls = true;
+      modalVideo.play().catch(e => console.log('Reproducción requerida por usuario:', e));
+    }
+  }
+
   if (modalTitle) modalTitle.textContent = title;
   if (modalDesc) modalDesc.textContent = desc;
 
   modalBackdrop.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Bloquear scroll de fondo
-
-  modalVideo.play().catch(e => console.log('Reproducción asistida requerida:', e));
+  document.body.style.overflow = 'hidden';
 }
 
 function closeVideoModal() {
-  if (!modalBackdrop || !modalVideo) return;
+  if (!modalBackdrop) return;
 
-  modalVideo.pause();
-  modalVideo.currentTime = 0;
-  modalVideo.src = '';
+  if (modalIframe) {
+    modalIframe.src = '';
+    modalIframe.style.display = 'none';
+  }
+  if (modalVideo) {
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+    modalVideo.src = '';
+    modalVideo.style.display = 'block';
+  }
+
   modalBackdrop.classList.remove('active');
-  document.body.style.overflow = ''; // Restaurar scroll
+  document.body.style.overflow = '';
 }
 
 /* ==========================================================================
-   3. SELECTOR DIDÁCTICO DE LAS 3 PROPIEDADES (TABS)
+   5. SELECTOR DIDÁCTICO DE LAS 3 PROPIEDADES (TABS)
    ========================================================================== */
 const propertiesData = {
   parcela5000: {
@@ -241,7 +385,6 @@ function renderPropertyDetail(data) {
   const container = document.getElementById('propertyDetailBox');
   if (!container) return;
 
-  // Video y Visual
   const visualPane = container.querySelector('.prop-visual-pane');
   const video = visualPane.querySelector('video');
   const ribbon = visualPane.querySelector('.prop-tag-ribbon');
@@ -254,12 +397,10 @@ function renderPropertyDetail(data) {
     video.play().catch(() => {});
   }
 
-  // Textos
   container.querySelector('.prop-location-badge span').textContent = data.location;
   container.querySelector('.prop-title').textContent = data.title;
   container.querySelector('.prop-description').textContent = data.description;
 
-  // Tabla de especificaciones técnicas
   const specsContainer = container.querySelector('.prop-specs-table');
   if (specsContainer) {
     specsContainer.innerHTML = data.specs.map(item => `
@@ -270,7 +411,6 @@ function renderPropertyDetail(data) {
     `).join('');
   }
 
-  // Lista de ventajas
   const benefitsContainer = container.querySelector('.prop-benefits-list');
   if (benefitsContainer) {
     benefitsContainer.innerHTML = data.benefits.map(b => `
@@ -281,7 +421,6 @@ function renderPropertyDetail(data) {
     `).join('');
   }
 
-  // Botón directo a WhatsApp
   const btnWhatsapp = container.querySelector('.btn-prop-whatsapp');
   if (btnWhatsapp) {
     const encoded = encodeURIComponent(data.whatsappMsg);
@@ -290,7 +429,7 @@ function renderPropertyDetail(data) {
 }
 
 /* ==========================================================================
-   4. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
+   6. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
    ========================================================================== */
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
@@ -307,7 +446,7 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   5. FORMULARIO DE CONTACTO CON ENVÍO DIRECTO A WHATSAPP
+   7. FORMULARIO DE CONTACTO CON ENVÍO DIRECTO A WHATSAPP
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('directContactForm');
@@ -332,7 +471,7 @@ function initContactForm() {
 }
 
 /* ==========================================================================
-   6. NAVEGACIÓN Y SCROLL SUAVE
+   8. NAVEGACIÓN Y SCROLL SUAVE
    ========================================================================== */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -342,7 +481,7 @@ function initSmoothScroll() {
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        const headerHeight = document.querySelector('.main-header')?.offsetHeight || 80;
+        const headerHeight = document.querySelector('.main-header')?.offsetHeight || 64;
         const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
         window.scrollTo({
           top: targetPos,
