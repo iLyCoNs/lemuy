@@ -311,123 +311,110 @@ function closeVideoModal() {
    ========================================================================== */
 const propertiesData = {
   parcela5000: {
-    tag: "Oportunidad Residencial & Retiro",
-    location: "Isla Lemuy, Archipiélago de Chiloé (Sector Costero)",
+    tag: "Oportunidad Residencial",
+    location: "Isla Lemuy • Vista al Mar Interior",
     title: "Parcela de 5.000 m² en Isla Lemuy",
-    description: "La dimensión perfecta para construir un refugio de retiro o segunda vivienda austral. Emplazada en una loma suave protegida con vista privilegiada al canal y entorno de bosque nativo. Accesible todo el año con camino de ripio consolidado a pocos minutos de la rampa de transbordadores.",
+    description: "Topografía suave con vista despejada a los canales interiores de Chiloé y bosque nativo. La dimensión ideal para segunda vivienda o descanso definitivo a minutos del ferry.",
     videoSrc: "HORIZONTAL/TERRENO.mp4",
     poster: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
     specs: [
-      { label: "Superficie Total", val: "5.000 m² (0,5 ha)" },
-      { label: "Estatus Legal", val: "Rol Propio Individual (SAG / CBR)" },
-      { label: "Acceso y Camino", val: "Ripio consolidado todo el año" },
-      { label: "Factibilidad Eléctrica", val: "Tendido a orilla de camino" },
-      { label: "Agua", val: "Factibilidad APR / Pozo / Vertiente" },
-      { label: "Topografía", val: "Loma suave con drenaje natural" }
+      { label: "Superficie", val: "5.000 m² (0,5 ha)" },
+      { label: "Estatus Legal", val: "Rol Propio SII (SAG & CBR)" },
+      { label: "Servicios", val: "Factibilidad de Luz y Agua" },
+      { label: "Acceso", val: "Camino ripio todo el año" }
     ],
     benefits: [
-      "Vista despejada al mar interior y amaneceres sobre los canales.",
-      "Entorno de bosque nativo con coigües, canelos y arrayanes.",
-      "A solo 12 minutos de la rampa del ferry Chonchi - Lemuy.",
-      "Trato directo con su dueño, sin comisiones de corretaje."
+      "Vista frontal al mar interior y amaneceres sobre los canales.",
+      "Entorno de bosque nativo con canelos, arrayanes y coigües.",
+      "Trato directo con el propietario: 0% comisión de corretaje."
     ],
     whatsappMsg: "Hola, me interesa la Parcela de 5.000 m2 en Isla Lemuy. Quisiera solicitar más información técnica y coordinar una visita."
   },
   fundo5ha: {
-    tag: "Exclusividad & Conservación Familiar",
-    location: "Isla Lemuy, Chiloé (Sector Alto Panorámico)",
+    tag: "Exclusividad & Naturaleza",
+    location: "Isla Lemuy • Sector Panorámico",
     title: "Fundo Privado de 5 Hectáreas (50.000 m²)",
-    description: "Una extensión de campo excepcional para quienes buscan máxima privacidad, un proyecto familiar o desarrollo ecoturístico boutique. Cuenta con praderas limpias para construcción, un bosque nativo maduro de alta densidad biológica y vertiente natural de agua pura.",
+    description: "Extensión de campo con praderas limpias para construir, bosque nativo maduro y vertiente permanente de agua pura. Máxima privacidad, seguridad y plusvalía en Chiloé.",
     videoSrc: "https://github.com/iLyCoNs/austral-drones/releases/download/videos/16_9_ISLA_LEMUY.mp4",
     poster: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
     specs: [
-      { label: "Superficie Total", val: "50.000 m² (5,0 ha)" },
-      { label: "Estatus Legal", val: "Títulos saneados y Rol Propio" },
-      { label: "Vegetación", val: "Bosque nativo maduro + praderas" },
-      { label: "Recursos Hídricos", val: "Vertientes y napas superficiales" },
-      { label: "Vistas", val: "Panorámica 360° al archipiélago" },
-      { label: "Uso Recomendado", val: "Fundo familiar / Lodge / Eco-refugio" }
+      { label: "Superficie", val: "50.000 m² (5,0 ha)" },
+      { label: "Estatus Legal", val: "Rol Propio y Títulos al Día" },
+      { label: "Recursos Hídricos", val: "Vertiente permanente de agua pura" },
+      { label: "Topografía", val: "Praderas limpias con lomajes suaves" }
     ],
     benefits: [
-      "Total aislamiento sonoro y pureza de aire insuperable.",
-      "Topografía diversa que permite múltiples puntos de edificación.",
-      "Potencial para proyecto de conservación o agroturismo sustentable.",
-      "Ubicado en una de las islas más tranquilas y seguras de Chile."
+      "Aislamiento sonoro absoluto y aire puro en la Patagonia insular.",
+      "Múltiples mesetas con vistas panorámicas 360° al archipiélago.",
+      "Venta directa con el dueño: sin comisiones de intermediarios."
     ],
     whatsappMsg: "Hola, me interesa el Fundo de 5 Hectáreas en Isla Lemuy. Deseo conocer planos, estatus de títulos y coordinar una visita."
   },
   fundo17ha: {
-    tag: "Santuario Náutico • 410m de Playa",
-    location: "Isla Taucolón, Archipiélago de las Chauques (Quemchi, Chiloé)",
-    title: "Fundo Isla Taucolón • 15,93 Hectáreas (410 m de Borde Costero)",
-    description: "Excepcional predio virgen de 15,93 hectáreas con aprox. 410 metros lineales de orilla de playa protegida de piedrecilla fina y aguas calmas. Su topografía en forma de suave anfiteatro natural se eleva gradualmente desde la orilla costera hacia la cumbre del cerro, otorgando imponentes vistas panorámicas a los canales interiores e islas vecinas. Cuenta con praderas limpias, bosque nativo maduro, vertientes de agua pura viva y tendido eléctrico en el predio. Una oportunidad patrimonial insustituible para refugio privado, proyecto de conservación o inversión náutica de primer nivel.",
+    tag: "Borde Costero • UF 8.900",
+    location: "Isla Taucolón • Archipiélago de Chauques",
+    title: "Fundo Costero 15,93 Has (410m de Playa)",
+    description: "Macro-predio virgen con 410 metros de playa protegida de piedrecilla y anfiteatro natural con vistas a los canales. Cuenta con vertientes de agua pura y tendido eléctrico.",
     videoSrc: "HORIZONTAL/FRENTE_PLAYA.mp4",
-    poster: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_f360ec",
+    poster: "images/taucolon/01_bahia_playa.jpg",
     hasGallery: true,
     photos: [
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_f360ec",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_f360ec",
-        caption: "Vista panorámica frontal de la bahía y canal interior desde la orilla de Isla Taucolón"
+        url: "images/taucolon/01_bahia_playa.jpg",
+        thumb: "images/taucolon/01_bahia_playa.jpg",
+        caption: "Vista panorámica de la bahía y canal interior desde la orilla de Isla Taucolón"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_184990",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_184990",
-        caption: "410 metros continuos de playa de piedrecilla fina y aguas calmas para desembarque de embarcaciones"
+        url: "images/taucolon/02_playa_costa.jpg",
+        thumb: "images/taucolon/02_playa_costa.jpg",
+        caption: "410 metros continuos de playa de piedrecilla fina y aguas calmas para desembarque"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_7016c9",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_7016c9",
+        url: "images/taucolon/03_orilla_mar.jpg",
+        thumb: "images/taucolon/03_orilla_mar.jpg",
         caption: "Borde costero con suave pendiente ascendente hacia el bosque nativo templado"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_a69194",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_a69194",
+        url: "images/taucolon/04_sendero_bosque.jpg",
+        thumb: "images/taucolon/04_sendero_bosque.jpg",
         caption: "Topografía en anfiteatro natural: vistas despejadas a canales e islas vecinas"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_95bc10",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_95bc10",
+        url: "images/taucolon/05_vista_bahia.jpg",
+        thumb: "images/taucolon/05_vista_bahia.jpg",
         caption: "Áreas despejadas y praderas limpias ideales para construcción sin talar"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_b33c19",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_b33c19",
+        url: "images/taucolon/06_mar_islas.jpg",
+        thumb: "images/taucolon/06_mar_islas.jpg",
         caption: "Orilla este con vista al archipiélago de las Chauques y navegación protegida"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_f038a5",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_f038a5",
+        url: "images/taucolon/07_anfiteatro_playa.jpg",
+        thumb: "images/taucolon/07_anfiteatro_playa.jpg",
         caption: "Vista hacia las islas vecinas Mechuque y Añihué (a minutos en embarcación)"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_d2f84e",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_d2f84e",
+        url: "images/taucolon/08_costa_chauques.jpg",
+        thumb: "images/taucolon/08_costa_chauques.jpg",
         caption: "Sendero interior y bosque nativo maduro hasta la cumbre del cerro"
       },
       {
-        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_fd7773",
-        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_fd7773",
+        url: "images/taucolon/09_vertientes_entorno.jpg",
+        thumb: "images/taucolon/09_vertientes_entorno.jpg",
         caption: "Entorno virgen con vertientes naturales de agua dulce viva en la propiedad"
       }
     ],
     specs: [
-      { label: "Superficie Total", val: "15,93 Hectáreas (159.300 m²)" },
-      { label: "Frente de Playa", val: "410 m de orilla de piedrecilla fina" },
-      { label: "Precio Referencial", val: "UF 8.900 (Trato directo • 0% comisión)" },
-      { label: "Estatus Legal", val: "Rol Propio individual y títulos saneados" },
-      { label: "Electricidad", val: "Tendido eléctrico pasa por el predio" },
-      { label: "Agua Dulce", val: "Múltiples vertientes naturales permanentes" },
-      { label: "Conectividad", val: "20 min en lancha rápida desde Tenaún" },
-      { label: "Telecomunicaciones", val: "Excelente señal celular 4G" }
+      { label: "Superficie", val: "15,93 Has (159.300 m²)" },
+      { label: "Frente de Playa", val: "410 metros de piedrecilla" },
+      { label: "Precio Referencial", val: "UF 8.900 (0% Comisión)" },
+      { label: "Estatus Legal", val: "Rol Propio SAG & CBR Castro" }
     ],
     benefits: [
-      "410 metros continuos de playa calma protegida, ideal para fondeo, kayak y veleros.",
-      "A solo 20 minutos de navegación en lancha rápida desde Tenaún (Chiloé continental).",
-      "Al frente de Isla Puduhuapi (con marina privada, muelle e instalaciones náuticas).",
-      "A 10 min de palafitos y gastronomía en Mechuque, y vecina al viñedo de Viña Montes en Añihué.",
-      "Pista de aterrizaje para avionetas en la vecina Isla Batachauques (a 4 millas náuticas).",
-      "Topografía en anfiteatro con praderas limpias y bosque nativo virgen hasta la cumbre."
+      "410m de playa calma para fondeo seguro de veleros y lanchas.",
+      "Frente a marina de Puduhuapi y a 10 min de Mechuque.",
+      "Tendido eléctrico en el predio y vertientes de agua viva."
     ],
     whatsappMsg: "Hola, me comunico por el Fundo de 15,93 Hectáreas con 410m de playa en Isla Taucolón (Chauques, Chiloé - UF 8.900). Quisiera recibir antecedentes técnicos y coordinar contacto directo con el dueño."
   }
