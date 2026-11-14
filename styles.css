@@ -48,14 +48,20 @@
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Base Reset & Accessibility */
+/* Base Reset & Accessibility (A prueba de desbordes móviles) */
 *, *::before, *::after {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   margin: 0;
   padding: 0;
 }
 
-html {
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  position: relative !important;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
@@ -67,7 +73,6 @@ body {
   color: var(--color-text-main);
   line-height: 1.65;
   font-weight: 400;
-  overflow-x: hidden;
 }
 
 /* Accessible High Contrast Typography & Editorial Rhythm */
@@ -166,16 +171,16 @@ img, video {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  width: 100%;
 }
 
 .top-notice-left {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .top-notice-badge {
@@ -192,7 +197,6 @@ img, video {
 .top-notice-link {
   color: var(--color-accent);
   font-weight: 600;
-  white-space: nowrap;
   flex-shrink: 0;
   font-size: 0.8rem;
 }
@@ -1767,117 +1771,442 @@ img, video {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    height: 56px;
+  /* Contenedor y Espaciados sin Desbordes */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .brand-icon {
-    width: 32px;
-    height: 32px;
+
+  .section-padding {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
   }
-  .brand-text-name {
-    font-size: 1rem;
-  }
-  .brand-text-sub {
-    font-size: 0.58rem;
-  }
-  .btn-header-cta {
-    display: none;
-  }
+
+  /* Barra Superior de Confianza (100% Centrada) */
   .top-notice {
-    font-size: 0.72rem;
-    padding: 0.35rem 0.75rem;
+    font-size: 0.74rem !important;
+    padding: 0.45rem 0.75rem !important;
+    text-align: center !important;
+    width: 100% !important;
   }
   .top-notice-content {
-    justify-content: center;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .top-notice-left {
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
   }
   .top-notice-link {
-    display: none;
+    display: none !important;
+  }
+
+  /* Encabezado y Navbar */
+  .navbar {
+    height: 56px !important;
+    padding: 0 !important;
+  }
+  .brand-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .brand-text-name {
+    font-size: 0.98rem !important;
+  }
+  .brand-text-sub {
+    font-size: 0.58rem !important;
+  }
+  .btn-header-cta {
+    display: none !important;
+  }
+
+  /* HERO SECTION (Completamente Centrado) */
+  .hero-section {
+    min-height: auto !important;
+    padding: 2.5rem 0 3rem !important;
+    display: flex !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .hero-content {
+    padding: 1.5rem 0 1rem !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+  .eyebrow-badge {
+    margin: 0 auto 1.25rem !important;
+    font-size: 0.72rem !important;
+    padding: 0.35rem 0.8rem !important;
   }
   .hero-title { 
-    font-size: clamp(1.95rem, 6.5vw, 2.35rem); 
-    line-height: 1.18;
+    font-size: clamp(1.85rem, 6.8vw, 2.3rem) !important; 
+    line-height: 1.18 !important;
+    text-align: center !important;
+    margin: 0 auto 1.1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
   }
   .hero-subtitle { 
-    font-size: 1.02rem; 
-    margin-bottom: 2rem;
-    line-height: 1.65;
+    font-size: 0.98rem !important; 
+    line-height: 1.65 !important;
+    text-align: center !important;
+    margin: 0 auto 1.8rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 0.25rem !important;
   }
   .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.85rem;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto 2.25rem !important;
+    gap: 0.85rem !important;
   }
   .hero-actions .btn {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    font-size: 0.95rem !important;
   }
   .hero-stats-bar { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 1rem; 
-    padding: 1.25rem 1rem; 
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
+    gap: 0.65rem !important; 
+    padding: 1rem 0.6rem !important; 
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .routes-timeline { 
-    grid-template-columns: 1fr; 
+  .hero-stat-item {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  .prop-info-pane { 
-    padding: 1.75rem 1.25rem; 
+  .hero-stat-number {
+    font-size: 1.15rem !important;
+    text-align: center !important;
   }
-  .prop-specs-table { 
-    grid-template-columns: 1fr; 
+  .hero-stat-label {
+    font-size: 0.72rem !important;
+    text-align: center !important;
   }
-  .prop-cta-bar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
-    width: 100%;
+
+  /* Credencial Trust Banner */
+  .trust-content {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1.25rem !important;
+    align-items: center !important;
+    width: 100% !important;
   }
-  .prop-cta-bar .btn {
-    width: 100%;
-    justify-content: center;
+  .trust-badge-group {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
+    width: 100% !important;
   }
-  .reel-action-buttons {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
-    width: 100%;
+  .drone-logo-badge {
+    margin: 0 auto !important;
   }
-  .reel-action-buttons .btn {
-    width: 100%;
-    justify-content: center;
+  .trust-content .btn {
+    width: 100% !important;
+    max-width: 300px !important;
   }
-  .contact-card {
-    padding: 1.75rem 1.25rem;
-    gap: 2rem;
+
+  /* Encabezados de Sección */
+  .section-header {
+    margin-bottom: 2.5rem !important;
+    text-align: center !important;
+    width: 100% !important;
   }
-  .floating-whatsapp-btn {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 54px;
-    height: 54px;
+  .section-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.1rem) !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    margin-bottom: 0.75rem !important;
   }
-  .floating-whatsapp-tooltip {
-    display: none;
+  .section-desc {
+    font-size: 0.96rem !important;
+    line-height: 1.65 !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 0.25rem !important;
+  }
+  .hover-tip-banner {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 1rem auto 0 !important;
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.8rem !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Galería de Videos */
+  .video-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    margin: 0 auto !important;
+    gap: 1.5rem !important;
+  }
+  .video-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .video-card-footer {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+  .video-duration {
+    justify-content: center !important;
+  }
+  .btn-video-expand {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 42px !important;
+    background: rgba(23, 42, 33, 0.05) !important;
+    border-radius: 8px !important;
+    padding: 0.4rem !important;
+  }
+
+  /* Sección Reel Celular */
+  .reel-showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .smartphone-col {
+    width: 100% !important;
+    justify-content: center !important;
   }
   .smartphone-frame {
-    width: 260px;
-    height: 520px;
+    width: 100% !important;
+    max-width: 270px !important;
+    height: auto !important;
+    aspect-ratio: 9 / 18.5 !important;
+    margin: 0 auto !important;
+    border-radius: 36px !important;
+    border-width: 8px !important;
+  }
+  .reel-info-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .reel-info-col h2 {
+    font-size: 1.75rem !important;
+    text-align: center !important;
+  }
+  .reel-features-list {
+    text-align: left !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 1.5rem 0 2rem !important;
+    padding: 0 0.5rem !important;
+  }
+  .reel-action-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+  }
+  .reel-action-buttons .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Sección Las 3 Propiedades */
+  .property-tabs {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 0.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .prop-tab-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.8rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+  .property-detail-box {
+    width: 100% !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+  .property-detail-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+  .prop-visual-pane {
+    min-height: 260px !important;
+    width: 100% !important;
+  }
+  .prop-info-pane {
+    padding: 1.5rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .prop-title {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+  .prop-description {
+    font-size: 0.96rem !important;
+    line-height: 1.65 !important;
+  }
+  .prop-specs-table {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .prop-benefits-list {
+    margin-bottom: 1.75rem !important;
+    gap: 0.6rem !important;
+  }
+  .prop-cta-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+  .prop-cta-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Por Qué Isla Lemuy */
+  .reasons-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    margin-top: 2.5rem !important;
+  }
+  .reason-card {
+    padding: 1.5rem 1.2rem !important;
+    width: 100% !important;
+  }
+  .connectivity-box {
+    padding: 1.5rem 1rem !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+    margin-top: 2.5rem !important;
+    box-sizing: border-box !important;
+  }
+  .routes-timeline {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+  }
+  .route-step {
+    padding: 1.15rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Preguntas Frecuentes */
+  .faq-question {
+    padding: 1.1rem 1rem !important;
+    font-size: 0.98rem !important;
+  }
+  .faq-answer {
+    padding: 0 1rem 1.25rem 1rem !important;
+    font-size: 0.925rem !important;
+  }
+
+  /* Contacto Directo */
+  .contact-card {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem 1rem !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+  .contact-info-col {
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .contact-direct-owner-box {
+    text-align: center !important;
+    padding: 1.15rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .contact-list {
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .contact-form-col {
+    width: 100% !important;
+  }
+  .form-input, .form-select, .form-textarea {
+    font-size: 16px !important; /* Previene zoom indeseado en iPhones */
+  }
+
+  /* Botón Flotante WhatsApp */
+  .floating-whatsapp-btn {
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+    width: 52px !important;
+    height: 52px !important;
+  }
+  .floating-whatsapp-tooltip {
+    display: none !important;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .footer-links {
+    align-items: center !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+  }
+  .footer-austral-credit {
+    justify-content: center !important;
   }
 }
 
 @media (max-width: 480px) {
   .hero-stat-number {
-    font-size: 1.4rem;
+    font-size: 1.1rem !important;
   }
   .hero-stat-label {
-    font-size: 0.75rem;
-  }
-  .property-tabs {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .prop-tab-btn {
-    width: 100%;
-    justify-content: center;
+    font-size: 0.68rem !important;
   }
 }
