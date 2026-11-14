@@ -5,46 +5,49 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette - Austral & Luxury Earthy Tones */
-  --color-primary: #172a21;         /* Verde Bosque Austral Profundo */
-  --color-primary-light: #264335;   /* Verde Musgo */
-  --color-primary-dark: #0d1a14;    /* Verde casi negro */
+  /* Color Palette - Austral Ultra-Luxury & Obsidian Moss */
+  --color-primary: #12241b;         /* Verde Bosque Austral Profundo */
+  --color-primary-light: #1f3b2d;   /* Verde Musgo */
+  --color-primary-dark: #07100b;    /* Basalto / Obsidiana Austral */
   
-  --color-accent: #c59b27;          /* Dorado Roble / Acento noble */
-  --color-accent-hover: #b0871e;
-  --color-accent-soft: rgba(197, 155, 39, 0.12);
+  --color-accent: #cfa859;          /* Dorado Champagne Patagónico */
+  --color-accent-hover: #dfc17b;    /* Oro luminoso */
+  --color-accent-soft: rgba(207, 168, 89, 0.14);
+  --color-accent-glow: rgba(207, 168, 89, 0.28);
   
-  --color-ocean: #1e3a4c;           /* Azul Fiordo / Mar Interior */
-  --color-ocean-light: #2c536c;
+  --color-ocean: #162f3f;           /* Azul Fiordo / Mar Interior */
+  --color-ocean-light: #254b63;
   
-  --color-bg-main: #fbfaf7;         /* Blanco Lino / Papel Algodón */
+  --color-bg-main: #fbf9f5;         /* Blanco Lino / Papel Algodón */
   --color-bg-card: #ffffff;
-  --color-bg-alt: #f3efe6;          /* Arena suave Chiloé */
-  --color-bg-dark: #0f1914;         /* Noche Austral */
+  --color-bg-alt: #f3eee6;          /* Arena suave Chiloé */
+  --color-bg-dark: #07100b;         /* Noche Basáltica Austral */
   
-  --color-text-main: #242c27;       /* Gris carbón orgánico */
-  --color-text-muted: #57635c;      /* Texto secundario de alta legibilidad */
-  --color-text-light: #f8faf8;
+  --color-text-main: #1f2722;       /* Gris carbón orgánico */
+  --color-text-muted: #56645d;      /* Texto secundario de alta legibilidad */
+  --color-text-light: #f7faf7;
   
-  --color-border: #e2ddd4;
-  --color-border-light: #ece8e0;
+  --color-border: #e3ded5;
+  --color-border-light: #ece7de;
+  --color-border-gold: rgba(207, 168, 89, 0.35);
   
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
-  /* Shadows & Radius */
-  --shadow-sm: 0 2px 8px rgba(15, 25, 20, 0.05);
-  --shadow-md: 0 8px 24px rgba(15, 25, 20, 0.08);
-  --shadow-lg: 0 16px 40px rgba(15, 25, 20, 0.12);
-  --shadow-video: 0 20px 50px rgba(15, 25, 20, 0.25);
+  /* macOS / Glassmorphism Shadows & Radius */
+  --shadow-sm: 0 2px 8px rgba(7, 16, 11, 0.05);
+  --shadow-md: 0 8px 24px rgba(7, 16, 11, 0.08);
+  --shadow-lg: 0 16px 40px rgba(7, 16, 11, 0.12);
+  --shadow-gold: 0 8px 30px rgba(207, 168, 89, 0.22);
+  --shadow-video: 0 24px 60px rgba(0, 0, 0, 0.35);
   
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-full: 9999px;
   
-  --transition-fast: 0.2s ease;
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -418,52 +421,55 @@ img, video {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   font-size: 0.925rem;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-full);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
   letter-spacing: -0.01em;
-  min-height: 44px;
+  min-height: 46px;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:active {
-  transform: scale(0.985);
+  transform: scale(0.975);
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #274536 0%, #1b3327 50%, #112219 100%);
-  border: 1px solid rgba(8, 18, 12, 0.85);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 3px 10px rgba(13, 26, 20, 0.28);
+  background: linear-gradient(180deg, #1d3629 0%, #112219 100%);
+  border: 1px solid rgba(207, 168, 89, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 16px rgba(7, 16, 11, 0.35);
   color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.35);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(180deg, #325745 0%, #234233 50%, #162c21 100%);
+  background: linear-gradient(180deg, #274837 0%, #172d21 100%);
+  border-color: rgba(207, 168, 89, 0.7);
   transform: translateY(-1.5px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 6px 18px rgba(13, 26, 20, 0.35);
-  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 24px rgba(7, 16, 11, 0.45), 0 0 16px rgba(207, 168, 89, 0.25);
+  color: #ffffff;
 }
 
 .btn-accent {
-  background: linear-gradient(180deg, #e3c162 0%, #cf9e2b 50%, #b38618 100%);
-  border: 1px solid rgba(135, 98, 12, 0.85);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 3px 12px rgba(179, 134, 24, 0.32);
-  color: #1a1608;
+  background: linear-gradient(180deg, #dfc17b 0%, #cfa859 50%, #b88d3b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 4px 16px rgba(207, 168, 89, 0.35);
+  color: #07100b;
   font-weight: 700;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .btn-accent:hover {
-  background: linear-gradient(180deg, #edd17b 0%, #dbae38 50%, #c2941e 100%);
+  background: linear-gradient(180deg, #ecce8a 0%, #dab263 50%, #c59740 100%);
   transform: translateY(-1.5px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 6px 18px rgba(179, 134, 24, 0.4);
-  color: #0d1a14;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 8px 24px rgba(207, 168, 89, 0.5);
+  color: #07100b;
 }
 
 .btn-outline {
@@ -1615,6 +1621,259 @@ img, video {
 }
 
 /* ==========================================================================
+   STRATEGIC COMPARISON: VENTA DIRECTA VS PORTALES & CORREDORAS
+   Demuestra radicalmente la superioridad frente a Yapo / Portal Inmobiliario
+   ========================================================================== */
+.comparison-section {
+  background: linear-gradient(180deg, #fbf9f5 0%, #f3eee6 100%);
+  position: relative;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.comparison-table-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: 1.35rem 1.5rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.comparison-table thead th {
+  background: #f8f6f0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  letter-spacing: -0.01em;
+}
+
+.comparison-table thead th.col-official {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  position: relative;
+  border-top: 3px solid var(--color-accent);
+}
+
+.comparison-table thead th.col-official .badge-recommended {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #07100b;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.comparison-feature-name {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-size: 0.98rem;
+}
+
+.comparison-feature-sub {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+.comparison-table td.col-official {
+  background: rgba(18, 36, 27, 0.03);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  border-left: 2px solid rgba(207, 168, 89, 0.35);
+  border-right: 2px solid rgba(207, 168, 89, 0.35);
+}
+
+.comparison-check-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #12632e;
+  font-weight: 700;
+}
+
+.comparison-check-badge.highlight {
+  color: #8c6a0c;
+  background: var(--color-accent-soft);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(207, 168, 89, 0.35);
+}
+
+.comparison-cross-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a83232;
+  font-weight: 500;
+}
+
+.comparison-warning-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #795548;
+  font-size: 0.9rem;
+}
+
+.comparison-summary-banner {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  padding: 2.25rem;
+  border-radius: var(--radius-md);
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border: 1px solid var(--color-border-gold);
+  box-shadow: var(--shadow-video);
+}
+
+.comparison-summary-text h3 {
+  color: #ffffff;
+  font-size: 1.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-summary-text p {
+  color: #cad8ce;
+  font-size: 0.98rem;
+  max-width: 680px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4-STEP SECURE PURCHASE PROCESS (Certeza Notarial Inmediata)
+   ========================================================================== */
+.secure-process-section {
+  background: #ffffff;
+  position: relative;
+}
+
+.secure-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.secure-step-card {
+  background: var(--color-bg-main);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  position: relative;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.secure-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.secure-step-num {
+  width: 38px;
+  height: 38px;
+  background: var(--color-primary-dark);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.secure-step-title {
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.65rem;
+  font-weight: 700;
+}
+
+.secure-step-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Hero Quick Property Switchers */
+.hero-property-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.hero-property-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.hero-property-pill:hover {
+  background: var(--color-accent);
+  color: #07100b;
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(207, 168, 89, 0.35);
+}
+
+.hero-property-pill .pill-tag {
+  background: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.hero-property-pill:hover .pill-tag {
+  background: #07100b;
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
    DIDACTIC SECTION: WHY ISLA LEMUY (Target 50+ Audience)
    ========================================================================== */
 .why-lemuy-section {
@@ -2661,16 +2920,21 @@ img, video {
 
   /* Contacto Directo */
   .contact-card {
+    display: flex !important;
+    flex-direction: column !important;
     grid-template-columns: 1fr !important;
     padding: 1.5rem 1rem !important;
-    gap: 2rem !important;
+    gap: 1.75rem !important;
     width: 100% !important;
+    max-width: 100% !important;
     border-radius: 14px !important;
     box-sizing: border-box !important;
   }
   .contact-info-col {
     text-align: center !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .contact-direct-owner-box {
     text-align: center !important;
@@ -2684,9 +2948,81 @@ img, video {
   }
   .contact-form-col {
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .form-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .form-input, .form-select, .form-textarea {
+    width: 100% !important;
+    max-width: 100% !important;
     font-size: 16px !important; /* Previene zoom indeseado en iPhones */
+    box-sizing: border-box !important;
+  }
+
+  /* Comparativa en Móviles: Adaptabilidad Fluida */
+  .comparison-table-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+  }
+  .comparison-table {
+    min-width: 580px; /* Permite scroll horizontal fluido en tabla */
+  }
+  .comparison-table th, 
+  .comparison-table td {
+    padding: 0.9rem 0.85rem !important;
+    font-size: 0.825rem !important;
+  }
+  .comparison-feature-name {
+    font-size: 0.85rem !important;
+  }
+  .comparison-feature-sub {
+    font-size: 0.72rem !important;
+  }
+  .comparison-summary-banner {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1.5rem 1rem !important;
+    gap: 1.25rem !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .comparison-summary-text h3 {
+    font-size: 1.35rem !important;
+  }
+  .comparison-summary-banner .btn {
+    width: 100% !important;
+  }
+
+  /* Proceso de Compra Seguro en Móviles */
+  .secure-steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+  .secure-step-card {
+    padding: 1.25rem 1rem !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero Property Switcher Móvil */
+  .hero-property-selector {
+    gap: 0.5rem !important;
+    margin-top: 1.25rem !important;
+  }
+  .hero-property-pill {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0.85rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
   }
 
   /* Botón Flotante WhatsApp */

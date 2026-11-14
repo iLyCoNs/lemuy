@@ -451,6 +451,17 @@ function initPropertyTabs() {
       renderPropertyDetail(propertiesData[propKey]);
     });
   });
+
+  // Vinculación de los pills de selección rápida del Hero
+  const heroPills = document.querySelectorAll('.hero-property-pill[data-tab-target]');
+  heroPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const targetIndex = parseInt(pill.getAttribute('data-tab-target'), 10);
+      if (!isNaN(targetIndex) && tabButtons[targetIndex]) {
+        tabButtons[targetIndex].click();
+      }
+    });
+  });
 }
 
 function renderPropertyDetail(data) {
