@@ -655,6 +655,14 @@ function initPhotoLightbox() {
     }
   });
 
+  document.querySelectorAll('.taucolon-photo-card').forEach(card => {
+    card.addEventListener('click', () => {
+      currentGalleryPhotos = propertiesData.fundo17ha.photos;
+      const index = parseInt(card.getAttribute('data-gallery-index'), 10) || 0;
+      openPhotoLightbox(index);
+    });
+  });
+
   document.addEventListener('keydown', (e) => {
     if (!photoModal.classList.contains('active')) return;
     if (e.key === 'Escape') closePhotoLightbox();

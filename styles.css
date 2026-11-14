@@ -1496,6 +1496,125 @@ img, video {
 }
 
 /* ==========================================================================
+   SECCIÓN GALERÍA DESTACADA: FUNDO 15,93 HAS (ISLA TAUCOLÓN)
+   ========================================================================== */
+.taucolon-gallery-section {
+  background: #08120d;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.taucolon-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.taucolon-photo-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0e1d16;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-normal);
+  aspect-ratio: 4 / 3;
+}
+
+.taucolon-photo-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.taucolon-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.taucolon-photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.taucolon-photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.92) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #fff;
+}
+
+.taucolon-photo-caption {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e2ede5;
+  line-height: 1.35;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.taucolon-photo-zoom-icon {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-accent);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.taucolon-photo-card:hover .taucolon-photo-zoom-icon {
+  background: var(--color-accent);
+  color: #0d1a14;
+  border-color: var(--color-accent);
+}
+
+.taucolon-cta-banner {
+  margin-top: 2.5rem;
+  background: rgba(13, 26, 20, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.taucolon-cta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.taucolon-cta-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.taucolon-cta-sub {
+  font-size: 0.9rem;
+  color: #a4b8ab;
+}
+
+/* ==========================================================================
    DIDACTIC SECTION: WHY ISLA LEMUY (Target 50+ Audience)
    ========================================================================== */
 .why-lemuy-section {
@@ -2652,6 +2771,22 @@ img, video {
   }
   .photo-lightbox-content {
     max-height: 55vh !important;
+  }
+
+  /* Galería In Situ Taucolón Móvil */
+  .taucolon-gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .taucolon-cta-banner {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+  .taucolon-cta-banner .btn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 
   /* Footer */
