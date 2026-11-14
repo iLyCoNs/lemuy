@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ilycons.github.io/lemuy/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
+      <image:title>Parcelas y Fundos en Venta en Isla Lemuy Chiloé</image:title>
+      <image:caption>Propiedades exclusivas con rol propio, bosque nativo y borde costero en el archipiélago de Chiloé</image:caption>
+    </image:image>
+  </url>
+</urlset>
