@@ -102,7 +102,7 @@ function initHoverVideos() {
     mediaContainer.addEventListener('click', () => {
       const isYoutube = card.getAttribute('data-youtube-id');
       if (isYoutube) {
-        openVideoModal(isYoutube, 'Isla Lemuy en 4K Ultra HD', 'Producción aérea oficial Australdrone', true);
+        openVideoModal(isYoutube, 'Isla Lemuy en 4K Ultra HD', 'Producción Audiovisual Aérea en Alta Definición', true);
         return;
       }
       const videoSrc = video.getAttribute('data-full-src') || video.currentSrc || video.querySelector('source')?.src;
@@ -117,7 +117,7 @@ function initHoverVideos() {
         e.stopPropagation();
         const isYoutube = card.getAttribute('data-youtube-id');
         if (isYoutube) {
-          openVideoModal(isYoutube, 'Isla Lemuy en 4K Ultra HD', 'Producción aérea oficial Australdrone', true);
+          openVideoModal(isYoutube, 'Isla Lemuy en 4K Ultra HD', 'Producción Audiovisual Aérea en Alta Definición', true);
           return;
         }
         const videoSrc = video.getAttribute('data-full-src') || video.currentSrc || video.querySelector('source')?.src;
@@ -190,7 +190,7 @@ function initSmartphoneReel() {
     if (expandReelBtn) {
       expandReelBtn.addEventListener('click', () => {
         const src = reelVideo.currentSrc || reelVideo.querySelector('source')?.src;
-        openVideoModal(src, 'Recorrido en Formato Celular', 'Isla Lemuy • Tomas dinámicas verticales Australdrone', false);
+        openVideoModal(src, 'Recorrido en Formato Celular', 'Isla Lemuy • Perspectiva vertical panorámica', false);
       });
     }
   }
@@ -200,7 +200,7 @@ function initSmartphoneReel() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const ytId = btn.getAttribute('data-youtube-id') || 'UyUsmi38UsI';
-      openVideoModal(ytId, 'Isla Lemuy en 4K Ultra HD (YouTube)', 'Producción Cinematográfica Aérea por Australdrone.cl', true);
+      openVideoModal(ytId, 'Isla Lemuy en 4K Ultra HD (YouTube)', 'Producción Audiovisual Aérea en Alta Definición', true);
     });
   });
 }
@@ -208,7 +208,7 @@ function initSmartphoneReel() {
 /* ==========================================================================
    4. REPRODUCTOR CINEMATOGRÁFICO EN MODAL (Video MP4 o YouTube 4K)
    ========================================================================== */
-let modalBackdrop, modalVideo, modalIframe, modalTitle, modalDesc, modalCloseBtn;
+let modalBackdrop, modalVideo, modalIframe, modalTitle, modalDesc;
 
 function initVideoModal() {
   modalBackdrop = document.getElementById('videoModal');
@@ -218,9 +218,12 @@ function initVideoModal() {
   modalIframe = modalBackdrop.querySelector('.modal-iframe-element');
   modalTitle = modalBackdrop.querySelector('#modalVideoTitle');
   modalDesc = modalBackdrop.querySelector('#modalVideoDesc');
-  modalCloseBtn = modalBackdrop.querySelector('.video-modal-close');
-
-  modalCloseBtn.addEventListener('click', closeVideoModal);
+  
+  // Soporte para todos los botones de cerrar (superior y pie)
+  const closeButtons = modalBackdrop.querySelectorAll('.video-modal-close, .btn-modal-close-footer');
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', closeVideoModal);
+  });
 
   // Cerrar al hacer clic en el fondo exterior
   modalBackdrop.addEventListener('click', (e) => {

@@ -1587,7 +1587,7 @@ img, video {
 }
 
 /* ==========================================================================
-   VIDEO MODAL LIGHTBOX
+   VIDEO MODAL LIGHTBOX (Sin Interrupción de Controles de YouTube)
    ========================================================================== */
 .video-modal-backdrop {
   position: fixed;
@@ -1595,13 +1595,15 @@ img, video {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(5, 10, 8, 0.94);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  background: rgba(3, 8, 5, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .video-modal-backdrop.active {
@@ -1611,42 +1613,105 @@ img, video {
 .video-modal-box {
   width: 100%;
   max-width: 1080px;
-  background: #000;
+  background: #0a140f;
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra Superior Dedicada: Separa 100% los botones de cierre de los controles de YouTube */
+.video-modal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.4rem;
+  background: #0d1a14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 1rem;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.video-modal-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.video-modal-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(212, 175, 55, 0.16);
+  color: var(--color-accent);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.video-modal-gear-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #b5c7ba;
+  font-size: 0.825rem;
+}
+
+.video-modal-gear-tip svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
 }
 
 .video-modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1.25rem;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
-  z-index: 10;
-  transition: background var(--transition-fast);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .video-modal-close:hover {
-  background: var(--color-accent);
-  color: #000;
+  background: #dc3545;
+  border-color: #dc3545;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.video-modal-close svg {
+  stroke-width: 2.5;
+}
+
+.video-modal-media-wrap {
+  width: 100%;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-video-element {
   width: 100%;
-  max-height: 75vh;
+  max-height: 70vh;
   display: block;
+  background: #000;
 }
 
 .modal-iframe-element {
@@ -1654,15 +1719,33 @@ img, video {
   aspect-ratio: 16 / 9;
   border: none;
   display: none;
+  background: #000;
 }
 
 .modal-video-footer {
-  padding: 1.25rem 1.75rem;
+  padding: 1rem 1.4rem;
   background: #0d1a14;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-modal-close-footer {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #e2ede5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-size: 0.825rem !important;
+  padding: 0.4rem 0.9rem !important;
+}
+
+.btn-modal-close-footer:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #fff !important;
 }
 
 /* Floating WhatsApp Quick Action Button */
@@ -2247,6 +2330,38 @@ img, video {
   }
   .floating-whatsapp-tooltip {
     display: none !important;
+  }
+
+  /* Reproductor Modal en Dispositivos Móviles (Cero interferencia con controles) */
+  .video-modal-backdrop {
+    padding: 0.5rem !important;
+  }
+  .video-modal-box {
+    border-radius: 12px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .video-modal-topbar {
+    padding: 0.6rem 0.85rem !important;
+    gap: 0.5rem !important;
+  }
+  .video-modal-gear-tip {
+    display: none !important; /* Optimiza espacio en pantallas estrechas */
+  }
+  .video-modal-pill {
+    font-size: 0.72rem !important;
+    padding: 0.25rem 0.55rem !important;
+  }
+  .video-modal-close {
+    padding: 0.35rem 0.75rem !important;
+    font-size: 0.8rem !important;
+    min-height: 38px !important;
+  }
+  .modal-video-footer {
+    padding: 0.75rem 0.85rem !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.65rem !important;
   }
 
   /* Footer */
