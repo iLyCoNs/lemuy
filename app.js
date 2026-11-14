@@ -5,6 +5,19 @@
  * showcase de Reel en formato celular y menú móvil responsivo.
  */
 
+// ==========================================================================
+// CONFIGURACIÓN DE CONTACTO (Fácilmente modificable cuando el cliente entregue su número)
+// ==========================================================================
+const CONFIG_WHATSAPP_PHONE = ""; // Escribir aquí el número real del propietario (ej: "56912345678"). Si está vacío, abre WhatsApp para seleccionar destinatario.
+
+function getWhatsAppUrl(text) {
+  const encoded = encodeURIComponent(text);
+  if (CONFIG_WHATSAPP_PHONE && CONFIG_WHATSAPP_PHONE.trim() !== "") {
+    return `https://wa.me/${CONFIG_WHATSAPP_PHONE.replace(/\D/g, '')}?text=${encoded}`;
+  }
+  return `https://wa.me/?text=${encoded}`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initHoverVideos();
@@ -423,8 +436,7 @@ function renderPropertyDetail(data) {
 
   const btnWhatsapp = container.querySelector('.btn-prop-whatsapp');
   if (btnWhatsapp) {
-    const encoded = encodeURIComponent(data.whatsappMsg);
-    btnWhatsapp.href = `https://wa.me/56976228383?text=${encoded}`;
+    btnWhatsapp.href = getWhatsAppUrl(data.whatsappMsg);
   }
 }
 
@@ -465,7 +477,7 @@ function initContactForm() {
       `*Propiedad de interés:* ${property}\n` +
       `*Mensaje:* ${message || 'Solicito coordinar una llamada o visita a terreno.'}`;
 
-    const whatsappUrl = `https://wa.me/56976228383?text=${encodeURIComponent(formattedMessage)}`;
+    const whatsappUrl = getWhatsAppUrl(formattedMessage);
     window.open(whatsappUrl, '_blank');
   });
 }
