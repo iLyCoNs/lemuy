@@ -1112,6 +1112,15 @@ img, video {
 .property-detail-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .property-detail-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
 }
 
 .prop-visual-pane {
@@ -1470,6 +1479,19 @@ img, video {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 3.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .contact-card {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 1.5rem 1rem !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
 
 .contact-info-col h3 {

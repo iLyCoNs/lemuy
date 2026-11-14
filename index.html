@@ -11,8 +11,229 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Hoja de Estilos -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Hoja de Estilos con Cache Buster -->
+  <link rel="stylesheet" href="styles.css?v=4.0">
+
+  <!-- Estilos Críticos Responsivos Móviles (Garantía sin caché) -->
+  <style>
+    /* Prevención absoluta de desborde horizontal */
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: relative !important;
+      box-sizing: border-box !important;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+
+    img, video, iframe {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Reglas estrictas para dispositivos móviles y tablets (< 1024px) */
+    @media screen and (max-width: 1024px) {
+      .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Barra Superior 100% Centrada */
+      .top-notice {
+        padding: 0.5rem 0.75rem !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+      .top-notice-content {
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+      .top-notice-left {
+        white-space: normal !important;
+        text-align: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        font-size: 0.75rem !important;
+        line-height: 1.35 !important;
+      }
+      .top-notice-link {
+        display: none !important;
+      }
+
+      /* Hero Section Centrado */
+      .hero-content {
+        text-align: center !important;
+        padding: 2.5rem 0 1.5rem !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .hero-title {
+        font-size: clamp(1.85rem, 6.5vw, 2.3rem) !important;
+        line-height: 1.18 !important;
+        text-align: center !important;
+        margin: 0 auto 1rem !important;
+        width: 100% !important;
+      }
+      .hero-subtitle {
+        font-size: 0.98rem !important;
+        line-height: 1.65 !important;
+        text-align: center !important;
+        margin: 0 auto 1.8rem !important;
+        max-width: 100% !important;
+      }
+      .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto 2rem !important;
+        gap: 0.8rem !important;
+      }
+      .hero-actions .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        min-height: 48px !important;
+      }
+      .hero-stats-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.65rem !important;
+        padding: 1rem 0.6rem !important;
+        width: 100% !important;
+      }
+      .hero-stat-item {
+        text-align: center !important;
+        align-items: center !important;
+      }
+
+      /* Tarjeta de Contacto en 1 SOLA COLUMNA VERTICAL */
+      .contact-card {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 1.5rem 1rem !important;
+        gap: 2rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 14px !important;
+        box-sizing: border-box !important;
+      }
+      .contact-info-col, .contact-form-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .contact-info-col {
+        text-align: center !important;
+      }
+      .contact-info-col h3 {
+        font-size: 1.65rem !important;
+        text-align: center !important;
+      }
+      .contact-direct-owner-box {
+        text-align: center !important;
+        padding: 1.15rem 1rem !important;
+        width: 100% !important;
+      }
+      .contact-list {
+        text-align: left !important;
+        width: 100% !important;
+      }
+      .form-group {
+        width: 100% !important;
+        margin-bottom: 1.15rem !important;
+        text-align: left !important;
+      }
+      .form-input, .form-select, .form-textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 16px !important;
+        padding: 0.85rem 1rem !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+      }
+      .contact-form-col .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        min-height: 48px !important;
+      }
+
+      /* Detalle de Propiedades en 1 Columna */
+      .property-detail-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .prop-visual-pane {
+        width: 100% !important;
+        min-height: 250px !important;
+        height: 260px !important;
+      }
+      .prop-info-pane {
+        width: 100% !important;
+        padding: 1.5rem 1rem !important;
+        box-sizing: border-box !important;
+      }
+      .prop-specs-table {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding: 1rem !important;
+      }
+      .prop-cta-bar {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+      }
+      .prop-cta-bar .btn {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      /* Grillas y Elementos a 1 Columna */
+      .video-grid {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 440px !important;
+        margin: 0 auto !important;
+      }
+      .reel-showcase-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 2rem !important;
+      }
+      .smartphone-frame {
+        width: 100% !important;
+        max-width: 270px !important;
+        height: auto !important;
+        aspect-ratio: 9 / 18.5 !important;
+        margin: 0 auto !important;
+      }
+      .reasons-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .routes-timeline {
+        grid-template-columns: 1fr !important;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+      }
+      .floating-whatsapp-tooltip {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
