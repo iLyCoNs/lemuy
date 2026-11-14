@@ -1,0 +1,8 @@
+# Ignorar archivos maestros de video pesados (los videos se sirven desde GitHub Releases)
+HORIZONTAL/
+ORIGINALES/
+REELS/
+*.mp4
+*.mov
+*.zip
+*.rar
