@@ -1247,6 +1247,255 @@ img, video {
 }
 
 /* ==========================================================================
+   GALERÍA FOTOGRÁFICA INTERACTIVA DE PROPIEDADES (Fundo 15,93 Has)
+   ========================================================================== */
+.prop-gallery-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  background: #08120d;
+  position: relative;
+  overflow: hidden;
+}
+
+.prop-gallery-main {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.prop-gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.prop-gallery-main:hover .prop-gallery-main-img {
+  transform: scale(1.02);
+}
+
+.prop-gallery-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 6;
+  backdrop-filter: blur(8px);
+}
+
+.prop-gallery-expand-btn {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 1.25rem;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.prop-gallery-expand-btn:hover {
+  background: var(--color-accent);
+  color: #000;
+  transform: scale(1.1);
+}
+
+.prop-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 7;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(6px);
+}
+
+.prop-gallery-arrow:hover {
+  background: rgba(212, 175, 55, 0.9);
+  color: #0d1a14;
+  border-color: rgba(212, 175, 55, 1);
+}
+
+.prop-gallery-arrow.prev {
+  left: 1rem;
+}
+
+.prop-gallery-arrow.next {
+  right: 1rem;
+}
+
+.prop-gallery-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 100%);
+  color: #e2ede5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 5;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Tira de Miniaturas (Thumbnails) */
+.prop-gallery-thumbs-wrap {
+  background: #08120d;
+  padding: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
+}
+
+.prop-gallery-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  width: max-content;
+}
+
+.prop-gallery-thumb-btn {
+  width: 72px;
+  height: 52px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  background: #000;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.prop-gallery-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.prop-gallery-thumb-btn:hover {
+  opacity: 0.9;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.prop-gallery-thumb-btn.active {
+  opacity: 1;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Modal Lightbox para Fotos en Pantalla Completa (Full HD) */
+.photo-lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 8, 6, 0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 10001;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.photo-lightbox-modal.active {
+  display: flex;
+}
+
+.photo-lightbox-box {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #0a1410;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9);
+}
+
+.photo-lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.4rem;
+  background: #0d1a14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.photo-lightbox-content {
+  position: relative;
+  width: 100%;
+  max-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  overflow: hidden;
+}
+
+.photo-lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+}
+
+.photo-lightbox-footer {
+  padding: 1rem 1.4rem;
+  background: #0d1a14;
+  color: #b5c7ba;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+/* ==========================================================================
    DIDACTIC SECTION: WHY ISLA LEMUY (Target 50+ Audience)
    ========================================================================== */
 .why-lemuy-section {
@@ -2362,6 +2611,47 @@ img, video {
     flex-direction: column !important;
     text-align: center !important;
     gap: 0.65rem !important;
+  }
+
+  /* Galería Fotográfica Móvil */
+  .prop-gallery-wrapper {
+    min-height: 280px !important;
+  }
+  .prop-gallery-main {
+    min-height: 230px !important;
+  }
+  .prop-gallery-badge {
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.55rem !important;
+  }
+  .prop-gallery-arrow {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .prop-gallery-arrow.prev {
+    left: 0.4rem !important;
+  }
+  .prop-gallery-arrow.next {
+    right: 0.4rem !important;
+  }
+  .prop-gallery-caption-bar {
+    font-size: 0.78rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+  .prop-gallery-thumbs-wrap {
+    padding: 0.5rem 0.4rem !important;
+  }
+  .prop-gallery-thumb-btn {
+    width: 58px !important;
+    height: 42px !important;
+  }
+  .photo-lightbox-modal {
+    padding: 0.4rem !important;
+  }
+  .photo-lightbox-content {
+    max-height: 55vh !important;
   }
 
   /* Footer */

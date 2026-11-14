@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmartphoneReel();
   initPropertyTabs();
   initVideoModal();
+  initPhotoLightbox();
   initFaqAccordion();
   initContactForm();
   initSmoothScroll();
@@ -356,29 +357,84 @@ const propertiesData = {
     whatsappMsg: "Hola, me interesa el Fundo de 5 Hectáreas en Isla Lemuy. Deseo conocer planos, estatus de títulos y coordinar una visita."
   },
   fundo17ha: {
-    tag: "Santuario Patrimonial de Gran Escala",
-    location: "Isla del Archipiélago de Chiloé (Frente Costero)",
-    title: "Gran Fundo Costero de ~17 Hectáreas (170.000 m²)",
-    description: "Una joya territorial de características escasas en el sur de Chile. Gran extensión de 17 hectáreas con frente marítimo, bahías tranquilas protegidas del oleaje y lomajes vírgenes. Un legado patrimonial de clase mundial para inversión o reserva natural privada.",
+    tag: "Santuario Náutico • 410m de Playa",
+    location: "Isla Taucolón, Archipiélago de las Chauques (Quemchi, Chiloé)",
+    title: "Fundo Isla Taucolón • 15,93 Hectáreas (410 m de Borde Costero)",
+    description: "Excepcional predio virgen de 15,93 hectáreas con aprox. 410 metros lineales de orilla de playa protegida de piedrecilla fina y aguas calmas. Su topografía en forma de suave anfiteatro natural se eleva gradualmente desde la orilla costera hacia la cumbre del cerro, otorgando imponentes vistas panorámicas a los canales interiores e islas vecinas. Cuenta con praderas limpias, bosque nativo maduro, vertientes de agua pura viva y tendido eléctrico en el predio. Una oportunidad patrimonial insustituible para refugio privado, proyecto de conservación o inversión náutica de primer nivel.",
     videoSrc: "HORIZONTAL/FRENTE_PLAYA.mp4",
-    poster: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    poster: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_f360ec",
+    hasGallery: true,
+    photos: [
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_f360ec",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_f360ec",
+        caption: "Vista panorámica frontal de la bahía y canal interior desde la orilla de Isla Taucolón"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_184990",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_184990",
+        caption: "410 metros continuos de playa de piedrecilla fina y aguas calmas para desembarque de embarcaciones"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_7016c9",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_7016c9",
+        caption: "Borde costero con suave pendiente ascendente hacia el bosque nativo templado"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_a69194",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_a69194",
+        caption: "Topografía en anfiteatro natural: vistas despejadas a canales e islas vecinas"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_95bc10",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_95bc10",
+        caption: "Áreas despejadas y praderas limpias ideales para construcción sin talar"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_b33c19",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_b33c19",
+        caption: "Orilla este con vista al archipiélago de las Chauques y navegación protegida"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_f038a5",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_f038a5",
+        caption: "Vista hacia las islas vecinas Mechuque y Añihué (a minutos en embarcación)"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_d2f84e",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_d2f84e",
+        caption: "Sendero interior y bosque nativo maduro hasta la cumbre del cerro"
+      },
+      {
+        url: "https://photos.encuentra24.com/t_or_fh_l/f_auto/v1/cl/30/58/56/72/30585672_fd7773",
+        thumb: "https://photos.encuentra24.com/t_or_fh_m/f_auto/v1/cl/30/58/56/72/30585672_fd7773",
+        caption: "Entorno virgen con vertientes naturales de agua dulce viva en la propiedad"
+      }
+    ],
     specs: [
-      { label: "Superficie Total", val: "Aprox. 170.000 m² (17 ha)" },
-      { label: "Estatus Legal", val: "Rol Propio e inscripción al día" },
-      { label: "Frente Costero", val: "Acceso a playa y orilla de mar" },
-      { label: "Acceso Marítimo", val: "Caleta natural protegida para bote/lancha" },
-      { label: "Naturaleza", val: "Flora costera austral, avifauna marina" },
-      { label: "Potencial", val: "Reserva privada / Marina / Santuario" }
+      { label: "Superficie Total", val: "15,93 Hectáreas (159.300 m²)" },
+      { label: "Frente de Playa", val: "410 m de orilla de piedrecilla fina" },
+      { label: "Precio Referencial", val: "UF 8.900 (Trato directo • 0% comisión)" },
+      { label: "Estatus Legal", val: "Rol Propio individual y títulos saneados" },
+      { label: "Electricidad", val: "Tendido eléctrico pasa por el predio" },
+      { label: "Agua Dulce", val: "Múltiples vertientes naturales permanentes" },
+      { label: "Conectividad", val: "20 min en lancha rápida desde Tenaún" },
+      { label: "Telecomunicaciones", val: "Excelente señal celular 4G" }
     ],
     benefits: [
-      "Propiedad de escala irrepetible con borde de mar virgen.",
-      "Máxima plusvalía y resguardo de capital en tierras australes.",
-      "Ideal para quienes valoran la navegación y la privacidad total.",
-      "Documentación legal completa lista para firma en Notaría."
+      "410 metros continuos de playa calma protegida, ideal para fondeo, kayak y veleros.",
+      "A solo 20 minutos de navegación en lancha rápida desde Tenaún (Chiloé continental).",
+      "Al frente de Isla Puduhuapi (con marina privada, muelle e instalaciones náuticas).",
+      "A 10 min de palafitos y gastronomía en Mechuque, y vecina al viñedo de Viña Montes en Añihué.",
+      "Pista de aterrizaje para avionetas en la vecina Isla Batachauques (a 4 millas náuticas).",
+      "Topografía en anfiteatro con praderas limpias y bosque nativo virgen hasta la cumbre."
     ],
-    whatsappMsg: "Hola, me comunico por el Fundo de 17 Hectáreas con borde costero en Chiloé. Quisiera recibir la carpeta de títulos y agendar una llamada."
+    whatsappMsg: "Hola, me comunico por el Fundo de 15,93 Hectáreas con 410m de playa en Isla Taucolón (Chauques, Chiloé - UF 8.900). Quisiera recibir antecedentes técnicos y coordinar contacto directo con el dueño."
   }
 };
+
+let currentGalleryPhotos = [];
+let currentGalleryIndex = 0;
 
 function initPropertyTabs() {
   const tabButtons = document.querySelectorAll('.prop-tab-btn');
@@ -402,15 +458,60 @@ function renderPropertyDetail(data) {
   if (!container) return;
 
   const visualPane = container.querySelector('.prop-visual-pane');
-  const video = visualPane.querySelector('video');
-  const ribbon = visualPane.querySelector('.prop-tag-ribbon');
+  
+  if (data.hasGallery && data.photos && data.photos.length > 0) {
+    currentGalleryPhotos = data.photos;
+    currentGalleryIndex = 0;
 
-  if (ribbon) ribbon.textContent = data.tag;
-  if (video) {
-    video.src = data.videoSrc;
-    video.poster = data.poster;
-    video.load();
-    video.play().catch(() => {});
+    visualPane.innerHTML = `
+      <div class="prop-gallery-wrapper">
+        <div class="prop-gallery-main" id="propGalleryMain" title="Haga clic para ampliar foto en alta resolución">
+          <img class="prop-gallery-main-img" id="propGalleryActiveImg" src="${data.photos[0].url}" alt="${data.photos[0].caption}">
+          <span class="prop-tag-ribbon">${data.tag}</span>
+          <div class="prop-gallery-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span id="propGalleryCounter">1 / ${data.photos.length}</span>
+          </div>
+          <button type="button" class="prop-gallery-expand-btn" id="propGalleryExpandBtn" aria-label="Ampliar foto" title="Ver en pantalla completa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </button>
+          <button type="button" class="prop-gallery-arrow prev" id="propGalleryPrev" aria-label="Foto anterior">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="prop-gallery-arrow next" id="propGalleryNext" aria-label="Foto siguiente">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="prop-gallery-caption-bar">
+            <span id="propGalleryCaption">${data.photos[0].caption}</span>
+          </div>
+        </div>
+        <div class="prop-gallery-thumbs-wrap">
+          <div class="prop-gallery-thumbs" id="propGalleryThumbs">
+            ${data.photos.map((p, idx) => `
+              <button type="button" class="prop-gallery-thumb-btn ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Ver foto ${idx + 1}">
+                <img src="${p.thumb}" alt="Miniatura ${idx + 1}" loading="lazy">
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+
+    setupGalleryListeners();
+  } else {
+    visualPane.innerHTML = `
+      <span class="prop-tag-ribbon">${data.tag}</span>
+      <div class="prop-visual-video-wrap">
+        <video class="prop-visual-video" autoplay muted loop playsinline poster="${data.poster}">
+          <source src="${data.videoSrc}" type="video/mp4">
+        </video>
+      </div>
+    `;
+    const v = visualPane.querySelector('video');
+    if (v) {
+      v.load();
+      v.play().catch(() => {});
+    }
   }
 
   container.querySelector('.prop-location-badge span').textContent = data.location;
@@ -441,6 +542,158 @@ function renderPropertyDetail(data) {
   if (btnWhatsapp) {
     btnWhatsapp.href = getWhatsAppUrl(data.whatsappMsg);
   }
+}
+
+function updateGalleryView(index) {
+  if (!currentGalleryPhotos || !currentGalleryPhotos.length) return;
+  if (index < 0) index = currentGalleryPhotos.length - 1;
+  if (index >= currentGalleryPhotos.length) index = 0;
+  currentGalleryIndex = index;
+
+  const img = document.getElementById('propGalleryActiveImg');
+  const counter = document.getElementById('propGalleryCounter');
+  const caption = document.getElementById('propGalleryCaption');
+  const thumbs = document.querySelectorAll('.prop-gallery-thumb-btn');
+
+  if (img) {
+    img.src = currentGalleryPhotos[index].url;
+    img.alt = currentGalleryPhotos[index].caption;
+  }
+  if (counter) counter.textContent = `${index + 1} / ${currentGalleryPhotos.length}`;
+  if (caption) caption.textContent = currentGalleryPhotos[index].caption;
+
+  thumbs.forEach((t, i) => {
+    if (i === index) {
+      t.classList.add('active');
+      t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    } else {
+      t.classList.remove('active');
+    }
+  });
+}
+
+function setupGalleryListeners() {
+  const prevBtn = document.getElementById('propGalleryPrev');
+  const nextBtn = document.getElementById('propGalleryNext');
+  const expandBtn = document.getElementById('propGalleryExpandBtn');
+  const mainBox = document.getElementById('propGalleryMain');
+  const thumbs = document.querySelectorAll('.prop-gallery-thumb-btn');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateGalleryView(currentGalleryIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateGalleryView(currentGalleryIndex + 1);
+    });
+  }
+
+  if (expandBtn) {
+    expandBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openPhotoLightbox(currentGalleryIndex);
+    });
+  }
+
+  if (mainBox) {
+    mainBox.addEventListener('click', (e) => {
+      if (e.target.closest('.prop-gallery-arrow') || e.target.closest('.prop-gallery-expand-btn')) return;
+      openPhotoLightbox(currentGalleryIndex);
+    });
+  }
+
+  thumbs.forEach(t => {
+    t.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(t.getAttribute('data-index'), 10);
+      updateGalleryView(idx);
+    });
+  });
+}
+
+/* ==========================================================================
+   VISOR MODAL LIGHTBOX PARA FOTOS EN ALTA RESOLUCIÓN
+   ========================================================================== */
+let photoModal, photoModalImg, photoModalCounter, photoModalCaption;
+
+function initPhotoLightbox() {
+  photoModal = document.getElementById('photoModal');
+  if (!photoModal) return;
+
+  photoModalImg = document.getElementById('photoModalImg');
+  photoModalCounter = document.getElementById('photoModalCounter');
+  photoModalCaption = document.getElementById('photoModalCaption');
+
+  const closeBtn = document.getElementById('closePhotoModal');
+  const prevBtn = document.getElementById('photoModalPrev');
+  const nextBtn = document.getElementById('photoModalNext');
+
+  if (closeBtn) closeBtn.addEventListener('click', closePhotoLightbox);
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigatePhotoLightbox(currentGalleryIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigatePhotoLightbox(currentGalleryIndex + 1);
+    });
+  }
+
+  photoModal.addEventListener('click', (e) => {
+    if (e.target === photoModal) {
+      closePhotoLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!photoModal.classList.contains('active')) return;
+    if (e.key === 'Escape') closePhotoLightbox();
+    if (e.key === 'ArrowLeft') navigatePhotoLightbox(currentGalleryIndex - 1);
+    if (e.key === 'ArrowRight') navigatePhotoLightbox(currentGalleryIndex + 1);
+  });
+}
+
+function openPhotoLightbox(index = 0) {
+  if (!photoModal || !currentGalleryPhotos.length) return;
+  navigatePhotoLightbox(index);
+  photoModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function navigatePhotoLightbox(index) {
+  if (!currentGalleryPhotos || !currentGalleryPhotos.length) return;
+  if (index < 0) index = currentGalleryPhotos.length - 1;
+  if (index >= currentGalleryPhotos.length) index = 0;
+  currentGalleryIndex = index;
+
+  if (photoModalImg) {
+    photoModalImg.src = currentGalleryPhotos[index].url;
+    photoModalImg.alt = currentGalleryPhotos[index].caption;
+  }
+  if (photoModalCounter) {
+    photoModalCounter.textContent = `${index + 1} / ${currentGalleryPhotos.length}`;
+  }
+  if (photoModalCaption) {
+    photoModalCaption.textContent = currentGalleryPhotos[index].caption;
+  }
+
+  updateGalleryView(index);
+}
+
+function closePhotoLightbox() {
+  if (!photoModal) return;
+  photoModal.classList.remove('active');
+  document.body.style.overflow = '';
 }
 
 /* ==========================================================================
