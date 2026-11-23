@@ -365,38 +365,38 @@ const propertiesData = {
         caption: "Vista panorámica de la bahía y canal interior desde la orilla de Isla Taucolón"
       },
       {
-        url: "images/taucolon/02_playa_costa.jpg",
-        thumb: "images/taucolon/02_playa_costa.jpg",
+        url: "images/taucolon/02_orilla_410m.jpg",
+        thumb: "images/taucolon/02_orilla_410m.jpg",
         caption: "410 metros continuos de playa de piedrecilla fina y aguas calmas para desembarque"
       },
       {
-        url: "images/taucolon/03_orilla_mar.jpg",
-        thumb: "images/taucolon/03_orilla_mar.jpg",
+        url: "images/taucolon/03_playa_bosque.jpg",
+        thumb: "images/taucolon/03_playa_bosque.jpg",
         caption: "Borde costero con suave pendiente ascendente hacia el bosque nativo templado"
       },
       {
-        url: "images/taucolon/04_sendero_bosque.jpg",
-        thumb: "images/taucolon/04_sendero_bosque.jpg",
+        url: "images/taucolon/04_anfiteatro_canales.jpg",
+        thumb: "images/taucolon/04_anfiteatro_canales.jpg",
         caption: "Topografía en anfiteatro natural: vistas despejadas a canales e islas vecinas"
       },
       {
-        url: "images/taucolon/05_vista_bahia.jpg",
-        thumb: "images/taucolon/05_vista_bahia.jpg",
+        url: "images/taucolon/05_praderas_limpias.jpg",
+        thumb: "images/taucolon/05_praderas_limpias.jpg",
         caption: "Áreas despejadas y praderas limpias ideales para construcción sin talar"
       },
       {
-        url: "images/taucolon/06_mar_islas.jpg",
-        thumb: "images/taucolon/06_mar_islas.jpg",
+        url: "images/taucolon/06_vista_chauques.jpg",
+        thumb: "images/taucolon/06_vista_chauques.jpg",
         caption: "Orilla este con vista al archipiélago de las Chauques y navegación protegida"
       },
       {
-        url: "images/taucolon/07_anfiteatro_playa.jpg",
-        thumb: "images/taucolon/07_anfiteatro_playa.jpg",
+        url: "images/taucolon/07_islas_mechuque_anihue.jpg",
+        thumb: "images/taucolon/07_islas_mechuque_anihue.jpg",
         caption: "Vista hacia las islas vecinas Mechuque y Añihué (a minutos en embarcación)"
       },
       {
-        url: "images/taucolon/08_costa_chauques.jpg",
-        thumb: "images/taucolon/08_costa_chauques.jpg",
+        url: "images/taucolon/08_sendero_bosque_nativo.jpg",
+        thumb: "images/taucolon/08_sendero_bosque_nativo.jpg",
         caption: "Sendero interior y bosque nativo maduro hasta la cumbre del cerro"
       },
       {
@@ -439,8 +439,8 @@ function initPropertyTabs() {
     });
   });
 
-  // Vinculación de los pills de selección rápida del Hero
-  const heroPills = document.querySelectorAll('.hero-property-pill[data-tab-target]');
+  // Vinculación de los segmentos de selección rápida del Hero
+  const heroPills = document.querySelectorAll('.hero-property-pill[data-tab-target], .hero-segment-item[data-tab-target]');
   heroPills.forEach(pill => {
     pill.addEventListener('click', () => {
       const targetIndex = parseInt(pill.getAttribute('data-tab-target'), 10);
