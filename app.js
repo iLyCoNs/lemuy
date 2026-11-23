@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPhotoLightbox();
   initFaqAccordion();
   initContactForm();
+  initPropertyDirectContactForm();
+  initLiveWeather();
   initSmoothScroll();
 });
 
@@ -763,5 +765,107 @@ function initSmoothScroll() {
         });
       }
     });
+  });
+}
+
+/* ==========================================================================
+   9. FORMULARIO DIRECTO EN PÁGINAS DEDICADAS DE PROPIEDAD
+   ========================================================================== */
+function initPropertyDirectContactForm() {
+  const form = document.getElementById('propertyDirectContactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const propName = form.querySelector('#pageProperty')?.value || 'Terreno en Chiloé';
+    const name = form.querySelector('#propUserName')?.value.trim() || 'Interesado';
+    const phone = form.querySelector('#propUserPhone')?.value.trim() || 'No informado';
+    const message = form.querySelector('#propUserMessage')?.value.trim() || 'Deseo consultar precio, rol y coordinar visita.';
+
+    const formattedMessage = `*Consulta Oficial - Santuario Lemuy*\n\n` +
+      `*Propiedad:* ${propName}\n` +
+      `*Nombre:* ${name}\n` +
+      `*Teléfono:* ${phone}\n` +
+      `*Mensaje:* ${message}`;
+
+    const whatsappUrl = getWhatsAppUrl(formattedMessage);
+    window.open(whatsappUrl, '_blank');
+  });
+}
+
+/* ==========================================================================
+   10. WIDGET DE CLIMA EN VIVO SATELITAL (Open-Meteo API)
+   ========================================================================== */
+const WMO_WEATHER_MAP = {
+  0: { label: "Despejado", icon: "☀️" },
+  1: { label: "Mayormente Despejado", icon: "🌤️" },
+  2: { label: "Parcialmente Nublado", icon: "⛅" },
+  3: { label: "Nublado", icon: "☁️" },
+  45: { label: "Neblina", icon: "🌫️" },
+  48: { label: "Neblina con Escarcha", icon: "🌫️" },
+  51: { label: "Llovizna Ligera", icon: "🌦️" },
+  53: { label: "Llovizna Moderada", icon: "🌦️" },
+  55: { label: "Llovizna Intensa", icon: "🌧️" },
+  61: { label: "Lluvia Ligera", icon: "🌧️" },
+  63: { label: "Lluvia Moderada", icon: "🌧️" },
+  65: { label: "Lluvia Fuerte", icon: "🌧️" },
+  71: { label: "Nevada Ligera", icon: "🌨️" },
+  73: { label: "Nevada Moderada", icon: "🌨️" },
+  75: { label: "Nevada Intensa", icon: "❄️" },
+  80: { label: "Chubascos Aislados", icon: "🌦️" },
+  81: { label: "Chubascos Moderados", icon: "🌧️" },
+  82: { label: "Chubascos Fuertes", icon: "⛈️" },
+  95: { label: "Tormenta Eléctrica", icon: "⛈️" },
+  96: { label: "Tormenta con Granizo", icon: "⛈️" },
+  99: { label: "Tormenta Severa", icon: "⛈️" }
+};
+
+function initLiveWeather() {
+  const weatherCards = document.querySelectorAll('.weather-card[data-lat][data-lon]');
+  if (!weatherCards.length) return;
+
+  weatherCards.forEach(async (card) => {
+    const lat = card.getAttribute('data-lat');
+    const lon = card.getAttribute('data-lon');
+    if (!lat || !lon) return;
+
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&timezone=America%2FSantiago`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Respuesta no válida');
+      const data = await response.json();
+
+      if (data && data.current) {
+        const cur = data.current;
+        const weatherInfo = WMO_WEATHER_MAP[cur.weather_code] || { label: "Templado", icon: "⛅" };
+
+        const iconEl = card.querySelector('.weather-icon');
+        const tempEl = card.querySelector('.weather-temp-val');
+        const condEl = card.querySelector('.weather-condition-text');
+        const metrics = card.querySelectorAll('.metric-val');
+
+        if (iconEl) iconEl.textContent = weatherInfo.icon;
+        if (tempEl) tempEl.textContent = `${Math.round(cur.temperature_2m)}°C`;
+        if (condEl) condEl.textContent = weatherInfo.label;
+
+        // Metrics: [0]=Sensación, [1]=Viento, [2]=Humedad, [3]=Precipitación
+        if (metrics.length >= 4) {
+          metrics[0].textContent = `${Math.round(cur.apparent_temperature)}°C`;
+          metrics[1].textContent = `${Math.round(cur.wind_speed_10m)} km/h`;
+          metrics[2].textContent = `${Math.round(cur.relative_humidity_2m)}%`;
+          metrics[3].textContent = `${cur.precipitation.toFixed(1)} mm`;
+        }
+      }
+    } catch (err) {
+      console.warn('Santuario Lemuy: No se pudo actualizar el widget de clima satelital:', err);
+      const condEl = card.querySelector('.weather-condition-text');
+      if (condEl && condEl.textContent.includes('Cargando')) {
+        condEl.textContent = 'Clima Templado Austral';
+      }
+      const tempEl = card.querySelector('.weather-temp-val');
+      if (tempEl && tempEl.textContent === '--°C') {
+        tempEl.textContent = '14°C';
+      }
+    }
   });
 }

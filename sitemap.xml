@@ -3,13 +3,43 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://ilycons.github.io/lemuy/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1600&amp;q=80</image:loc>
       <image:title>Parcelas y Fundos en Venta en Isla Lemuy Chiloé</image:title>
       <image:caption>Propiedades exclusivas con rol propio, bosque nativo y borde costero en el archipiélago de Chiloé</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ilycons.github.io/lemuy/parcela-5000m2.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Parcela de 5.000 m² en Isla Lemuy con Vista al Mar Interior</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ilycons.github.io/lemuy/fundo-5-hectareas.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Fundo de 5 Hectáreas en Isla Lemuy con Vertiente y Praderas Limpias</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ilycons.github.io/lemuy/fundo-taucolon-15ha.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ilycons.github.io/lemuy/images/taucolon/01_bahia_playa.jpg</image:loc>
+      <image:title>Fundo Costero 15,93 Has en Isla Taucolón con 410m de Playa</image:title>
     </image:image>
   </url>
 </urlset>
