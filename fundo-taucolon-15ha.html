@@ -53,12 +53,12 @@
   }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Cormorant Garamond, Cinzel, Playfair Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=16.0">
+  <link rel="stylesheet" href="styles.css?v=17.0">
 
   <style>
     html, body {
@@ -227,37 +227,69 @@
 
       <div class="specs-master-grid">
         <div class="spec-card">
-          <div class="spec-card-icon">📐</div>
+          <div class="spec-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M3 9h18M9 21V9"></path>
+            </svg>
+          </div>
           <h3>Superficie y Medidas</h3>
           <p><strong>15,93 Hectáreas (159.300 m²)</strong> con deslindes perimetrales georreferenciados mediante plano de agrimensura profesional.</p>
         </div>
 
         <div class="spec-card highlight-card">
-          <div class="spec-card-icon">🌊</div>
+          <div class="spec-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12c3-4 6-4 9 0 3 4 6 4 9 0 1.5-2 3-2 4 0"></path>
+              <path d="M2 17c3-4 6-4 9 0 3 4 6 4 9 0 1.5-2 3-2 4 0"></path>
+            </svg>
+          </div>
           <h3>410 Metros de Borde Costero</h3>
           <p>Playa continua de piedrecilla fina y aguas mansas. Apta para desembarque de botes, kayak, veleros y construcción de muelle o rampa de varado.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon">⚖️</div>
+          <div class="spec-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
           <h3>Certeza Jurídica 100%</h3>
           <p>Rol Propio individual emitido por el SII, subdivisión aprobada por el SAG e inscripción vigente en el Conservador de Bienes Raíces de Castro.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon">💧</div>
+          <div class="spec-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          </div>
           <h3>Vertientes de Agua Viva</h3>
           <p>Nacientes naturales de agua dulce permanente que brotan en el predio, garantizando autonomía hídrica total durante todo el año.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon">⚡</div>
+          <div class="spec-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
           <h3>Factibilidad Eléctrica</h3>
           <p>Tendido de electrificación pública pasa por el deslinde del terreno, permitiendo empalme directo para futuras construcciones.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon">🚤</div>
+          <div class="spec-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+              <line x1="12" y1="3" x2="12" y2="9"></line>
+              <line x1="12" y1="15" x2="12" y2="21"></line>
+              <line x1="3" y1="12" x2="9" y2="12"></line>
+              <line x1="15" y1="12" x2="21" y2="12"></line>
+            </svg>
+          </div>
           <h3>Navegación & Conectividad</h3>
           <p>Ubicado frente a marina de Puduhuapi y a solo 10 minutos de navegación de las islas Mechuque y Añihué, con transporte y abastecimiento regular.</p>
         </div>
@@ -432,13 +464,44 @@
     </div>
   </section>
 
-  <!-- UBICACIÓN GEORREFERENCIADA GOOGLE MAPS -->
+  <!-- UBICACIÓN GEORREFERENCIADA GOOGLE MAPS & CONECTIVIDAD -->
   <section id="ubicacion" class="section-padding">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow-badge">Georreferenciación Satelital</div>
-        <h2 class="section-title">Ubicación de Isla Taucolón en Chiloé</h2>
-        <p class="section-desc">Archipiélago de las Chauques, comuna de Quemchi, Región de Los Lagos.</p>
+        <div class="eyebrow-badge">Conectividad & Mapa</div>
+        <h2 class="section-title">Ubicación y Accesos: Fundo Isla Taucolón</h2>
+        <p class="section-desc">Archipiélago de las Chauques, comuna de Quemchi • Ruta marítima resguardada por aguas calmas interiores.</p>
+      </div>
+
+      <!-- Guía de Conectividad Náutica en 4 Pasos -->
+      <div class="connectivity-box" style="margin-top: 0; margin-bottom: 2.5rem;">
+        <h3 class="serif-font" style="font-size: 1.8rem; color: #fff;">Conectividad Marítima Protegida: De Santiago a Isla Taucolón</h3>
+        <p style="color: #c4d4c8; margin-top: 0.5rem;">
+          Acceso combinado ágil y seguro mediante vuelo regular, ruta terrestre pavimentada y navegación protegida en mar interior.
+        </p>
+
+        <div class="routes-timeline">
+          <div class="route-step">
+            <div class="route-step-time">1 hr 40 min</div>
+            <div class="route-step-title">Vuelo Santiago - Castro</div>
+            <div class="route-step-desc">Vuelos comerciales regulares desde Santiago directo al Aeródromo de Mocopulli (Castro).</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-time">45 min</div>
+            <div class="route-step-title">Castro a Rampa Quemchi / Dalcahue</div>
+            <div class="route-step-desc">Ruta asfaltada de primer nivel hasta el embarcadero marítimo de Quemchi o Dalcahue.</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-time">40-50 min</div>
+            <div class="route-step-title">Navegación Protegida en Canales</div>
+            <div class="route-step-desc">Travesía escénica y mansa entre las islas Chauques resguardadas de temporales oceánicos.</div>
+          </div>
+          <div class="route-step">
+            <div class="route-step-time">Desembarco Directo</div>
+            <div class="route-step-title">Fondeo en Playa de 410m</div>
+            <div class="route-step-desc">Arribo directo a la playa de piedrecilla fina de la propiedad con excelente resguardo náutico.</div>
+          </div>
+        </div>
       </div>
 
       <div class="interactive-map-wrapper">
@@ -567,6 +630,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=16.0"></script>
+  <script src="app.js?v=17.0"></script>
 </body>
 </html>

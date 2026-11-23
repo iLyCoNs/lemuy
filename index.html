@@ -185,13 +185,13 @@
   }
   </script>
   
-  <!-- Google Fonts: Playfair Display (Elegancia clásica) & Plus Jakarta Sans (Legibilidad óptima) -->
+  <!-- Google Fonts: Cormorant Garamond (Elegancia formal clásica), Cinzel (Arquitectura y distinción), Playfair Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Hoja de Estilos con Cache Buster -->
-  <link rel="stylesheet" href="styles.css?v=16.0">
+  <link rel="stylesheet" href="styles.css?v=17.0">
 
   <!-- Estilos Críticos Responsivos Móviles (Garantía sin caché) -->
   <style>
@@ -597,11 +597,10 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="#propiedades" class="nav-link">Propiedades</a></li>
-          <li><a href="#clima" class="nav-link">Clima en Vivo</a></li>
-          <li><a href="#proceso-seguro" class="nav-link">Compra Segura</a></li>
           <li><a href="#isla-lemuy" class="nav-link">Por qué Lemuy</a></li>
-          <li><a href="#conectividad" class="nav-link">Cómo Llegar</a></li>
+          <li><a href="#proceso-seguro" class="nav-link">Compra Segura</a></li>
           <li><a href="#preguntas" class="nav-link">Preguntas</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
 
@@ -632,10 +631,8 @@
   <div class="mobile-nav-drawer" role="dialog" aria-modal="true">
     <ul class="mobile-drawer-links">
       <li><a href="#propiedades" class="mobile-drawer-link">Las 3 Propiedades <span>&rarr;</span></a></li>
-      <li><a href="#clima" class="mobile-drawer-link">Clima Actual en Vivo <span>&rarr;</span></a></li>
-      <li><a href="#proceso-seguro" class="mobile-drawer-link">Compra Segura en 4 Pasos <span>&rarr;</span></a></li>
       <li><a href="#isla-lemuy" class="mobile-drawer-link">Por qué Isla Lemuy <span>&rarr;</span></a></li>
-      <li><a href="#conectividad" class="mobile-drawer-link">Cómo Llegar <span>&rarr;</span></a></li>
+      <li><a href="#proceso-seguro" class="mobile-drawer-link">Compra Segura en 4 Pasos <span>&rarr;</span></a></li>
       <li><a href="#preguntas" class="mobile-drawer-link">Preguntas Frecuentes <span>&rarr;</span></a></li>
       <li><a href="#contacto" class="mobile-drawer-link">Contacto Directo <span>&rarr;</span></a></li>
     </ul>
@@ -687,97 +684,46 @@
 
       <!-- Barra Didáctica Segmentada de Selección de Propiedades (Diseño Armónico Minimalista) -->
       <div class="hero-property-segments">
-        <a href="parcela-5000m2.html" class="hero-segment-item" title="Ver ficha completa y videos de la Parcela 5.000 m²">
-          <span class="seg-icon">📍</span>
+        <a href="parcela-5000m2.html" class="hero-segment-item" title="Ver ficha técnica de la Parcela 5.000 m²">
+          <span class="seg-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
           <div class="seg-text">
             <span class="seg-title">Parcela 5.000 m²</span>
             <span class="seg-sub">Vista Mar • Isla Lemuy &rarr;</span>
           </div>
         </a>
         <div class="seg-divider"></div>
-        <a href="fundo-5-hectareas.html" class="hero-segment-item" title="Ver ficha completa y videos del Fundo 5 Has">
-          <span class="seg-icon">🌲</span>
+        <a href="fundo-5-hectareas.html" class="hero-segment-item" title="Ver ficha técnica del Fundo 5 Has">
+          <span class="seg-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m8 10 4-6 4 6"></path>
+              <path d="m6 16 6-6 6 6"></path>
+              <path d="M4 21h16"></path>
+              <path d="M12 16v5"></path>
+            </svg>
+          </span>
           <div class="seg-text">
             <span class="seg-title">Fundo 5 Has</span>
             <span class="seg-sub">Vertiente • Isla Lemuy &rarr;</span>
           </div>
         </a>
         <div class="seg-divider"></div>
-        <a href="fundo-taucolon-15ha.html" class="hero-segment-item" title="Ver ficha completa y 9 fotos del Fundo 15,93 Has">
-          <span class="seg-icon">🌊</span>
+        <a href="fundo-taucolon-15ha.html" class="hero-segment-item" title="Ver ficha técnica y fotos del Fundo 15,93 Has">
+          <span class="seg-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12c3-4 6-4 9 0 3 4 6 4 9 0 1.5-2 3-2 4 0"></path>
+              <path d="M2 17c3-4 6-4 9 0 3 4 6 4 9 0 1.5-2 3-2 4 0"></path>
+            </svg>
+          </span>
           <div class="seg-text">
             <span class="seg-title">Fundo 15,93 Has</span>
             <span class="seg-sub">410m Playa • UF 8.900 &rarr;</span>
           </div>
         </a>
-      </div>
-
-      <!-- Barra Didáctica de Datos Clave para Inversionistas -->
-      <div class="hero-stats-bar">
-        <div class="hero-stat-item">
-          <div class="hero-stat-number">5.000 m² a 15,93 Has</div>
-          <div class="hero-stat-label">Desde parcela a macro-lote costero</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-number">100% Legal</div>
-          <div class="hero-stat-label">Rol Propio Individual SAG & CBR</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-number">410 Metros</div>
-          <div class="hero-stat-label">Playa de piedrecilla en Taucolón</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-number">0% Comisión</div>
-          <div class="hero-stat-label">Trato directo con el dueño</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WIDGET CLIMA EN VIVO GPS (Open-Meteo Satelital) -->
-  <section id="clima" class="weather-widget-section">
-    <div class="container">
-      <div class="weather-card" id="weatherWidgetLemuyPortal" data-lat="-42.6176" data-lon="-73.7226" data-place="Isla Lemuy, Puqueldón">
-        <div class="weather-header">
-          <div class="weather-place-group">
-            <span class="weather-live-indicator"><span class="pulse-ring"></span> EN VIVO</span>
-            <span class="weather-place-name">Condición Climática Actual en Isla Lemuy, Chiloé</span>
-            <span class="weather-coords">Estación Meteorológica Satelital GPS: -42.6176, -73.7226 (Puqueldón)</span>
-          </div>
-          <div class="weather-api-badge">Datos Satelitales Open-Meteo</div>
-        </div>
-
-        <div class="weather-body">
-          <div class="weather-main-temp">
-            <span class="weather-icon" id="portalWeatherIcon">⛅</span>
-            <div>
-              <div class="weather-temp-val" id="portalTemp">--°C</div>
-              <div class="weather-condition-text" id="portalCondition">Cargando clima actual...</div>
-            </div>
-          </div>
-
-          <div class="weather-metrics-grid">
-            <div class="weather-metric-item">
-              <span class="metric-label">Sensación Térmica</span>
-              <span class="metric-val" id="portalFeels">--°C</span>
-            </div>
-            <div class="weather-metric-item">
-              <span class="metric-label">Viento Canales</span>
-              <span class="metric-val" id="portalWind">-- km/h</span>
-            </div>
-            <div class="weather-metric-item">
-              <span class="metric-label">Humedad Relativa</span>
-              <span class="metric-val" id="portalHumidity">--%</span>
-            </div>
-            <div class="weather-metric-item">
-              <span class="metric-label">Precipitación</span>
-              <span class="metric-val" id="portalRain">0.0 mm</span>
-            </div>
-          </div>
-        </div>
-        <div class="weather-footer-note">
-          🌿 <strong>Microclima Templado:</strong> Las aguas protegidas del mar interior resguardan a Isla Lemuy de las tormentas oceánicas, brindando temperaturas estables y un entorno ideal para vivir o invertir.
-        </div>
       </div>
     </div>
   </section>
@@ -1074,72 +1020,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Guía Didáctica de Conectividad -->
-      <div id="conectividad" class="connectivity-box">
-        <h3 class="serif-font" style="font-size: 1.8rem; color: #fff;">Conectividad Ininterrumpida: De Santiago a su Refugio</h3>
-        <p style="color: #c4d4c8; margin-top: 0.5rem;">
-          Llegar a Isla Lemuy es expedito, confiable y seguro en cualquier época del año.
-        </p>
-
-        <div class="routes-timeline">
-          <div class="route-step">
-            <div class="route-step-time">1 hr 40 min</div>
-            <div class="route-step-title">Vuelo Santiago - Castro</div>
-            <div class="route-step-desc">Vuelos comerciales regulares desde Santiago directo al Aeródromo de Mocopulli (Castro).</div>
-          </div>
-          <div class="route-step">
-            <div class="route-step-time">40 min</div>
-            <div class="route-step-title">Castro a Rampa Chonchi</div>
-            <div class="route-step-desc">Ruta 5 Sur completamente asfaltada hasta la rampa del embarcadero de Huicha (Chonchi).</div>
-          </div>
-          <div class="route-step">
-            <div class="route-step-time">10 min</div>
-            <div class="route-step-title">Cruce en Transbordador</div>
-            <div class="route-step-desc">Ferry vehicular continuo cada 15-20 minutos, servicio 24/7 y gratuito para residentes.</div>
-          </div>
-          <div class="route-step">
-            <div class="route-step-time">10-15 min</div>
-            <div class="route-step-title">Llegada al Terreno</div>
-            <div class="route-step-desc">Camino de ripio firme y transitable para cualquier vehículo hasta la entrada de la propiedad.</div>
-          </div>
-        </div>
-
-        <!-- Mapa Interactivo Google Maps Georreferenciado -->
-        <div class="interactive-map-wrapper">
-          <div class="map-header-bar">
-            <div class="map-title-group">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <div>
-                <span class="map-title-name">Ubicación Georreferenciada: Isla Lemuy, Chiloé</span>
-                <span class="map-title-sub">Comuna de Puqueldón, Región de Los Lagos, Chile (-42.617589, -73.722646)</span>
-              </div>
-            </div>
-            <div class="map-actions">
-              <a href="https://maps.google.com/?q=Isla+Lemuy,+Puqueldon,+Los+Lagos,+Chile" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Abrir en Google Maps
-              </a>
-              <a href="https://www.google.com/maps/dir/Castro,+Los+Lagos/Isla+Lemuy,+Puqueldon" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Trazar Ruta desde Castro
-              </a>
-            </div>
-          </div>
-          <div class="map-iframe-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94875.25368388902!2d-73.72264565!3d-42.61758925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96227b686d63c5d7%3A0x868f86016be41eb8!2sIsla%20Lemuy!5e0!3m2!1ses!2scl!4v1715640000000!5m2!1ses!2scl" 
-              width="100%" 
-              height="100%" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Mapa Vial y Satelital de Isla Lemuy, Chiloé">
-            </iframe>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1306,8 +1186,9 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               Enviar Consulta al Propietario por WhatsApp
             </button>
-            <p style="font-size: 0.8rem; color: #718076; text-align: center; margin-top: 0.75rem;">
-              🔒 Sus datos son privados y tratados con estricta confidencialidad.
+            <p style="font-size: 0.8rem; color: #718076; text-align: center; margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>Sus datos son privados y tratados con estricta confidencialidad.</span>
             </p>
           </form>
         </div>
@@ -1332,10 +1213,10 @@
             <li><a href="parcela-5000m2.html">Parcela de 5.000 m² (Lemuy)</a></li>
             <li><a href="fundo-5-hectareas.html">Fundo de 5 Hectáreas (Lemuy)</a></li>
             <li><a href="fundo-taucolon-15ha.html">Fundo 15,93 Has (Taucolón)</a></li>
-            <li><a href="#clima">Clima en Vivo GPS</a></li>
-            <li><a href="#proceso-seguro">Compra Segura</a></li>
+            <li><a href="#propiedades">Portafolio de Propiedades</a></li>
             <li><a href="#isla-lemuy">Por qué Isla Lemuy</a></li>
-            <li><a href="#conectividad">Cómo Llegar</a></li>
+            <li><a href="#proceso-seguro">Compra Segura</a></li>
+            <li><a href="#preguntas">Preguntas Frecuentes</a></li>
           </ul>
         </div>
 
@@ -1440,6 +1321,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="app.js?v=16.0"></script>
+  <script src="app.js?v=17.0"></script>
 </body>
 </html>

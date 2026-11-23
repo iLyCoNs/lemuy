@@ -31,8 +31,10 @@
   --color-border-light: #ece7de;
   --color-border-gold: rgba(207, 168, 89, 0.35);
   
-  /* Typography */
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  /* Typography - Formal Architectural & High-End Editorial */
+  --font-formal: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* macOS / Glassmorphism Shadows & Radius */
@@ -256,10 +258,10 @@ img, video {
 }
 
 .brand-text-name {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   color: #ffffff;
   line-height: 1.1;
 }
@@ -817,32 +819,41 @@ img, video {
   position: relative;
   z-index: 3;
   padding: 4.5rem 0 3rem;
-  max-width: 920px;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-title {
+  font-family: var(--font-formal);
   font-size: clamp(2.3rem, 4.4vw, 3.5rem);
   color: #ffffff;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
   margin-bottom: 1.25rem;
   line-height: 1.15;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .hero-title em {
+  font-family: var(--font-formal);
   font-style: italic;
   font-weight: 400;
   color: #f7faf7;
 }
 
 .hero-subtitle {
-  font-size: 1.18rem;
+  font-size: 1.12rem;
   line-height: 1.72;
   color: #dbe8e0;
-  margin-bottom: 2.25rem;
-  max-width: 800px;
+  margin: 0 auto 2.25rem;
+  max-width: 780px;
   font-weight: 300;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
 .hero-actions {
@@ -850,21 +861,23 @@ img, video {
   flex-wrap: wrap;
   gap: 1.15rem;
   align-items: center;
-  margin-bottom: 2.25rem;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 /* Selector Segmentado de Propiedades en Hero */
 .hero-property-segments {
   display: inline-flex;
   align-items: center;
-  background: rgba(7, 16, 11, 0.75);
+  justify-content: center;
+  background: rgba(7, 16, 11, 0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-full);
   padding: 0.35rem 0.6rem;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
   max-width: 100%;
 }
 
@@ -886,8 +899,20 @@ img, video {
 }
 
 .seg-icon {
-  font-size: 1.1rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.seg-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-accent);
+  display: block;
 }
 
 .seg-text {
@@ -1914,11 +1939,24 @@ img, video {
 
 /* Travel Routes / Connectivity Box */
 .connectivity-box {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #07100b;
+  color: #ffffff;
+  border: 1px solid rgba(207, 168, 89, 0.25);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.connectivity-box h3 {
+  font-family: var(--font-formal);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.connectivity-box p {
+  color: #c4d4c8;
 }
 
 .routes-timeline {
@@ -1930,15 +1968,18 @@ img, video {
 }
 
 .route-step {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.04);
   padding: 1.5rem;
   border-radius: var(--radius-md);
   border-left: 3px solid var(--color-accent);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .route-step-time {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-family: var(--font-formal);
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--color-accent);
 }
@@ -1953,6 +1994,8 @@ img, video {
 .route-step-desc {
   font-size: 0.875rem;
   color: #b5c7ba;
+  line-height: 1.6;
+}
 }
 
 /* ==========================================================================
@@ -3471,9 +3514,18 @@ img, video {
 }
 
 .spec-card-icon {
-  font-size: 2rem;
   margin-bottom: 1rem;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.spec-card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--color-accent);
 }
 
 .spec-card h3 {
