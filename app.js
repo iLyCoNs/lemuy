@@ -1074,6 +1074,24 @@ function initLiveWeather() {
   if (!weatherCards.length) return;
 
   weatherCards.forEach(async (card) => {
+    // Configurar botón interactivo para desplegar/plegar el pronóstico extendido
+    const toggleBtn = card.querySelector('.weather-toggle-btn');
+    const forecastBox = card.querySelector('.weather-forecast-container');
+    if (toggleBtn && forecastBox) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = forecastBox.classList.toggle('is-open');
+        toggleBtn.classList.toggle('active', isOpen);
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        const textSpan = toggleBtn.querySelector('.weather-toggle-text');
+        if (textSpan) {
+          textSpan.textContent = isOpen 
+            ? 'Ocultar Pronóstico Extendido' 
+            : 'Ver Pronóstico de los Próximos Días';
+        }
+      });
+    }
+
     const lat = card.getAttribute('data-lat');
     const lon = card.getAttribute('data-lon');
     if (!lat || !lon) return;
