@@ -5061,69 +5061,84 @@ section {
   }
 }
 
-/* --- TARJETAS DESCRIPTIVAS RECTANGULARES ELEGANTES (ISLA TAUCOLÓN) --- */
-.property-descriptive-section {
+/* --- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES 3D (ISLA TAUCOLÓN) --- */
+.taucolon-master-section {
   background-color: var(--color-arena) !important;
   position: relative;
+  perspective: 1000px;
 }
 
-.descriptive-master-grid {
+.taucolon-master-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-  margin-top: 2.75rem;
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
 }
 
-.descriptive-card {
-  background: #FFFFFF !important;
+.taucolon-3d-card {
+  background: linear-gradient(168deg, #FFFFFF 0%, #FAF8F4 55%, #F4EFE6 100%) !important;
   border: 1.5px solid rgba(200, 169, 107, 0.45) !important;
-  border-radius: 18px !important;
-  padding: 2.25rem 1.85rem !important;
-  box-shadow: 0 6px 20px -4px rgba(31, 78, 95, 0.07) !important;
+  border-radius: 22px !important;
+  padding: 2.35rem 2rem !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
   position: relative;
-  min-height: 290px;
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.35s ease;
+  box-shadow: 0 4px 10px rgba(31, 78, 95, 0.04), 
+              0 14px 28px -4px rgba(31, 78, 95, 0.08), 
+              0 28px 56px -12px rgba(200, 169, 107, 0.14),
+              inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
 }
 
-.descriptive-card:hover {
-  transform: translateY(-5px);
+.taucolon-3d-card:hover {
+  transform: translateY(-8px) scale(1.015);
   border-color: #C8A96B !important;
-  box-shadow: 0 16px 36px -6px rgba(31, 78, 95, 0.13) !important;
+  box-shadow: 0 8px 16px rgba(31, 78, 95, 0.06), 
+              0 22px 44px -6px rgba(31, 78, 95, 0.16), 
+              0 36px 72px -12px rgba(200, 169, 107, 0.28),
+              inset 0 1px 0 rgba(255, 255, 255, 1) !important;
 }
 
-.descriptive-card-top {
+.taucolon-3d-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.35rem;
 }
 
-.descriptive-icon-box {
-  width: 44px;
-  height: 44px;
-  background: rgba(31, 78, 95, 0.06);
-  border: 1.5px solid rgba(200, 169, 107, 0.5);
-  border-radius: 12px;
+/* Contenedor 3D de icono minimalista premium monocromo */
+.taucolon-3d-icon-badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(31, 78, 95, 0.07) 0%, rgba(200, 169, 107, 0.22) 100%);
+  border: 1.5px solid rgba(200, 169, 107, 0.6);
+  box-shadow: 0 4px 12px rgba(31, 78, 95, 0.07), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.85),
+              inset 0 -2px 4px rgba(31, 78, 95, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #1F4E5F;
   flex-shrink: 0;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
-.descriptive-card:hover .descriptive-icon-box {
-  background: #1F4E5F;
-  color: #F6F2EA;
+.taucolon-3d-card:hover .taucolon-3d-icon-badge {
+  transform: scale(1.08) translateZ(8px);
+  background: linear-gradient(135deg, #1F4E5F 0%, #2F4A3F 100%);
+  color: #F8EED9;
   border-color: #1F4E5F;
-  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(31, 78, 95, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
-.descriptive-tag-pill {
+.taucolon-pill-tag {
   font-family: var(--font-body);
   font-size: 0.74rem;
   font-weight: 700;
@@ -5131,55 +5146,62 @@ section {
   text-transform: uppercase;
   color: #1F4E5F;
   background: rgba(31, 78, 95, 0.06);
-  border: 1px solid rgba(31, 78, 95, 0.15);
-  padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(200, 169, 107, 0.4);
+  padding: 0.32rem 0.8rem;
   border-radius: var(--radius-full);
+  box-shadow: 0 2px 6px rgba(31, 78, 95, 0.04);
 }
 
-.descriptive-card-title {
+.taucolon-3d-title {
   font-family: var(--font-title) !important;
-  font-size: 1.32rem !important;
+  font-size: 1.34rem !important;
   font-weight: 700 !important;
   color: #1F4E5F !important;
   margin: 0 0 0.75rem !important;
   line-height: 1.3 !important;
+  letter-spacing: -0.01em;
 }
 
-.descriptive-card-desc {
+.taucolon-3d-desc {
   font-family: var(--font-body) !important;
   font-size: 0.94rem !important;
-  line-height: 1.68 !important;
+  line-height: 1.7 !important;
   color: #2F4A3F !important;
   margin: 0 !important;
+  font-weight: 450;
 }
 
-.descriptive-card-footer {
+.taucolon-3d-footer {
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(200, 169, 107, 0.25);
+  border-top: 1px solid rgba(200, 169, 107, 0.3);
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
-  color: #557065;
+  color: #1F4E5F;
+}
+
+.taucolon-3d-footer svg {
+  color: #C8A96B;
+  flex-shrink: 0;
 }
 
 @media (max-width: 991px) {
-  .descriptive-master-grid {
+  .taucolon-master-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 640px) {
-  .descriptive-master-grid {
+  .taucolon-master-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  .descriptive-card {
-    padding: 1.75rem 1.4rem !important;
-    min-height: auto;
+  .taucolon-3d-card {
+    padding: 1.85rem 1.45rem !important;
   }
 }
