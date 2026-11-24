@@ -52,11 +52,18 @@
   --color-border-light: rgba(234, 227, 214, 0.65);
   --color-border-gold: rgba(200, 169, 107, 0.38);
   
-  /* Typography - Formal Architectural & High-End Editorial */
-  --font-formal: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-display: 'Cinzel', 'Cormorant Garamond', serif;
-  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* ==========================================================================
+     SISTEMA TIPOGRÁFICO UNIFICADO: 2 FUENTES OFICIALES (PRESTIGIO Y LEGIBILIDAD)
+     1. Títulos y Elementos de Prestigio: Cormorant Garamond
+     2. Lectura, UI, Formularios y Botones: Plus Jakarta Sans
+     ========================================================================== */
+  --font-title: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --font-formal: var(--font-title);
+  --font-display: var(--font-title);
+  --font-serif: var(--font-title);
+  --font-sans: var(--font-body);
   
   /* macOS / Glassmorphism Shadows & Radius */
   --shadow-sm: 0 2px 8px rgba(31, 78, 95, 0.06);
@@ -352,32 +359,36 @@ img, video {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Botón Hamburguesa Móvil */
+/* Botón Hamburguesa Móvil (Ultra Visible con Alto Contraste) */
 .mobile-nav-toggle {
   display: none;
-  background: rgba(7, 16, 11, 0.05);
-  border: 1px solid var(--color-border);
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.45) !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
   cursor: pointer;
   padding: 0;
-  color: var(--color-primary-dark);
   z-index: 1002;
   transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-nav-toggle:hover {
-  background: rgba(7, 16, 11, 0.1);
+  background: rgba(200, 169, 107, 0.25) !important;
+  border-color: var(--color-dorado) !important;
 }
 
 .hamburger-line {
   display: block;
   width: 22px;
-  height: 2px;
-  margin: 5px auto;
-  background-color: var(--color-primary-dark);
+  height: 2.5px;
+  margin: 4.5px auto;
+  background-color: #ffffff !important;
   border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   transition: all 0.3s ease-in-out;
 }
 
@@ -2155,21 +2166,22 @@ img, video {
    CONTACT & SCHEDULE VISIT (High Trust Form)
    ========================================================================== */
 .contact-section {
-  background: #ffffff;
+  background: var(--color-bg-main);
+  position: relative;
 }
 
 .contact-card {
-  background: linear-gradient(145deg, #1F4E5F 0%, #153844 55%, #2F4A3F 100%);
-  border: 1px solid rgba(200, 169, 107, 0.45);
+  background: linear-gradient(145deg, #102933 0%, #173d4a 55%, #1a4235 100%) !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.48) !important;
   border-radius: 24px;
   padding: 3.5rem;
-  box-shadow: 0 28px 70px rgba(20, 53, 65, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 70px rgba(10, 28, 35, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 3.5rem;
   width: 100%;
   box-sizing: border-box;
-  color: #ffffff;
+  color: #ffffff !important;
   position: relative;
   overflow: hidden;
 }
@@ -2178,47 +2190,59 @@ img, video {
   .contact-card {
     display: flex !important;
     flex-direction: column !important;
-    padding: 1.75rem 1.25rem !important;
+    padding: 2rem 1.25rem !important;
     gap: 2rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 }
 
+.contact-card .eyebrow-badge {
+  background: rgba(200, 169, 107, 0.16) !important;
+  border: 1px solid rgba(200, 169, 107, 0.45) !important;
+  color: var(--color-dorado) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.25rem;
+}
+
 .contact-info-col h3 {
-  font-family: var(--font-formal);
+  font-family: var(--font-formal) !important;
   font-size: clamp(2rem, 3.5vw, 2.6rem);
-  color: #ffffff;
+  color: #ffffff !important;
   line-height: 1.15;
   margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .contact-info-col p {
-  color: #EAE3D6;
+  color: #dbe7df !important;
   font-size: 1.02rem;
   line-height: 1.7;
 }
 
 .contact-direct-owner-box {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(10, 28, 35, 0.8) !important;
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(200, 169, 107, 0.35);
-  border-left: 4px solid var(--color-dorado);
+  border: 1px solid rgba(200, 169, 107, 0.4) !important;
+  border-left: 4px solid var(--color-dorado) !important;
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
   margin: 1.75rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .contact-direct-owner-box h4 {
-  font-family: var(--font-formal);
+  font-family: var(--font-formal) !important;
   font-size: 1.15rem;
-  color: #ffffff;
+  color: var(--color-dorado) !important;
   margin-bottom: 0.35rem;
+  font-weight: 700;
 }
 
 .contact-direct-owner-box p {
-  color: var(--color-arena);
-  font-size: 0.9rem;
+  color: #EAE3D6 !important;
+  font-size: 0.92rem;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -2241,14 +2265,15 @@ img, video {
 .contact-icon-circle {
   width: 44px;
   height: 44px;
-  background: rgba(200, 169, 107, 0.2);
-  border: 1px solid rgba(200, 169, 107, 0.4);
-  color: var(--color-dorado);
+  background: rgba(200, 169, 107, 0.18) !important;
+  border: 1.5px solid var(--color-dorado) !important;
+  color: var(--color-dorado) !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .form-group {
@@ -2263,13 +2288,23 @@ img, video {
   margin-bottom: 0.4rem;
 }
 
+.contact-form-col {
+  background: rgba(10, 28, 35, 0.85) !important;
+  border: 1px solid rgba(200, 169, 107, 0.35) !important;
+  border-radius: 18px !important;
+  padding: 2.25rem !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
 .contact-card .form-label {
-  color: #EAE3D6;
-  font-size: 0.825rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-bottom: 0.45rem;
+  color: #EAE3D6 !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
   display: block;
+  font-family: var(--font-sans) !important;
 }
 
 .form-input, .form-select, .form-textarea {
@@ -2287,11 +2322,11 @@ img, video {
 .contact-card .form-input, 
 .contact-card .form-select, 
 .contact-card .form-textarea {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #ffffff;
+  background: #091a22 !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.42) !important;
+  color: #ffffff !important;
   border-radius: 10px;
-  padding: 0.85rem 1rem;
+  padding: 0.95rem 1.15rem;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   width: 100%;
@@ -2301,16 +2336,32 @@ img, video {
 
 .contact-card .form-input::placeholder, 
 .contact-card .form-textarea::placeholder {
-  color: rgba(234, 227, 214, 0.6);
+  color: #8ea398 !important;
 }
 
 .contact-card .form-input:focus, 
 .contact-card .form-select:focus, 
 .contact-card .form-textarea:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.18);
-  border-color: var(--color-dorado);
-  box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.28);
+  background: #0e2733 !important;
+  border-color: var(--color-dorado) !important;
+  box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.35) !important;
+}
+
+.contact-card button[type="submit"] {
+  background: linear-gradient(135deg, #2F4A3F 0%, #1e332a 100%) !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.45) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 24px rgba(10, 28, 35, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.contact-card button[type="submit"]:hover {
+  background: linear-gradient(135deg, #3e6354 0%, #2F4A3F 100%) !important;
+  border-color: var(--color-dorado) !important;
+  box-shadow: 0 12px 30px rgba(200, 169, 107, 0.25);
+  transform: translateY(-2px);
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
@@ -2648,29 +2699,48 @@ img, video {
     padding-bottom: 3.5rem !important;
   }
 
-  /* Barra Superior de Confianza (100% Centrada y Compacta) */
+  /* Barra Superior de Confianza (100% Armónica, sin recortes) */
   .top-notice {
-    font-size: 0.72rem !important;
-    padding: 0.35rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.45rem 0.85rem !important;
     text-align: center !important;
     width: 100% !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    line-height: 1.35 !important;
     box-sizing: border-box !important;
+    background-color: var(--color-petroleo-dark) !important;
+    border-bottom: 1px solid rgba(200, 169, 107, 0.25) !important;
   }
   .top-notice-content {
     justify-content: center !important;
+    align-items: center !important;
     text-align: center !important;
     width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
   }
   .top-notice-left {
     justify-content: center !important;
+    align-items: center !important;
     text-align: center !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
     width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 0.45rem !important;
+    color: #dbe7df !important;
+  }
+  .top-notice-badge {
+    background-color: var(--color-dorado) !important;
+    color: #102933 !important;
+    font-weight: 800 !important;
+    font-size: 0.68rem !important;
+    padding: 0.15rem 0.5rem !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.04em !important;
+    display: inline-block !important;
   }
   .top-notice-link {
     display: none !important;
@@ -4016,62 +4086,105 @@ img, video {
   transform: translateY(-2px);
 }
 
-/* --- GRID DE ESPECIFICACIONES TÉCNICAS --- */
+/* --- GRID DE ESPECIFICACIONES TÉCNICAS (ESTILO SEGURIDAD JURÍDICA NOTARIAL) --- */
 .specs-master-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+  gap: 1.75rem;
+  margin-top: 2.75rem;
+  width: 100%;
 }
 
 .spec-card {
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
+  background: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-radius: 18px;
+  padding: 2.25rem 1.85rem;
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 18px rgba(31, 78, 95, 0.05);
 }
 
 .spec-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(207, 168, 89, 0.4);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  border-color: var(--color-dorado);
+  box-shadow: 0 16px 36px rgba(31, 78, 95, 0.12);
 }
 
 .spec-card.highlight-card {
-  background: linear-gradient(145deg, rgba(207, 168, 89, 0.08) 0%, rgba(13, 26, 20, 0.4) 100%);
-  border-color: rgba(207, 168, 89, 0.35);
+  background: #ffffff;
+  border-color: rgba(200, 169, 107, 0.65);
+  box-shadow: 0 8px 24px rgba(200, 169, 107, 0.14);
 }
 
-.spec-card-icon {
-  margin-bottom: 1rem;
-  line-height: 1;
-  display: inline-flex;
+.spec-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.spec-step-num {
+  width: 42px;
+  height: 42px;
+  background: var(--color-petroleo);
+  color: var(--color-dorado);
+  border: 1.5px solid rgba(200, 169, 107, 0.45);
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent);
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(31, 78, 95, 0.18);
 }
 
-.spec-card-icon svg {
-  width: 28px;
-  height: 28px;
-  stroke: var(--color-accent);
+.spec-tag-pill {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-petroleo);
+  background: rgba(31, 78, 95, 0.07);
+  border: 1px solid rgba(31, 78, 95, 0.18);
+  padding: 0.32rem 0.8rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
 }
 
-.spec-card h3 {
-  font-size: 1.2rem;
-  color: var(--color-text-title);
+.spec-card.highlight-card .spec-tag-pill {
+  color: #8c6a0c;
+  background: rgba(200, 169, 107, 0.18);
+  border-color: rgba(200, 169, 107, 0.5);
+}
+
+.spec-card-title, .spec-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-petroleo);
   margin-bottom: 0.65rem;
-  font-family: var(--font-serif);
+  line-height: 1.25;
 }
 
-.spec-card p {
-  font-size: 0.92rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
+.spec-card-desc, .spec-card p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #3b4e45;
+  line-height: 1.65;
   margin: 0;
+}
+
+.spec-card-desc strong, .spec-card p strong {
+  color: var(--color-petroleo);
+  font-weight: 700;
 }
 
 /* --- REPRODUCTORES DE VIDEO Y REELS EN LOOP --- */
@@ -4145,49 +4258,7 @@ img, video {
   pointer-events: auto;
 }
 
-/* --- CONTACTO DIRECTO PROPIEDAD --- */
-.contact-section {
-  background: transparent;
-}
 
-.contact-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  background: var(--color-card-bg);
-  border: 1px solid rgba(207, 168, 89, 0.25);
-  border-radius: var(--radius-xl);
-  padding: 3rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-}
-
-.contact-info-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.contact-direct-owner-box {
-  background: rgba(207, 168, 89, 0.08);
-  border-left: 3px solid var(--color-accent);
-  padding: 1rem 1.25rem;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  margin: 1.5rem 0;
-}
-
-.contact-direct-owner-box h4 {
-  font-size: 0.95rem;
-  color: var(--color-accent);
-  margin-bottom: 0.35rem;
-  font-weight: 700;
-}
-
-.contact-form-col {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-}
 
 /* --- MODULAR SHOWCASE EN INDEX.HTML (3 PROPIEDADES CON LINK A PÁGINA) --- */
 .property-preview-grid {
@@ -4431,6 +4502,10 @@ img, video {
   }
   .specs-master-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .spec-card {
+    padding: 1.6rem 1.25rem;
   }
   .property-hero-section {
     padding: 7.5rem 0 3.5rem;

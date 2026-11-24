@@ -58,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=19.0">
+  <link rel="stylesheet" href="styles.css?v=20.0">
 
   <style>
     html, body {
@@ -129,7 +129,38 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
           <span>WhatsApp</span>
         </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button class="mobile-nav-toggle" aria-label="Abrir Menú de Navegación">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
+    </div>
+  </header>
+
+  <!-- Menú Desplegable Pantalla Completa para Móviles (Drawer) -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true">
+    <ul class="mobile-drawer-links">
+      <li><a href="index.html" class="mobile-drawer-link">&larr; Portal Principal <span>&rarr;</span></a></li>
+      <li><a href="#galeria-fotos" class="mobile-drawer-link">9 Fotos In Situ <span>&rarr;</span></a></li>
+      <li><a href="#especificaciones" class="mobile-drawer-link">Ficha Técnica & Jurídica <span>&rarr;</span></a></li>
+      <li><a href="#audiovisual" class="mobile-drawer-link">Videos & Reels 4K <span>&rarr;</span></a></li>
+      <li><a href="#ubicacion" class="mobile-drawer-link">Ubicación GPS & Canales <span>&rarr;</span></a></li>
+      <li><a href="#contacto-propiedad" class="mobile-drawer-link">Contactar al Propietario <span>&rarr;</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-cta-box">
+      <a href="https://wa.me/?text=Hola,%20me%20interesa%20el%20Fundo%20de%2015,93%20Has%20en%20Isla%20Taucolón%20(UF%208.900)" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
+        Consultar vía WhatsApp
+      </a>
+      <a href="#contacto-propiedad" class="btn btn-outline-white btn-lg" style="width: 100%;">
+        Coordinar Visita con el Dueño
+      </a>
+    </div>
+  </div>
     </div>
   </header>
 
@@ -238,71 +269,57 @@
 
       <div class="specs-master-grid">
         <div class="spec-card">
-          <div class="spec-card-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-              <path d="M3 9h18M9 21V9"></path>
-            </svg>
+          <div class="spec-card-top">
+            <div class="spec-step-num">01</div>
+            <span class="spec-tag-pill">159.300 m²</span>
           </div>
-          <h3>Superficie y Medidas</h3>
-          <p><strong>15,93 Hectáreas (159.300 m²)</strong> con deslindes perimetrales georreferenciados mediante plano de agrimensura profesional.</p>
+          <h3 class="spec-card-title">Superficie & Agrimensura</h3>
+          <p class="spec-card-desc"><strong>15,93 Hectáreas (159.300 m²)</strong> con deslindes perimetrales georreferenciados mediante plano de agrimensura profesional y amojonamiento en terreno.</p>
         </div>
 
         <div class="spec-card highlight-card">
-          <div class="spec-card-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 12c3-4 6-4 9 0 3 4 6 4 9 0 1.5-2 3-2 4 0"></path>
-              <path d="M2 17c3-4 6-4 9 0 3 4 6 4 9 0 1.5-2 3-2 4 0"></path>
-            </svg>
+          <div class="spec-card-top">
+            <div class="spec-step-num">02</div>
+            <span class="spec-tag-pill">Playa de Piedrecilla</span>
           </div>
-          <h3>410 Metros de Borde Costero</h3>
-          <p>Playa continua de piedrecilla fina y aguas mansas. Apta para desembarque de botes, kayak, veleros y construcción de muelle o rampa de varado.</p>
+          <h3 class="spec-card-title">410 Metros de Borde Costero</h3>
+          <p class="spec-card-desc">Playa continua de piedrecilla fina y aguas mansas protegidas del oleaje abierto. Apta para desembarque de embarcaciones, kayak, veleros y rampa de varado privada.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              <polyline points="9 12 11 14 15 10"></polyline>
-            </svg>
+          <div class="spec-card-top">
+            <div class="spec-step-num">03</div>
+            <span class="spec-tag-pill">100% Saneado</span>
           </div>
-          <h3>Certeza Jurídica 100%</h3>
-          <p>Rol Propio individual emitido por el SII, subdivisión aprobada por el SAG e inscripción vigente en el Conservador de Bienes Raíces de Castro.</p>
+          <h3 class="spec-card-title">Certeza Jurídica Notarial</h3>
+          <p class="spec-card-desc">Rol Propio individual emitido por el SII, subdivisión aprobada por el SAG e inscripción de dominio vigente en el Conservador de Bienes Raíces de Castro.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-            </svg>
+          <div class="spec-card-top">
+            <div class="spec-step-num">04</div>
+            <span class="spec-tag-pill">Autonomía Total</span>
           </div>
-          <h3>Vertientes de Agua Viva</h3>
-          <p>Nacientes naturales de agua dulce permanente que brotan en el predio, garantizando autonomía hídrica total durante todo el año.</p>
+          <h3 class="spec-card-title">Vertientes de Agua Viva</h3>
+          <p class="spec-card-desc">Nacientes naturales de agua dulce permanente que brotan al interior del predio, asegurando provisión autónoma inagotable durante las cuatro estaciones del año.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
+          <div class="spec-card-top">
+            <div class="spec-step-num">05</div>
+            <span class="spec-tag-pill">Tendido Activo</span>
           </div>
-          <h3>Factibilidad Eléctrica</h3>
-          <p>Tendido de electrificación pública pasa por el deslinde del terreno, permitiendo empalme directo para futuras construcciones.</p>
+          <h3 class="spec-card-title">Factibilidad Eléctrica</h3>
+          <p class="spec-card-desc">Tendido de electrificación pública colindante al predio, permitiendo empalme de red monofásica o trifásica para futuras obras y cabañas sin sobrecostos.</p>
         </div>
 
         <div class="spec-card">
-          <div class="spec-card-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="9"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-              <line x1="12" y1="3" x2="12" y2="9"></line>
-              <line x1="12" y1="15" x2="12" y2="21"></line>
-              <line x1="3" y1="12" x2="9" y2="12"></line>
-              <line x1="15" y1="12" x2="21" y2="12"></line>
-            </svg>
+          <div class="spec-card-top">
+            <div class="spec-step-num">06</div>
+            <span class="spec-tag-pill">Mar Interior Chauques</span>
           </div>
-          <h3>Navegación & Conectividad</h3>
-          <p>Ubicado frente a marina de Puduhuapi y a solo 10 minutos de navegación de las islas Mechuque y Añihué, con transporte y abastecimiento regular.</p>
+          <h3 class="spec-card-title">Navegación & Conectividad Marina</h3>
+          <p class="spec-card-desc">Ubicado frente a marina de Puduhuapi y a solo 10 minutos de navegación de las islas Mechuque y Añihué, con canales tranquilos aptos para todo tipo de quilla.</p>
         </div>
       </div>
     </div>
@@ -603,7 +620,7 @@
 
           <div class="contact-direct-owner-box">
             <h4>Condiciones Comerciales</h4>
-            <p style="font-size: 0.95rem; color: #57635c; margin: 0;">
+            <p style="font-size: 0.95rem; color: #EAE3D6; margin: 0;">
               <strong>Precio:</strong> UF 8.900 • 0% comisión de corretaje.<br>
               <strong>Forma de pago:</strong> Contado / Vale Vista contra inscripción CBR.
             </p>
@@ -719,6 +736,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=19.0"></script>
+  <script src="app.js?v=20.0"></script>
 </body>
 </html>
