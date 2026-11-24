@@ -159,6 +159,60 @@ img, video {
 .section-padding {
   padding-top: 5.5rem;
   padding-bottom: 5.5rem;
+  position: relative;
+}
+
+/* ==========================================================================
+   SOMBRAS GRADIENTES Y TRANSICIONES TENUES ENTRE SECCIONES
+   Elegancia editorial en cada cambio de tono (Arena, Marfil y Noche)
+   ========================================================================== */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Transición para fondos en Arena Clara (#EAE3D6) */
+.properties-section,
+.why-lemuy-section,
+#especificaciones,
+#ubicacion,
+.section-alt-bg {
+  background-color: var(--color-arena) !important;
+  box-shadow: inset 0 16px 28px -14px rgba(31, 78, 95, 0.09),
+              inset 0 -16px 28px -14px rgba(31, 78, 95, 0.09);
+  border-top: 1px solid rgba(200, 169, 107, 0.22);
+  border-bottom: 1px solid rgba(200, 169, 107, 0.22);
+}
+
+/* Transición para secciones en Marfil Suave (#F6F2EA) */
+.secure-process-section,
+.faq-section,
+.contact-section,
+#entorno,
+.weather-widget-section {
+  background-color: var(--color-marfil) !important;
+  position: relative;
+}
+
+/* Sombra gradiente profunda en sección audiovisual oscura */
+.video-showcase-section {
+  background: linear-gradient(180deg, #0e1e24 0%, #102933 50%, #0d1a14 100%) !important;
+  box-shadow: inset 0 24px 40px -15px rgba(0, 0, 0, 0.6),
+              inset 0 -24px 40px -15px rgba(0, 0, 0, 0.6),
+              0 -10px 30px rgba(10, 28, 35, 0.12),
+              0 10px 30px rgba(10, 28, 35, 0.12);
+  border-top: 1px solid rgba(200, 169, 107, 0.35);
+  border-bottom: 1px solid rgba(200, 169, 107, 0.35);
+  z-index: 2;
+}
+
+/* Sombra gradiente superior en Footer Austral */
+.main-footer {
+  box-shadow: inset 0 22px 35px -14px rgba(0, 0, 0, 0.65),
+              0 -10px 25px rgba(10, 28, 35, 0.14);
+  border-top: 1.5px solid rgba(200, 169, 107, 0.35);
+  position: relative;
+  z-index: 2;
 }
 
 .text-center { text-align: center; }
@@ -337,11 +391,39 @@ img, video {
   flex-shrink: 0;
 }
 
-.btn-header-cta {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
-  border-radius: var(--radius-full);
-  white-space: nowrap;
+/* Botón de Cabecera / Dock: WhatsApp Verde Oficial */
+.btn-header-cta,
+.btn-whatsapp-dock {
+  background-color: #25D366 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  padding: 0.55rem 1.25rem !important;
+  font-size: 0.85rem !important;
+  border-radius: var(--radius-full) !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.38) !important;
+  transition: all var(--transition-fast) !important;
+  text-decoration: none !important;
+  font-family: var(--font-body) !important;
+}
+
+.btn-header-cta:hover,
+.btn-whatsapp-dock:hover {
+  background-color: #20ba59 !important;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55) !important;
+  transform: translateY(-2px) !important;
+  color: #ffffff !important;
+}
+
+.btn-header-cta svg,
+.btn-whatsapp-dock svg {
+  flex-shrink: 0;
+  fill: currentColor;
 }
 
 .mobile-nav-wa-pill {
@@ -2028,55 +2110,82 @@ img, video {
   color: #b5c7ba;
   line-height: 1.6;
 }
-}
 
 /* ==========================================================================
-   GOOGLE MAPS INTERACTIVO (Isla Lemuy & Chiloé)
+   GOOGLE MAPS INTERACTIVO SATELITAL (Diseño Redondeado & Orgánico)
    ========================================================================== */
 .interactive-map-wrapper {
-  margin-top: 2.5rem;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-md);
+  margin-top: 2.75rem;
+  background: linear-gradient(160deg, #102933 0%, #173d4a 55%, #1a4235 100%) !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.45) !important;
+  border-radius: 28px !important;
   overflow: hidden;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  padding: 1.35rem !important;
+  box-shadow: 0 25px 60px rgba(10, 28, 35, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 .map-header-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.1rem 1.6rem;
-  background: rgba(13, 26, 20, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0.5rem 1.25rem 0.5rem;
+  background: transparent !important;
+  border-bottom: none !important;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .map-title-group {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
-.map-title-group svg {
-  color: var(--color-accent);
+.map-icon-badge {
+  width: 44px;
+  height: 44px;
+  background: rgba(200, 169, 107, 0.16);
+  border: 1.5px solid var(--color-dorado);
+  color: var(--color-dorado);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .map-title-name {
   display: block;
+  font-family: var(--font-title);
   font-weight: 700;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.25rem;
   letter-spacing: -0.01em;
 }
 
 .map-title-sub {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.825rem;
-  color: #b2c5b7;
-  margin-top: 2px;
+  color: #dbe7df;
+  margin-top: 3px;
+}
+
+.map-satellite-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .map-actions {
@@ -2086,11 +2195,59 @@ img, video {
   flex-wrap: wrap;
 }
 
+.btn-route-maps {
+  background: #1a73e8 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  font-weight: 700 !important;
+  padding: 0.55rem 1.15rem !important;
+  border-radius: var(--radius-full) !important;
+  font-size: 0.825rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  text-decoration: none !important;
+  transition: all var(--transition-fast) !important;
+  box-shadow: 0 4px 14px rgba(26, 115, 232, 0.35);
+}
+
+.btn-route-maps:hover {
+  background: #1557b0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 115, 232, 0.5);
+}
+
+.btn-route-waze {
+  background: #33ccff !important;
+  color: #0b1d28 !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 800 !important;
+  padding: 0.55rem 1.15rem !important;
+  border-radius: var(--radius-full) !important;
+  font-size: 0.825rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  text-decoration: none !important;
+  transition: all var(--transition-fast) !important;
+  box-shadow: 0 4px 14px rgba(51, 204, 255, 0.3);
+}
+
+.btn-route-waze:hover {
+  background: #1ab8f0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(51, 204, 255, 0.5);
+}
+
 .map-iframe-container {
   width: 100%;
-  height: 440px;
+  height: 480px;
   position: relative;
-  background: #0d1a14;
+  background: #091a22;
+  border-radius: 20px !important;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(200, 169, 107, 0.35);
 }
 
 .map-iframe-container iframe {
@@ -2098,7 +2255,21 @@ img, video {
   height: 100%;
   border: 0;
   display: block;
-  filter: contrast(102%) brightness(96%);
+}
+
+.map-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem 0.25rem 0.5rem;
+  color: #dbe7df;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.map-footer-bar strong {
+  color: var(--color-dorado);
 }
 
 /* ==========================================================================
@@ -3403,42 +3574,74 @@ img, video {
   transform: translateY(-2px);
 }
 
-/* macOS Top Titlebar */
+/* Weather Top Titlebar (Limpio y Elegante, sin círculos de colores) */
+.weather-titlebar,
 .macos-titlebar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1rem;
-  margin-bottom: 1.25rem;
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.35rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  flex-wrap: wrap;
+  gap: 0.85rem;
 }
 
-.macos-traffic-lights {
-  display: flex;
+.weather-plan-pill {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
+  background: rgba(200, 169, 107, 0.18);
+  border: 1.5px solid var(--color-dorado);
+  color: var(--color-dorado);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
 }
 
-.mac-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.mac-red { background: #ff5f56; border: 1px solid #e0443e; }
-.mac-yellow { background: #ffbd2e; border: 1px solid #dea123; }
-.mac-green { background: #27c93f; border: 1px solid #1aab29; }
-
+.weather-window-title,
 .macos-window-title {
-  font-size: 0.8rem;
+  font-size: 0.825rem;
   font-weight: 600;
-  color: rgba(246, 242, 234, 0.85);
-  letter-spacing: 0.04em;
+  color: rgba(246, 242, 234, 0.9);
+  letter-spacing: 0.03em;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* Encabezado Didáctico de Invitación a Visitas */
+.weather-invite-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.weather-invite-eyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-dorado);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.weather-invite-title {
+  font-family: var(--font-title) !important;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem) !important;
+  color: #ffffff !important;
+  margin-bottom: 0.35rem !important;
+  line-height: 1.25 !important;
+}
+
+.weather-invite-desc {
+  font-size: 0.92rem;
+  color: #dbe7df;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .weather-header {
@@ -3605,6 +3808,111 @@ img, video {
   font-size: 0.85rem;
   color: var(--color-arena);
   line-height: 1.6;
+}
+
+/* Pronóstico Extendido de los Próximos Días para Programar Visitas */
+.weather-forecast-container {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.weather-forecast-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.weather-forecast-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weather-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
+.forecast-card {
+  background: rgba(10, 28, 35, 0.75);
+  border: 1.5px solid rgba(200, 169, 107, 0.28);
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(14px);
+}
+
+.forecast-card:hover {
+  border-color: var(--color-dorado);
+  transform: translateY(-2px);
+  background: rgba(10, 28, 35, 0.92);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.forecast-day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-dorado);
+  text-transform: capitalize;
+}
+
+.forecast-body {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.35rem 0;
+}
+
+.forecast-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.forecast-temps {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: var(--font-title);
+}
+
+.forecast-temps .temp-min {
+  font-size: 0.95rem;
+  color: #8fa59b;
+  font-weight: 500;
+  margin-left: 0.2rem;
+}
+
+.forecast-cond {
+  font-size: 0.825rem;
+  color: #dbe7df;
+  font-weight: 500;
+}
+
+.forecast-advisory {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(200, 169, 107, 0.15);
+  color: #f0e6ce;
+  border: 1px solid rgba(200, 169, 107, 0.3);
+  margin-top: 0.35rem;
+  display: inline-block;
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -4490,6 +4798,18 @@ img, video {
   .weather-metrics-grid {
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
+  }
+  .weather-forecast-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  .interactive-map-wrapper {
+    padding: 0.85rem !important;
+    border-radius: 20px !important;
+  }
+  .map-iframe-container {
+    height: 350px !important;
+    border-radius: 14px !important;
   }
   .weather-card {
     padding: 1.25rem 1rem;

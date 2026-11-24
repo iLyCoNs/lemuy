@@ -47,7 +47,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=20.0">
+  <link rel="stylesheet" href="styles.css?v=21.0">
 
   <style>
     html, body {
@@ -110,8 +110,8 @@
       </nav>
 
       <div class="header-cta-group">
-        <a href="https://wa.me/?text=Hola,%20me%20interesa%20la%20Parcela%20de%205.000%20m²%20en%20Isla%20Lemuy.%20Quisiera%20recibir%20el%20precio,%20planos%20y%20coordinar%20visita." target="_blank" class="btn btn-accent btn-header-cta">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
+        <a href="https://wa.me/?text=Hola,%20me%20interesa%20la%20Parcela%20de%205.000%20m²%20en%20Isla%20Lemuy.%20Quisiera%20recibir%20el%20precio,%20planos%20y%20coordinar%20visita." target="_blank" class="btn btn-whatsapp-dock btn-header-cta" aria-label="Hablar con el Dueño por WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
           Hablar con el Dueño
         </a>
         <a href="https://wa.me/?text=Hola,%20me%20interesa%20la%20Parcela%20de%205.000%20m²%20en%20Isla%20Lemuy" target="_blank" class="mobile-nav-wa-pill" aria-label="WhatsApp">
@@ -186,29 +186,38 @@
     </div>
   </section>
 
-  <!-- WIDGET CLIMA EN VIVO GPS (Open-Meteo) -->
+  <!-- WIDGET CLIMA EN VIVO GPS & PRONÓSTICO PARA VISITAS (Open-Meteo) -->
   <section class="weather-widget-section">
     <div class="container">
       <div class="weather-card" id="weatherWidgetLemuy" data-lat="-42.6176" data-lon="-73.7226" data-place="Isla Lemuy, Puqueldón">
-        <!-- Barra de Ventana Estilo macOS Crystal -->
-        <div class="macos-titlebar">
-          <div class="macos-traffic-lights">
-            <span class="mac-dot mac-red" title="Cerrar"></span>
-            <span class="mac-dot mac-yellow" title="Minimizar"></span>
-            <span class="mac-dot mac-green" title="Maximizar"></span>
+        <!-- Barra de Ventana Meteorológica -->
+        <div class="weather-titlebar">
+          <div class="weather-plan-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+            <span>Planificación de Visitas en Terreno</span>
           </div>
-          <div class="macos-window-title">
+          <div class="weather-window-title">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
             <span>Estación Meteorológica Satelital • Isla Lemuy</span>
           </div>
-          <div class="weather-api-badge">Datos Satelitales Open-Meteo</div>
+          <div class="weather-api-badge">
+            <span class="pulse-ring"></span>
+            <span>Radar en Vivo Open-Meteo</span>
+          </div>
+        </div>
+
+        <!-- Invitación Didáctica para Visitar el Lugar -->
+        <div class="weather-invite-header">
+          <div class="weather-invite-eyebrow">¿Pensando en coordinar su visita?</div>
+          <h3 class="weather-invite-title">Si quieres venir a visitarnos, el clima está así:</h3>
+          <p class="weather-invite-desc">Revise las condiciones atmosféricas en tiempo real y el pronóstico de los próximos días para planificar su recorrido a la parcela con total tranquilidad.</p>
         </div>
 
         <div class="weather-header">
           <div class="weather-place-group">
-            <span class="weather-live-indicator"><span class="pulse-ring"></span> EN VIVO</span>
-            <span class="weather-place-name">Condición Climática Actual en Isla Lemuy</span>
-            <span class="weather-coords">GPS: -42.6176, -73.7226 (Puqueldón, Chiloé)</span>
+            <span class="weather-live-indicator"><span class="pulse-ring"></span> CONDICIÓN ACTUAL EN VIVO</span>
+            <span class="weather-place-name">Microclima Austral de Isla Lemuy</span>
+            <span class="weather-coords">GPS Georreferenciado: -42.6176, -73.7226 (Puqueldón, Chiloé)</span>
           </div>
         </div>
 
@@ -240,6 +249,66 @@
             </div>
           </div>
         </div>
+
+        <!-- Pronóstico Extendido de los Próximos Días para Planificar Visita -->
+        <div class="weather-forecast-container">
+          <div class="weather-forecast-title-row">
+            <div class="weather-forecast-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>Pronóstico de los Próximos Días para Programar su Visita</span>
+            </div>
+            <span style="font-size: 0.78rem; color: #C8A96B; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Proyección 3 Días</span>
+          </div>
+
+          <div class="weather-forecast-grid">
+            <!-- Tarjetas generadas dinámicamente por app.js con fallback inmediato -->
+            <div class="forecast-card">
+              <div class="forecast-day-header">
+                <span>Mañana</span>
+                <span style="font-size: 0.72rem; color: #b7cbbf;">Próx. 24 hrs</span>
+              </div>
+              <div class="forecast-body">
+                <span class="forecast-icon">🌤️</span>
+                <div>
+                  <div class="forecast-temps">16°C <span class="temp-min">/ 8°C</span></div>
+                  <div class="forecast-cond">Mayormente Despejado</div>
+                </div>
+              </div>
+              <div class="forecast-advisory">Excelente día • Óptimo para caminar y recorrer miradores</div>
+            </div>
+
+            <div class="forecast-card">
+              <div class="forecast-day-header">
+                <span>Pasado Mañana</span>
+                <span style="font-size: 0.72rem; color: #b7cbbf;">Próx. 48 hrs</span>
+              </div>
+              <div class="forecast-body">
+                <span class="forecast-icon">⛅</span>
+                <div>
+                  <div class="forecast-temps">15°C <span class="temp-min">/ 9°C</span></div>
+                  <div class="forecast-cond">Parcialmente Nublado</div>
+                </div>
+              </div>
+              <div class="forecast-advisory">Tiempo apacible • Ideal para visitar en terreno</div>
+            </div>
+
+            <div class="forecast-card">
+              <div class="forecast-day-header">
+                <span>En 3 Días</span>
+                <span style="font-size: 0.72rem; color: #b7cbbf;">Próx. 72 hrs</span>
+              </div>
+              <div class="forecast-body">
+                <span class="forecast-icon">☀️</span>
+                <div>
+                  <div class="forecast-temps">17°C <span class="temp-min">/ 7°C</span></div>
+                  <div class="forecast-cond">Despejado</div>
+                </div>
+              </div>
+              <div class="forecast-advisory">Día radiante • Visibilidad despejada en mar interior</div>
+            </div>
+          </div>
+        </div>
+
         <div class="weather-footer-note">
           🌿 <strong>Microclima Protegido:</strong> Isla Lemuy disfruta de temperaturas más suaves y menor exposición a vientos fuertes que la costa abierta de Chiloé gracias a su ubicación en el mar interior.
         </div>
@@ -445,10 +514,15 @@
       <div class="interactive-map-wrapper">
         <div class="map-header-bar">
           <div class="map-title-group">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="map-icon-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
             <div>
-              <span class="map-title-name">Isla Lemuy (-42.6176, -73.7226)</span>
-              <span class="map-title-sub">Puqueldón, Archipiélago de Chiloé</span>
+              <span class="map-title-name">Isla Lemuy • Parcela de 5.000 m²</span>
+              <div class="map-title-sub">
+                <span>Puqueldón, Archipiélago de Chiloé</span>
+                <span class="map-satellite-live-pill"><span class="pulse-ring"></span> Vista Satelital 4K Activa</span>
+              </div>
             </div>
           </div>
           <div class="map-actions">
@@ -460,23 +534,27 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L2 22l5.71-.97C9.02 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
               Navegar en Waze
             </a>
-            <a href="https://maps.google.com/?q=-42.617589,-73.722646&t=k" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Ver terreno satelital en Google Maps">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Ver Terreno Satelital
+            <a href="https://maps.google.com/?q=-42.617589,-73.722646&t=k" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Abrir terreno satelital en pantalla completa">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              Pantalla Completa
             </a>
           </div>
         </div>
         <div class="map-iframe-container">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94875.25368388902!2d-73.72264565!3d-42.61758925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96227b686d63c5d7%3A0x868f86016be41eb8!2sIsla%20Lemuy!5e0!3m2!1ses!2scl!4v1715640000000!5m2!1ses!2scl" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94875.25368388902!2d-73.72264565!3d-42.61758925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96227b686d63c5d7%3A0x868f86016be41eb8!2sIsla%20Lemuy!5e1!3m2!1ses!2scl!4v1715640000000!5m2!1ses!2scl" 
             width="100%" 
             height="100%" 
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa de Isla Lemuy">
+            title="Vista Satelital Oficial de Parcela 5.000 m² en Isla Lemuy">
           </iframe>
+        </div>
+        <div class="map-footer-bar">
+          <div>Coordenadas Georreferenciadas: <strong>-42.6176° S, -73.7226° W</strong></div>
+          <div>Acceso continuo por transbordadores Chonchi-Lemuy (24/7) • Camino de ripio firme transitable los 365 días</div>
         </div>
       </div>
     </div>
@@ -582,6 +660,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=20.0"></script>
+  <script src="app.js?v=21.0"></script>
 </body>
 </html>

@@ -894,6 +894,18 @@ const WMO_WEATHER_MAP = {
   99: { label: "Tormenta Severa", icon: "⛈️" }
 };
 
+function getVisitAdvisory(code, rainProb) {
+  if (rainProb >= 65 || [63, 65, 81, 82, 95, 96, 99].includes(code)) {
+    return 'Lluvia austral • Llevar abrigo e impermeable';
+  } else if (rainProb >= 35 || [51, 53, 55, 61, 80].includes(code)) {
+    return 'Chubascos suaves • Caminata y miradores factibles';
+  } else if ([0, 1].includes(code)) {
+    return 'Día radiante • Óptimo para playa y navegación';
+  } else {
+    return 'Tiempo apacible • Ideal para visitar en terreno';
+  }
+}
+
 function initLiveWeather() {
   const weatherCards = document.querySelectorAll('.weather-card[data-lat][data-lon]');
   if (!weatherCards.length) return;
@@ -904,7 +916,7 @@ function initLiveWeather() {
     if (!lat || !lon) return;
 
     try {
-      const url = `https://api.open-meteo.com/v1/forecast?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&timezone=America%2FSantiago`;
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America%2FSantiago&forecast_days=4`;
       const response = await fetch(url);
       if (!response.ok) throw new Error('Respuesta no válida');
       const data = await response.json();
@@ -928,6 +940,50 @@ function initLiveWeather() {
           metrics[1].textContent = `${Math.round(cur.wind_speed_10m)} km/h`;
           metrics[2].textContent = `${Math.round(cur.relative_humidity_2m)}%`;
           metrics[3].textContent = `${cur.precipitation.toFixed(1)} mm`;
+        }
+      }
+
+      // Renderizar pronóstico extendido de los próximos días
+      if (data && data.daily && data.daily.time) {
+        const forecastGrid = card.querySelector('.weather-forecast-grid');
+        if (forecastGrid) {
+          let forecastHTML = '';
+          const dayNames = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+          const monthNames = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+
+          for (let i = 1; i < Math.min(4, data.daily.time.length); i++) {
+            const dateStr = data.daily.time[i];
+            const dateObj = new Date(dateStr + 'T12:00:00');
+            const dayTitle = (i === 1) ? 'Mañana' : (dayNames[dateObj.getDay()] || dateStr);
+            const formattedDate = `${dateObj.getDate()} ${monthNames[dateObj.getMonth()]}`;
+
+            const dayCode = (data.daily.weather_code && data.daily.weather_code[i] != null) ? data.daily.weather_code[i] : 2;
+            const dayInfo = WMO_WEATHER_MAP[dayCode] || { label: 'Parcialmente Nublado', icon: '⛅' };
+            const maxT = Math.round(data.daily.temperature_2m_max[i]);
+            const minT = Math.round(data.daily.temperature_2m_min[i]);
+            const rainProb = (data.daily.precipitation_probability_max && data.daily.precipitation_probability_max[i] != null)
+              ? data.daily.precipitation_probability_max[i]
+              : 15;
+            const advisory = getVisitAdvisory(dayCode, rainProb);
+
+            forecastHTML += `
+              <div class="forecast-card">
+                <div class="forecast-day-header">
+                  <span>${dayTitle}</span>
+                  <span style="font-size: 0.72rem; color: #b7cbbf; font-weight: 500;">${formattedDate}</span>
+                </div>
+                <div class="forecast-body">
+                  <span class="forecast-icon">${dayInfo.icon}</span>
+                  <div>
+                    <div class="forecast-temps">${maxT}°C <span class="temp-min">/ ${minT}°C</span></div>
+                    <div class="forecast-cond">${dayInfo.label}</div>
+                  </div>
+                </div>
+                <div class="forecast-advisory">${advisory}</div>
+              </div>
+            `;
+          }
+          forecastGrid.innerHTML = forecastHTML;
         }
       }
     } catch (err) {
