@@ -2105,6 +2105,23 @@ section {
   font-weight: 400 !important;
 }
 
+/* Grid generica de 3 columnas */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+@media (max-width: 991px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Feature cards para seccion #entorno en Fundo 5 Ha */
 #entorno .feature-card {
   background: #FFFFFF !important;
@@ -5041,5 +5058,140 @@ section {
   }
   .spec-cell-val {
     font-size: 0.76rem;
+  }
+}
+
+/* --- SECCIÓN DESCRIPTIVA EDITORIAL DE PROPIEDAD (ISLA TAUCOLÓN) --- */
+.property-story-section {
+  background-color: var(--color-arena) !important;
+  position: relative;
+}
+
+.property-story-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.45) !important;
+  border-radius: 24px !important;
+  padding: 3rem 2.75rem !important;
+  box-shadow: 0 12px 36px -8px rgba(31, 78, 95, 0.08), 0 2px 6px rgba(31, 78, 95, 0.04) !important;
+  margin-top: 2rem;
+}
+
+.story-lead-badge {
+  display: inline-block;
+  background: rgba(31, 78, 95, 0.08);
+  border: 1px solid rgba(31, 78, 95, 0.2);
+  color: #1F4E5F;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.story-lead-text {
+  font-family: var(--font-title) !important;
+  font-size: clamp(1.15rem, 2vw, 1.35rem) !important;
+  line-height: 1.6 !important;
+  color: #1F4E5F !important;
+  margin-bottom: 2.25rem !important;
+  font-weight: 500 !important;
+  border-bottom: 1px solid rgba(200, 169, 107, 0.3);
+  padding-bottom: 1.75rem;
+}
+
+.story-text-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.story-col-title {
+  font-family: var(--font-title) !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #1F4E5F !important;
+  margin-bottom: 0.75rem !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.story-col-icon {
+  font-size: 1.15rem;
+}
+
+.story-col p {
+  font-family: var(--font-body) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.72 !important;
+  color: #2F4A3F !important;
+  margin: 0 !important;
+}
+
+.story-highlights-ribbon {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(200, 169, 107, 0.3);
+  text-align: center;
+}
+
+.story-ribbon-item {
+  background: rgba(31, 78, 95, 0.03);
+  border: 1px solid rgba(200, 169, 107, 0.35);
+  border-radius: 14px;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.story-ribbon-item:hover {
+  transform: translateY(-3px);
+  border-color: #C8A96B;
+  background: rgba(200, 169, 107, 0.08);
+}
+
+.ribbon-val {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1F4E5F;
+}
+
+.ribbon-lbl {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: #557065;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .story-text-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .story-highlights-ribbon {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .property-story-card {
+    padding: 2rem 1.25rem !important;
+    border-radius: 18px !important;
+  }
+  .story-highlights-ribbon {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 }
