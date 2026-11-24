@@ -5061,22 +5061,148 @@ section {
   }
 }
 
-/* --- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES 3D (ISLA TAUCOLÓN) --- */
-.taucolon-master-section {
+/* --- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES 3D (SISTEMA ARQUITECTÓNICO) --- */
+.taucolon-master-section,
+.master-attr-section {
   background-color: var(--color-arena) !important;
   position: relative;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
-.taucolon-master-grid {
+.master-attr-section.is-marfil-canvas {
+  background-color: var(--color-marfil) !important;
+  box-shadow: none;
+  border-top: 1px solid rgba(200, 169, 107, 0.22);
+  border-bottom: none;
+}
+
+/* Barra Esculpida de Resumen Técnico Interactivo (Dossier KPI Ribbon) */
+.master-dossier-ribbon {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #143541 0%, #1F4E5F 55%, #1d362e 100%);
+  border: 1.5px solid rgba(200, 169, 107, 0.5);
+  border-radius: 20px;
+  padding: 0.45rem;
+  margin: 2.25rem auto 0;
+  box-shadow: 0 18px 42px -10px rgba(20, 53, 65, 0.34),
+              inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  position: relative;
+  z-index: 3;
+}
+
+.dossier-kpi-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+  width: 100%;
+  padding: 0.9rem 1.15rem;
+  border-radius: 15px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: left;
+  transition: background 0.28s ease, border-color 0.28s ease, transform 0.28s ease;
+  position: relative;
+}
+
+.dossier-kpi-item + .dossier-kpi-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22%;
+  bottom: 22%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(200, 169, 107, 0.42), transparent);
+}
+
+.dossier-kpi-item:hover,
+.dossier-kpi-item.is-active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(200, 169, 107, 0.45);
+  transform: translateY(-1px);
+}
+
+.dossier-kpi-item:hover::before,
+.dossier-kpi-item.is-active::before {
+  opacity: 0;
+}
+
+.dossier-kpi-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(200, 169, 107, 0.14);
+  border: 1px solid rgba(200, 169, 107, 0.48);
+  color: #E8CFA0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.28s ease, background 0.28s ease, color 0.28s ease;
+}
+
+.dossier-kpi-item:hover .dossier-kpi-icon,
+.dossier-kpi-item.is-active .dossier-kpi-icon {
+  background: #C8A96B;
+  color: #143541;
+  transform: scale(1.06);
+}
+
+.dossier-kpi-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dossier-kpi-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C8A96B;
+  line-height: 1.25;
+}
+
+.dossier-kpi-val {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #F6F2EA;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dossier-ribbon-hint {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #5F7D8A;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.taucolon-master-grid,
+.master-attr-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2.35rem;
   width: 100%;
+  perspective: 1400px;
 }
 
-.taucolon-3d-card {
+.taucolon-3d-card,
+.master-3d-card {
   background: linear-gradient(168deg, #FFFFFF 0%, #FAF8F4 55%, #F4EFE6 100%) !important;
   border: 1.5px solid rgba(200, 169, 107, 0.45) !important;
   border-radius: 22px !important;
@@ -5086,80 +5212,191 @@ section {
   justify-content: space-between;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
-              box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
-              border-color 0.35s ease;
-  box-shadow: 0 4px 10px rgba(31, 78, 95, 0.04), 
-              0 14px 28px -4px rgba(31, 78, 95, 0.08), 
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(0px) scale(1);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.35s ease,
+              opacity 0.3s ease;
+  box-shadow: 0 4px 10px rgba(31, 78, 95, 0.04),
+              0 14px 28px -4px rgba(31, 78, 95, 0.08),
               0 28px 56px -12px rgba(200, 169, 107, 0.14),
               inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  will-change: transform;
 }
 
-.taucolon-3d-card:hover {
-  transform: translateY(-8px) scale(1.015);
+.taucolon-3d-card.is-tilting,
+.master-3d-card.is-tilting {
+  transition: transform 0.08s linear,
+              box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.35s ease;
+}
+
+.taucolon-3d-card:hover,
+.master-3d-card:hover {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-8px) scale(1.015);
   border-color: #C8A96B !important;
-  box-shadow: 0 8px 16px rgba(31, 78, 95, 0.06), 
-              0 22px 44px -6px rgba(31, 78, 95, 0.16), 
+  box-shadow: 0 8px 16px rgba(31, 78, 95, 0.06),
+              0 22px 44px -6px rgba(31, 78, 95, 0.16),
               0 36px 72px -12px rgba(200, 169, 107, 0.28),
               inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* Estados interactivos vinculados desde la Barra KPI */
+.taucolon-3d-card.is-kpi-highlighted,
+.master-3d-card.is-kpi-highlighted {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #C8A96B !important;
+  box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.35),
+              0 24px 50px -8px rgba(31, 78, 95, 0.2),
+              0 36px 76px -10px rgba(200, 169, 107, 0.34) !important;
+  z-index: 4;
+}
+
+.taucolon-3d-card.is-kpi-dimmed,
+.master-3d-card.is-kpi-dimmed {
+  opacity: 0.62;
+  transform: scale(0.988);
+}
+
+/* Capa de Reflejo Champagne & Borde Superior Metálico (sin romper preserve-3d) */
+.card-3d-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-3d-glare::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent 0%, rgba(200, 169, 107, 0.65) 50%, transparent 100%);
+  opacity: 0.55;
+  transition: left 0.4s ease, right 0.4s ease, opacity 0.35s ease;
+}
+
+.taucolon-3d-card:hover .card-3d-glare::before,
+.master-3d-card:hover .card-3d-glare::before,
+.is-kpi-highlighted .card-3d-glare::before {
+  left: 4%;
+  right: 4%;
+  opacity: 1;
+}
+
+.card-3d-glare::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 35%),
+              rgba(200, 169, 107, 0.2) 0%,
+              rgba(255, 255, 255, 0.48) 34%,
+              transparent 72%);
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+
+.taucolon-3d-card:hover .card-3d-glare::after,
+.master-3d-card:hover .card-3d-glare::after {
+  opacity: 1;
+}
+
+/* Marcas Numéricas Editoriales Flotantes en Relieve */
+.card-3d-num {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.65rem;
+  font-family: var(--font-title);
+  font-size: 3.15rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(200, 169, 107, 0.2);
+  pointer-events: none;
+  user-select: none;
+  transform: translateZ(10px);
+  transition: color 0.35s ease, transform 0.35s ease;
+  z-index: 1;
+}
+
+.taucolon-3d-card:hover .card-3d-num,
+.master-3d-card:hover .card-3d-num {
+  color: rgba(200, 169, 107, 0.42);
+  transform: translateZ(18px) translateY(-2px);
+}
+
+.taucolon-3d-card > div:not(.card-3d-glare),
+.master-3d-card > div:not(.card-3d-glare) {
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
 }
 
 .taucolon-3d-card-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  justify-content: flex-start;
+  gap: 0.85rem;
+  padding-right: 3.1rem;
   margin-bottom: 1.35rem;
+  transform: translateZ(16px);
 }
 
 /* Contenedor 3D de icono minimalista premium monocromo */
 .taucolon-3d-icon-badge {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
   background: linear-gradient(135deg, rgba(31, 78, 95, 0.07) 0%, rgba(200, 169, 107, 0.22) 100%);
-  border: 1.5px solid rgba(200, 169, 107, 0.6);
-  box-shadow: 0 4px 12px rgba(31, 78, 95, 0.07), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.85),
+  border: 1.5px solid rgba(200, 169, 107, 0.62);
+  box-shadow: 0 6px 14px rgba(31, 78, 95, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.88),
               inset 0 -2px 4px rgba(31, 78, 95, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #1F4E5F;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transform: translateZ(12px);
+  transition: all 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.taucolon-3d-card:hover .taucolon-3d-icon-badge {
-  transform: scale(1.08) translateZ(8px);
+.taucolon-3d-card:hover .taucolon-3d-icon-badge,
+.master-3d-card:hover .taucolon-3d-icon-badge {
+  transform: scale(1.08) translateZ(26px);
   background: linear-gradient(135deg, #1F4E5F 0%, #2F4A3F 100%);
   color: #F8EED9;
   border-color: #1F4E5F;
-  box-shadow: 0 6px 18px rgba(31, 78, 95, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 22px rgba(31, 78, 95, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .taucolon-pill-tag {
   font-family: var(--font-body);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #1F4E5F;
-  background: rgba(31, 78, 95, 0.06);
-  border: 1px solid rgba(200, 169, 107, 0.4);
-  padding: 0.32rem 0.8rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(200, 169, 107, 0.48);
+  padding: 0.32rem 0.82rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 2px 6px rgba(31, 78, 95, 0.04);
+  box-shadow: 0 2px 8px rgba(31, 78, 95, 0.05);
 }
 
 .taucolon-3d-title {
   font-family: var(--font-title) !important;
-  font-size: 1.34rem !important;
+  font-size: 1.36rem !important;
   font-weight: 700 !important;
   color: #1F4E5F !important;
   margin: 0 0 0.75rem !important;
-  line-height: 1.3 !important;
+  line-height: 1.28 !important;
   letter-spacing: -0.01em;
+  transform: translateZ(14px);
 }
 
 .taucolon-3d-desc {
@@ -5169,19 +5406,26 @@ section {
   color: #2F4A3F !important;
   margin: 0 !important;
   font-weight: 450;
+  transform: translateZ(10px);
+}
+
+.taucolon-3d-desc strong {
+  color: #1F4E5F;
+  font-weight: 700;
 }
 
 .taucolon-3d-footer {
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(200, 169, 107, 0.3);
+  border-top: 1px solid rgba(200, 169, 107, 0.34);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
   color: #1F4E5F;
+  transform: translateZ(12px);
 }
 
 .taucolon-3d-footer svg {
@@ -5189,19 +5433,142 @@ section {
   flex-shrink: 0;
 }
 
+/* --- VARIANTE ARQUITECTÓNICA NOCTURNA (PETRÓLEO OBSIDIANA & CHAMPAGNE) --- */
+.taucolon-3d-card.is-dark-3d,
+.master-3d-card.is-dark-3d {
+  background: linear-gradient(158deg, #163b48 0%, #1F4E5F 56%, #18362e 100%) !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.48) !important;
+  box-shadow: 0 10px 24px rgba(20, 53, 65, 0.22),
+              0 26px 52px -12px rgba(20, 53, 65, 0.36),
+              inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+}
+
+.taucolon-3d-card.is-dark-3d:hover,
+.master-3d-card.is-dark-3d:hover {
+  border-color: #d7bc82 !important;
+  box-shadow: 0 14px 30px rgba(20, 53, 65, 0.28),
+              0 34px 68px -10px rgba(20, 53, 65, 0.44),
+              0 0 28px rgba(200, 169, 107, 0.18),
+              inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+.is-dark-3d .card-3d-glare::after {
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 35%),
+              rgba(200, 169, 107, 0.24) 0%,
+              rgba(255, 255, 255, 0.12) 40%,
+              transparent 74%);
+}
+
+.is-dark-3d .card-3d-num {
+  color: rgba(200, 169, 107, 0.22);
+}
+
+.is-dark-3d:hover .card-3d-num {
+  color: rgba(200, 169, 107, 0.45);
+}
+
+.is-dark-3d .taucolon-3d-icon-badge {
+  background: linear-gradient(135deg, rgba(200, 169, 107, 0.16) 0%, rgba(200, 169, 107, 0.3) 100%);
+  border: 1.5px solid rgba(200, 169, 107, 0.65);
+  color: #F8EED9;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.is-dark-3d:hover .taucolon-3d-icon-badge {
+  background: linear-gradient(135deg, #C8A96B 0%, #d7bc82 100%);
+  color: #143541;
+  border-color: #F8EED9;
+}
+
+.is-dark-3d .taucolon-pill-tag {
+  color: #F8EED9;
+  background: rgba(20, 53, 65, 0.65);
+  border-color: rgba(200, 169, 107, 0.48);
+}
+
+.is-dark-3d .taucolon-3d-title {
+  color: #F6F2EA !important;
+}
+
+.is-dark-3d .taucolon-3d-desc {
+  color: #dbe6e1 !important;
+}
+
+.is-dark-3d .taucolon-3d-desc strong {
+  color: #E8CFA0;
+}
+
+.is-dark-3d .taucolon-3d-footer {
+  border-top-color: rgba(200, 169, 107, 0.3);
+  color: #E8CFA0;
+}
+
 @media (max-width: 991px) {
-  .taucolon-master-grid {
+  .taucolon-master-grid,
+  .master-attr-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+  .master-dossier-ribbon {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+  .dossier-kpi-item:nth-child(3)::before {
+    display: none;
+  }
+  .dossier-kpi-item:nth-child(1),
+  .dossier-kpi-item:nth-child(2) {
+    border-bottom: 1px solid rgba(200, 169, 107, 0.22);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 
 @media (max-width: 640px) {
-  .taucolon-master-grid {
+  .taucolon-master-grid,
+  .master-attr-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  .taucolon-3d-card {
+  .taucolon-3d-card,
+  .master-3d-card {
     padding: 1.85rem 1.45rem !important;
+  }
+  .taucolon-pill-tag {
+    line-height: 1.25;
+    white-space: normal;
+  }
+  .master-dossier-ribbon {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.4rem;
+    border-radius: 16px;
+  }
+  .dossier-kpi-item {
+    padding: 0.65rem 0.55rem;
+    gap: 0.5rem;
+  }
+  .dossier-kpi-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+  }
+  .dossier-kpi-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+  .dossier-kpi-label {
+    font-size: 0.58rem;
+  }
+  .dossier-kpi-val {
+    font-size: 0.88rem;
+    white-space: normal;
+    line-height: 1.2;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  .card-3d-num {
+    font-size: 2.5rem;
+    top: 1rem;
+    right: 1.2rem;
   }
 }

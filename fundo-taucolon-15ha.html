@@ -58,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=25.0">
+  <link rel="stylesheet" href="styles.css?v=26.0">
 
   <style>
     html, body {
@@ -283,8 +283,8 @@
   <!-- ANCLAJE RETROCOMPATIBLE PARA DESCRIPCIÓN -->
   <div id="descripcion"></div>
 
-  <!-- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES TÉCNICAS (3D ELEVATED) -->
-  <section id="especificaciones" class="section-padding taucolon-master-section">
+  <!-- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES TÉCNICAS (3D INTERACTIVO) -->
+  <section id="especificaciones" class="section-padding master-attr-section taucolon-master-section">
     <div class="container">
       <div class="section-header text-center">
         <div class="eyebrow-badge">Atributos Maestros & Ficha Técnica</div>
@@ -294,11 +294,57 @@
         </p>
       </div>
 
+      <!-- Barra Esculpida de Resumen Técnico Interactivo -->
+      <div class="master-dossier-ribbon" role="region" aria-label="Resumen de atributos del fundo Taucolón">
+        <button type="button" class="dossier-kpi-item" data-highlight-card="0" title="Resaltar cabida y morfología en anfiteatro">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Superficie Total</span>
+            <span class="dossier-kpi-val">15,93 Has (Anfiteatro)</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="1" title="Resaltar borde de playa de piedrecilla fina">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><line x1="12" y1="22" x2="12" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Borde Costero</span>
+            <span class="dossier-kpi-val">410m Playa Continua</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="2" title="Resaltar títulos saneados y venta directa">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Estatus & Valor</span>
+            <span class="dossier-kpi-val">UF 8.900 • Rol SII</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="3,4,5" title="Resaltar agua, electricidad, marina y pista aérea">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Servicios & Náutica</span>
+            <span class="dossier-kpi-val">Luz, Agua & Marina</span>
+          </div>
+        </button>
+      </div>
+      <p class="dossier-ribbon-hint">Pase el cursor o pulse sobre cualquier indicador superior para enfocar su ficha técnica.</p>
+
       <!-- Cuadrícula Maestra 3D de 6 Tarjetas Rectangulares de Lujo -->
-      <div class="taucolon-master-grid">
+      <div class="taucolon-master-grid master-attr-grid">
 
         <!-- 01: Topografía en Anfiteatro -->
-        <div class="taucolon-3d-card">
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">01</span>
           <div>
             <div class="taucolon-3d-card-top">
               <div class="taucolon-3d-icon-badge">
@@ -320,7 +366,9 @@
         </div>
 
         <!-- 02: 410m Borde de Playa -->
-        <div class="taucolon-3d-card">
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">02</span>
           <div>
             <div class="taucolon-3d-card-top">
               <div class="taucolon-3d-icon-badge">
@@ -344,7 +392,9 @@
         </div>
 
         <!-- 03: Certeza Jurídica & Terreno Virgen -->
-        <div class="taucolon-3d-card">
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">03</span>
           <div>
             <div class="taucolon-3d-card-top">
               <div class="taucolon-3d-icon-badge">
@@ -367,7 +417,9 @@
         </div>
 
         <!-- 04: Vertientes de Agua Dulce & Servicios -->
-        <div class="taucolon-3d-card">
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">04</span>
           <div>
             <div class="taucolon-3d-card-top">
               <div class="taucolon-3d-icon-badge">
@@ -389,7 +441,9 @@
         </div>
 
         <!-- 05: Marina Puduhuapi & Microclima -->
-        <div class="taucolon-3d-card">
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">05</span>
           <div>
             <div class="taucolon-3d-card-top">
               <div class="taucolon-3d-icon-badge">
@@ -412,7 +466,9 @@
         </div>
 
         <!-- 06: Conectividad Multimodal -->
-        <div class="taucolon-3d-card">
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">06</span>
           <div>
             <div class="taucolon-3d-card-top">
               <div class="taucolon-3d-icon-badge">
@@ -858,6 +914,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=25.0"></script>
+  <script src="app.js?v=26.0"></script>
 </body>
 </html>

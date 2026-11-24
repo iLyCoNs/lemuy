@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initPropertyDirectContactForm();
   initLiveWeather();
+  initMaster3DCards();
   initSmoothScroll();
 });
 
@@ -1178,5 +1179,150 @@ function initLiveWeather() {
         tempEl.textContent = '14°C';
       }
     }
+  });
+}
+
+/* ==========================================================================
+   11. TARJETAS MAESTRAS 3D CON TILT ESPACIAL, DESTELLO CHAMPAGNE & BARRA KPI
+   ========================================================================== */
+function initMaster3DCards() {
+  const cards = document.querySelectorAll('.taucolon-3d-card, .master-3d-card');
+  if (!cards.length) return;
+
+  const canTilt =
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  cards.forEach((card) => {
+    // Asegurar capa de reflejo champagne sin mutar estructura visual
+    if (!card.querySelector('.card-3d-glare')) {
+      const glare = document.createElement('div');
+      glare.className = 'card-3d-glare';
+      glare.setAttribute('aria-hidden', 'true');
+      card.prepend(glare);
+    }
+
+    if (!canTilt) return;
+
+    let rafId = null;
+
+    card.addEventListener('pointermove', (e) => {
+      if (e.pointerType && e.pointerType !== 'mouse') return;
+      if (rafId) cancelAnimationFrame(rafId);
+
+      rafId = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+
+        const relX = (e.clientX - rect.left) / rect.width;
+        const relY = (e.clientY - rect.top) / rect.height;
+
+        const rx = ((0.5 - relY) * 7.5).toFixed(2);
+        const ry = ((relX - 0.5) * 7.5).toFixed(2);
+        const mx = (relX * 100).toFixed(1);
+        const my = (relY * 100).toFixed(1);
+
+        card.classList.add('is-tilting');
+        card.style.setProperty('--rx', `${rx}deg`);
+        card.style.setProperty('--ry', `${ry}deg`);
+        card.style.setProperty('--mx', `${mx}%`);
+        card.style.setProperty('--my', `${my}%`);
+      });
+    });
+
+    card.addEventListener('pointerleave', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      card.classList.remove('is-tilting');
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    });
+  });
+
+  // Vinculación interactiva entre la Barra KPI Dossier y las tarjetas inferiores
+  const ribbons = document.querySelectorAll('.master-dossier-ribbon');
+  ribbons.forEach((ribbon) => {
+    const section = ribbon.closest('section');
+    if (!section) return;
+
+    const sectionCards = Array.from(section.querySelectorAll('.taucolon-3d-card, .master-3d-card'));
+    const kpiItems = Array.from(ribbon.querySelectorAll('.dossier-kpi-item[data-highlight-card]'));
+    if (!sectionCards.length || !kpiItems.length) return;
+
+    let lockedIndex = null;
+
+    function applyHighlight(targetSpec) {
+      const targets = String(targetSpec)
+        .split(',')
+        .map((n) => parseInt(n.trim(), 10))
+        .filter((n) => !Number.isNaN(n));
+
+      sectionCards.forEach((c, idx) => {
+        const isHit = targets.includes(idx);
+        c.classList.toggle('is-kpi-highlighted', isHit);
+        c.classList.toggle('is-kpi-dimmed', !isHit);
+      });
+    }
+
+    function clearHighlight() {
+      kpiItems.forEach((item) => item.classList.remove('is-active'));
+      sectionCards.forEach((c) => {
+        c.classList.remove('is-kpi-highlighted', 'is-kpi-dimmed');
+      });
+    }
+
+    kpiItems.forEach((item, idx) => {
+      const spec = item.getAttribute('data-highlight-card');
+
+      item.addEventListener('mouseenter', () => {
+        if (lockedIndex !== null) return;
+        kpiItems.forEach((k) => k.classList.remove('is-active'));
+        item.classList.add('is-active');
+        applyHighlight(spec);
+      });
+
+      item.addEventListener('focus', () => {
+        kpiItems.forEach((k) => k.classList.remove('is-active'));
+        item.classList.add('is-active');
+        applyHighlight(spec);
+      });
+
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (lockedIndex === idx) {
+          lockedIndex = null;
+          clearHighlight();
+        } else {
+          lockedIndex = idx;
+          kpiItems.forEach((k) => k.classList.remove('is-active'));
+          item.classList.add('is-active');
+          applyHighlight(spec);
+
+          const firstTargetIdx = parseInt(String(spec).split(',')[0].trim(), 10);
+          const firstCard = sectionCards[firstTargetIdx];
+          if (firstCard && window.innerWidth <= 991) {
+            const headerOffset = document.querySelector('.main-header')?.offsetHeight || 68;
+            const y = firstCard.getBoundingClientRect().top + window.pageYOffset - headerOffset - 16;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    ribbon.addEventListener('mouseleave', () => {
+      if (lockedIndex === null) clearHighlight();
+    });
+
+    ribbon.addEventListener('focusout', (e) => {
+      if (lockedIndex === null && !ribbon.contains(e.relatedTarget)) {
+        clearHighlight();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (lockedIndex !== null && !ribbon.contains(e.target)) {
+        lockedIndex = null;
+        clearHighlight();
+      }
+    });
   });
 }

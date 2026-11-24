@@ -47,7 +47,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=25.0">
+  <link rel="stylesheet" href="styles.css?v=26.0">
 
   <style>
     html, body {
@@ -102,7 +102,7 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html#propiedades" class="nav-link">&larr; Todas las Propiedades</a></li>
-          <li><a href="#especificaciones" class="nav-link">Ficha Técnica</a></li>
+          <li><a href="#especificaciones" class="nav-link">Ficha & Atributos</a></li>
           <li><a href="#audiovisual" class="nav-link">Videos & Reels</a></li>
           <li><a href="#entorno" class="nav-link">Vertientes & Suelos</a></li>
           <li><a href="#ubicacion" class="nav-link">Ubicación GPS</a></li>
@@ -269,71 +269,214 @@
     </div>
   </section>
 
-  <!-- ESPECIFICACIONES TÉCNICAS -->
-  <section id="especificaciones" class="section-padding">
+  <!-- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES TÉCNICAS (3D INTERACTIVO) -->
+  <section id="especificaciones" class="section-padding master-attr-section taucolon-master-section">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow-badge">Detalle del Fundo & Usos</div>
-        <h2 class="section-title">Ficha Técnica: Fundo de 5 Hectáreas</h2>
+        <div class="eyebrow-badge">Atributos Maestros & Ficha Técnica</div>
+        <h2 class="section-title">Fundo de 5 Hectáreas: Praderas, Vertiente & Soberanía</h2>
         <p class="section-desc">
-          Propiedad de escala intermedia con alto potencial de plusvalía y total independencia territorial.
+          Isla Lemuy, Comuna de Puqueldón, Chiloé • Macro-predio rural con abundancia hídrica autónoma, suelos trumaos fértiles, biodiversidad nativa y certeza registral total.
         </p>
       </div>
 
-      <div class="specs-master-grid">
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">01</div>
-            <span class="spec-tag-pill">50.000 m²</span>
+      <!-- Barra Esculpida de Resumen Técnico Interactivo -->
+      <div class="master-dossier-ribbon" role="region" aria-label="Resumen de atributos del fundo de 5 hectáreas">
+        <button type="button" class="dossier-kpi-item" data-highlight-card="0" title="Resaltar cabida y topografía del fundo">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
           </div>
-          <h3 class="spec-card-title">Superficie Macro-Lote</h3>
-          <p class="spec-card-desc"><strong>50.000 m² (5 Hectáreas)</strong> con lomajes suaves muy caminables. Combina sectores despejados de pradera con manchones de bosque nativo antiguo.</p>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Superficie Total</span>
+            <span class="dossier-kpi-val">50.000 m² (5 Has)</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="1" title="Resaltar vertiente natural permanente">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Recurso Hídrico</span>
+            <span class="dossier-kpi-val">Vertiente Viva 365d</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="2" title="Resaltar rol propio individual">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Certeza Legal</span>
+            <span class="dossier-kpi-val">Rol Propio CBR Castro</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="3,4,5" title="Resaltar suelos, bosque nativo y accesos">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Vocación & Ruta</span>
+            <span class="dossier-kpi-val">Trumaos & Camino Firme</span>
+          </div>
+        </button>
+      </div>
+      <p class="dossier-ribbon-hint">Pase el cursor o pulse sobre cualquier indicador superior para enfocar su ficha técnica.</p>
+
+      <!-- Cuadrícula Maestra 3D de 6 Tarjetas Rectangulares -->
+      <div class="taucolon-master-grid master-attr-grid">
+
+        <!-- 01: Superficie Macro-Lote -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">01</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">50.000 m² (5 Has)</span>
+            </div>
+            <h3 class="taucolon-3d-title">Macro-Lote de Lomajes Caminables</h3>
+            <p class="taucolon-3d-desc">
+              <strong>50.000 m² (5 Hectáreas)</strong> de lomajes suaves muy caminables. Combina amplias áreas despejadas de praderas aprovechables de inmediato con manchones maduros de bosque nativo antiguo.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/></svg>
+            <span>Deslindes claros • Alta escala residencial y productiva</span>
+          </div>
         </div>
 
-        <div class="spec-card highlight-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">02</div>
-            <span class="spec-tag-pill">Agua Dulce Viva</span>
+        <!-- 02: Vertiente Natural Permanente -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">02</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Agua Dulce Viva</span>
+            </div>
+            <h3 class="taucolon-3d-title">Vertiente Natural Permanente</h3>
+            <p class="taucolon-3d-desc">
+              Fuente hídrica natural que nace y fluye durante todo el año al interior del predio. Garantiza abastecimiento inagotable de agua dulce pura para consumo humano, riego de huertos y animales.
+            </p>
           </div>
-          <h3 class="spec-card-title">Vertiente Natural Permanente</h3>
-          <p class="spec-card-desc">Fuente hídrica natural que fluye durante todo el año dentro del predio. Permite abastecimiento de agua dulce pura para consumo, riego, animales y autosuficiencia.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Flujo permanente las 4 estaciones • Autonomía hídrica</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">03</div>
-            <span class="spec-tag-pill">CBR Castro</span>
+        <!-- 03: Rol Propio Individual -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">03</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">CBR Castro • 0% Com.</span>
+            </div>
+            <h3 class="taucolon-3d-title">Rol Propio & Certeza Notarial</h3>
+            <p class="taucolon-3d-desc">
+              Predio matriz con Rol Propio individual asignado por el SII, visación SAG e inscripción vigente en el CBR de Castro. Sin cesiones de derechos ni litigios, venta directa con dueño libre de comisiones.
+            </p>
           </div>
-          <h3 class="spec-card-title">Rol Propio Individual</h3>
-          <p class="spec-card-desc">Predio no subdividido ilegalmente; cuenta con rol propio individual del SII y archivo en el CBR de Castro. Título libre de litigios, listo para escriturar.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Títulos saneados • Listo para escrituración notarial</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">04</div>
-            <span class="spec-tag-pill">Suelos Trumaos</span>
+        <!-- 04: Aptitud Productiva & Residencial -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">04</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Suelos Trumaos</span>
+            </div>
+            <h3 class="taucolon-3d-title">Aptitud Productiva & Hacienda</h3>
+            <p class="taucolon-3d-desc">
+              Fértiles suelos volcánicos (trumaos) ideales para huertos de manzanos chilotes, apicultura de bosque nativo, cultivo orgánico de ajo chilote o desarrollo de hacienda familiar con alta privacidad.
+            </p>
           </div>
-          <h3 class="spec-card-title">Aptitud Productiva & Residencial</h3>
-          <p class="spec-card-desc">Ideal para huerto de manzanos chilotes, apicultura de bosque nativo, siembra de ajo chilote o proyecto familiar de autosuficiencia ecológica con alta privacidad.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>Tierra fértil orgánica • Microclima de mar interior</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">05</div>
-            <span class="spec-tag-pill">Fauna Austral</span>
+        <!-- 05: Biodiversidad Autóctona -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">05</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m8 10 4-6 4 6"/>
+                  <path d="m6 16 6-6 6 6"/>
+                  <path d="M4 21h16"/>
+                  <path d="M12 16v5"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Bosque Centenario</span>
+            </div>
+            <h3 class="taucolon-3d-title">Biodiversidad Nativa Autóctona</h3>
+            <p class="taucolon-3d-desc">
+              Reserva viva con renovales y ejemplares centenarios de coigüe, canelo sagrado, arrayán, avellano chileno y ulmo. Hábitat protegido de chucaos, bandurrias y avifauna de la Patagonia insular.
+            </p>
           </div>
-          <h3 class="spec-card-title">Biodiversidad Autóctona</h3>
-          <p class="spec-card-desc">Especies centenarias de coigüe, canelo sagrado, arrayán, avellano y ulmo. Hábitat natural de chucaos, bandurrias y fauna silvestre de la Patagonia insular.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Refugio natural virgen • Cortavientos ecológicos</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">06</div>
-            <span class="spec-tag-pill">Ruta Mantenida</span>
+        <!-- 06: Conectividad Vial Permanente -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">06</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Ruta Mantenida</span>
+            </div>
+            <h3 class="taucolon-3d-title">Conectividad Vial Todo el Año</h3>
+            <p class="taucolon-3d-desc">
+              Acceso asegurado por caminos consolidados de ripio mantenidos por Vialidad durante todo el año. A pocos minutos de servicios médicos, escuelas, comercio local de Puqueldón y rampa de transbordadores.
+            </p>
           </div>
-          <h3 class="spec-card-title">Conectividad Vial Permanente</h3>
-          <p class="spec-card-desc">Conectividad garantizada por caminos consolidados de ripio mantenidos por Vialidad. A minutos de servicios básicos, colegios, posta y comercio en Puqueldón.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            <span>Tránsito 365 días • Conexión continua a Chonchi y Castro</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -424,49 +567,94 @@
     </div>
   </section>
 
-  <!-- ENTORNO Y RECURSO HÍDRICO -->
-  <section id="entorno" class="section-padding">
+  <!-- ENTORNO Y VALOR PATRIMONIAL ESTRATÉGICO (3D ELEVATED) -->
+  <section id="entorno" class="section-padding master-attr-section is-marfil-canvas">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow-badge">Riqueza Territorial</div>
-        <h2 class="section-title">El Valor del Agua Dulce y la Tierra Fértil</h2>
+        <div class="eyebrow-badge">Riqueza Territorial & Proyección</div>
+        <h2 class="section-title">Patrimonio Hídrico, Subdivisión Legal & Entorno Puro</h2>
         <p class="section-desc">
-          En un escenario global de escasez de agua, poseer 5 hectáreas con vertiente permanente en la Patagonia es uno de los patrimonios más sólidos y resilientes.
+          En un escenario global de escasez hídrica y densidad urbana, poseer 5 hectáreas autónomas en la Patagonia insular representa un activo resiliente de largo plazo.
         </p>
       </div>
 
-      <div class="grid-3" style="margin-top: 2rem;">
-        <div class="feature-card">
-          <div class="feature-card-icon" style="color: var(--color-accent); margin-bottom: 0.75rem;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-            </svg>
+      <div class="taucolon-master-grid master-attr-grid">
+
+        <!-- Pilar 01 -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">01</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Cero Dependencia</span>
+            </div>
+            <h3 class="taucolon-3d-title">Captación Gravitacional Autónoma</h3>
+            <p class="taucolon-3d-desc">
+              Vertiente viva no estacional apta para diseñar sistemas propios de captación, decantación y almacenamiento natural, evitando depender de camiones aljibe o racionamientos de red externa.
+            </p>
           </div>
-          <h4>Seguridad Hídrica Absoluta</h4>
-          <p>Vertiente viva no estacional. Apta para captación y filtrado natural sin depender de camiones aljibe ni cortes en el suministro rural.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Soberanía hídrica real durante las cuatro estaciones</span>
+          </div>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card-icon" style="color: var(--color-accent); margin-bottom: 0.75rem;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-              <path d="M3 9h18M9 21V9"></path>
-            </svg>
+        <!-- Pilar 02 -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">02</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9h18M9 21V9"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Ley D.L. 3.516</span>
+            </div>
+            <h3 class="taucolon-3d-title">Potencial Legal de Subdivisión</h3>
+            <p class="taucolon-3d-desc">
+              Gracias a su cabida de 50.000 m², la normativa vigente del SAG faculta legalmente al propietario para subdividir en lotes desde 5.000 m² a futuro para legado familiar o retorno de capital.
+            </p>
           </div>
-          <h4>Capacidad de Subdivisión Futura</h4>
-          <p>Al contar con 50.000 m², la normativa SAG (D.L. 3.516) faculta legalmente al propietario a subdividir en parcelas de 5.000 m² a futuro si así lo deseara.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Flexibilidad patrimonial proyectable a largo plazo</span>
+          </div>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-card-icon" style="color: var(--color-accent); margin-bottom: 0.75rem;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              <polyline points="9 12 11 14 15 10"></polyline>
-            </svg>
+        <!-- Pilar 03 -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">03</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                  <path d="M2 12h20"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Reserva Austral</span>
+            </div>
+            <h3 class="taucolon-3d-title">Silencio Puro & Tierra sin Químicos</h3>
+            <p class="taucolon-3d-desc">
+              Entorno libre de polución acústica, contaminación lumínica y agroquímicos industriales. Cielos nocturnos limpios, brisa marina y privacidad absoluta para una vida tranquila en Chiloé.
+            </p>
           </div>
-          <h4>Paz y Libre de Contaminación</h4>
-          <p>Entorno con cero polución acústica ni lumínica. Cielos estrellados, cantos de aves silvestres y privacidad garantizada.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            <span>Ecosistema apacible e inalterado todo el año</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -661,6 +849,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=25.0"></script>
+  <script src="app.js?v=26.0"></script>
 </body>
 </html>

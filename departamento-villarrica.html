@@ -68,7 +68,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=25.0">
+  <link rel="stylesheet" href="styles.css?v=26.0">
 
   <style>
     html, body {
@@ -151,37 +151,6 @@
       opacity: 1;
       transform: scale(1);
     }
-    .condo-amenities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .condo-amenity-card {
-      background: #FFFFFF;
-      border: 1.5px solid rgba(200, 169, 107, 0.38);
-      border-radius: 18px;
-      padding: 1.75rem 1.5rem;
-      box-shadow: 0 8px 24px -6px rgba(31, 78, 95, 0.08);
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-    .condo-amenity-card:hover {
-      transform: translateY(-4px);
-      border-color: #C8A96B;
-    }
-    .condo-amenity-card h4 {
-      color: #1F4E5F;
-      font-family: var(--font-title);
-      font-size: 1.28rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .condo-amenity-card p {
-      color: #2F4A3F;
-      font-size: 0.92rem;
-      line-height: 1.6;
-      margin: 0;
-    }
     @media (max-width: 768px) {
       .villarrica-gallery-grid {
         grid-template-columns: 1fr;
@@ -230,7 +199,7 @@
         <ul class="nav-menu">
           <li><a href="index.html#propiedades" class="nav-link">&larr; Todas las Propiedades</a></li>
           <li><a href="#galeria-fotos" class="nav-link">Fotos</a></li>
-          <li><a href="#especificaciones" class="nav-link">Ficha Técnica</a></li>
+          <li><a href="#especificaciones" class="nav-link">Ficha & Atributos</a></li>
           <li><a href="#amenidades" class="nav-link">Áreas Comunes & Muelle</a></li>
           <li><a href="#ubicacion" class="nav-link">Ubicación GPS</a></li>
         </ul>
@@ -394,111 +363,381 @@
     </div>
   </section>
 
-  <!-- FICHA TÉCNICA Y ESPECIFICACIONES COMPLETAS -->
-  <section id="especificaciones" class="section-padding">
+  <!-- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES DEL DEPARTAMENTO (3D INTERACTIVO) -->
+  <section id="especificaciones" class="section-padding master-attr-section taucolon-master-section">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow-badge">Ficha Técnica & Arquitectura</div>
-        <h2 class="section-title">Especificaciones Técnicas del Departamento</h2>
+        <div class="eyebrow-badge">Atributos Maestros & Ficha Técnica</div>
+        <h2 class="section-title">Departamento La Rivera: Arquitectura, Terraza & Vistas</h2>
         <p class="section-desc">
-          Propiedad construida en 2020 con diseño moderno, finas terminaciones, amplios espacios de almacenamiento y orientación panorámica despejada.
+          Villarrica, Región de La Araucanía • Construcción año 2020 en piso 5 con finas terminaciones, bodega privada y vista panorámica despejada al Río Toltén, Lago y Volcán Villarrica.
         </p>
       </div>
 
-      <div class="specs-master-grid">
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">01</div>
-            <span class="spec-tag-pill">113 m² Totales</span>
+      <!-- Barra Esculpida de Resumen Técnico Interactivo -->
+      <div class="master-dossier-ribbon" role="region" aria-label="Resumen técnico del departamento">
+        <button type="button" class="dossier-kpi-item" data-highlight-card="0" title="Resaltar superficie y terraza acristalada">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
-          <h3 class="spec-card-title">Superficie & Terraza Cerrada</h3>
-          <p class="spec-card-desc"><strong>90 m² útiles interiores + 23 m² de terraza panorámica</strong> cerrada integralmente con cristales templados abatibles para disfrutar durante las cuatro estaciones del año.</p>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Superficie Total</span>
+            <span class="dossier-kpi-val">113 m² (90+23 m²)</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="1" title="Resaltar distribución de dormitorios y baños">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Distribución</span>
+            <span class="dossier-kpi-val">3 Dorm. (Suite) + 2B</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="2,3,4" title="Resaltar nivel, terminaciones y estacionamiento">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Arquitectura & Nivel</span>
+            <span class="dossier-kpi-val">Piso 5 • Año 2020</span>
+          </div>
+        </button>
+
+        <button type="button" class="dossier-kpi-item" data-highlight-card="5" title="Resaltar condiciones comerciales y código">
+          <div class="dossier-kpi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </div>
+          <div class="dossier-kpi-text">
+            <span class="dossier-kpi-label">Valor Publicado</span>
+            <span class="dossier-kpi-val">UF 7.770 • MZ12694</span>
+          </div>
+        </button>
+      </div>
+      <p class="dossier-ribbon-hint">Pase el cursor o pulse sobre cualquier indicador superior para enfocar su ficha técnica.</p>
+
+      <!-- Cuadrícula Maestra 3D de 6 Tarjetas Rectangulares -->
+      <div class="taucolon-master-grid master-attr-grid">
+
+        <!-- 01: Superficie & Terraza Cerrada -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">01</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9h18M9 21V9"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">113 m² Totales</span>
+            </div>
+            <h3 class="taucolon-3d-title">Terraza Panorámica Acristalada</h3>
+            <p class="taucolon-3d-desc">
+              <strong>90 m² útiles interiores + 23 m² de terraza panorámica</strong> cerrada con sistema plegable de cristal templado Lumon, transformando la vista al río y volcán en un salón disfrutable todo el año.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Cierre acristalado abatible • Uso invierno y verano</span>
+          </div>
         </div>
 
-        <div class="spec-card highlight-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">02</div>
-            <span class="spec-tag-pill">3D + 2B en Suite</span>
+        <!-- 02: Distribución y Habitaciones -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">02</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">3D + 2B en Suite</span>
+            </div>
+            <h3 class="taucolon-3d-title">Suite Principal & Distribución</h3>
+            <p class="taucolon-3d-desc">
+              Dormitorio matrimonial en suite con amplio walk-in closet y salida directa a la terraza panorámica. Se suman dos dormitorios secundarios espaciosos con clósets empotrados y un segundo baño completo.
+            </p>
           </div>
-          <h3 class="spec-card-title">Distribución y Habitaciones</h3>
-          <p class="spec-card-desc">Dormitorio matrimonial en suite con walk-in closet y salida independiente a la terraza panorámica. Dos dormitorios secundarios espaciosos con clóset y un segundo baño completo.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/></svg>
+            <span>Planta cómoda • Living comedor integrado luminoso</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">03</div>
-            <span class="spec-tag-pill">Piso 5 • Año 2020</span>
+        <!-- 03: Piso 5 Baja Densidad -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">03</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Piso 5 • Año 2020</span>
+            </div>
+            <h3 class="taucolon-3d-title">Torre Moderna de Baja Densidad</h3>
+            <p class="taucolon-3d-desc">
+              Emplazado en el quinto piso de una torre contemporánea de solo 7 niveles. Privacidad elevada, silencio acústico y perspectiva frontal sin obstrucciones hacia el Río Toltén, Lago y Volcán Villarrica.
+            </p>
           </div>
-          <h3 class="spec-card-title">Piso 5 en Edificio de Baja Densidad</h3>
-          <p class="spec-card-desc">Ubicado en el quinto piso de una torre moderna de solo 7 niveles. Máxima privacidad, silencio acústico, aislación térmica y vistas frontales despejadas sin interferencias.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12c2.5-2 5-2 7.5 0s5 2 7.5 0 4.5-2 7 0"/></svg>
+            <span>Triple vista postal: Río, Lago y Volcán Villarrica</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">04</div>
-            <span class="spec-tag-pill">Incluidos</span>
+        <!-- 04: Cocina & Aislación Termopanel -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">04</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Alto Estándar</span>
+            </div>
+            <h3 class="taucolon-3d-title">Cocina Equipada & Termopanel</h3>
+            <p class="taucolon-3d-desc">
+              Cocina contemporánea amoblada y equipada con encimera, horno y campana, logia funcional, ventanales termopanel de alta eficiencia térmica y terminaciones de primera línea para máximo confort sureño.
+            </p>
           </div>
-          <h3 class="spec-card-title">Estacionamiento Techado & Bodega</h3>
-          <p class="spec-card-desc">Cuenta con 1 estacionamiento cubierto protegido del clima y 1 bodega privada de gran capacidad para guardar equipamiento náutico, esquí y bicicletas.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Aislación térmica premium • Terminaciones año 2020</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">05</div>
-            <span class="spec-tag-pill">Navegación</span>
+        <!-- 05: Estacionamiento & Bodega -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">05</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Incluidos en Rol</span>
+            </div>
+            <h3 class="taucolon-3d-title">Estacionamiento Techado & Bodega</h3>
+            <p class="taucolon-3d-desc">
+              Cuenta con 1 estacionamiento cubierto protegido de lluvia y heladas invernales, junto a 1 bodega privada de gran capacidad para guardar equipamiento náutico, kayaks, tablas SUP, esquí y bicicletas.
+            </p>
           </div>
-          <h3 class="spec-card-title">Muelle Náutico y Ribera de Río</h3>
-          <p class="spec-card-desc">Acceso peatonal directo a la orilla del Río Toltén y muelle privado exclusivo para residentes: perfecto para practicar kayak, stand-up paddle, pesca con mosca y embarcaciones.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Almacenamiento cómodo para vida lacustre y nieve</span>
+          </div>
         </div>
 
-        <div class="spec-card">
-          <div class="spec-card-top">
-            <div class="spec-step-num">06</div>
-            <span class="spec-tag-pill">UF 7.770</span>
+        <!-- 06: Condiciones Comerciales -->
+        <div class="taucolon-3d-card master-3d-card">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">06</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">UF 7.770 • Hipotecable</span>
+            </div>
+            <h3 class="taucolon-3d-title">Condiciones Comerciales & Títulos</h3>
+            <p class="taucolon-3d-desc">
+              Valor de venta: <strong>UF 7.770</strong> (~$299.145.000 CLP). Código <strong>MZ12694</strong>. Títulos 100% saneados con rol propio individual, recepción municipal al día y apto para crédito hipotecario en cualquier banco.
+            </p>
           </div>
-          <h3 class="spec-card-title">Condiciones Comerciales</h3>
-          <p class="spec-card-desc">Valor de venta: <strong>UF 7.770</strong> (~$299.000.000 CLP). Código de propiedad MZ12694. Apta para crédito hipotecario en cualquier banco nacional.</p>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Entrega y escrituración inmediata • Carpeta al día</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- AMENIDADES Y EQUIPAMIENTO DEL CONDOMINIO -->
-  <section id="amenidades" class="section-padding why-lemuy-section">
+  <!-- AMENIDADES Y EQUIPAMIENTO DEL CONDOMINIO (VARIANTE NOCTURNA 3D PETRÓLEO & ORO) -->
+  <section id="amenidades" class="section-padding master-attr-section is-marfil-canvas">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow-badge">Vida & Comunidad Exclusiva</div>
-        <h2 class="section-title">Equipamiento del Condominio La Rivera</h2>
+        <div class="eyebrow-badge">Vida Náutica & Áreas Comunes</div>
+        <h2 class="section-title">Equipamiento Exclusivo del Condominio La Rivera</h2>
         <p class="section-desc">
-          Infraestructura de nivel superior diseñada para disfrutar de un estilo de vida relajado y seguro en contacto constante con la naturaleza sureña.
+          Infraestructura privada de primer nivel a orillas del Río Toltén, diseñada para disfrutar el estilo de vida lacustre las cuatro estaciones con seguridad integral 24/7.
         </p>
       </div>
 
-      <div class="condo-amenities-grid">
-        <div class="condo-amenity-card">
-          <h4>Muelle Privado y Acceso a Río</h4>
-          <p>Bajada directa a la ribera para zarpar en embarcaciones ligeras, nadar o disfrutar de la calma del río con vista a la desembocadura del lago.</p>
+      <div class="taucolon-master-grid master-attr-grid">
+
+        <!-- Amenidad 01: Muelle Náutico Privado -->
+        <div class="taucolon-3d-card master-3d-card is-dark-3d">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">01</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="3"/>
+                  <line x1="12" y1="22" x2="12" y2="8"/>
+                  <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Ribera Río Toltén</span>
+            </div>
+            <h3 class="taucolon-3d-title">Muelle Náutico & Acceso Directo al Río</h3>
+            <p class="taucolon-3d-desc">
+              Bajada peatonal privada desde los jardines hacia la orilla del Río Toltén y muelle exclusivo para residentes. Ideal para zarpar en kayak, paddleboard, pesca con mosca o embarcaciones hacia la desembocadura del lago.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Infraestructura náutica privada para propietarios</span>
+          </div>
         </div>
-        <div class="condo-amenity-card">
-          <h4>Piscina Exterior & Solárium</h4>
-          <p>Amplia piscina emplazada en jardines consolidados para refrescarse durante los cálidos días del verano lacustre.</p>
+
+        <!-- Amenidad 02: Piscina Exterior & Solárium -->
+        <div class="taucolon-3d-card master-3d-card is-dark-3d">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">02</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12c2.5-2 5-2 7.5 0s5 2 7.5 0 4.5-2 7 0"/>
+                  <path d="M2 17c2.5-2 5-2 7.5 0s5 2 7.5 0 4.5-2 7 0"/>
+                  <circle cx="12" cy="6" r="3"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Jardines & Descanso</span>
+            </div>
+            <h3 class="taucolon-3d-title">Piscina Exterior & Solárium</h3>
+            <p class="taucolon-3d-desc">
+              Amplia piscina al aire libre rodeada de áreas verdes consolidadas y reposeras solárium con vista abierta al entorno natural, pensada para disfrutar las tardes cálidas de la temporada lacustre.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>Entorno paisajístico privado con mantención continua</span>
+          </div>
         </div>
-        <div class="condo-amenity-card">
-          <h4>Gimnasio Equipado</h4>
-          <p>Sala de máquinas y acondicionamiento físico completa dentro del recinto, operativa los 365 días del año.</p>
+
+        <!-- Amenidad 03: Gimnasio Equipado -->
+        <div class="taucolon-3d-card master-3d-card is-dark-3d">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">03</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Bienestar 365 Días</span>
+            </div>
+            <h3 class="taucolon-3d-title">Gimnasio Equipado en el Recinto</h3>
+            <p class="taucolon-3d-desc">
+              Sala de acondicionamiento físico completa con máquinas cardiovasculares y pesas dentro del edificio, operativa durante todo el año para entrenar sin salir del condominio en días de lluvia o invierno.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Equipamiento operativo todo el año sin traslados</span>
+          </div>
         </div>
-        <div class="condo-amenity-card">
-          <h4>Quincho y Salón Multiuso</h4>
-          <p>Espacios comunes cerrados y climatizados con parrilla y mobiliario para eventos familiares y celebraciones con amigos.</p>
+
+        <!-- Amenidad 04: Quincho y Salón Multiuso -->
+        <div class="taucolon-3d-card master-3d-card is-dark-3d">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">04</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Vida Social</span>
+            </div>
+            <h3 class="taucolon-3d-title">Quincho & Salón Multiuso Climatizado</h3>
+            <p class="taucolon-3d-desc">
+              Espacios comunes cerrados y finamente ambientados con parrilla en obra, mesones y mobiliario completo para recibir invitados y celebrar encuentros familiares en cualquier época del año.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Reserva exclusiva para copropietarios</span>
+          </div>
         </div>
-        <div class="condo-amenity-card">
-          <h4>Seguridad y Portería 24/7</h4>
-          <p>Acceso vehicular y peatonal controlado por conserjería permanente, cerco perimetral y cámaras de vigilancia.</p>
+
+        <!-- Amenidad 05: Seguridad y Portería 24/7 -->
+        <div class="taucolon-3d-card master-3d-card is-dark-3d">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">05</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Conserjería 24/7</span>
+            </div>
+            <h3 class="taucolon-3d-title">Seguridad & Acceso Controlado</h3>
+            <p class="taucolon-3d-desc">
+              Acceso vehicular y peatonal estrictamente controlado por conserjería permanente 24/7, cerco perimetral y circuito cerrado de vigilancia, ofreciendo tranquilidad absoluta como primera o segunda vivienda.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Resguardo continuo los 365 días del año</span>
+          </div>
         </div>
-        <div class="condo-amenity-card">
-          <h4>Área de Juegos Infantiles</h4>
-          <p>Parque de juegos y extensas áreas verdes seguras para que los niños jueguen con total libertad y tranquilidad.</p>
+
+        <!-- Amenidad 06: Parque Infantil & Áreas Verdes -->
+        <div class="taucolon-3d-card master-3d-card is-dark-3d">
+          <div class="card-3d-glare" aria-hidden="true"></div>
+          <span class="card-3d-num" aria-hidden="true">06</span>
+          <div>
+            <div class="taucolon-3d-card-top">
+              <div class="taucolon-3d-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m8 10 4-6 4 6"/>
+                  <path d="m6 16 6-6 6 6"/>
+                  <path d="M4 21h16"/>
+                  <path d="M12 16v5"/>
+                </svg>
+              </div>
+              <span class="taucolon-pill-tag">Entorno Familiar</span>
+            </div>
+            <h3 class="taucolon-3d-title">Parque Infantil & Ribera Arbolada</h3>
+            <p class="taucolon-3d-desc">
+              Extensas praderas privadas junto a vegetación nativa y sector de juegos infantiles en un recinto cerrado, libre de tránsito vehicular externo para que toda la familia disfrute con total libertad.
+            </p>
+          </div>
+          <div class="taucolon-3d-footer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            <span>Jardines privados frente al Río Toltén</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -997,6 +1236,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=25.0"></script>
+  <script src="app.js?v=26.0"></script>
 </body>
 </html>
