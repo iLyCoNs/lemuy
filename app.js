@@ -391,7 +391,7 @@ const propertiesData = {
     location: "Isla Lemuy • Vista al Mar Interior",
     title: "Parcela de 5.000 m² en Isla Lemuy",
     description: "Topografía suave con vista despejada a los canales interiores de Chiloé y bosque nativo. La dimensión ideal para segunda vivienda o descanso definitivo a minutos del ferry.",
-    videoSrc: "HORIZONTAL/TERRENO.mp4",
+    videoSrc: "https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_PROPIEDAD.mp4",
     poster: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
     specs: [
       { label: "Superficie", val: "5.000 m² (0,5 ha)" },
