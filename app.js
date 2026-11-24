@@ -493,6 +493,164 @@ const propertiesData = {
       "Tendido eléctrico en el predio y vertientes de agua viva."
     ],
     whatsappMsg: "Hola, me comunico por el Fundo de 15,93 Hectáreas con 410m de playa en Isla Taucolón (Chauques, Chiloé - UF 8.900). Quisiera recibir antecedentes técnicos y coordinar contacto directo con el dueño."
+  },
+  villarrica: {
+    tag: "Orilla de Río & Muelle • UF 7.770",
+    location: "Villarrica • Región de La Araucanía",
+    title: "Departamento Vista Río, Lago & Volcán",
+    description: "Exclusivo departamento en 5° piso en Condominio La Rivera. 113 m² totales, terraza panorámica cerrada en cristal, muelle náutico privado, piscina, quincho y acceso a orilla de río.",
+    videoSrc: "",
+    poster: "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
+    hasGallery: true,
+    photos: [
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
+            "caption": "1. Terraza panorámica con vista al Río Toltén, Lago y Volcán Villarrica"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-f531cd729f9ec4c4.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-f531cd729f9ec4c4.jpg",
+            "caption": "2. Living comedor integrado con amplios ventanales"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-617ad1f31ac02a0f.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-617ad1f31ac02a0f.jpg",
+            "caption": "3. Vista despejada al agua y ribera arbolada"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-6858bdbb5d1ba233.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-6858bdbb5d1ba233.jpg",
+            "caption": "4. Espacio de terraza para comedor utilizable todo el año"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3b69017a16a70b90.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3b69017a16a70b90.jpg",
+            "caption": "5. Cocina moderna equipada con encimera y campana"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-ed720aa32e97dd70.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-ed720aa32e97dd70.jpg",
+            "caption": "6. Dormitorio principal en suite con salida a terraza"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e5aab630be0811af.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e5aab630be0811af.jpg",
+            "caption": "7. Baño en suite con finas terminaciones"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d582dfaec837a611.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d582dfaec837a611.jpg",
+            "caption": "8. Segundo dormitorio amplio con clóset"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-63d2c534cba38f77.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-63d2c534cba38f77.jpg",
+            "caption": "9. Tercer dormitorio con excelente iluminación"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-fd4e798767636228.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-fd4e798767636228.jpg",
+            "caption": "10. Segundo baño completo para habitaciones y visitas"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32ffef96340d0aba.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32ffef96340d0aba.jpg",
+            "caption": "11. Condominio La Rivera: Jardines y acceso al río"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-8a4deaec1cae9f40.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-8a4deaec1cae9f40.jpg",
+            "caption": "12. Piscina exterior del condominio rodeada de parque"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-29c696701163625a.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-29c696701163625a.jpg",
+            "caption": "13. Muelle privado para kayak y embarcaciones"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-37caa1ce011cbc3c.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-37caa1ce011cbc3c.jpg",
+            "caption": "14. Quincho y zona de parrillas para residentes"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3d96d4a800e708fa.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3d96d4a800e708fa.jpg",
+            "caption": "15. Gimnasio equipado dentro del condominio"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-cbb599d8405b061a.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-cbb599d8405b061a.jpg",
+            "caption": "16. Salón multiuso y de eventos sociales"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-30f2eb6e11b7b38e.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-30f2eb6e11b7b38e.jpg",
+            "caption": "17. Fachada exterior del edificio contemporáneo"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3dfcf3975077caad.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3dfcf3975077caad.jpg",
+            "caption": "18. Conserjería y acceso seguro 24/7"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-b1a2c11a2fc9e704.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-b1a2c11a2fc9e704.jpg",
+            "caption": "19. Senderos interiores y áreas verdes"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-050dfa0a961bf3c2.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-050dfa0a961bf3c2.jpg",
+            "caption": "20. Estacionamiento techado y seguro"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-119d7959a197058c.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-119d7959a197058c.jpg",
+            "caption": "21. Zona de juegos infantiles para niños"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-506ce40e49d7b4f3.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-506ce40e49d7b4f3.jpg",
+            "caption": "22. Descanso y orilla de río con vegetación autóctona"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e263fa3d6c57c81c.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e263fa3d6c57c81c.jpg",
+            "caption": "23. Perspectiva del edificio frente al río Toltén"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-57f3a4823f6b28b9.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-57f3a4823f6b28b9.jpg",
+            "caption": "24. Ventanales termopanel de alta eficiencia"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32f774fb60320581.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32f774fb60320581.jpg",
+            "caption": "25. Atardecer sobre el Lago Villarrica"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d780bde74ba07c48.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d780bde74ba07c48.jpg",
+            "caption": "26. Vista despejada al Volcán Villarrica"
+      },
+      {
+            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-89750607929685f0.jpg",
+            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-89750607929685f0.jpg",
+            "caption": "27. Panorámica general de Condominio La Rivera"
+      }
+],
+    specs: [
+      { label: "Superficie", val: "113 m² Totales (90 m² Útiles)" },
+      { label: "Dormitorios / Baños", val: "3 Dormitorios • 2 Baños (Suite)" },
+      { label: "Estacionamiento", val: "1 Techado + Bodega" },
+      { label: "Condominio", val: "Muelle Privado, Piscina, Quincho, 24/7" }
+    ],
+    benefits: [
+      "Terraza panorámica de 23 m² cerrada en cristal con vista al río Toltén, lago y volcán.",
+      "Muelle náutico privado para embarcaciones y deportes acuáticos a pasos.",
+      "Condominio de primer nivel con conserjería 24/7, piscina, quincho y áreas verdes."
+    ],
+    whatsappMsg: "Hola, me interesa el departamento en Condominio La Rivera, Villarrica (UF 7.770). Quisiera más antecedentes y coordinar una visita."
   }
 };
 
@@ -729,9 +887,14 @@ function initPhotoLightbox() {
     }
   });
 
-  document.querySelectorAll('.taucolon-photo-card').forEach(card => {
+  document.querySelectorAll('.taucolon-photo-card, .villarrica-photo-card').forEach(card => {
     card.addEventListener('click', () => {
-      currentGalleryPhotos = propertiesData.fundo17ha.photos;
+      const propKey = card.getAttribute('data-gallery-prop') || (card.classList.contains('villarrica-photo-card') ? 'villarrica' : 'fundo17ha');
+      if (propertiesData[propKey] && propertiesData[propKey].photos) {
+        currentGalleryPhotos = propertiesData[propKey].photos;
+      } else {
+        currentGalleryPhotos = propertiesData.fundo17ha.photos;
+      }
       const index = parseInt(card.getAttribute('data-gallery-index'), 10) || 0;
       openPhotoLightbox(index);
     });

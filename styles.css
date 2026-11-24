@@ -4653,38 +4653,44 @@ section {
 /* --- MODULAR SHOWCASE EN INDEX.HTML (3 PROPIEDADES CON LINK A PÁGINA) --- */
 .property-preview-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2.5rem;
 }
 
 .property-preview-card {
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.45) !important;
+  border-radius: 22px !important;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-normal);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px -6px rgba(31, 78, 95, 0.09), 0 2px 6px rgba(31, 78, 95, 0.04) !important;
 }
 
 .property-preview-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(207, 168, 89, 0.45);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  transform: translateY(-8px);
+  border-color: #C8A96B !important;
+  box-shadow: 0 22px 48px -10px rgba(31, 78, 95, 0.18), 0 6px 16px rgba(200, 169, 107, 0.22) !important;
 }
 
 .property-preview-card.featured {
-  border-color: rgba(207, 168, 89, 0.38);
+  border: 2px solid #C8A96B !important;
+  box-shadow: 0 12px 36px -6px rgba(200, 169, 107, 0.25), 0 2px 8px rgba(31, 78, 95, 0.06) !important;
+}
+
+.property-preview-card.featured:hover {
+  border-color: #d7bc82 !important;
+  box-shadow: 0 26px 54px -10px rgba(200, 169, 107, 0.35), 0 6px 18px rgba(31, 78, 95, 0.12) !important;
 }
 
 .property-preview-media {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #000;
+  background: #102933;
 }
 
 .property-preview-media img {
@@ -4702,104 +4708,115 @@ section {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(7, 16, 11, 0.88);
+  background: rgba(16, 41, 51, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: var(--color-accent);
-  border: 1px solid rgba(207, 168, 89, 0.3);
+  color: var(--color-dorado);
+  border: 1px solid rgba(200, 169, 107, 0.4);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 750;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .property-preview-price-tag {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: rgba(7, 16, 11, 0.92);
+  background: rgba(16, 41, 51, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
-  border: 1px solid rgba(207, 168, 89, 0.3);
-  font-size: 0.85rem;
-  font-weight: 700;
-  font-family: var(--font-serif);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(200, 169, 107, 0.5);
+  font-size: 0.88rem;
+  font-weight: 750;
+  font-family: var(--font-title);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-sm);
   z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .property-preview-body {
-  padding: 1.75rem;
+  padding: 1.85rem 1.75rem 1.65rem !important;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background: #FFFFFF !important;
 }
 
 .property-preview-header {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .property-preview-location {
-  font-size: 0.72rem;
+  font-size: 0.72rem !important;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-accent);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.35rem;
+  letter-spacing: 0.08em;
+  color: #1F4E5F !important; /* Azul petróleo profundo */
+  background: rgba(31, 78, 95, 0.07) !important;
+  border: 1px solid rgba(31, 78, 95, 0.18) !important;
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 750;
+  margin-bottom: 0.55rem;
 }
 
 .property-preview-title {
-  font-size: 1.35rem;
-  color: #ffffff;
-  margin: 0;
-  font-family: var(--font-serif);
+  font-size: 1.55rem !important;
+  color: #1F4E5F !important; /* Azul petróleo profundo: legibilidad absoluta */
+  margin: 0 !important;
+  font-family: var(--font-title) !important;
+  font-weight: 700 !important;
   line-height: 1.25;
 }
 
 .property-preview-desc {
-  font-size: 0.88rem;
-  color: #a2b8aa;
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-  min-height: 4.5em;
+  font-size: 0.94rem !important;
+  color: #2F4A3F !important; /* Verde bosque costero profundo: contraste nítido y descansado */
+  line-height: 1.65 !important;
+  margin-bottom: 1.35rem !important;
+  min-height: 4.8em;
   flex-grow: 1;
+  font-family: var(--font-body) !important;
+  font-weight: 450 !important;
 }
 
-/* Grilla de Especificaciones Monocromática Minimalista */
+/* Grilla de Especificaciones con la Paleta Completa */
 .property-specs-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.85rem;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.95rem;
+  padding: 1.15rem 0 !important;
+  border-top: 1.5px solid rgba(200, 169, 107, 0.3) !important;
+  border-bottom: 1.5px solid rgba(200, 169, 107, 0.3) !important;
   margin-bottom: 1.5rem;
 }
 
 .spec-cell {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .spec-cell-icon {
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  background: rgba(207, 168, 89, 0.08);
-  border: 1px solid rgba(207, 168, 89, 0.22);
-  border-radius: var(--radius-sm);
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  background: linear-gradient(135deg, rgba(31, 78, 95, 0.07) 0%, rgba(200, 169, 107, 0.2) 100%) !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.5) !important;
+  border-radius: 10px !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent);
+  color: #1F4E5F !important; /* Azul petróleo */
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(31, 78, 95, 0.05);
 }
 
 .spec-cell-text {
@@ -4809,18 +4826,18 @@ section {
 }
 
 .spec-cell-label {
-  font-size: 0.65rem;
+  font-size: 0.68rem !important;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #8da495;
-  font-weight: 600;
+  color: #5F7D8A !important; /* Azul mar grisáceo oficial */
+  font-weight: 700 !important;
   line-height: 1.2;
 }
 
 .spec-cell-val {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 0.88rem !important;
+  font-weight: 800 !important;
+  color: #1F4E5F !important; /* Azul petróleo profundo oficial */
   line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
