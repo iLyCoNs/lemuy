@@ -1009,7 +1009,6 @@ img, video {
    VIDEO INTERACTIVE HOVER SHOWCASE (CORE REQUEST)
    ========================================================================== */
 .video-showcase-section {
-  background-color: var(--color-bg-alt);
   position: relative;
 }
 
@@ -3542,30 +3541,90 @@ img, video {
    ESTUDIO AUDIOVISUAL DUAL 16:9 & 9:16 (In-Page Cinema Experience)
    ========================================================================== */
 
+.video-showcase-section {
+  background: linear-gradient(180deg, #0e2028 0%, #143541 45%, #0f2732 100%) !important;
+  border-top: 1px solid rgba(200, 169, 107, 0.28) !important;
+  border-bottom: 1px solid rgba(200, 169, 107, 0.28) !important;
+  color: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+}
+
+.video-showcase-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  max-width: 100%;
+  height: 380px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(200, 169, 107, 0.16) 0%, rgba(31, 78, 95, 0.28) 50%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.video-showcase-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.video-showcase-section .eyebrow-badge {
+  background: rgba(200, 169, 107, 0.16) !important;
+  border: 1px solid rgba(200, 169, 107, 0.45) !important;
+  color: var(--color-dorado) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.25rem;
+}
+
+.video-showcase-section .section-title {
+  color: #ffffff !important;
+  font-family: var(--font-formal) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6) !important;
+  font-size: clamp(2rem, 3.8vw, 2.75rem) !important;
+  margin-bottom: 1rem !important;
+}
+
+.video-showcase-section .section-desc {
+  color: #dbe7df !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  max-width: 780px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
 .video-format-toolbar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin: 0 auto 2.5rem;
-  background: rgba(31, 78, 95, 0.12);
-  border: 1px solid rgba(200, 169, 107, 0.35);
+  margin: 2.25rem auto 2.5rem;
+  background: rgba(13, 34, 43, 0.92) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(200, 169, 107, 0.38) !important;
   border-radius: 999px;
   padding: 0.35rem 0.5rem;
   width: fit-content;
   max-width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
 .video-format-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.55rem 1.2rem;
+  padding: 0.55rem 1.25rem;
   border-radius: 999px;
   border: none;
   background: transparent;
-  color: var(--color-petroleo);
-  font-size: 0.85rem;
+  color: #d5e3dc !important;
+  font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -3578,14 +3637,15 @@ img, video {
 }
 
 .video-format-btn.active {
-  background: var(--color-petroleo);
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(31, 78, 95, 0.3);
+  background: linear-gradient(135deg, #C8A96B 0%, #b89552 100%) !important;
+  color: #0b1a20 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 16px rgba(200, 169, 107, 0.45) !important;
 }
 
 .video-format-btn:hover:not(.active) {
-  background: rgba(200, 169, 107, 0.2);
-  color: var(--color-petroleo-dark);
+  background: rgba(200, 169, 107, 0.22) !important;
+  color: #ffffff !important;
 }
 
 .video-dual-stage {
@@ -4015,11 +4075,7 @@ img, video {
 }
 
 /* --- REPRODUCTORES DE VIDEO Y REELS EN LOOP --- */
-.video-showcase-section {
-  background: rgba(7, 16, 11, 0.5);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
+
 
 .media-duo-grid {
   display: grid;
