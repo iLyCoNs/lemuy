@@ -47,7 +47,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=17.0">
+  <link rel="stylesheet" href="styles.css?v=18.0">
 
   <style>
     html, body {
@@ -159,13 +159,26 @@
   <section class="weather-widget-section">
     <div class="container">
       <div class="weather-card" id="weatherWidgetLemuy" data-lat="-42.6176" data-lon="-73.7226" data-place="Isla Lemuy, Puqueldón">
+        <!-- Barra de Ventana Estilo macOS Crystal -->
+        <div class="macos-titlebar">
+          <div class="macos-traffic-lights">
+            <span class="mac-dot mac-red" title="Cerrar"></span>
+            <span class="mac-dot mac-yellow" title="Minimizar"></span>
+            <span class="mac-dot mac-green" title="Maximizar"></span>
+          </div>
+          <div class="macos-window-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <span>Estación Meteorológica Satelital • Isla Lemuy</span>
+          </div>
+          <div class="weather-api-badge">Datos Satelitales Open-Meteo</div>
+        </div>
+
         <div class="weather-header">
           <div class="weather-place-group">
             <span class="weather-live-indicator"><span class="pulse-ring"></span> EN VIVO</span>
             <span class="weather-place-name">Condición Climática Actual en Isla Lemuy</span>
             <span class="weather-coords">GPS: -42.6176, -73.7226 (Puqueldón, Chiloé)</span>
           </div>
-          <div class="weather-api-badge">Datos Satelitales Open-Meteo</div>
         </div>
 
         <div class="weather-body">
@@ -285,53 +298,88 @@
     </div>
   </section>
 
-  <!-- SECCIÓN AUDIOVISUAL: VIDEOS HORIZONTALES Y REELS EN LOOP -->
+  <!-- SECCIÓN AUDIOVISUAL DUAL: FORMATOS 16:9 Y 9:16 IN-PAGE -->
   <section id="audiovisual" class="section-padding video-showcase-section">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow-badge">Perspectiva Aérea 4K</div>
-        <h2 class="section-title">Recorridos en Video: Parcela de 5.000 m²</h2>
+        <div class="eyebrow-badge">Estudio Aéreo 4K Ultra HD</div>
+        <h2 class="section-title">Registro Aéreo Cinematográfico 4K</h2>
         <p class="section-desc">
-          Reproducción automática en bucle para apreciar la escala y el relieve del terreno.
+          Formatos de video especialmente optimizados: Panorámica 16:9 para pantallas amplias o Reel 9:16 para smartphones. Visualícelos en modo cine in-page sin salir ni abrir nuevas ventanas.
         </p>
       </div>
 
-      <div class="media-duo-grid">
-        <!-- Video Horizontal 16:9 Loop -->
-        <div class="media-box-16-9">
-          <div class="media-box-badge">Formato Horizontal 16:9 • Loop Automático</div>
-          <video class="loop-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80">
-            <source src="HORIZONTAL/TERRENO.mp4" type="video/mp4">
-          </video>
-          <div class="media-box-caption">
-            <h4>Lomajes Suaves y Orientación al Mar</h4>
-            <p>Vuelo rasante sobre la topografía y el bosque de la parcela.</p>
-          </div>
-        </div>
+      <!-- Barra Selectora de Formato -->
+      <div class="video-format-toolbar">
+        <button type="button" class="video-format-btn active" data-format="all">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Vista Dual
+        </button>
+        <button type="button" class="video-format-btn" data-format="16-9">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="15" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/></svg>
+          Panorámica 16:9
+        </button>
+        <button type="button" class="video-format-btn" data-format="9-16">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+          Reel Móvil 9:16
+        </button>
+      </div>
 
-        <!-- Video Vertical Reel 9:16 Loop -->
-        <div class="media-box-9-16-container">
-          <div class="smartphone-frame" style="margin: 0 auto;">
-            <div class="smartphone-notch"></div>
-            <div class="smartphone-screen">
+      <!-- Escenario Audiovisual Dual -->
+      <div class="video-dual-stage">
+        <!-- Tarjeta Formato 16:9 (Cinema) -->
+        <article class="video-card-cinema">
+          <div class="cinema-screen-wrap">
+            <span class="cinema-screen-badge">16:9 Panorámica • 4K</span>
+            <video class="loop-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80">
+              <source src="HORIZONTAL/TERRENO.mp4" type="video/mp4">
+            </video>
+            <div class="cinema-overlay-controls">
+              <button type="button" class="cinema-quick-action-btn" data-open-inpage-video data-video-src="HORIZONTAL/TERRENO.mp4" data-video-title="Parcela 5.000 m² • Vista Panorámica 16:9" data-video-desc="Vuelo aéreo en 4K Ultra HD sobre los lomajes y entorno natural de la parcela." data-is-reel="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Abrir en Modo Cine
+              </button>
+            </div>
+          </div>
+          <div class="cinema-footer-bar">
+            <div class="cinema-footer-text">
+              <h4>Lomajes Suaves y Orientación al Mar</h4>
+              <p>Perspectiva horizontal 16:9 para apreciar la escala y topografía del predio.</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+              <button type="button" class="video-mute-toggle-btn btn btn-outline btn-sm" aria-label="Audio">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/></svg>
+                Audio desactivado
+              </button>
+              <button type="button" class="btn btn-accent btn-sm" data-open-inpage-video data-video-src="HORIZONTAL/TERRENO.mp4" data-video-title="Parcela 5.000 m² • Vista Panorámica 16:9" data-video-desc="Vuelo aéreo en 4K Ultra HD sobre los lomajes y entorno natural de la parcela." data-is-reel="false">
+                Modo Cine &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta Formato 9:16 (Reel) -->
+        <article class="video-card-reel">
+          <div class="smartphone-titanium-frame">
+            <div class="smartphone-dynamic-island"></div>
+            <div class="smartphone-screen-wrap">
               <video class="loop-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80">
                 <source src="https://github.com/iLyCoNs/austral-drones/releases/download/videos/REEL_ISLA_LEMUY.mp4" type="video/mp4">
               </video>
-              <div class="reel-ui-overlay">
-                <div class="reel-top-bar">
-                  <span class="reel-badge-tag">REEL LEMUY</span>
+              <div class="reel-glass-pill">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.25rem;">
+                  <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-dorado); text-transform: uppercase;">REEL 9:16 MÓVIL</span>
+                  <span style="font-size: 0.7rem; color: #b5c7ba;">@santuariolemuy</span>
                 </div>
-                <div class="reel-bottom-info">
-                  <span class="reel-author-name">@santuariolemuy</span>
-                  <p class="reel-caption-text">Vista aérea en primera persona de la parcela de 5.000 m².</p>
-                </div>
+                <p style="font-size: 0.78rem; line-height: 1.3; margin: 0 0 0.35rem; color: #ffffff;">Recorrido vertical inmersivo de la parcela de 5.000 m².</p>
+                <button type="button" class="reel-action-inpage-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/austral-drones/releases/download/videos/REEL_ISLA_LEMUY.mp4" data-video-title="Reel Vertical • Parcela 5.000 m²" data-video-desc="Formato cinematográfico vertical 9:16 diseñado para dispositivos móviles." data-is-reel="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  Reproducir Reel In-Page
+                </button>
               </div>
             </div>
           </div>
-          <div style="text-align: center; margin-top: 1rem;">
-            <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 700;">Reel Vertical para Smartphone</span>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -386,11 +434,17 @@
             </div>
           </div>
           <div class="map-actions">
-            <a href="https://maps.google.com/?q=Isla+Lemuy,+Puqueldon,+Chile" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-              Abrir en Google Maps
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-42.617589,-73.722646&travelmode=driving" target="_blank" rel="noopener noreferrer" class="btn-route-maps" title="Crear ruta vehicular en Google Maps hacia la parcela">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Ruta en Google Maps
             </a>
-            <a href="https://www.google.com/maps/dir/Castro,+Chile/Isla+Lemuy,+Chile" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-              Trazar Ruta desde Castro
+            <a href="https://waze.com/ul?ll=-42.617589,-73.722646&navigate=yes" target="_blank" rel="noopener noreferrer" class="btn-route-waze" title="Iniciar navegación vehicular en Waze hacia la parcela">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L2 22l5.71-.97C9.02 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+              Navegar en Waze
+            </a>
+            <a href="https://maps.google.com/?q=-42.617589,-73.722646&t=k" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Ver terreno satelital en Google Maps">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Ver Terreno Satelital
             </a>
           </div>
         </div>
@@ -476,6 +530,40 @@
     </div>
   </footer>
 
-  <script src="app.js?v=17.0"></script>
+  <!-- Modal Lightbox Cinematográfico de Video a Pantalla Completa (In-Page) -->
+  <div id="videoModal" class="video-modal-backdrop" role="dialog" aria-modal="true" aria-label="Reproductor de video cinematográfico">
+    <div class="video-modal-box">
+      <div class="video-modal-topbar">
+        <div class="video-modal-badge-group">
+          <span class="video-modal-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Modo Cine 4K In-Page
+          </span>
+        </div>
+        <button class="video-modal-close" aria-label="Cerrar video" title="Cerrar ventana">
+          <span>Cerrar</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      
+      <div class="video-modal-media-wrap">
+        <video class="modal-video-element" controls playsinline></video>
+        <iframe class="modal-iframe-element" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      
+      <div class="modal-video-footer">
+        <div>
+          <h4 id="modalVideoTitle" style="color: #fff; font-size: 1.15rem; margin-bottom: 0.2rem;">Video Aéreo</h4>
+          <p id="modalVideoDesc" style="color: #a0b2a5; font-size: 0.85rem; margin: 0;">Parcela 5.000 m² • Isla Lemuy, Chiloé</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.85rem;">
+          <span style="font-size: 0.825rem; color: var(--color-dorado); font-weight: 700; text-transform: uppercase;">4K Ultra HD</span>
+          <button type="button" class="btn btn-modal-close-footer" aria-label="Cerrar video">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=18.0"></script>
 </body>
 </html>

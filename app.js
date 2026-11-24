@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmartphoneReel();
   initPropertyTabs();
   initVideoModal();
+  initVideoDualSuite();
   initPhotoLightbox();
   initFaqAccordion();
   initContactForm();
@@ -243,8 +244,19 @@ function initVideoModal() {
   });
 }
 
-function openVideoModal(src, title, desc, isYoutube = false) {
+function openVideoModal(src, title, desc, isYoutube = false, isReel = false) {
   if (!modalBackdrop) return;
+
+  const modalBox = modalBackdrop.querySelector('.video-modal-box');
+  const isVertical = isReel || (typeof src === 'string' && src.toLowerCase().includes('reel'));
+  
+  if (modalBox) {
+    if (isVertical) {
+      modalBox.classList.add('aspect-9-16');
+    } else {
+      modalBox.classList.remove('aspect-9-16');
+    }
+  }
 
   const isYtUrl = isYoutube || (typeof src === 'string' && (src.includes('youtube.com') || src.includes('youtu.be') || src === 'UyUsmi38UsI'));
 
@@ -293,6 +305,11 @@ function openVideoModal(src, title, desc, isYoutube = false) {
 function closeVideoModal() {
   if (!modalBackdrop) return;
 
+  const modalBox = modalBackdrop.querySelector('.video-modal-box');
+  if (modalBox) {
+    modalBox.classList.remove('aspect-9-16');
+  }
+
   if (modalIframe) {
     modalIframe.src = '';
     modalIframe.style.display = 'none';
@@ -306,6 +323,63 @@ function closeVideoModal() {
 
   modalBackdrop.classList.remove('active');
   document.body.style.overflow = '';
+}
+
+/* ==========================================================================
+   ESTUDIO AUDIOVISUAL DUAL: SELECTOR DE FORMATO & MODO TEATRO IN-PAGE
+   ========================================================================== */
+function initVideoDualSuite() {
+  // Selector de Formato (16:9, 9:16 o Vista Dual Simultánea)
+  const toolbars = document.querySelectorAll('.video-format-toolbar');
+  toolbars.forEach(toolbar => {
+    const buttons = toolbar.querySelectorAll('.video-format-btn');
+    const stage = toolbar.closest('section')?.querySelector('.video-dual-stage');
+    if (!stage) return;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const format = btn.getAttribute('data-format');
+
+        stage.classList.remove('view-cinema-only', 'view-reel-only');
+        if (format === '16-9') {
+          stage.classList.add('view-cinema-only');
+        } else if (format === '9-16') {
+          stage.classList.add('view-reel-only');
+        }
+      });
+    });
+  });
+
+  // Botones de Apertura In-Page (Modo Cine y Modo Reel sin nuevas ventanas)
+  document.querySelectorAll('[data-open-inpage-video]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const videoSrc = btn.getAttribute('data-video-src');
+      const videoTitle = btn.getAttribute('data-video-title') || 'Registro Aéreo 4K';
+      const videoDesc = btn.getAttribute('data-video-desc') || 'Perspectiva aérea in situ de la propiedad.';
+      const isReel = btn.getAttribute('data-is-reel') === 'true';
+      if (videoSrc) {
+        openVideoModal(videoSrc, videoTitle, videoDesc, false, isReel);
+      }
+    });
+  });
+
+  // Botones de Silenciar/Activar Audio In-Card
+  document.querySelectorAll('.video-mute-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.video-card-cinema') || btn.closest('.video-card-reel') || btn.closest('.media-box-16-9');
+      const vid = card?.querySelector('video');
+      if (vid) {
+        vid.muted = !vid.muted;
+        btn.innerHTML = vid.muted 
+          ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/></svg> Audio desactivado`
+          : `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Audio activo`;
+      }
+    });
+  });
 }
 
 /* ==========================================================================

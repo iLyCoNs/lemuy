@@ -5,31 +5,52 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette - Austral Ultra-Luxury & Obsidian Moss */
-  --color-primary: #12241b;         /* Verde Bosque Austral Profundo */
-  --color-primary-light: #1f3b2d;   /* Verde Musgo */
-  --color-primary-dark: #07100b;    /* Basalto / Obsidiana Austral */
+  /* ==========================================================================
+     PALETA OFICIAL SANTUARIO LEMUY (Mar Interior, Bosque Nativo & Exclusividad Austral)
+     ========================================================================== */
+  --color-petroleo: #1F4E5F;       /* Azul petróleo profundo (Profundidad y aplomo) */
+  --color-petroleo-dark: #143541;  /* Tono nocturno para contrastes de fondo */
+  --color-petroleo-light: #2b687e; /* Azul petróleo luminoso */
   
-  --color-accent: #cfa859;          /* Dorado Champagne Patagónico */
-  --color-accent-hover: #dfc17b;    /* Oro luminoso */
-  --color-accent-soft: rgba(207, 168, 89, 0.14);
-  --color-accent-glow: rgba(207, 168, 89, 0.28);
+  --color-mar-grisaceo: #5F7D8A;   /* Azul mar grisáceo (Canales y bruma marina) */
+  --color-bosque: #2F4A3F;         /* Verde bosque costero (Vegetación autóctona) */
+  --color-bosque-dark: #1d3129;    /* Verde bosque profundo */
+  --color-bosque-light: #3e6354;   /* Verde bosque templado */
   
-  --color-ocean: #162f3f;           /* Azul Fiordo / Mar Interior */
-  --color-ocean-light: #254b63;
+  --color-arena: #EAE3D6;          /* Arena clara / hueso (Fondos alternos y líneas) */
+  --color-marfil: #F6F2EA;         /* Marfil suave (Base orgánica principal) */
   
-  --color-bg-main: #fbf9f5;         /* Blanco Lino / Papel Algodón */
+  --color-dorado: #C8A96B;         /* Dorado arena / champagne (Acento premium) */
+  --color-dorado-hover: #d7bc82;   /* Dorado resplandeciente */
+  --color-dorado-soft: rgba(200, 169, 107, 0.16);
+  --color-dorado-glow: rgba(200, 169, 107, 0.32);
+
+  /* Mapeo del Design System */
+  --color-primary: #2F4A3F;         /* Verde bosque costero */
+  --color-primary-light: #3e6354;
+  --color-primary-dark: #1F4E5F;    /* Azul petróleo profundo */
+  
+  --color-accent: #C8A96B;          /* Dorado arena / champagne */
+  --color-accent-hover: #d7bc82;
+  --color-accent-soft: rgba(200, 169, 107, 0.16);
+  --color-accent-glow: rgba(200, 169, 107, 0.32);
+  
+  --color-ocean: #1F4E5F;           /* Azul petróleo profundo */
+  --color-ocean-light: #5F7D8A;     /* Azul mar grisáceo */
+  
+  --color-bg-main: #F6F2EA;         /* Marfil suave (Base) */
   --color-bg-card: #ffffff;
-  --color-bg-alt: #f3eee6;          /* Arena suave Chiloé */
-  --color-bg-dark: #07100b;         /* Noche Basáltica Austral */
+  --color-bg-alt: #EAE3D6;          /* Arena clara / hueso */
+  --color-bg-dark: #1F4E5F;         /* Azul petróleo profundo */
+  --color-bg-darker: #143541;       /* Azul petróleo oscuro para pie de página y hero overlays */
   
-  --color-text-main: #1f2722;       /* Gris carbón orgánico */
-  --color-text-muted: #56645d;      /* Texto secundario de alta legibilidad */
-  --color-text-light: #f7faf7;
+  --color-text-main: #182824;       /* Carbón orgánico profundo de máxima legibilidad */
+  --color-text-muted: #5F7D8A;      /* Azul mar grisáceo de contraste armónico */
+  --color-text-light: #F6F2EA;      /* Marfil suave para fondos oscuros */
   
-  --color-border: #e3ded5;
-  --color-border-light: #ece7de;
-  --color-border-gold: rgba(207, 168, 89, 0.35);
+  --color-border: #EAE3D6;          /* Arena clara / hueso */
+  --color-border-light: rgba(234, 227, 214, 0.65);
+  --color-border-gold: rgba(200, 169, 107, 0.38);
   
   /* Typography - Formal Architectural & High-End Editorial */
   --font-formal: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
@@ -38,11 +59,11 @@
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* macOS / Glassmorphism Shadows & Radius */
-  --shadow-sm: 0 2px 8px rgba(7, 16, 11, 0.05);
-  --shadow-md: 0 8px 24px rgba(7, 16, 11, 0.08);
-  --shadow-lg: 0 16px 40px rgba(7, 16, 11, 0.12);
-  --shadow-gold: 0 8px 30px rgba(207, 168, 89, 0.22);
-  --shadow-video: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 2px 8px rgba(31, 78, 95, 0.06);
+  --shadow-md: 0 8px 24px rgba(31, 78, 95, 0.1);
+  --shadow-lg: 0 16px 40px rgba(31, 78, 95, 0.14);
+  --shadow-gold: 0 8px 30px rgba(200, 169, 107, 0.24);
+  --shadow-video: 0 24px 60px rgba(20, 53, 65, 0.38);
   
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -455,35 +476,36 @@ img, video {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #1d3629 0%, #112219 100%);
-  border: 1px solid rgba(207, 168, 89, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 16px rgba(7, 16, 11, 0.35);
+  background: linear-gradient(180deg, #2F4A3F 0%, #1d332b 100%);
+  border: 1px solid rgba(200, 169, 107, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 16px rgba(20, 53, 65, 0.35);
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(180deg, #274837 0%, #172d21 100%);
-  border-color: rgba(207, 168, 89, 0.7);
+  background: linear-gradient(180deg, #3d5f52 0%, #254035 100%);
+  border-color: rgba(200, 169, 107, 0.75);
   transform: translateY(-1.5px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 24px rgba(7, 16, 11, 0.45), 0 0 16px rgba(207, 168, 89, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 24px rgba(20, 53, 65, 0.45), 0 0 16px rgba(200, 169, 107, 0.3);
   color: #ffffff;
 }
 
 .btn-accent {
-  background: linear-gradient(180deg, #dfc17b 0%, #cfa859 50%, #b88d3b 100%);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 4px 16px rgba(207, 168, 89, 0.35);
-  color: #07100b;
+  background: linear-gradient(180deg, #d7bc82 0%, #C8A96B 50%, #b28f4d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 4px 16px rgba(200, 169, 107, 0.4);
+  color: #143541;
   font-weight: 700;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .btn-accent:hover {
-  background: linear-gradient(180deg, #ecce8a 0%, #dab263 50%, #c59740 100%);
+  background: linear-gradient(180deg, #e3cd9c 0%, #d4b679 50%, #bf9a54 100%);
+  border-color: #ffffff;
   transform: translateY(-1.5px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 8px 24px rgba(207, 168, 89, 0.5);
-  color: #07100b;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 8px 24px rgba(200, 169, 107, 0.55), 0 0 20px rgba(200, 169, 107, 0.4);
+  color: #143541;
 }
 
 .btn-outline {
@@ -2138,23 +2160,26 @@ img, video {
 }
 
 .contact-card {
-  background: var(--color-bg-main);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, #1F4E5F 0%, #153844 55%, #2F4A3F 100%);
+  border: 1px solid rgba(200, 169, 107, 0.45);
+  border-radius: 24px;
   padding: 3.5rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 28px 70px rgba(20, 53, 65, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.35);
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 3.5rem;
   width: 100%;
   box-sizing: border-box;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
   .contact-card {
     display: flex !important;
     flex-direction: column !important;
-    padding: 1.5rem 1rem !important;
+    padding: 1.75rem 1.25rem !important;
     gap: 2rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -2162,22 +2187,40 @@ img, video {
 }
 
 .contact-info-col h3 {
-  font-size: 2rem;
+  font-family: var(--font-formal);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  color: #ffffff;
+  line-height: 1.15;
   margin-bottom: 1rem;
 }
 
+.contact-info-col p {
+  color: #EAE3D6;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
 .contact-direct-owner-box {
-  background: #ffffff;
-  border: 1.5px dashed var(--color-accent);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-  margin: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(200, 169, 107, 0.35);
+  border-left: 4px solid var(--color-dorado);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
 }
 
 .contact-direct-owner-box h4 {
-  font-size: 1.1rem;
-  color: #8c6a0c;
+  font-family: var(--font-formal);
+  font-size: 1.15rem;
+  color: #ffffff;
   margin-bottom: 0.35rem;
+}
+
+.contact-direct-owner-box p {
+  color: var(--color-arena);
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 .contact-list {
@@ -2193,14 +2236,15 @@ img, video {
   align-items: center;
   gap: 1rem;
   font-size: 1.05rem;
-  color: var(--color-text-main);
+  color: #EAE3D6;
 }
 
 .contact-icon-circle {
   width: 44px;
   height: 44px;
-  background: var(--color-primary);
-  color: #ffffff;
+  background: rgba(200, 169, 107, 0.2);
+  border: 1px solid rgba(200, 169, 107, 0.4);
+  color: var(--color-dorado);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2220,6 +2264,15 @@ img, video {
   margin-bottom: 0.4rem;
 }
 
+.contact-card .form-label {
+  color: #EAE3D6;
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.45rem;
+  display: block;
+}
+
 .form-input, .form-select, .form-textarea {
   width: 100%;
   padding: 0.9rem 1.15rem;
@@ -2230,6 +2283,35 @@ img, video {
   color: var(--color-text-main);
   background: #ffffff;
   transition: border-color var(--transition-fast);
+}
+
+.contact-card .form-input, 
+.contact-card .form-select, 
+.contact-card .form-textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all var(--transition-fast);
+}
+
+.contact-card .form-input::placeholder, 
+.contact-card .form-textarea::placeholder {
+  color: rgba(234, 227, 214, 0.6);
+}
+
+.contact-card .form-input:focus, 
+.contact-card .form-select:focus, 
+.contact-card .form-textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--color-dorado);
+  box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.28);
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
@@ -2273,6 +2355,21 @@ img, video {
   border: 1px solid rgba(255, 255, 255, 0.16);
   display: flex;
   flex-direction: column;
+  transition: max-width 0.3s ease;
+}
+
+.video-modal-box.aspect-9-16 {
+  max-width: 420px;
+}
+
+.video-modal-box.aspect-9-16 .video-modal-media-wrap {
+  aspect-ratio: 9 / 16;
+  max-height: 72vh;
+}
+
+.video-modal-box.aspect-9-16 .modal-video-element {
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Barra Superior Dedicada: Separa 100% los botones de cierre de los controles de YouTube */
@@ -2937,11 +3034,21 @@ img, video {
   }
   .map-actions {
     width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
   }
-  .map-actions .btn {
+  .map-actions .btn,
+  .map-actions .btn-route-maps,
+  .map-actions .btn-route-waze {
     width: 100% !important;
     justify-content: center !important;
     font-size: 0.85rem !important;
+    text-align: center !important;
+  }
+  .video-dual-stage {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
   }
   .map-iframe-container {
     height: 300px !important;
@@ -3202,27 +3309,67 @@ img, video {
    SANTUARIO LEMUY - SISTEMA MULTIPÁGINA & CLIMA EN VIVO GPS (v15.0)
    ========================================================================== */
 
-/* --- WIDGET CLIMA EN VIVO (Open-Meteo) --- */
+/* --- WIDGET CLIMA EN VIVO (macOS Frosted Crystal Glass) --- */
 .weather-widget-section {
-  padding: 1.5rem 0 2rem;
+  padding: 2rem 0 2.5rem;
   background: transparent;
 }
 
 .weather-card {
-  background: rgba(13, 26, 20, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(207, 168, 89, 0.25);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 2rem;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, rgba(31, 78, 95, 0.84) 0%, rgba(47, 74, 63, 0.8) 100%);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 20px;
+  padding: 1.5rem 2rem 1.75rem;
+  box-shadow: 0 24px 64px rgba(20, 53, 65, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45), inset 0 -1px 2px rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
-  transition: border-color var(--transition-normal);
+  transition: all var(--transition-normal);
 }
 
 .weather-card:hover {
-  border-color: rgba(207, 168, 89, 0.45);
+  border-color: rgba(200, 169, 107, 0.55);
+  box-shadow: 0 28px 70px rgba(20, 53, 65, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* macOS Top Titlebar */
+.macos-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.macos-traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mac-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mac-red { background: #ff5f56; border: 1px solid #e0443e; }
+.mac-yellow { background: #ffbd2e; border: 1px solid #dea123; }
+.mac-green { background: #27c93f; border: 1px solid #1aab29; }
+
+.macos-window-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(246, 242, 234, 0.85);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .weather-header {
@@ -3232,7 +3379,7 @@ img, video {
   flex-wrap: wrap;
   gap: 1rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1.25rem;
 }
 
@@ -3278,26 +3425,28 @@ img, video {
 }
 
 .weather-place-name {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #ffffff;
   letter-spacing: -0.01em;
+  font-family: var(--font-formal);
 }
 
 .weather-coords {
   font-size: 0.8rem;
-  color: #9cb1a2;
+  color: var(--color-arena);
 }
 
 .weather-api-badge {
   font-size: 0.72rem;
-  color: var(--color-accent);
-  background: rgba(207, 168, 89, 0.12);
-  border: 1px solid rgba(207, 168, 89, 0.25);
-  padding: 0.3rem 0.75rem;
+  color: var(--color-dorado);
+  background: rgba(200, 169, 107, 0.14);
+  border: 1px solid rgba(200, 169, 107, 0.35);
+  padding: 0.35rem 0.85rem;
   border-radius: 999px;
   font-weight: 600;
   letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
 }
 
 .weather-body {
@@ -3312,7 +3461,7 @@ img, video {
   align-items: center;
   gap: 1.25rem;
   padding-right: 2rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .weather-icon {
@@ -3321,16 +3470,17 @@ img, video {
 }
 
 .weather-temp-val {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: #ffffff;
-  font-family: var(--font-serif);
+  font-family: var(--font-formal);
   line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .weather-condition-text {
   font-size: 0.95rem;
-  color: #c0d1c5;
+  color: var(--color-arena);
   font-weight: 500;
   margin-top: 0.2rem;
 }
@@ -3338,41 +3488,363 @@ img, video {
 .weather-metrics-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .weather-metric-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
   padding: 0.85rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.weather-metric-item:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(200, 169, 107, 0.4);
+  transform: translateY(-1px);
 }
 
 .metric-label {
-  font-size: 0.72rem;
-  color: #8da495;
+  font-size: 0.7rem;
+  color: #c5d6cc;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   font-weight: 600;
 }
 
 .metric-val {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: #ffffff;
   font-weight: 700;
+  font-family: var(--font-formal);
   font-feature-settings: "tnum";
 }
 
 .weather-footer-note {
   margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.85rem 1.15rem;
+  background: rgba(200, 169, 107, 0.1);
+  border: 1px solid rgba(200, 169, 107, 0.25);
+  border-radius: 12px;
   font-size: 0.85rem;
-  color: #9cb1a2;
-  line-height: 1.5;
+  color: var(--color-arena);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   ESTUDIO AUDIOVISUAL DUAL 16:9 & 9:16 (In-Page Cinema Experience)
+   ========================================================================== */
+
+.video-format-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto 2.5rem;
+  background: rgba(31, 78, 95, 0.12);
+  border: 1px solid rgba(200, 169, 107, 0.35);
+  border-radius: 999px;
+  padding: 0.35rem 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.video-format-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--color-petroleo);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.video-format-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.video-format-btn.active {
+  background: var(--color-petroleo);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(31, 78, 95, 0.3);
+}
+
+.video-format-btn:hover:not(.active) {
+  background: rgba(200, 169, 107, 0.2);
+  color: var(--color-petroleo-dark);
+}
+
+.video-dual-stage {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.video-dual-stage.view-cinema-only {
+  grid-template-columns: 1fr;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.video-dual-stage.view-cinema-only .video-card-reel {
+  display: none !important;
+}
+
+.video-dual-stage.view-reel-only {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.video-dual-stage.view-reel-only .video-card-cinema {
+  display: none !important;
+}
+
+/* Marco Pantalla Panorámica 16:9 */
+.video-card-cinema {
+  background: linear-gradient(145deg, #143541 0%, #1F4E5F 100%);
+  border: 1px solid rgba(200, 169, 107, 0.35);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(20, 53, 65, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.cinema-screen-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000000;
+  overflow: hidden;
+}
+
+.cinema-screen-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cinema-screen-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(20, 53, 65, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 169, 107, 0.4);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  z-index: 5;
+}
+
+.cinema-overlay-controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 6;
+}
+
+.cinema-screen-wrap:hover .cinema-overlay-controls,
+.cinema-screen-wrap:focus-within .cinema-overlay-controls {
+  opacity: 1;
+}
+
+.cinema-quick-action-btn {
+  background: rgba(31, 78, 95, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(200, 169, 107, 0.55);
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cinema-quick-action-btn:hover {
+  background: var(--color-dorado);
+  color: #143541;
+  transform: scale(1.05);
+}
+
+.cinema-footer-bar {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(20, 53, 65, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cinema-footer-text h4 {
+  font-family: var(--font-formal);
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.cinema-footer-text p {
+  font-size: 0.85rem;
+  color: var(--color-arena);
+  margin: 0;
+}
+
+/* Marco Smartphone 9:16 Reel */
+.video-card-reel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.smartphone-titanium-frame {
+  width: 100%;
+  max-width: 290px;
+  aspect-ratio: 9 / 18.5;
+  background: #0d1a21;
+  border-radius: 42px;
+  border: 4px solid #334e5a;
+  box-shadow: 0 24px 60px rgba(20, 53, 65, 0.4), inset 0 0 0 2px rgba(200, 169, 107, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.smartphone-dynamic-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 20px;
+  background: #000000;
+  border-radius: 16px;
+  z-index: 10;
+}
+
+.smartphone-screen-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.smartphone-screen-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.reel-glass-pill {
+  position: absolute;
+  bottom: 14px;
+  left: 12px;
+  right: 12px;
+  background: rgba(20, 53, 65, 0.82);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 0.65rem 0.85rem;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.reel-action-inpage-btn {
+  background: var(--color-dorado);
+  color: #143541;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  width: 100%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.reel-action-inpage-btn:hover {
+  background: #ffffff;
+}
+
+/* Rutas Vehiculares en Google Maps & Waze */
+.btn-route-maps {
+  background: linear-gradient(180deg, #1F4E5F 0%, #153844 100%);
+  border: 1px solid rgba(200, 169, 107, 0.4);
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.825rem;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-route-maps:hover {
+  background: var(--color-dorado);
+  color: #143541 !important;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-route-waze {
+  background: linear-gradient(180deg, #2b687e 0%, #1F4E5F 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.825rem;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-route-waze:hover {
+  background: #33ccff;
+  color: #0d2833 !important;
+  border-color: #33ccff;
+  transform: translateY(-1px);
 }
 
 /* --- HERO DE PÁGINAS DEDICADAS DE PROPIEDAD --- */
