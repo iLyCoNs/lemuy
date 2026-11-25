@@ -329,13 +329,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 78px;
   gap: 1.5rem;
   transition: height 0.25s ease;
 }
 
 .main-header.is-scrolled .navbar {
-  height: 64px;
+  height: 66px;
 }
 
 .brand-logo {
@@ -345,6 +345,35 @@ section {
   text-decoration: none;
   flex-shrink: 0;
   min-width: 0;
+}
+
+.brand-full-logo {
+  display: block;
+  height: 62px;
+  width: auto;
+  max-width: 225px;
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(1.22) contrast(1.06) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.48));
+  transition: transform 0.25s ease, height 0.25s ease, filter 0.25s ease;
+}
+
+.main-header.is-scrolled .brand-full-logo {
+  height: 50px;
+}
+
+.brand-logo:hover .brand-full-logo {
+  transform: translateY(-1px);
+  filter: brightness(1.28) contrast(1.08) drop-shadow(0 4px 14px rgba(200, 169, 107, 0.38));
+}
+
+.footer-brand-logo {
+  display: block;
+  height: 64px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  filter: brightness(1.16) contrast(1.05) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
 }
 
 .brand-icon {
@@ -368,8 +397,8 @@ section {
   padding: 0;
   background: transparent;
   border: none;
-  border-radius: 11px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.42);
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.38);
   overflow: hidden;
 }
 
@@ -378,6 +407,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: brightness(1.15) contrast(1.05);
 }
 
 .brand-logo:hover .brand-icon--crest {
@@ -3015,6 +3045,16 @@ body.video-modal-active .floating-whatsapp-btn {
 /* ==========================================================================
    RESPONSIVE DESIGN (Perfeccionado Windows Desktop & Móviles)
    ========================================================================== */
+@media (max-width: 1240px) {
+  .brand-full-logo {
+    height: 50px;
+  }
+  .nav-link {
+    padding: 0.45rem 0.72rem;
+    font-size: 0.84rem;
+  }
+}
+
 @media (max-width: 1080px) {
   .nav-menu { 
     display: none !important; 
@@ -3111,7 +3151,7 @@ body.video-modal-active .floating-whatsapp-btn {
 
   /* Encabezado y Navbar Móvil */
   .navbar {
-    height: 58px !important;
+    height: 64px !important;
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -3120,10 +3160,20 @@ body.video-modal-active .floating-whatsapp-btn {
     box-sizing: border-box !important;
     width: 100% !important;
   }
+  .main-header.is-scrolled .navbar {
+    height: 58px !important;
+  }
   .brand-logo {
     min-width: 0 !important;
     flex: 1 1 auto !important;
     gap: 0.55rem !important;
+  }
+  .brand-full-logo {
+    height: 50px !important;
+    max-width: min(188px, 100%) !important;
+  }
+  .main-header.is-scrolled .brand-full-logo {
+    height: 44px !important;
   }
   .header-cta-group {
     display: flex !important;
@@ -6166,5 +6216,11 @@ html.reveal-ready [data-reveal].is-revealed {
   .portfolio-compare-toggle {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 370px) {
+  .brand-full-logo {
+    height: 42px !important;
   }
 }
