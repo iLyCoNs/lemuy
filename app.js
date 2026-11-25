@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScrollProgress();
   initMaster3DCards();
   initPortfolioExplorer();
-  initDirectSavingsCalculator();
   initScrollReveal();
   initSmoothScroll();
 });
@@ -1631,7 +1630,7 @@ function initScrollReveal() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const targets = [];
-  document.querySelectorAll('.section-header, .master-dossier-ribbon, .direct-savings-simulator, .interactive-map-wrapper, .contact-card').forEach((el) => {
+  document.querySelectorAll('.section-header, .master-dossier-ribbon, .interactive-map-wrapper, .contact-card').forEach((el) => {
     targets.push({ el, delay: 0 });
   });
 
@@ -1724,73 +1723,4 @@ function initPortfolioExplorer() {
       compareToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   }
-}
-
-/* ==========================================================================
-   15. SIMULADOR EN VIVO UF -> CLP & AHORRO 0% COMISIÓN
-   ========================================================================== */
-function initDirectSavingsCalculator() {
-  const sim = document.getElementById('directSavingsSimulator');
-  if (!sim) return;
-
-  const slider = sim.querySelector('#simUfRange');
-  const rateInput = sim.querySelector('#simUfRate');
-  const ufDisplay = sim.querySelector('#simUfValueDisplay');
-  const clpTotalEl = sim.querySelector('#simClpTotal');
-  const clpSavingEl = sim.querySelector('#simCommissionSaving');
-  const waBtn = sim.querySelector('#simWhatsappCta');
-  const presetBtns = Array.from(sim.querySelectorAll('.sim-preset-btn[data-uf]'));
-
-  if (!slider || !rateInput) return;
-
-  const fmtClp = new Intl.NumberFormat('es-CL', {
-    style: 'currency',
-    currency: 'CLP',
-    maximumFractionDigits: 0
-  });
-  const fmtUf = new Intl.NumberFormat('es-CL', { maximumFractionDigits: 0 });
-
-  let selectedLabel = 'Fundo Isla Taucolón (15,93 Has)';
-
-  function recalculate() {
-    const uf = Number(slider.value) || 8900;
-    const rate = Math.max(30000, Math.min(60000, Number(rateInput.value) || 38500));
-    const totalClp = uf * rate;
-    // Comisión estándar mercado chileno: 2% + 19% IVA = 2,38% por parte compradora
-    const commissionSaved = Math.round(totalClp * 0.0238);
-
-    if (ufDisplay) ufDisplay.textContent = `UF ${fmtUf.format(uf)}`;
-    if (clpTotalEl) clpTotalEl.textContent = fmtClp.format(totalClp);
-    if (clpSavingEl) clpSavingEl.textContent = fmtClp.format(commissionSaved);
-
-    if (waBtn) {
-      const msg = `Hola, evalué la inversión de ${selectedLabel} (${fmtUf.format(uf)} UF) con ahorro estimado de ${fmtClp.format(commissionSaved)} CLP en comisión directa 0%. Quisiera coordinar contacto con el dueño.`;
-      waBtn.href = getWhatsAppUrl(msg);
-    }
-  }
-
-  presetBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      presetBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      slider.value = btn.getAttribute('data-uf');
-      selectedLabel = btn.getAttribute('data-label') || 'Propiedad Santuario Lemuy';
-      recalculate();
-    });
-  });
-
-  slider.addEventListener('input', () => {
-    presetBtns.forEach((b) => {
-      const match = Number(b.getAttribute('data-uf')) === Number(slider.value);
-      b.classList.toggle('active', match);
-      if (match) selectedLabel = b.getAttribute('data-label') || selectedLabel;
-    });
-    if (!presetBtns.some((b) => b.classList.contains('active'))) {
-      selectedLabel = 'Inversión personalizada en portafolio';
-    }
-    recalculate();
-  });
-
-  rateInput.addEventListener('input', recalculate);
-  recalculate();
 }
