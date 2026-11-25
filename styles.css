@@ -2689,7 +2689,50 @@ section {
 
 .video-modal-box.aspect-9-16 .modal-video-element {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.modal-video-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.72);
+  color: #E8CFA0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 4;
+}
+
+.modal-video-loader.is-visible {
+  opacity: 1;
+}
+
+.modal-loader-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(200, 169, 107, 0.25);
+  border-top-color: #C8A96B;
+  animation: modalSpin 0.8s linear infinite;
+}
+
+@keyframes modalSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Aislamiento de compositor GPU cuando el reproductor fullscreen está abierto */
+body.video-modal-active .hero-video-bg-wrap,
+body.video-modal-active .video-dual-stage video,
+body.video-modal-active .floating-whatsapp-btn {
+  visibility: hidden !important;
 }
 
 /* Barra Superior Dedicada: Separa 100% los botones de cierre de los controles de YouTube */
@@ -3526,18 +3569,48 @@ section {
     display: none !important;
   }
 
-  /* Reproductor Modal en Dispositivos Móviles (Cero interferencia con controles) */
+  /* Reproductor Solo-Video Fullscreen en Dispositivos Móviles (Cero blur/decodificadores de fondo) */
   .video-modal-backdrop {
-    padding: 0.5rem !important;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px) !important;
+    background: #000000 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
   .video-modal-box {
-    border-radius: 12px !important;
+    border-radius: 0 !important;
+    border: none !important;
     max-width: 100% !important;
     width: 100% !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    box-shadow: none !important;
+    background: #000000 !important;
+    justify-content: space-between !important;
+  }
+  .video-modal-box.aspect-9-16 {
+    max-width: 100% !important;
+  }
+  .video-modal-media-wrap {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    background: #000000 !important;
+  }
+  .video-modal-box.aspect-9-16 .video-modal-media-wrap {
+    max-height: none !important;
+    aspect-ratio: auto !important;
+  }
+  .modal-video-element {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
   }
   .video-modal-topbar {
-    padding: 0.6rem 0.85rem !important;
+    padding: 0.65rem 0.9rem !important;
     gap: 0.5rem !important;
+    background: #08120e !important;
   }
   .video-modal-gear-tip {
     display: none !important; /* Optimiza espacio en pantallas estrechas */
@@ -3547,15 +3620,32 @@ section {
     padding: 0.25rem 0.55rem !important;
   }
   .video-modal-close {
-    padding: 0.35rem 0.75rem !important;
-    font-size: 0.8rem !important;
-    min-height: 38px !important;
+    padding: 0.42rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    min-height: 40px !important;
+    touch-action: manipulation;
   }
   .modal-video-footer {
-    padding: 0.75rem 0.85rem !important;
+    padding: 0.65rem 0.9rem !important;
     flex-direction: column !important;
-    text-align: center !important;
-    gap: 0.65rem !important;
+    align-items: stretch !important;
+    text-align: left !important;
+    gap: 0.5rem !important;
+    background: #08120e !important;
+  }
+  .modal-video-footer > div:last-child {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .modal-video-footer h4 {
+    font-size: 0.95rem !important;
+    margin-bottom: 0 !important;
+  }
+  .modal-video-footer p {
+    display: none !important;
+  }
+  .cinema-screen-wrap {
+    cursor: pointer;
   }
 
   /* Galería Fotográfica Móvil */

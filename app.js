@@ -211,9 +211,14 @@ function initSmartphoneReel() {
 }
 
 /* ==========================================================================
-   4. REPRODUCTOR CINEMATOGRÁFICO EN MODAL (Video MP4 o YouTube 4K)
+   4. REPRODUCTOR CINEMATOGRÁFICO EN MODAL + LIBERACIÓN DE DECODIFICADORES MÓVILES
    ========================================================================== */
-let modalBackdrop, modalVideo, modalIframe, modalTitle, modalDesc;
+let modalBackdrop, modalVideo, modalIframe, modalTitle, modalDesc, modalLoader;
+let suspendedBackgroundVideos = [];
+let restoreVideosTimer = null;
+let dualSuiteObserver = null;
+const IS_MOBILE_VIDEO_ENV = () =>
+  window.matchMedia('(max-width: 991px), (pointer: coarse)').matches;
 
 function initVideoModal() {
   modalBackdrop = document.getElementById('videoModal');
@@ -223,7 +228,40 @@ function initVideoModal() {
   modalIframe = modalBackdrop.querySelector('.modal-iframe-element');
   modalTitle = modalBackdrop.querySelector('#modalVideoTitle');
   modalDesc = modalBackdrop.querySelector('#modalVideoDesc');
-  
+
+  // Asegurar atributos iOS/Android inline y crear indicador sutil de carga
+  const mediaWrap = modalBackdrop.querySelector('.video-modal-media-wrap');
+  if (modalVideo) {
+    modalVideo.setAttribute('playsinline', '');
+    modalVideo.setAttribute('webkit-playsinline', '');
+    modalVideo.preload = 'auto';
+
+    if (mediaWrap && !mediaWrap.querySelector('.modal-video-loader')) {
+      modalLoader = document.createElement('div');
+      modalLoader.className = 'modal-video-loader';
+      modalLoader.setAttribute('aria-hidden', 'true');
+      modalLoader.innerHTML = '<span class="modal-loader-spinner"></span><span>Cargando video...</span>';
+      mediaWrap.appendChild(modalLoader);
+    } else if (mediaWrap) {
+      modalLoader = mediaWrap.querySelector('.modal-video-loader');
+    }
+
+    const hideLoader = () => {
+      if (modalLoader) modalLoader.classList.remove('is-visible');
+    };
+    const showLoader = () => {
+      if (modalLoader && modalBackdrop.classList.contains('active') && modalVideo.style.display !== 'none') {
+        modalLoader.classList.add('is-visible');
+      }
+    };
+
+    modalVideo.addEventListener('loadstart', showLoader);
+    modalVideo.addEventListener('waiting', showLoader);
+    modalVideo.addEventListener('canplay', hideLoader);
+    modalVideo.addEventListener('playing', hideLoader);
+    modalVideo.addEventListener('error', hideLoader);
+  }
+
   // Soporte para todos los botones de cerrar (superior y pie)
   const closeButtons = modalBackdrop.querySelectorAll('.video-modal-close, .btn-modal-close-footer');
   closeButtons.forEach(btn => {
@@ -245,24 +283,123 @@ function initVideoModal() {
   });
 }
 
+function suspendBackgroundVideos() {
+  if (restoreVideosTimer) {
+    clearTimeout(restoreVideosTimer);
+    restoreVideosTimer = null;
+  }
+
+  // Evita sobrescribir snapshots si ya hay una suspensión activa
+  if (suspendedBackgroundVideos.length > 0) return;
+
+  const allVideos = Array.from(document.querySelectorAll('video')).filter(v => v !== modalVideo);
+  suspendedBackgroundVideos = allVideos.map((v) => {
+    const childSources = Array.from(v.querySelectorAll('source')).map(s => ({
+      el: s,
+      src: s.getAttribute('src')
+    }));
+    const directSrc = v.getAttribute('src');
+    const wasPlaying = !v.paused && !v.ended && v.readyState > 0;
+    const savedTime = Number.isFinite(v.currentTime) ? v.currentTime : 0;
+
+    // Pausar y liberar explícitamente el decodificador de hardware y la descarga en curso
+    try {
+      v.pause();
+      if (directSrc) v.removeAttribute('src');
+      childSources.forEach(item => {
+        if (item.src) item.el.removeAttribute('src');
+      });
+      v.load();
+    } catch (err) {
+      console.warn('Santuario Lemuy: No se pudo suspender un video de fondo:', err);
+    }
+
+    return {
+      video: v,
+      directSrc,
+      childSources,
+      wasPlaying,
+      savedTime
+    };
+  });
+}
+
+function restoreBackgroundVideos() {
+  if (!suspendedBackgroundVideos.length) return;
+  const items = suspendedBackgroundVideos.slice();
+  suspendedBackgroundVideos = [];
+  const isMobile = IS_MOBILE_VIDEO_ENV();
+  let resumedOneMobileLoop = false;
+
+  items.forEach(({ video, directSrc, childSources, wasPlaying, savedTime }) => {
+    if (!video || !video.isConnected) return;
+
+    try {
+      if (directSrc) video.setAttribute('src', directSrc);
+      childSources.forEach(({ el, src }) => {
+        if (src) el.setAttribute('src', src);
+      });
+      video.load();
+
+      if (savedTime > 0) {
+        const onMeta = () => {
+          try {
+            if (Number.isFinite(video.duration) && savedTime < video.duration) {
+              video.currentTime = savedTime;
+            }
+          } catch (_) {}
+        };
+        video.addEventListener('loadedmetadata', onMeta, { once: true });
+      }
+
+      const rect = video.getBoundingClientRect();
+      const inViewport = rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < window.innerHeight;
+      let shouldResume = wasPlaying;
+
+      if (isMobile) {
+        if (!inViewport) {
+          shouldResume = false;
+        } else if (video.classList.contains('loop-video')) {
+          if (!resumedOneMobileLoop && (wasPlaying || rect.top < window.innerHeight * 0.75)) {
+            resumedOneMobileLoop = true;
+            shouldResume = true;
+          } else {
+            shouldResume = false;
+          }
+        } else if (video.classList.contains('hero-video-bg')) {
+          shouldResume = inViewport;
+        }
+      }
+
+      if (shouldResume) {
+        video.play().catch(() => {});
+      }
+    } catch (err) {
+      console.warn('Santuario Lemuy: No se pudo restaurar un video de fondo:', err);
+    }
+  });
+}
+
 function openVideoModal(src, title, desc, isYoutube = false, isReel = false) {
   if (!modalBackdrop) return;
 
+  // 1. Liberar decodificadores de hardware y descargas en segundo plano ANTES de iniciar el modal
+  suspendBackgroundVideos();
+
   const modalBox = modalBackdrop.querySelector('.video-modal-box');
   const isVertical = isReel || (typeof src === 'string' && src.toLowerCase().includes('reel'));
-  
+
   if (modalBox) {
-    if (isVertical) {
-      modalBox.classList.add('aspect-9-16');
-    } else {
-      modalBox.classList.remove('aspect-9-16');
-    }
+    modalBox.classList.toggle('aspect-9-16', isVertical);
   }
 
   const isYtUrl = isYoutube || (typeof src === 'string' && (src.includes('youtube.com') || src.includes('youtu.be') || src === 'UyUsmi38UsI'));
 
+  document.body.classList.add('video-modal-active');
+  modalBackdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
   if (isYtUrl) {
-    // Modo YouTube en 4K
     let videoId = src;
     if (typeof src === 'string') {
       if (src.includes('youtu.be/')) {
@@ -272,35 +409,39 @@ function openVideoModal(src, title, desc, isYoutube = false, isReel = false) {
       }
     }
 
+    if (modalLoader) modalLoader.classList.remove('is-visible');
     if (modalVideo) {
       modalVideo.pause();
+      modalVideo.removeAttribute('src');
+      modalVideo.load();
       modalVideo.style.display = 'none';
-      modalVideo.src = '';
     }
     if (modalIframe) {
       modalIframe.style.display = 'block';
       modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
     }
   } else {
-    // Modo Video MP4 local/remoto
     if (modalIframe) {
-      modalIframe.src = '';
+      modalIframe.removeAttribute('src');
       modalIframe.style.display = 'none';
     }
     if (modalVideo) {
       modalVideo.style.display = 'block';
-      modalVideo.src = src;
       modalVideo.muted = false;
       modalVideo.controls = true;
-      modalVideo.play().catch(e => console.log('Reproducción requerida por usuario:', e));
+      modalVideo.preload = 'auto';
+      modalVideo.src = src;
+      modalVideo.load();
+      if (modalLoader) modalLoader.classList.add('is-visible');
+      modalVideo.play().catch(e => {
+        if (modalLoader) modalLoader.classList.remove('is-visible');
+        console.log('Reproducción requerida por usuario:', e);
+      });
     }
   }
 
   if (modalTitle) modalTitle.textContent = title;
   if (modalDesc) modalDesc.textContent = desc;
-
-  modalBackdrop.classList.add('active');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeVideoModal() {
@@ -310,26 +451,60 @@ function closeVideoModal() {
   if (modalBox) {
     modalBox.classList.remove('aspect-9-16');
   }
+  if (modalLoader) modalLoader.classList.remove('is-visible');
 
   if (modalIframe) {
-    modalIframe.src = '';
+    modalIframe.removeAttribute('src');
     modalIframe.style.display = 'none';
   }
   if (modalVideo) {
     modalVideo.pause();
-    modalVideo.currentTime = 0;
-    modalVideo.src = '';
+    modalVideo.removeAttribute('src');
+    modalVideo.load();
     modalVideo.style.display = 'block';
   }
 
   modalBackdrop.classList.remove('active');
+  document.body.classList.remove('video-modal-active');
   document.body.style.overflow = '';
+
+  // Esperar un ciclo breve para asegurar liberación completa del decodificador antes de restaurar fondo
+  restoreVideosTimer = setTimeout(() => {
+    restoreVideosTimer = null;
+    restoreBackgroundVideos();
+  }, 140);
 }
 
 /* ==========================================================================
    ESTUDIO AUDIOVISUAL DUAL: SELECTOR DE FORMATO & MODO TEATRO IN-PAGE
    ========================================================================== */
 function initVideoDualSuite() {
+  const loopVideos = Array.from(document.querySelectorAll('.video-dual-stage .loop-video'));
+  const heroVideo = document.querySelector('.hero-video-bg');
+
+  // Sincroniza qué previsualizaciones deben reproducirse según visibilidad y modo activo
+  function syncDualStagePlayback(stage) {
+    if (!stage || document.body.classList.contains('video-modal-active')) return;
+    const isMobile = IS_MOBILE_VIDEO_ENV();
+    const videos = Array.from(stage.querySelectorAll('.loop-video'));
+
+    videos.forEach((v) => {
+      const card = v.closest('.video-card-cinema, .video-card-reel');
+      const isHiddenByFilter = !card || getComputedStyle(card).display === 'none';
+
+      if (isHiddenByFilter) {
+        if (!v.paused) v.pause();
+        return;
+      }
+
+      if (!isMobile) {
+        v.muted = true;
+        v.playsInline = true;
+        v.play().catch(() => {});
+      }
+    });
+  }
+
   // Selector de Formato (16:9, 9:16 o Vista Dual Simultánea)
   const toolbars = document.querySelectorAll('.video-format-toolbar');
   toolbars.forEach(toolbar => {
@@ -349,7 +524,68 @@ function initVideoDualSuite() {
         } else if (format === '9-16') {
           stage.classList.add('view-reel-only');
         }
+        syncDualStagePlayback(stage);
       });
+    });
+
+    syncDualStagePlayback(stage);
+  });
+
+  // En dispositivos móviles o táctiles: como máximo 1 video preview activo visible a la vez
+  if ('IntersectionObserver' in window && (loopVideos.length || heroVideo)) {
+    const visibleLoopVideos = new Set();
+    dualSuiteObserver = new IntersectionObserver((entries) => {
+      if (document.body.classList.contains('video-modal-active')) return;
+
+      entries.forEach((entry) => {
+        const video = entry.target;
+        const isLoop = video.classList.contains('loop-video');
+
+        if (isLoop) {
+          const card = video.closest('.video-card-cinema, .video-card-reel');
+          const visibleOnScreen = entry.isIntersecting && card && getComputedStyle(card).display !== 'none';
+          if (visibleOnScreen) {
+            visibleLoopVideos.add(video);
+          } else {
+            visibleLoopVideos.delete(video);
+            if (!video.paused) video.pause();
+          }
+        } else {
+          // Video de fondo del Hero: pausar al salir de pantalla para ahorrar recursos en móvil
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else if (IS_MOBILE_VIDEO_ENV() && !video.paused) {
+            video.pause();
+          }
+        }
+      });
+
+      if (IS_MOBILE_VIDEO_ENV() && loopVideos.length) {
+        // Reproducir únicamente la primera previsualización visible para no saturar decodificadores
+        let playedOne = false;
+        loopVideos.forEach((v) => {
+          if (!playedOne && visibleLoopVideos.has(v)) {
+            playedOne = true;
+            v.muted = true;
+            v.playsInline = true;
+            v.play().catch(() => {});
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      }
+    }, { threshold: 0.4 });
+
+    loopVideos.forEach(v => dualSuiteObserver.observe(v));
+    if (heroVideo) dualSuiteObserver.observe(heroVideo);
+  }
+
+  // Permitir tocar directamente el lienzo del video 16:9 para abrir Solo Video en pantalla completa
+  document.querySelectorAll('.cinema-screen-wrap').forEach(wrap => {
+    wrap.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      const openBtn = wrap.querySelector('[data-open-inpage-video]');
+      if (openBtn) openBtn.click();
     });
   });
 
@@ -357,6 +593,7 @@ function initVideoDualSuite() {
   document.querySelectorAll('[data-open-inpage-video]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const videoSrc = btn.getAttribute('data-video-src');
       const videoTitle = btn.getAttribute('data-video-title') || 'Registro Aéreo 4K';
       const videoDesc = btn.getAttribute('data-video-desc') || 'Perspectiva aérea in situ de la propiedad.';
@@ -375,7 +612,7 @@ function initVideoDualSuite() {
       const vid = card?.querySelector('video');
       if (vid) {
         vid.muted = !vid.muted;
-        btn.innerHTML = vid.muted 
+        btn.innerHTML = vid.muted
           ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/></svg> Audio desactivado`
           : `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Audio activo`;
       }
