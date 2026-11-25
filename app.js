@@ -630,7 +630,7 @@ const propertiesData = {
     title: "Parcela de 5.000 m² en Isla Lemuy",
     description: "Topografía suave con vista despejada a los canales interiores de Chiloé y bosque nativo. La dimensión ideal para segunda vivienda o descanso definitivo a minutos del ferry.",
     videoSrc: "https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_PROPIEDAD.mp4",
-    poster: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
+    poster: "images/posters/parcela_16_9.jpg",
     specs: [
       { label: "Superficie", val: "5.000 m² (0,5 ha)" },
       { label: "Estatus Legal", val: "Rol Propio SII (SAG & CBR)" },
@@ -650,7 +650,7 @@ const propertiesData = {
     title: "Fundo Privado de 5 Hectáreas (50.000 m²)",
     description: "Extensión de campo con praderas limpias para construir, bosque nativo maduro y vertiente permanente de agua pura. Máxima privacidad, seguridad y plusvalía en Chiloé.",
     videoSrc: "https://github.com/iLyCoNs/austral-drones/releases/download/videos/16_9_ISLA_LEMUY.mp4",
-    poster: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    poster: "images/posters/fundo5ha_16_9.jpg",
     specs: [
       { label: "Superficie", val: "50.000 m² (5,0 ha)" },
       { label: "Estatus Legal", val: "Rol Propio y Títulos al Día" },
