@@ -213,13 +213,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Hoja de Estilos con Cache Buster -->
-  <link rel="stylesheet" href="styles.css?v=27.0">
+  <link rel="stylesheet" href="styles.css?v=28.0">
 
   <!-- Estilos Críticos Responsivos Móviles (Garantía sin caché) -->
   <style>
     /* Prevención absoluta de desborde horizontal */
     html, body {
-      overflow-x: hidden !important;
+      overflow-x: clip !important;
       max-width: 100% !important;
       width: 100% !important;
       margin: 0 !important;
@@ -760,6 +760,11 @@
           </div>
         </a>
       </div>
+
+      <a href="#propiedades" class="hero-scroll-cue" aria-label="Desplazar al portafolio de propiedades">
+        <span>Explorar Portafolio</span>
+        <span class="hero-scroll-track" aria-hidden="true"><span class="hero-scroll-dot"></span></span>
+      </a>
     </div>
   </section>
 
@@ -774,10 +779,99 @@
         </p>
       </div>
 
+      <!-- Barra Curada de Filtro & Comparador Ejecutivo -->
+      <div class="portfolio-curated-toolbar" role="region" aria-label="Filtros y comparador de propiedades">
+        <div class="portfolio-filter-pills" role="tablist" aria-label="Filtrar propiedades por categoría">
+          <button type="button" class="portfolio-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            Todas <span class="portfolio-filter-count">(4)</span>
+          </button>
+          <button type="button" class="portfolio-filter-btn" data-filter="lemuy" role="tab" aria-selected="false">
+            Isla Lemuy <span class="portfolio-filter-count">(2)</span>
+          </button>
+          <button type="button" class="portfolio-filter-btn" data-filter="nautica" role="tab" aria-selected="false">
+            Borde de Agua & Náutica <span class="portfolio-filter-count">(2)</span>
+          </button>
+          <button type="button" class="portfolio-filter-btn" data-filter="macro" role="tab" aria-selected="false">
+            Macro-Predios <span class="portfolio-filter-count">(2)</span>
+          </button>
+        </div>
+
+        <button type="button" class="portfolio-compare-toggle" id="portfolioCompareBtn" aria-expanded="false" aria-controls="portfolioCompareDrawer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          Comparar las 4 Propiedades
+        </button>
+      </div>
+
+      <!-- Cuadro Comparativo Ejecutivo Desplegable -->
+      <div class="portfolio-compare-drawer" id="portfolioCompareDrawer">
+        <div class="portfolio-compare-inner">
+          <div class="compare-matrix-card">
+            <table class="compare-matrix-table">
+              <thead>
+                <tr>
+                  <th>Propiedad</th>
+                  <th>Superficie</th>
+                  <th>Atributo Distintivo</th>
+                  <th>Certeza Legal</th>
+                  <th>Valor / Condición</th>
+                  <th>Ficha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="compare-prop-name">Parcela de 5.000 m²</span>
+                    <span class="compare-prop-sub">Isla Lemuy • Chiloé</span>
+                  </td>
+                  <td><strong>5.000 m²</strong> (0,5 Ha)</td>
+                  <td>Vista mar interior &amp; bosque nativo</td>
+                  <td>Rol Propio SII &amp; CBR</td>
+                  <td><span class="compare-badge-highlight">Directo 0% Com.</span></td>
+                  <td><a href="parcela-5000m2.html" class="btn btn-outline btn-sm">Ver Ficha &rarr;</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="compare-prop-name">Fundo de 5 Hectáreas</span>
+                    <span class="compare-prop-sub">Isla Lemuy • Puqueldón</span>
+                  </td>
+                  <td><strong>50.000 m²</strong> (5 Has)</td>
+                  <td>Vertiente viva 365d &amp; subdivisión D.L. 3.516</td>
+                  <td>Rol Propio SAG &amp; CBR</td>
+                  <td><span class="compare-badge-highlight">Directo 0% Com.</span></td>
+                  <td><a href="fundo-5-hectareas.html" class="btn btn-outline btn-sm">Ver Ficha &rarr;</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="compare-prop-name">Fundo Isla Taucolón</span>
+                    <span class="compare-prop-sub">Archipiélago Chauques</span>
+                  </td>
+                  <td><strong>15,93 Has</strong> (159.300 m²)</td>
+                  <td>410m playa de piedrecilla &amp; marina al frente</td>
+                  <td>Rol Propio SAG &amp; CBR</td>
+                  <td><span class="compare-badge-highlight">UF 8.900 • 0% Com.</span></td>
+                  <td><a href="fundo-taucolon-15ha.html" class="btn btn-accent btn-sm">Ver Ficha &rarr;</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="compare-prop-name">Depto. La Rivera (Piso 5)</span>
+                    <span class="compare-prop-sub">Villarrica • Araucanía</span>
+                  </td>
+                  <td><strong>113 m²</strong> (90 + 23 m²)</td>
+                  <td>Terraza cristal, río, lago, volcán &amp; muelle</td>
+                  <td>Rol Individual • Hipotecable</td>
+                  <td><span class="compare-badge-highlight">UF 7.770 • MZ12694</span></td>
+                  <td><a href="departamento-villarrica.html" class="btn btn-accent btn-sm">Ver Ficha &rarr;</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       <!-- Grid Modular de Propiedades con Diseño Minimalista Monocromático -->
       <div class="property-preview-grid">
         <!-- Tarjeta 1: Parcela de 5.000 m² -->
-        <article class="property-preview-card">
+        <article class="property-preview-card" data-category="lemuy">
           <div class="property-preview-media">
             <span class="property-preview-badge">Refugio Residencial</span>
             <img src="images/posters/parcela_16_9.jpg" alt="Parcela 5.000 m² en Isla Lemuy con vista al mar interior" loading="lazy">
@@ -839,7 +933,7 @@
         </article>
 
         <!-- Tarjeta 2: Fundo de 5 Hectáreas -->
-        <article class="property-preview-card">
+        <article class="property-preview-card" data-category="lemuy macro">
           <div class="property-preview-media">
             <span class="property-preview-badge">Macro-Predio Austral</span>
             <img src="images/posters/fundo5ha_16_9.jpg" alt="Fundo de 5 Hectáreas en Isla Lemuy con vertiente y praderas" loading="lazy">
@@ -901,7 +995,7 @@
         </article>
 
         <!-- Tarjeta 3: Fundo Costero 15,93 Has (Taucolón) -->
-        <article class="property-preview-card featured">
+        <article class="property-preview-card featured" data-category="nautica macro">
           <div class="property-preview-media">
             <span class="property-preview-badge" style="background: rgba(207, 168, 89, 0.95); color: #07100b; font-weight: 800;">410m Borde de Playa</span>
             <span class="property-preview-price-tag">UF 8.900</span>
@@ -964,7 +1058,7 @@
         </article>
 
         <!-- Tarjeta 4: Departamento Vista Río, Lago & Volcán (Villarrica) -->
-        <article class="property-preview-card featured">
+        <article class="property-preview-card featured" data-category="nautica">
           <div class="property-preview-media">
             <span class="property-preview-badge" style="background: rgba(31, 78, 95, 0.95); color: #F6F2EA; font-weight: 800;">Orilla de Río & Muelle</span>
             <span class="property-preview-price-tag">UF 7.770</span>
@@ -1040,37 +1134,129 @@
         </p>
       </div>
 
-      <div class="secure-steps-grid">
-        <div class="secure-step-card">
-          <div class="secure-step-num">1</div>
-          <h3 class="secure-step-title">Contacto Directo & Planimetría</h3>
-          <p class="secure-step-desc">
-            Escríbanos por WhatsApp. Le enviaremos de inmediato los planos georreferenciados, deslindes exactos y especificaciones técnicas del predio de su interés.
-          </p>
+      <div class="secure-steps-grid is-timeline">
+        <div class="secure-step-card is-luxury-step">
+          <div>
+            <div class="secure-step-head">
+              <div class="secure-step-icon-pill">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <span class="secure-step-roman" aria-hidden="true">01</span>
+            </div>
+            <h3 class="secure-step-title">Contacto Directo & Planimetría</h3>
+            <p class="secure-step-desc">
+              Escríbanos por WhatsApp. Le enviaremos de inmediato los planos georreferenciados, deslindes exactos y especificaciones técnicas del predio de su interés.
+            </p>
+          </div>
+          <div class="secure-step-foot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Sin intermediarios • Respuesta directa</span>
+          </div>
         </div>
 
-        <div class="secure-step-card">
-          <div class="secure-step-num">2</div>
-          <h3 class="secure-step-title">Visita Guiada en Terreno</h3>
-          <p class="secure-step-desc">
-            Coordinamos una fecha para recibirlo personalmente en Chonchi o Isla Lemuy. Recorreremos a pie los senderos, la playa y los miradores de la propiedad.
-          </p>
+        <div class="secure-step-card is-luxury-step">
+          <div>
+            <div class="secure-step-head">
+              <div class="secure-step-icon-pill">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              </div>
+              <span class="secure-step-roman" aria-hidden="true">02</span>
+            </div>
+            <h3 class="secure-step-title">Visita Guiada en Terreno</h3>
+            <p class="secure-step-desc">
+              Coordinamos una fecha para recibirlo personalmente en Chonchi, Isla Lemuy o Villarrica. Recorreremos a pie los deslindes, playas y miradores de la propiedad.
+            </p>
+          </div>
+          <div class="secure-step-foot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Recorrido in situ con el propietario</span>
+          </div>
         </div>
 
-        <div class="secure-step-card">
-          <div class="secure-step-num">3</div>
-          <h3 class="secure-step-title">Auditoría Legal de Títulos</h3>
-          <p class="secure-step-desc">
-            Su abogado de confianza revisa la carpeta completa: Certificado de Dominio Vigente, Subdivisión SAG aprobada y Rol Propio individual emitido por el SII.
-          </p>
+        <div class="secure-step-card is-luxury-step">
+          <div>
+            <div class="secure-step-head">
+              <div class="secure-step-icon-pill">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <span class="secure-step-roman" aria-hidden="true">03</span>
+            </div>
+            <h3 class="secure-step-title">Auditoría Legal de Títulos</h3>
+            <p class="secure-step-desc">
+              Su abogado de confianza revisa la carpeta completa: Certificado de Dominio Vigente, Subdivisión SAG aprobada y Rol Propio individual emitido por el SII.
+            </p>
+          </div>
+          <div class="secure-step-foot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Carpeta saneada y revisable al 100%</span>
+          </div>
         </div>
 
-        <div class="secure-step-card">
-          <div class="secure-step-num">4</div>
-          <h3 class="secure-step-title">Firma en Notaría & Entrega</h3>
-          <p class="secure-step-desc">
-            La compraventa se formaliza ante Notario Público. El pago se resguarda mediante Vale Vista contra inscripción en el Conservador de Bienes Raíces de Castro.
-          </p>
+        <div class="secure-step-card is-luxury-step">
+          <div>
+            <div class="secure-step-head">
+              <div class="secure-step-icon-pill">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <span class="secure-step-roman" aria-hidden="true">04</span>
+            </div>
+            <h3 class="secure-step-title">Firma en Notaría & Entrega</h3>
+            <p class="secure-step-desc">
+              La compraventa se formaliza ante Notario Público. El pago se resguarda mediante Vale Vista contra inscripción en el Conservador de Bienes Raíces.
+            </p>
+          </div>
+          <div class="secure-step-foot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Custodia notarial • Vale Vista bancario</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulador Transparente de Valor UF & Ahorro en Comisión (0% Corretaje) -->
+      <div class="direct-savings-simulator" id="directSavingsSimulator">
+        <div class="sim-grid">
+          <div>
+            <div class="sim-eyebrow">Calculadora de Transparencia • 0% Comisión</div>
+            <h3 class="sim-title">Estime su Valor en Pesos y Ahorro Directo</h3>
+            <p class="sim-sub">
+              En transacciones tradicionales de corretaje, el comprador paga el <strong>2% + IVA (2,38%)</strong> adicional. Al tratar directo con el dueño, ese capital permanece íntegro en su inversión.
+            </p>
+
+            <div class="sim-presets" aria-label="Valores de referencia rápidos">
+              <button type="button" class="sim-preset-btn active" data-uf="8900" data-label="Fundo Isla Taucolón (15,93 Has)">Fundo Taucolón • UF 8.900</button>
+              <button type="button" class="sim-preset-btn" data-uf="7770" data-label="Depto. La Rivera, Villarrica">Depto. Villarrica • UF 7.770</button>
+              <button type="button" class="sim-preset-btn" data-uf="3500" data-label="Presupuesto referencial de inversión">Evaluar UF 3.500</button>
+            </div>
+
+            <div class="sim-slider-wrap">
+              <div class="sim-slider-head">
+                <label for="simUfRange" class="sim-slider-label">Monto de la operación en UF</label>
+                <span class="sim-uf-readout" id="simUfValueDisplay">UF 8.900</span>
+              </div>
+              <input type="range" id="simUfRange" class="sim-range-input" min="1000" max="12000" step="10" value="8900">
+              <div class="sim-rate-row">
+                <label for="simUfRate">Valor UF referencial (CLP):</label>
+                <input type="number" id="simUfRate" class="sim-rate-input" value="38500" min="30000" max="60000" step="50">
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-results-panel">
+            <div class="sim-stat-block">
+              <span class="sim-stat-title">Equivalente Total Estimado (CLP)</span>
+              <span class="sim-stat-clp" id="simClpTotal">$342.650.000</span>
+            </div>
+
+            <div class="sim-saving-box">
+              <span class="sim-stat-title" style="color: #E8CFA0;">Ahorro en Comisión de Corretaje (2,38%)</span>
+              <div class="sim-saving-val" id="simCommissionSaving">$8.155.070</div>
+              <span style="font-size: 0.76rem; color: #dbe7df; display: block; margin-top: 0.25rem;">Ahorro directo garantizado por trato sin intermediarios</span>
+            </div>
+
+            <a href="https://wa.me/" target="_blank" id="simWhatsappCta" class="btn btn-accent" style="width: 100%; justify-content: center; white-space: nowrap;">
+              Solicitar Carpeta por WhatsApp &rarr;
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1089,8 +1275,11 @@
 
       <div class="reasons-grid">
         <div class="reason-card">
-          <div class="reason-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="reason-card-top">
+            <div class="reason-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span class="taucolon-pill-tag">Comunidad Segura</span>
           </div>
           <h3 class="reason-title">Seguridad & Calidad de Vida</h3>
           <p>
@@ -1099,8 +1288,11 @@
         </div>
 
         <div class="reason-card">
-          <div class="reason-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          <div class="reason-card-top">
+            <div class="reason-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <span class="taucolon-pill-tag">Canales Protegidos</span>
           </div>
           <h3 class="reason-title">Microclima de Canales</h3>
           <p>
@@ -1109,8 +1301,11 @@
         </div>
 
         <div class="reason-card">
-          <div class="reason-icon-wrap">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <div class="reason-card-top">
+            <div class="reason-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <span class="taucolon-pill-tag">Legado UNESCO</span>
           </div>
           <h3 class="reason-title">Patrimonio de la Humanidad UNESCO</h3>
           <p>
@@ -1421,6 +1616,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="app.js?v=27.0"></script>
+  <script src="app.js?v=28.0"></script>
 </body>
 </html>

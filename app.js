@@ -30,7 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initPropertyDirectContactForm();
   initLiveWeather();
+  initHeaderScrollProgress();
   initMaster3DCards();
+  initPortfolioExplorer();
+  initDirectSavingsCalculator();
+  initScrollReveal();
   initSmoothScroll();
 });
 
@@ -1562,4 +1566,231 @@ function initMaster3DCards() {
       }
     });
   });
+
+  // Destello champagne sutil en tarjetas editoriales complementarias
+  const glareTargets = document.querySelectorAll('.secure-step-card.is-luxury-step, .reason-card');
+  if (canTilt && glareTargets.length) {
+    glareTargets.forEach((card) => {
+      if (!card.querySelector('.card-3d-glare')) {
+        const g = document.createElement('div');
+        g.className = 'card-3d-glare';
+        g.setAttribute('aria-hidden', 'true');
+        card.prepend(g);
+      }
+      card.addEventListener('pointermove', (e) => {
+        if (e.pointerType && e.pointerType !== 'mouse') return;
+        const rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        card.style.setProperty('--mx', `${(((e.clientX - rect.left) / rect.width) * 100).toFixed(1)}%`);
+        card.style.setProperty('--my', `${(((e.clientY - rect.top) / rect.height) * 100).toFixed(1)}%`);
+      });
+    });
+  }
+}
+
+/* ==========================================================================
+   12. HILO DE PROGRESO DORADO & ELEVACIÓN ADAPTATIVA DE CABECERA
+   ========================================================================== */
+function initHeaderScrollProgress() {
+  const header = document.querySelector('.main-header');
+  if (!header) return;
+
+  let progressEl = header.querySelector('.header-scroll-progress');
+  if (!progressEl) {
+    progressEl = document.createElement('div');
+    progressEl.className = 'header-scroll-progress';
+    progressEl.setAttribute('aria-hidden', 'true');
+    header.appendChild(progressEl);
+  }
+
+  let ticking = false;
+  function updateProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0;
+
+    header.classList.toggle('is-scrolled', scrollTop > 40);
+    progressEl.style.transform = `scaleX(${ratio.toFixed(4)})`;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateProgress();
+}
+
+/* ==========================================================================
+   13. COREOGRAFÍA DE APARICIÓN AL SCROLL (Progresiva y Respetuosa)
+   ========================================================================== */
+function initScrollReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const targets = [];
+  document.querySelectorAll('.section-header, .master-dossier-ribbon, .direct-savings-simulator, .interactive-map-wrapper, .contact-card').forEach((el) => {
+    targets.push({ el, delay: 0 });
+  });
+
+  const gridSelectors = [
+    '.property-preview-grid',
+    '.taucolon-master-grid',
+    '.secure-steps-grid',
+    '.reasons-grid',
+    '.villarrica-gallery-grid',
+    '.taucolon-gallery-grid',
+    '.faq-list'
+  ];
+  gridSelectors.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((grid) => {
+      Array.from(grid.children).forEach((child, idx) => {
+        targets.push({ el: child, delay: Math.min(idx % 3, 2) * 85 });
+      });
+    });
+  });
+
+  if (!targets.length) return;
+
+  targets.forEach(({ el, delay }) => {
+    if (!el.hasAttribute('data-reveal')) {
+      el.setAttribute('data-reveal', '');
+      if (delay > 0) el.style.setProperty('--reveal-delay', `${delay}ms`);
+    }
+  });
+
+  document.documentElement.classList.add('reveal-ready');
+
+  const vh = window.innerHeight || 900;
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  targets.forEach(({ el }) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < vh * 0.92) {
+      el.classList.add('is-revealed');
+    } else {
+      observer.observe(el);
+    }
+  });
+}
+
+/* ==========================================================================
+   14. FILTRO CURADO DE PORTAFOLIO & MATRIZ COMPARATIVA (INDEX)
+   ========================================================================== */
+function initPortfolioExplorer() {
+  const toolbar = document.querySelector('.portfolio-curated-toolbar');
+  const grid = document.querySelector('.property-preview-grid');
+  if (!toolbar || !grid) return;
+
+  const filterBtns = Array.from(toolbar.querySelectorAll('.portfolio-filter-btn[data-filter]'));
+  const cards = Array.from(grid.querySelectorAll('.property-preview-card'));
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-filter');
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const categories = (card.getAttribute('data-category') || '').split(/\s+/);
+        const match = cat === 'all' || categories.includes(cat);
+        card.classList.toggle('is-filtered-out', !match);
+        if (match) {
+          visibleCount += 1;
+          card.classList.add('is-revealed');
+        }
+      });
+
+      grid.classList.toggle('is-2-cols', visibleCount === 2);
+    });
+  });
+
+  const compareToggle = document.getElementById('portfolioCompareBtn');
+  const compareDrawer = document.getElementById('portfolioCompareDrawer');
+  if (compareToggle && compareDrawer) {
+    compareToggle.addEventListener('click', () => {
+      const isOpen = compareDrawer.classList.toggle('is-open');
+      compareToggle.classList.toggle('active', isOpen);
+      compareToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+}
+
+/* ==========================================================================
+   15. SIMULADOR EN VIVO UF -> CLP & AHORRO 0% COMISIÓN
+   ========================================================================== */
+function initDirectSavingsCalculator() {
+  const sim = document.getElementById('directSavingsSimulator');
+  if (!sim) return;
+
+  const slider = sim.querySelector('#simUfRange');
+  const rateInput = sim.querySelector('#simUfRate');
+  const ufDisplay = sim.querySelector('#simUfValueDisplay');
+  const clpTotalEl = sim.querySelector('#simClpTotal');
+  const clpSavingEl = sim.querySelector('#simCommissionSaving');
+  const waBtn = sim.querySelector('#simWhatsappCta');
+  const presetBtns = Array.from(sim.querySelectorAll('.sim-preset-btn[data-uf]'));
+
+  if (!slider || !rateInput) return;
+
+  const fmtClp = new Intl.NumberFormat('es-CL', {
+    style: 'currency',
+    currency: 'CLP',
+    maximumFractionDigits: 0
+  });
+  const fmtUf = new Intl.NumberFormat('es-CL', { maximumFractionDigits: 0 });
+
+  let selectedLabel = 'Fundo Isla Taucolón (15,93 Has)';
+
+  function recalculate() {
+    const uf = Number(slider.value) || 8900;
+    const rate = Math.max(30000, Math.min(60000, Number(rateInput.value) || 38500));
+    const totalClp = uf * rate;
+    // Comisión estándar mercado chileno: 2% + 19% IVA = 2,38% por parte compradora
+    const commissionSaved = Math.round(totalClp * 0.0238);
+
+    if (ufDisplay) ufDisplay.textContent = `UF ${fmtUf.format(uf)}`;
+    if (clpTotalEl) clpTotalEl.textContent = fmtClp.format(totalClp);
+    if (clpSavingEl) clpSavingEl.textContent = fmtClp.format(commissionSaved);
+
+    if (waBtn) {
+      const msg = `Hola, evalué la inversión de ${selectedLabel} (${fmtUf.format(uf)} UF) con ahorro estimado de ${fmtClp.format(commissionSaved)} CLP en comisión directa 0%. Quisiera coordinar contacto con el dueño.`;
+      waBtn.href = getWhatsAppUrl(msg);
+    }
+  }
+
+  presetBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      presetBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      slider.value = btn.getAttribute('data-uf');
+      selectedLabel = btn.getAttribute('data-label') || 'Propiedad Santuario Lemuy';
+      recalculate();
+    });
+  });
+
+  slider.addEventListener('input', () => {
+    presetBtns.forEach((b) => {
+      const match = Number(b.getAttribute('data-uf')) === Number(slider.value);
+      b.classList.toggle('active', match);
+      if (match) selectedLabel = b.getAttribute('data-label') || selectedLabel;
+    });
+    if (!presetBtns.some((b) => b.classList.contains('active'))) {
+      selectedLabel = 'Inversión personalizada en portafolio';
+    }
+    recalculate();
+  });
+
+  rateInput.addEventListener('input', recalculate);
+  recalculate();
 }
