@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Emblema Santuario Lemuy">
+  <defs>
+    <linearGradient id="slBg" x1="8" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B1F26"/>
+      <stop offset="55%" stop-color="#153945"/>
+      <stop offset="100%" stop-color="#193A31"/>
+    </linearGradient>
+    <linearGradient id="slGoldFrame" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F6E5BD"/>
+      <stop offset="38%" stop-color="#C8A96B"/>
+      <stop offset="72%" stop-color="#A68444"/>
+      <stop offset="100%" stop-color="#EBD3A2"/>
+    </linearGradient>
+    <linearGradient id="slGoldBright" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FAF0D7"/>
+      <stop offset="50%" stop-color="#DFBE7D"/>
+      <stop offset="100%" stop-color="#B9944F"/>
+    </linearGradient>
+    <linearGradient id="slWindow" x1="37" y1="31" x2="37" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF7E2"/>
+      <stop offset="100%" stop-color="#C8A96B"/>
+    </linearGradient>
+    <radialGradient id="slGlow" cx="34" cy="29" r="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E8CFA0" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#E8CFA0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Escudo arquitectónico esmaltado petróleo nocturno -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#slBg)" stroke="url(#slGoldFrame)" stroke-width="2.2"/>
+  <rect x="5.8" y="5.8" width="52.4" height="52.4" rx="11.5" fill="none" stroke="#E8CFA0" stroke-opacity="0.3" stroke-width="0.9"/>
+
+  <!-- Resplandor austral de fondo -->
+  <circle cx="34" cy="29" r="20" fill="url(#slGlow)"/>
+
+  <!-- Estrella austral de 4 puntas (Orientación Sur de Chile) -->
+  <path d="M47.5 11.2 L48.55 14.45 L51.8 15.5 L48.55 16.55 L47.5 19.8 L46.45 16.55 L43.2 15.5 L46.45 14.45 Z" fill="url(#slGoldBright)"/>
+
+  <!-- Cumbre insular & volcánica (Anfiteatro / Volcán Villarrica) -->
+  <path d="M11 39.2 L23.5 21 L36.5 36.2 L36.5 39.2 Z" fill="#0E2933" fill-opacity="0.78"/>
+  <path d="M11 38.8 L23.5 21 L33.2 32.3" fill="none" stroke="url(#slGoldFrame)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20.8 25.1 L23.5 26.8 L26.2 25.1" fill="none" stroke="#FAF0D7" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"/>
+
+  <!-- Árbol nativo estilizado (Bosque templado austral) -->
+  <path d="M16 27.6 L11.8 35.6 H20.2 Z" fill="#1F4A3D" stroke="#C8A96B" stroke-width="1.45" stroke-linejoin="round"/>
+  <line x1="16" y1="35.6" x2="16" y2="39.2" stroke="#C8A96B" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Refugio arquitectónico patrimonial (Propiedad Raíz) -->
+  <path d="M28.2 39.2 V31.6 L38 23.6 L47.8 31.6 V39.2 Z" fill="#13333E" stroke="url(#slGoldBright)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M25.4 33.4 L38 23 L50.6 33.4" fill="none" stroke="url(#slGoldBright)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="36.1" y="31.2" width="3.8" height="8" rx="1.5" fill="url(#slWindow)"/>
+
+  <!-- Horizonte costero & canales / río-lago -->
+  <line x1="11" y1="39.5" x2="53" y2="39.5" stroke="#E8CFA0" stroke-width="1.35" stroke-linecap="round" stroke-opacity="0.8"/>
+  <path d="M12 44.8 Q22 41.8 32 44.8 T52 44.8" fill="none" stroke="url(#slGoldBright)" stroke-width="2.1" stroke-linecap="round"/>
+  <path d="M17.5 49.8 Q24.8 47.6 32 49.8 T46.5 49.8" fill="none" stroke="url(#slGoldFrame)" stroke-width="1.45" stroke-linecap="round" stroke-opacity="0.85"/>
+</svg>
