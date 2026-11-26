@@ -634,6 +634,74 @@ const propertiesData = {
     description: "5.200 m² con cabaña renovada, vertiente mayor de agua natural, bosque nativo y vista despejada al mar interior y la cordillera nevada. Camino asfaltado hasta 100 m de la cabaña.",
     videoSrc: "https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_PROPIEDAD.mp4",
     poster: "images/posters/parcela_16_9.jpg",
+    hasGallery: true,
+    photos: [
+      {
+        url: "images/parcela5200/01_vista_aerea_parcela_bahia.jpg",
+        thumb: "images/parcela5200/01_vista_aerea_parcela_bahia.jpg",
+        caption: "1. Vista elevada de la parcela hacia el mar interior e islas"
+      },
+      {
+        url: "images/parcela5200/02_cabana_living_panoramico.jpg",
+        thumb: "images/parcela5200/02_cabana_living_panoramico.jpg",
+        caption: "2. Cabaña renovada: living luminoso con vista frontal al mar"
+      },
+      {
+        url: "images/parcela5200/03_cabana_estufa_sala.jpg",
+        thumb: "images/parcela5200/03_cabana_estufa_sala.jpg",
+        caption: "3. Sala de estar con combustión lenta a leña y madera blanca"
+      },
+      {
+        url: "images/parcela5200/04_cabana_acceso_mar.jpg",
+        thumb: "images/parcela5200/04_cabana_acceso_mar.jpg",
+        caption: "4. Acceso acristalado de la cabaña con vista abierta al canal"
+      },
+      {
+        url: "images/parcela5200/05_cabana_cocina_comedor.jpg",
+        thumb: "images/parcela5200/05_cabana_cocina_comedor.jpg",
+        caption: "5. Cocina y comedor integrado mirando al mar interior"
+      },
+      {
+        url: "images/parcela5200/06_cabana_bano_renovado.jpg",
+        thumb: "images/parcela5200/06_cabana_bano_renovado.jpg",
+        caption: "6. Baño completo renovado con cabina de ducha"
+      },
+      {
+        url: "images/parcela5200/07_ventana_bahia_barcos.jpg",
+        thumb: "images/parcela5200/07_ventana_bahia_barcos.jpg",
+        caption: "7. Despertar mirando barcos y la cordillera desde la ventana"
+      },
+      {
+        url: "images/parcela5200/08_jardin_arcoiris_mar.jpg",
+        thumb: "images/parcela5200/08_jardin_arcoiris_mar.jpg",
+        caption: "8. Jardín frontal con arcoíris sobre la bahía de Lemuy"
+      },
+      {
+        url: "images/parcela5200/09_pradera_arboles_nativos.jpg",
+        thumb: "images/parcela5200/09_pradera_arboles_nativos.jpg",
+        caption: "9. Pradera verde con arboleda y lomajes del terreno"
+      },
+      {
+        url: "images/parcela5200/10_bodega_kayaks_botes.jpg",
+        thumb: "images/parcela5200/10_bodega_kayaks_botes.jpg",
+        caption: "10. Bodega equipada ideal para kayaks y equipo náutico"
+      },
+      {
+        url: "images/parcela5200/11_cordillera_nevada_skorpios.jpg",
+        thumb: "images/parcela5200/11_cordillera_nevada_skorpios.jpg",
+        caption: "11. Vista despejada a cumbres nevadas sobre el mar interior"
+      },
+      {
+        url: "images/parcela5200/12_doble_volcan_veleros.jpg",
+        thumb: "images/parcela5200/12_doble_volcan_veleros.jpg",
+        caption: "12. Cordillera nevada, volcanes y veleros en el horizonte"
+      },
+      {
+        url: "images/parcela5200/13_velero_cordillera_nevada.jpg",
+        thumb: "images/parcela5200/13_velero_cordillera_nevada.jpg",
+        caption: "13. Navegación a vela frente a la cordillera nevada"
+      }
+    ],
     specs: [
       { label: "Superficie", val: "5.200 m² (0,52 ha)" },
       { label: "Edificación", val: "Cabaña Renovada" },
@@ -643,7 +711,7 @@ const propertiesData = {
     benefits: [
       "Vista despejada al mar interior de Chiloé y a la cordillera nevada.",
       "Cabaña renovada y camino asfaltado hasta solo 100 m del acceso.",
-      "Trato directo con el propietario: 0% comisión de corretaje."
+      "Gestión directa y confidencial con el propietario."
     ],
     whatsappMsg: "Hola, me interesa la Parcela de 5.200 m2 en Isla Lemuy. Quisiera solicitar más información técnica y coordinar una visita."
   },
@@ -663,7 +731,7 @@ const propertiesData = {
     benefits: [
       "Casa habitación y 2 bodegas instaladas sobre praderas limpias.",
       "Red de Agua Potable Rural (APR) en servicio y vertiente natural por habilitar.",
-      "Venta directa con el dueño: sin comisiones de intermediarios."
+      "Atención privada y coordinación directa sin intermediarios."
     ],
     whatsappMsg: "Hola, me interesa la Parcela de 5 Hectáreas en Isla Lemuy. Deseo conocer planos, estatus de títulos y coordinar una visita."
   },
@@ -725,7 +793,7 @@ const propertiesData = {
     specs: [
       { label: "Superficie", val: "15,93 Has (159.300 m²)" },
       { label: "Frente de Playa", val: "410 metros de piedrecilla" },
-      { label: "Precio Referencial", val: "UF 8.900 (0% Comisión)" },
+      { label: "Precio Referencial", val: "UF 8.900" },
       { label: "Estatus Legal", val: "Rol Propio SAG & CBR Castro" }
     ],
     benefits: [
