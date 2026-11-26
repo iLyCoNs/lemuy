@@ -1,5 +1,5 @@
 /**
- * SANTUARIO LEMUY & CHILOÉ - INTERACTIVE CONTROLLER
+ * REMANSO NATURAL - INTERACTIVE CONTROLLER
  * Especialmente diseñado para la reproducción interactiva en hover,
  * visualizador de propiedades, modal cinematográfico (Video local + YouTube 4K),
  * showcase de Reel en formato celular y menú móvil responsivo.
@@ -314,7 +314,7 @@ function suspendBackgroundVideos() {
       });
       v.load();
     } catch (err) {
-      console.warn('Santuario Lemuy: No se pudo suspender un video de fondo:', err);
+      console.warn('Remanso Natural: No se pudo suspender un video de fondo:', err);
     }
 
     return {
@@ -378,7 +378,7 @@ function restoreBackgroundVideos() {
         video.play().catch(() => {});
       }
     } catch (err) {
-      console.warn('Santuario Lemuy: No se pudo restaurar un video de fondo:', err);
+      console.warn('Remanso Natural: No se pudo restaurar un video de fondo:', err);
     }
   });
 }
@@ -628,50 +628,50 @@ function initVideoDualSuite() {
    ========================================================================== */
 const propertiesData = {
   parcela5000: {
-    tag: "Oportunidad Residencial",
-    location: "Isla Lemuy • Vista al Mar Interior",
-    title: "Parcela de 5.000 m² en Isla Lemuy",
-    description: "Topografía suave con vista despejada a los canales interiores de Chiloé y bosque nativo. La dimensión ideal para segunda vivienda o descanso definitivo a minutos del ferry.",
+    tag: "Cabaña & Vertiente",
+    location: "Isla Lemuy • Cordillera & Mar",
+    title: "Parcela de 5.200 m² en Isla Lemuy",
+    description: "5.200 m² con cabaña renovada, vertiente mayor de agua natural, bosque nativo y vista despejada al mar interior y la cordillera nevada. Camino asfaltado hasta 100 m de la cabaña.",
     videoSrc: "https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_PROPIEDAD.mp4",
     poster: "images/posters/parcela_16_9.jpg",
     specs: [
-      { label: "Superficie", val: "5.000 m² (0,5 ha)" },
-      { label: "Estatus Legal", val: "Rol Propio SII (SAG & CBR)" },
-      { label: "Servicios", val: "Factibilidad de Luz y Agua" },
-      { label: "Acceso", val: "Camino ripio todo el año" }
+      { label: "Superficie", val: "5.200 m² (0,52 ha)" },
+      { label: "Edificación", val: "Cabaña Renovada" },
+      { label: "Agua Natural", val: "Vertiente Mayor Viabilizada" },
+      { label: "Acceso", val: "Asfalto hasta 100 m" }
     ],
     benefits: [
-      "Vista frontal al mar interior y amaneceres sobre los canales.",
-      "Entorno de bosque nativo con canelos, arrayanes y coigües.",
+      "Vista despejada al mar interior de Chiloé y a la cordillera nevada.",
+      "Cabaña renovada y camino asfaltado hasta solo 100 m del acceso.",
       "Trato directo con el propietario: 0% comisión de corretaje."
     ],
-    whatsappMsg: "Hola, me interesa la Parcela de 5.000 m2 en Isla Lemuy. Quisiera solicitar más información técnica y coordinar una visita."
+    whatsappMsg: "Hola, me interesa la Parcela de 5.200 m2 en Isla Lemuy. Quisiera solicitar más información técnica y coordinar una visita."
   },
   fundo5ha: {
-    tag: "Exclusividad & Naturaleza",
+    tag: "Casa + 2 Bodegas • APR",
     location: "Isla Lemuy • Sector Panorámico",
-    title: "Fundo Privado de 5 Hectáreas (50.000 m²)",
-    description: "Extensión de campo con praderas limpias para construir, bosque nativo maduro y vertiente permanente de agua pura. Máxima privacidad, seguridad y plusvalía en Chiloé.",
+    title: "Parcela de 5 Hectáreas (50.000 m²)",
+    description: "Parcela de 50.000 m² con casa habitación, 2 bodegas, Agua Potable Rural (APR) operativa, vertiente natural (sin viabilizar), praderas limpias y bosque nativo silvestre.",
     videoSrc: "https://github.com/iLyCoNs/austral-drones/releases/download/videos/16_9_ISLA_LEMUY.mp4",
     poster: "images/posters/fundo5ha_16_9.jpg",
     specs: [
       { label: "Superficie", val: "50.000 m² (5,0 ha)" },
-      { label: "Estatus Legal", val: "Rol Propio y Títulos al Día" },
-      { label: "Recursos Hídricos", val: "Vertiente permanente de agua pura" },
-      { label: "Topografía", val: "Praderas limpias con lomajes suaves" }
+      { label: "Infraestructura", val: "Casa + 2 Bodegas" },
+      { label: "Agua", val: "APR Activo (Vertiente s/viabilizar)" },
+      { label: "Estatus Legal", val: "Rol Propio y Títulos al Día" }
     ],
     benefits: [
-      "Aislamiento sonoro absoluto y aire puro en la Patagonia insular.",
-      "Múltiples mesetas con vistas panorámicas 360° al archipiélago.",
+      "Casa habitación y 2 bodegas instaladas sobre praderas limpias.",
+      "Red de Agua Potable Rural (APR) en servicio y vertiente natural por habilitar.",
       "Venta directa con el dueño: sin comisiones de intermediarios."
     ],
-    whatsappMsg: "Hola, me interesa el Fundo de 5 Hectáreas en Isla Lemuy. Deseo conocer planos, estatus de títulos y coordinar una visita."
+    whatsappMsg: "Hola, me interesa la Parcela de 5 Hectáreas en Isla Lemuy. Deseo conocer planos, estatus de títulos y coordinar una visita."
   },
   fundo17ha: {
     tag: "Borde Costero • UF 8.900",
     location: "Isla Taucolón • Archipiélago de Chauques",
-    title: "Fundo Costero 15,93 Has (410m de Playa)",
-    description: "Macro-predio virgen con 410 metros de playa protegida de piedrecilla y anfiteatro natural con vistas a los canales. Cuenta con vertientes de agua pura y tendido eléctrico.",
+    title: "Parcela Costera 15,93 Has (410m de Playa)",
+    description: "Parcela silvestre con 410 metros de playa protegida de piedrecilla y anfiteatro natural con vistas a los canales. Cuenta con vertientes de agua pura y tendido eléctrico.",
     videoSrc: "HORIZONTAL/FRENTE_PLAYA.mp4",
     poster: "images/taucolon/01_bahia_playa.jpg",
     hasGallery: true,
@@ -719,7 +719,7 @@ const propertiesData = {
       {
         url: "images/taucolon/09_vertientes_entorno.jpg",
         thumb: "images/taucolon/09_vertientes_entorno.jpg",
-        caption: "Entorno virgen con vertientes naturales de agua dulce viva en la propiedad"
+        caption: "Entorno silvestre con vertientes naturales de agua dulce en la propiedad"
       }
     ],
     specs: [
@@ -733,13 +733,13 @@ const propertiesData = {
       "Frente a marina de Puduhuapi y a 10 min de Mechuque.",
       "Tendido eléctrico en el predio y vertientes de agua viva."
     ],
-    whatsappMsg: "Hola, me comunico por el Fundo de 15,93 Hectáreas con 410m de playa en Isla Taucolón (Chauques, Chiloé - UF 8.900). Quisiera recibir antecedentes técnicos y coordinar contacto directo con el dueño."
+    whatsappMsg: "Hola, me comunico por la Parcela de 15,93 Hectáreas con 410m de playa en Isla Taucolón (Chauques, Chiloé - UF 8.900). Quisiera recibir antecedentes técnicos y coordinar contacto directo con el dueño."
   },
   villarrica: {
-    tag: "Orilla de Río & Muelle • UF 7.770",
-    location: "Villarrica • Región de La Araucanía",
+    tag: "Orillas Río Toltén • UF 7.770",
+    location: "Orillas Río Toltén • Villarrica",
     title: "Departamento Vista Río, Lago & Volcán",
-    description: "Exclusivo departamento en 5° piso en Condominio La Rivera. 113 m² totales, terraza panorámica cerrada en cristal, muelle náutico privado, piscina, quincho y acceso a orilla de río.",
+    description: "Exclusivo departamento en 5° piso en Condominio La Rivera, a orillas del río Toltén, con vista panorámica al río, lago y volcán Villarrica. 113 m² totales, terraza cerrada en cristal, muelle privado y piscina.",
     videoSrc: "",
     poster: "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
     hasGallery: true,
@@ -1260,7 +1260,7 @@ function initPropertyDirectContactForm() {
     const phone = form.querySelector('#propUserPhone')?.value.trim() || 'No informado';
     const message = form.querySelector('#propUserMessage')?.value.trim() || 'Deseo consultar precio, rol y coordinar visita.';
 
-    const formattedMessage = `*Consulta Oficial - Santuario Lemuy*\n\n` +
+    const formattedMessage = `*Consulta Oficial - Remanso Natural*\n\n` +
       `*Propiedad:* ${propName}\n` +
       `*Nombre:* ${name}\n` +
       `*Teléfono:* ${phone}\n` +
@@ -1409,7 +1409,7 @@ function initLiveWeather() {
         }
       }
     } catch (err) {
-      console.warn('Santuario Lemuy: No se pudo actualizar el widget de clima satelital:', err);
+      console.warn('Remanso Natural: No se pudo actualizar el widget de clima satelital:', err);
       const condEl = card.querySelector('.weather-condition-text');
       if (condEl && condEl.textContent.includes('Cargando')) {
         condEl.textContent = 'Clima Templado Austral';

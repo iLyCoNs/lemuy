@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" width="360" height="80" role="img" aria-label="Remanso Natural — Bosques, Playas, Islas y Cordillera">
+  <defs>
+    <radialGradient id="rnlBg" cx="40" cy="30" r="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#132A1F"/>
+      <stop offset="60%" stop-color="#0B1711"/>
+      <stop offset="100%" stop-color="#060B08"/>
+    </radialGradient>
+    <linearGradient id="rnlGold" x1="8" y1="8" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5E5BD"/>
+      <stop offset="50%" stop-color="#C8A96B"/>
+      <stop offset="100%" stop-color="#9A793C"/>
+    </linearGradient>
+    <linearGradient id="rnlBright" x1="16" y1="18" x2="64" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FAF0D7"/>
+      <stop offset="55%" stop-color="#E5C88B"/>
+      <stop offset="100%" stop-color="#B8934D"/>
+    </linearGradient>
+    <clipPath id="rnlClip">
+      <circle cx="40" cy="40" r="32.5"/>
+    </clipPath>
+  </defs>
+  <circle cx="40" cy="40" r="36" fill="url(#rnlBg)" stroke="url(#rnlGold)" stroke-width="2.2"/>
+  <circle cx="40" cy="40" r="32.5" fill="none" stroke="#E8CFA0" stroke-opacity="0.28" stroke-width="0.9"/>
+  <g clip-path="url(#rnlClip)">
+    <path d="M8 43.5 L26.5 22 L38.5 34.5 L52 18.5 L72 43.5 Z" fill="#0F241A" fill-opacity="0.9"/>
+    <path d="M8 43 L26.5 22 L38.5 34.5 L52 18.5 L71 43" fill="none" stroke="url(#rnlBright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M23.5 26.2 L26.5 28 L29.5 26.2" fill="none" stroke="#F4F0E8" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M48.5 23 L52 25.2 L55.5 23" fill="none" stroke="#F4F0E8" stroke-width="1.35" stroke-linecap="round"/>
+    <path d="M38.5 47.5 Q48 38 58 47.5 Z" fill="#183829" stroke="url(#rnlGold)" stroke-width="1.4"/>
+    <path d="M53 47.5 Q61 40.5 70 47.5 Z" fill="#132E21" stroke="url(#rnlGold)" stroke-width="1.25"/>
+    <path d="M16.5 45 L21 33.5 L25.5 45 Z" fill="#1E4734" stroke="url(#rnlBright)" stroke-width="1.35" stroke-linejoin="round"/>
+    <path d="M23 45.8 L28.2 31 L33.5 45.8 Z" fill="#265941" stroke="url(#rnlBright)" stroke-width="1.45" stroke-linejoin="round"/>
+    <path d="M30.5 46.2 L34.5 36 L38.5 46.2 Z" fill="#1B3F2E" stroke="url(#rnlGold)" stroke-width="1.25" stroke-linejoin="round"/>
+    <path d="M8 47.8 Q24 44.2 42 48.6" fill="none" stroke="url(#rnlBright)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M13 54.8 Q26 51.2 40 54.8 T67 54.8" fill="none" stroke="url(#rnlBright)" stroke-width="2.1" stroke-linecap="round"/>
+    <path d="M20 61 Q30 58 40 61 T60 61" fill="none" stroke="url(#rnlGold)" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+  </g>
+  <text x="92" y="39" fill="#F4F0E8" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" letter-spacing="1.8">REMANSO NATURAL</text>
+  <text x="93" y="57" fill="#C8A96B" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="2.6">BOSQUE • PLAYA • ISLAS • CORDILLERA</text>
+</svg>
