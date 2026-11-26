@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Departamento a Orillas del Río Toltén • Villarrica • UF 7.770">
   <meta property="og:description" content="113 m² totales, 3D + 2B, a orillas del río Toltén con vista panorámica al río, lago y volcán Villarrica.">
-  <meta property="og:image" content="https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg">
+  <meta property="og:image" content="https://ilycons.github.io/lemuy/images/villarrica/01_vista_panoramica_rio_lago_volcan.jpg">
   <meta property="og:url" content="https://ilycons.github.io/lemuy/departamento-villarrica.html">
 
   <!-- Schema.org JSON-LD -->
@@ -58,9 +58,9 @@
       "priceCurrency": "UF"
     },
     "image": [
-      "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
-      "https://storage.ppartnersgroup.com/property-files/media/100693/PP-f531cd729f9ec4c4.jpg",
-      "https://storage.ppartnersgroup.com/property-files/media/100693/PP-617ad1f31ac02a0f.jpg"
+      "https://ilycons.github.io/lemuy/images/villarrica/01_vista_panoramica_rio_lago_volcan.jpg",
+      "https://ilycons.github.io/lemuy/images/villarrica/04_terraza_cerrada_descanso.jpg",
+      "https://ilycons.github.io/lemuy/images/villarrica/09_living_comedor_amoblado.jpg"
     ]
   }
   </script>
@@ -70,7 +70,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=37.0">
+  <link rel="stylesheet" href="styles.css?v=38.0">
 
   <style>
     html, body {
@@ -83,81 +83,6 @@
     }
     *, *::before, *::after {
       box-sizing: border-box !important;
-    }
-    .villarrica-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-    .villarrica-photo-card {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      cursor: pointer;
-      border: 1px solid rgba(200, 169, 107, 0.3);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      background: #0d1913;
-    }
-    .villarrica-photo-card:hover {
-      transform: translateY(-5px) scale(1.02);
-      border-color: #C8A96B;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
-    }
-    .villarrica-photo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .villarrica-photo-card:hover img {
-      transform: scale(1.08);
-    }
-    .villarrica-photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(7, 11, 9, 0.94) 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 1.15rem;
-      transition: opacity 0.3s ease;
-    }
-    .villarrica-photo-caption {
-      color: #F4F0E8;
-      font-size: 0.85rem;
-      font-weight: 500;
-      line-height: 1.35;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
-    }
-    .villarrica-photo-zoom-icon {
-      position: absolute;
-      top: 0.85rem;
-      right: 0.85rem;
-      width: 34px;
-      height: 34px;
-      background: rgba(11, 21, 16, 0.86);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(200, 169, 107, 0.42);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #C8A96B;
-      opacity: 0;
-      transform: scale(0.85);
-      transition: all 0.25s ease;
-    }
-    .villarrica-photo-card:hover .villarrica-photo-zoom-icon {
-      opacity: 1;
-      transform: scale(1);
-    }
-    @media (max-width: 768px) {
-      .villarrica-gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
     }
   </style>
 </head>
@@ -194,10 +119,11 @@
       <!-- Menú Escritorio -->
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html#propiedades" class="nav-link">&larr; Todas las Propiedades</a></li>
-          <li><a href="#galeria-fotos" class="nav-link">Fotos</a></li>
+          <li><a href="index.html#propiedades" class="nav-link">&larr; Propiedades</a></li>
+          <li><a href="#galeria-fotos" class="nav-link">Fotos (14)</a></li>
+          <li><a href="#audiovisual" class="nav-link">Video</a></li>
           <li><a href="#especificaciones" class="nav-link">Ficha & Atributos</a></li>
-          <li><a href="#amenidades" class="nav-link">Áreas Comunes & Muelle</a></li>
+          <li><a href="#amenidades" class="nav-link">Muelle & Áreas</a></li>
           <li><a href="#ubicacion" class="nav-link">Ubicación GPS</a></li>
         </ul>
       </nav>
@@ -226,11 +152,12 @@
   <div class="mobile-nav-drawer" role="dialog" aria-modal="true">
     <ul class="mobile-drawer-links">
       <li><a href="index.html" class="mobile-drawer-link">&larr; Portal Principal <span>&rarr;</span></a></li>
-      <li><a href="#galeria-fotos" class="mobile-drawer-link">Fotos <span>&rarr;</span></a></li>
+      <li><a href="#galeria-fotos" class="mobile-drawer-link">Fotos Reales &amp; Plano (14) <span>&rarr;</span></a></li>
+      <li><a href="#audiovisual" class="mobile-drawer-link">Video Panorámico <span>&rarr;</span></a></li>
       <li><a href="#especificaciones" class="mobile-drawer-link">Ficha Técnica & Arquitectura <span>&rarr;</span></a></li>
       <li><a href="#amenidades" class="mobile-drawer-link">Áreas Comunes & Muelle <span>&rarr;</span></a></li>
       <li><a href="#ubicacion" class="mobile-drawer-link">Ubicación GPS & Entorno <span>&rarr;</span></a></li>
-      <li><a href="#contacto-propiedad" class="mobile-drawer-link">Contactar al Propietario <span>&rarr;</span></a></li>
+      <li><a href="#contacto-propiedad" class="mobile-drawer-link">Contacto Directo <span>&rarr;</span></a></li>
     </ul>
 
     <div class="mobile-drawer-cta-box">
@@ -239,13 +166,13 @@
         Consultar vía WhatsApp
       </a>
       <a href="#contacto-propiedad" class="btn btn-outline-white btn-lg" style="width: 100%;">
-        Coordinar Visita con el Dueño
+        Coordinar Visita Privada
       </a>
     </div>
   </div>
 
   <!-- HERO DE LA PROPIEDAD -->
-  <section class="property-hero-section" style="background-image: linear-gradient(180deg, rgba(7, 11, 9, 0.72) 0%, rgba(7, 11, 9, 0.9) 100%), url('https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg');">
+  <section class="property-hero-section" style="background-image: linear-gradient(180deg, rgba(7, 11, 9, 0.72) 0%, rgba(7, 11, 9, 0.9) 100%), url('images/villarrica/01_vista_panoramica_rio_lago_volcan.jpg');">
     <div class="container property-hero-content">
       <div class="eyebrow-badge dark">
         <span class="eyebrow-pulse-dot"></span>
@@ -270,8 +197,8 @@
           Consultar por WhatsApp
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </a>
-        <a href="#galeria-fotos" class="btn btn-outline-white btn-lg">
-          Ver las 27 Fotos en Alta Resolución
+        <a href="#audiovisual" class="btn btn-outline-white btn-lg">
+          Ver Video y 14 Fotos en Movimiento
         </a>
       </div>
     </div>
@@ -739,315 +666,251 @@
     </div>
   </section>
 
-  <!-- GALERÍA DE 27 FOTOGRAFÍAS REALES EN ALTA RESOLUCIÓN -->
-  <section id="galeria-fotos" class="section-padding" style="background: #070b09;">
+  <!-- SECCIÓN AUDIOVISUAL DEL PROPIETARIO (16:9 CON PLAY CENTRAL + MODO CINE) -->
+  <section id="audiovisual" class="section-padding video-showcase-section">
     <div class="container">
       <div class="section-header text-center">
-        <div class="eyebrow-badge" style="background: rgba(200, 169, 107, 0.18); color: var(--color-dorado); border: 1.5px solid rgba(200, 169, 107, 0.45);">
-          Registro Fotográfico Completo • 27 Fotografías HD
-        </div>
-        <h2 class="section-title" style="color: #ffffff;">Galería Oficial: Departamento Condominio La Rivera</h2>
-        <p class="section-desc" style="color: #c4d7d1;">
-          Fotografías reales del departamento, su terraza panorámica, interiores y las completas instalaciones del condominio. Haga clic en cualquiera de las imágenes para abrir el visor en alta resolución.
+        <div class="eyebrow-badge">Registro Audiovisual del Propietario • Vista Real</div>
+        <h2 class="section-title">Video Panorámico: Vista al Río Toltén, Lago &amp; Volcán Villarrica</h2>
+        <p class="section-desc">
+          Registro real tomado desde la propiedad mirando hacia el puente sobre el río Toltén, el lago y el cono nevado del volcán Villarrica. Presione Play en la pantalla para reproducir aquí mismo o ábralo en Modo Cine.
         </p>
       </div>
 
-      <div class="villarrica-gallery-grid">
-        <!-- Foto 1 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="0" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg" alt="Terraza cerrada con cristal y vista al río y volcán" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">1. Terraza panorámica con vista al Río Toltén, Lago y Volcán Villarrica</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      <div class="video-dual-stage view-cinema-only">
+        <article class="video-card-cinema">
+          <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/VILLARRICA.CLIENTE.mp4" data-video-title="Villarrica • Vista Panorámica Río, Lago y Volcán (00:12)" data-video-desc="Registro real desde el departamento en Condominio La Rivera frente al río Toltén, lago y volcán Villarrica.">
+            <img class="cinema-poster-img" src="images/posters/villarrica_clip_01.jpg" alt="Panorámica real en video hacia el río Toltén, puente, lago y volcán Villarrica" loading="lazy">
+            <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/villarrica_clip_01.jpg"></video>
+            <div class="cinema-ui-scrim" aria-hidden="true"></div>
+            <div class="cinema-top-hud">
+              <span class="cinema-screen-badge">
+                <span class="cinema-rec-dot" aria-hidden="true"></span>
+                VIDEO PANORÁMICO 16:9
+              </span>
+              <span class="cinema-duration-pill">00:12 min</span>
+            </div>
+            <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video panorámico de Villarrica">
+              <span class="cinema-play-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+              </span>
+              <span class="cinema-play-label">Reproducir Video</span>
+            </button>
+            <div class="cinema-player-bar-cue" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+              <span class="cinema-cue-time">00:00 / 00:12</span>
+              <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+              <span class="cinema-cue-quality">HD • 16:9</span>
             </div>
           </div>
-        </div>
+          <div class="cinema-footer-bar">
+            <div class="cinema-footer-text">
+              <h4>Panorámica Real: Río Toltén, Lago &amp; Volcán Villarrica</h4>
+              <p>Vista panorámica en video 16:9 apreciando el entorno natural y orientación del departamento en 5° piso.</p>
+            </div>
+            <div class="cinema-footer-actions">
+              <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/VILLARRICA.CLIENTE.mp4" data-video-title="Villarrica • Vista Panorámica Río, Lago y Volcán (00:12)" data-video-desc="Registro real desde el departamento en Condominio La Rivera frente al río Toltén, lago y volcán Villarrica." data-is-reel="false">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                Modo Cine
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <!-- Foto 2 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="1" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-f531cd729f9ec4c4.jpg" alt="Living comedor integrado con luz natural" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">2. Living comedor integrado con amplios ventanales</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
+  <!-- GALERÍA DINÁMICA EN MOVIMIENTO: 13 FOTOGRAFÍAS + PLANO OFICIAL DEL PROPIETARIO -->
+  <section id="galeria-fotos" class="section-padding owner-marquee-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow-badge" style="background: rgba(200, 169, 107, 0.16); border: 1px solid rgba(200, 169, 107, 0.45); color: var(--color-dorado);">
+          Galería Exclusiva del Propietario • 13 Fotos &amp; Plano Oficial
         </div>
+        <h2 class="section-title" style="color: #ffffff;">Recorrido en Movimiento: Villarrica • Haz Clic para Zoom</h2>
+        <p class="section-desc" style="color: #c8d8cd;">
+          Dos filas panorámicas en movimiento continuo mostrando vistas al volcán Villarrica, lago y río Toltén, la terraza cerrada en cristal Lumon, living comedor, dormitorio en suite y plano oficial de distribución.
+        </p>
+      </div>
 
-        <!-- Foto 3 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="2" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-617ad1f31ac02a0f.jpg" alt="Vista despejada al agua y naturaleza desde la terraza" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">3. Vista despejada al agua y ribera arbolada</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      <div class="owner-marquee-controls">
+        <button type="button" id="ownerMarqueeToggle" class="owner-marquee-toggle-btn" aria-pressed="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          <span>Pausar movimiento</span>
+        </button>
+        <span class="owner-marquee-hint-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          Clic en cualquier foto o plano para ampliar y hacer zoom
+        </span>
+      </div>
+    </div>
+
+    <div class="owner-marquee-rows" id="ownerMarqueeRows">
+      <!-- Fila 1: Desplazamiento hacia la izquierda (Fotos 1 a 7) -->
+      <div class="owner-marquee-viewport">
+        <div class="owner-marquee-track dir-left">
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="0" aria-label="Ampliar foto 1: Vista al río Toltén, lago y volcán">
+            <img src="images/villarrica/01_vista_panoramica_rio_lago_volcan.jpg" alt="Vista panorámica al puente del río Toltén, lago y volcán Villarrica" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">1. Vista panorámica al puente del río Toltén, lago y volcán Villarrica</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="1" aria-label="Ampliar foto 2: Terraza abierta mirando al río y volcán">
+            <img src="images/villarrica/02_terraza_abierta_volcan_rio.jpg" alt="Terraza abierta mirando al río Toltén, lago y volcán Villarrica" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">2. Terraza abierta mirando al río Toltén, lago y volcán Villarrica</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="2" aria-label="Ampliar foto 3: Atardecer desde la terraza en cristal Lumon">
+            <img src="images/villarrica/03_terraza_cristal_lumon_atardecer.jpg" alt="Atardecer y bruma matinal desde la terraza cerrada en cristal Lumon" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">3. Atardecer y bruma matinal desde la terraza cerrada en cristal Lumon</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="3" aria-label="Ampliar foto 4: Sala de descanso en terraza Lumon">
+            <img src="images/villarrica/04_terraza_cerrada_descanso.jpg" alt="Sala de descanso en terraza acristalada con vista al volcán" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">4. Sala de descanso en terraza acristalada con vista al volcán</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="4" aria-label="Ampliar foto 5: Vista desde terraza hacia lago y puente">
+            <img src="images/villarrica/05_vista_terraza_lumon_lago.jpg" alt="Vista despejada desde la terraza Lumon hacia el lago y puente" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">5. Vista despejada desde la terraza Lumon hacia el lago y puente</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="5" aria-label="Ampliar foto 6: Día despejado sobre el lago y volcán">
+            <img src="images/villarrica/06_vista_lago_volcan_despejado.jpg" alt="Día despejado sobre el lago y el volcán Villarrica" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">6. Día despejado sobre el lago y el volcán Villarrica</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="6" aria-label="Ampliar foto 7: Acercamiento al volcán Villarrica">
+            <img src="images/villarrica/07_volcan_villarrica_fumarola.jpg" alt="Acercamiento directo al cono nevado del volcán Villarrica" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">7. Acercamiento directo al cono nevado del volcán Villarrica</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <!-- Copia continua Fila 1 -->
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="0" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/01_vista_panoramica_rio_lago_volcan.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">1. Vista panorámica al puente del río Toltén, lago y volcán Villarrica</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="1" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/02_terraza_abierta_volcan_rio.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">2. Terraza abierta mirando al río Toltén, lago y volcán Villarrica</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="2" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/03_terraza_cristal_lumon_atardecer.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">3. Atardecer y bruma matinal desde la terraza cerrada en cristal Lumon</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="3" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/04_terraza_cerrada_descanso.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">4. Sala de descanso en terraza acristalada con vista al volcán</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="4" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/05_vista_terraza_lumon_lago.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">5. Vista despejada desde la terraza Lumon hacia el lago y puente</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="5" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/06_vista_lago_volcan_despejado.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">6. Día despejado sobre el lago y el volcán Villarrica</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="6" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/07_volcan_villarrica_fumarola.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">7. Acercamiento directo al cono nevado del volcán Villarrica</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
         </div>
+      </div>
 
-        <!-- Foto 4 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="3" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-6858bdbb5d1ba233.jpg" alt="Comedor en terraza utilizable en invierno y verano" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">4. Espacio de terraza para comedor utilizable todo el año</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      <!-- Fila 2: Desplazamiento hacia la derecha (Fotos 8 a 14) -->
+      <div class="owner-marquee-viewport">
+        <div class="owner-marquee-track dir-right">
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="7" aria-label="Ampliar foto 8: Horizonte cordillerano completo">
+            <img src="images/villarrica/08_vista_panoramica_entorno.jpg" alt="Horizonte cordillerano completo desde el departamento" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">8. Horizonte cordillerano completo desde el departamento</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Foto 5 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="4" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-3b69017a16a70b90.jpg" alt="Cocina moderna completamente equipada" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">5. Cocina moderna equipada con encimera y campana</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="8" aria-label="Ampliar foto 9: Living comedor amoblado">
+            <img src="images/villarrica/09_living_comedor_amoblado.jpg" alt="Living comedor integrado con terminaciones en madera natural" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">9. Living comedor integrado con terminaciones en madera natural</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Foto 6 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="5" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-ed720aa32e97dd70.jpg" alt="Dormitorio principal con salida a terraza" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">6. Dormitorio principal en suite con salida a terraza</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="9" aria-label="Ampliar foto 10: Perspectiva del comedor">
+            <img src="images/villarrica/10_living_comedor_perspectiva.jpg" alt="Perspectiva del comedor hacia la terraza panorámica" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">10. Perspectiva del comedor hacia la terraza panorámica</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Foto 7 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="6" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-e5aab630be0811af.jpg" alt="Baño en suite con vanitorio y shower" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">7. Baño en suite con finas terminaciones</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="10" aria-label="Ampliar foto 11: Sala de estar y distribución">
+            <img src="images/villarrica/11_living_estar_amoblado.jpg" alt="Sala de estar y distribución luminosa del living" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">11. Sala de estar y distribución luminosa del living</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Foto 8 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="7" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-d582dfaec837a611.jpg" alt="Segundo dormitorio amplio" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">8. Segundo dormitorio amplio con clóset</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="11" aria-label="Ampliar foto 12: Dormitorio principal en suite">
+            <img src="images/villarrica/12_dormitorio_principal_suite.jpg" alt="Dormitorio principal en suite" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">12. Dormitorio principal en suite</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Foto 9 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="8" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-63d2c534cba38f77.jpg" alt="Tercer dormitorio iluminado" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">9. Tercer dormitorio con excelente iluminación</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="12" aria-label="Ampliar foto 13: Baño en suite y walk-in closet">
+            <img src="images/villarrica/13_bano_suite_walkin_closet.jpg" alt="Baño principal en suite y walk-in closet" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">13. Baño principal en suite y walk-in closet</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Foto 10 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="9" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-fd4e798767636228.jpg" alt="Segundo baño completo" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">10. Segundo baño completo para habitaciones y visitas</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="13" aria-label="Ampliar foto 14: Plano de distribución 97,54 m²">
+            <img src="images/villarrica/14_plano_distribucion_97m2.png" alt="Plano oficial de arquitectura y distribución interior de 97,54 m² útiles" loading="eager" style="object-fit: contain; background: #ffffff; padding: 6px;">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">14. Plano oficial de arquitectura y distribución interior (97,54 m² útiles)</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Foto 11 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="10" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-32ffef96340d0aba.jpg" alt="Jardines y entorno frente al río" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">11. Condominio La Rivera: Jardines y acceso al río</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 12 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="11" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-8a4deaec1cae9f40.jpg" alt="Piscina exterior del condominio" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">12. Piscina exterior del condominio rodeada de parque</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 13 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="12" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-29c696701163625a.jpg" alt="Muelle náutico privado del condominio" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">13. Muelle privado para kayak y embarcaciones</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 14 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="13" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-37caa1ce011cbc3c.jpg" alt="Quincho y zona de asados" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">14. Quincho y zona de parrillas para residentes</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 15 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="14" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-3d96d4a800e708fa.jpg" alt="Gimnasio equipado" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">15. Gimnasio equipado dentro del condominio</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 16 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="15" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-cbb599d8405b061a.jpg" alt="Salón de eventos y multiuso" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">16. Salón multiuso y de eventos sociales</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 17 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="16" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-30f2eb6e11b7b38e.jpg" alt="Fachada y arquitectura del edificio" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">17. Fachada exterior del edificio contemporáneo</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 18 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="17" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-3dfcf3975077caad.jpg" alt="Control de acceso y conserjería" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">18. Conserjería y acceso seguro 24/7</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 19 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="18" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-b1a2c11a2fc9e704.jpg" alt="Senderos peatonales y áreas verdes" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">19. Senderos interiores y áreas verdes</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 20 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="19" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-050dfa0a961bf3c2.jpg" alt="Estacionamiento techado protegido" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">20. Estacionamiento techado y seguro</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 21 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="20" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-119d7959a197058c.jpg" alt="Zona de juegos infantiles en el parque" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">21. Zona de juegos infantiles para niños</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 22 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="21" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-506ce40e49d7b4f3.jpg" alt="Ribera del río con vegetación autóctona" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">22. Descanso y orilla de río con vegetación autóctona</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 23 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="22" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-e263fa3d6c57c81c.jpg" alt="Perspectiva del edificio frente al río" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">23. Perspectiva del edificio frente al río Toltén</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 24 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="23" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-57f3a4823f6b28b9.jpg" alt="Ventanales termopanel y finas terminaciones" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">24. Ventanales termopanel de alta eficiencia</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 25 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="24" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-32f774fb60320581.jpg" alt="Atardecer y vista al Lago Villarrica" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">25. Atardecer sobre el Lago Villarrica</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 26 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="25" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-d780bde74ba07c48.jpg" alt="Vista al majestuoso Volcán Villarrica" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">26. Vista despejada al Volcán Villarrica</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 27 -->
-        <div class="villarrica-photo-card" data-gallery-prop="villarrica" data-gallery-index="26" title="Ver foto ampliada">
-          <img src="https://storage.ppartnersgroup.com/property-files/media/100693/PP-89750607929685f0.jpg" alt="Panorámica general de Condominio La Rivera" loading="lazy">
-          <div class="villarrica-photo-overlay">
-            <span class="villarrica-photo-caption">27. Panorámica general de Condominio La Rivera</span>
-            <div class="villarrica-photo-zoom-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </div>
-          </div>
+          </button>
+          <!-- Copia continua Fila 2 -->
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="7" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/08_vista_panoramica_entorno.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">8. Horizonte cordillerano completo desde el departamento</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="8" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/09_living_comedor_amoblado.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">9. Living comedor integrado con terminaciones en madera natural</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="9" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/10_living_comedor_perspectiva.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">10. Perspectiva del comedor hacia la terraza panorámica</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="10" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/11_living_estar_amoblado.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">11. Sala de estar y distribución luminosa del living</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="11" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/12_dormitorio_principal_suite.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">12. Dormitorio principal en suite</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="12" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/13_bano_suite_walkin_closet.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">13. Baño principal en suite y walk-in closet</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="villarrica" data-gallery-index="13" aria-hidden="true" tabindex="-1">
+            <img src="images/villarrica/14_plano_distribucion_97m2.png" alt="" loading="eager" style="object-fit: contain; background: #ffffff; padding: 6px;">
+            <div class="taucolon-photo-overlay"><span class="taucolon-photo-caption">14. Plano oficial de arquitectura y distribución interior (97,54 m² útiles)</span><span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+          </button>
         </div>
       </div>
     </div>
@@ -1192,7 +1055,7 @@
       <div class="footer-col legal-col">
         <h4 class="footer-title">Certeza Jurídica</h4>
         <p class="legal-text">
-          Propiedad con títulos saneados y rol individual al día. Información referencial obtenida de publicación autorizada en Property Partners Chile (Código MZ12694).
+          Propiedad con títulos saneados y rol individual al día. Antecedentes y galería oficial del propietario (Código MZ12694).
         </p>
       </div>
     </div>
@@ -1210,7 +1073,7 @@
       <div class="photo-lightbox-header">
         <div style="display: flex; align-items: center; gap: 0.75rem;">
           <span style="font-size: 0.825rem; font-weight: 700; color: var(--color-dorado); text-transform: uppercase;">Condominio La Rivera • Galería Oficial</span>
-          <span id="photoModalCounter" style="font-size: 0.8rem; color: #a0b2a5;">1 / 27</span>
+          <span id="photoModalCounter" style="font-size: 0.8rem; color: #a0b2a5;">1 / 14</span>
         </div>
         <button type="button" class="video-modal-close" id="closePhotoModal" aria-label="Cerrar foto">
           <span>Cerrar</span>
@@ -1232,6 +1095,40 @@
     </div>
   </div>
 
-  <script src="app.js?v=37.0"></script>
+  <!-- MODAL DE VIDEO CINE IN-PAGE -->
+  <div id="videoModal" class="video-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Reproductor de video panorámico">
+    <div class="video-modal-box">
+      <div class="video-modal-topbar">
+        <div class="video-modal-badge-group">
+          <span class="video-modal-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Modo Cine In-Page
+          </span>
+        </div>
+        <button class="video-modal-close" aria-label="Cerrar video" title="Cerrar ventana">
+          <span>Cerrar</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="video-modal-media-wrap">
+        <video class="modal-video-element" controls playsinline></video>
+        <iframe class="modal-iframe-element" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div class="modal-video-footer">
+        <div>
+          <h4 id="modalVideoTitle" style="color: #fff; font-size: 1.15rem; margin-bottom: 0.2rem;">Vista Panorámica</h4>
+          <p id="modalVideoDesc" style="color: #a0b2a5; font-size: 0.85rem; margin: 0;">Condominio La Rivera • Orillas Río Toltén, Villarrica</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.85rem;">
+          <span style="font-size: 0.825rem; color: var(--color-dorado); font-weight: 700; text-transform: uppercase;">HD 16:9</span>
+          <button type="button" class="btn btn-modal-close-footer" aria-label="Cerrar video">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=38.0"></script>
 </body>
 </html>

@@ -989,146 +989,81 @@ const propertiesData = {
     location: "Orillas Río Toltén • Villarrica",
     title: "Departamento Vista Río, Lago & Volcán",
     description: "Exclusivo departamento en 5° piso en Condominio La Rivera, a orillas del río Toltén, con vista panorámica al río, lago y volcán Villarrica. 113 m² totales, terraza cerrada en cristal, muelle privado y piscina.",
-    videoSrc: "",
-    poster: "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
+    videoSrc: "https://github.com/iLyCoNs/lemuy/releases/download/videos/VILLARRICA.CLIENTE.mp4",
+    poster: "images/posters/villarrica_clip_01.jpg",
     hasGallery: true,
     photos: [
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-4c45892d20696648.jpg",
-            "caption": "1. Terraza panorámica con vista al Río Toltén, Lago y Volcán Villarrica"
+        url: "images/villarrica/01_vista_panoramica_rio_lago_volcan.jpg",
+        thumb: "images/villarrica/01_vista_panoramica_rio_lago_volcan.jpg",
+        caption: "1. Vista panorámica al puente del río Toltén, lago y volcán Villarrica"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-f531cd729f9ec4c4.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-f531cd729f9ec4c4.jpg",
-            "caption": "2. Living comedor integrado con amplios ventanales"
+        url: "images/villarrica/02_terraza_abierta_volcan_rio.jpg",
+        thumb: "images/villarrica/02_terraza_abierta_volcan_rio.jpg",
+        caption: "2. Terraza abierta mirando al río Toltén, lago y volcán Villarrica"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-617ad1f31ac02a0f.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-617ad1f31ac02a0f.jpg",
-            "caption": "3. Vista despejada al agua y ribera arbolada"
+        url: "images/villarrica/03_terraza_cristal_lumon_atardecer.jpg",
+        thumb: "images/villarrica/03_terraza_cristal_lumon_atardecer.jpg",
+        caption: "3. Atardecer y bruma matinal desde la terraza cerrada en cristal Lumon"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-6858bdbb5d1ba233.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-6858bdbb5d1ba233.jpg",
-            "caption": "4. Espacio de terraza para comedor utilizable todo el año"
+        url: "images/villarrica/04_terraza_cerrada_descanso.jpg",
+        thumb: "images/villarrica/04_terraza_cerrada_descanso.jpg",
+        caption: "4. Sala de descanso en terraza acristalada con vista al volcán"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3b69017a16a70b90.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3b69017a16a70b90.jpg",
-            "caption": "5. Cocina moderna equipada con encimera y campana"
+        url: "images/villarrica/05_vista_terraza_lumon_lago.jpg",
+        thumb: "images/villarrica/05_vista_terraza_lumon_lago.jpg",
+        caption: "5. Vista despejada desde la terraza Lumon hacia el lago y puente"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-ed720aa32e97dd70.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-ed720aa32e97dd70.jpg",
-            "caption": "6. Dormitorio principal en suite con salida a terraza"
+        url: "images/villarrica/06_vista_lago_volcan_despejado.jpg",
+        thumb: "images/villarrica/06_vista_lago_volcan_despejado.jpg",
+        caption: "6. Día despejado sobre el lago y el volcán Villarrica"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e5aab630be0811af.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e5aab630be0811af.jpg",
-            "caption": "7. Baño en suite con finas terminaciones"
+        url: "images/villarrica/07_volcan_villarrica_fumarola.jpg",
+        thumb: "images/villarrica/07_volcan_villarrica_fumarola.jpg",
+        caption: "7. Acercamiento directo al cono nevado del volcán Villarrica"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d582dfaec837a611.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d582dfaec837a611.jpg",
-            "caption": "8. Segundo dormitorio amplio con clóset"
+        url: "images/villarrica/08_vista_panoramica_entorno.jpg",
+        thumb: "images/villarrica/08_vista_panoramica_entorno.jpg",
+        caption: "8. Horizonte cordillerano completo desde el departamento"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-63d2c534cba38f77.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-63d2c534cba38f77.jpg",
-            "caption": "9. Tercer dormitorio con excelente iluminación"
+        url: "images/villarrica/09_living_comedor_amoblado.jpg",
+        thumb: "images/villarrica/09_living_comedor_amoblado.jpg",
+        caption: "9. Living comedor integrado con terminaciones en madera natural"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-fd4e798767636228.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-fd4e798767636228.jpg",
-            "caption": "10. Segundo baño completo para habitaciones y visitas"
+        url: "images/villarrica/10_living_comedor_perspectiva.jpg",
+        thumb: "images/villarrica/10_living_comedor_perspectiva.jpg",
+        caption: "10. Perspectiva del comedor hacia la terraza panorámica"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32ffef96340d0aba.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32ffef96340d0aba.jpg",
-            "caption": "11. Condominio La Rivera: Jardines y acceso al río"
+        url: "images/villarrica/11_living_estar_amoblado.jpg",
+        thumb: "images/villarrica/11_living_estar_amoblado.jpg",
+        caption: "11. Sala de estar y distribución luminosa del living"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-8a4deaec1cae9f40.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-8a4deaec1cae9f40.jpg",
-            "caption": "12. Piscina exterior del condominio rodeada de parque"
+        url: "images/villarrica/12_dormitorio_principal_suite.jpg",
+        thumb: "images/villarrica/12_dormitorio_principal_suite.jpg",
+        caption: "12. Dormitorio principal en suite"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-29c696701163625a.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-29c696701163625a.jpg",
-            "caption": "13. Muelle privado para kayak y embarcaciones"
+        url: "images/villarrica/13_bano_suite_walkin_closet.jpg",
+        thumb: "images/villarrica/13_bano_suite_walkin_closet.jpg",
+        caption: "13. Baño principal en suite y walk-in closet"
       },
       {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-37caa1ce011cbc3c.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-37caa1ce011cbc3c.jpg",
-            "caption": "14. Quincho y zona de parrillas para residentes"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3d96d4a800e708fa.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3d96d4a800e708fa.jpg",
-            "caption": "15. Gimnasio equipado dentro del condominio"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-cbb599d8405b061a.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-cbb599d8405b061a.jpg",
-            "caption": "16. Salón multiuso y de eventos sociales"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-30f2eb6e11b7b38e.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-30f2eb6e11b7b38e.jpg",
-            "caption": "17. Fachada exterior del edificio contemporáneo"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3dfcf3975077caad.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-3dfcf3975077caad.jpg",
-            "caption": "18. Conserjería y acceso seguro 24/7"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-b1a2c11a2fc9e704.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-b1a2c11a2fc9e704.jpg",
-            "caption": "19. Senderos interiores y áreas verdes"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-050dfa0a961bf3c2.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-050dfa0a961bf3c2.jpg",
-            "caption": "20. Estacionamiento techado y seguro"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-119d7959a197058c.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-119d7959a197058c.jpg",
-            "caption": "21. Zona de juegos infantiles para niños"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-506ce40e49d7b4f3.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-506ce40e49d7b4f3.jpg",
-            "caption": "22. Descanso y orilla de río con vegetación autóctona"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e263fa3d6c57c81c.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-e263fa3d6c57c81c.jpg",
-            "caption": "23. Perspectiva del edificio frente al río Toltén"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-57f3a4823f6b28b9.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-57f3a4823f6b28b9.jpg",
-            "caption": "24. Ventanales termopanel de alta eficiencia"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32f774fb60320581.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-32f774fb60320581.jpg",
-            "caption": "25. Atardecer sobre el Lago Villarrica"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d780bde74ba07c48.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-d780bde74ba07c48.jpg",
-            "caption": "26. Vista despejada al Volcán Villarrica"
-      },
-      {
-            "url": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-89750607929685f0.jpg",
-            "thumb": "https://storage.ppartnersgroup.com/property-files/media/100693/PP-89750607929685f0.jpg",
-            "caption": "27. Panorámica general de Condominio La Rivera"
+        url: "images/villarrica/14_plano_distribucion_97m2.png",
+        thumb: "images/villarrica/14_plano_distribucion_97m2.png",
+        caption: "14. Plano oficial de arquitectura y distribución interior (97,54 m² útiles)"
       }
-],
+    ],
     specs: [
       { label: "Superficie", val: "113 m² Totales (90 m² Útiles)" },
       { label: "Dormitorios / Baños", val: "3 Dormitorios • 2 Baños (Suite)" },
