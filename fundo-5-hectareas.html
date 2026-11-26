@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=36.0">
+  <link rel="stylesheet" href="styles.css?v=37.0">
 
   <style>
     html, body {
@@ -550,14 +550,20 @@
           </div>
         </article>
 
-        <!-- Tarjeta Formato 9:16 (Reel) -->
+        <!-- Tarjeta Formato 9:16 (Reel con Botón Central de Play) -->
         <article class="video-card-reel">
           <div class="smartphone-titanium-frame">
             <div class="smartphone-dynamic-island"></div>
-            <div class="smartphone-screen-wrap">
-              <video class="loop-video" muted loop playsinline preload="metadata" poster="images/posters/fundo5ha_reel.jpg">
-                <source src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_REEL_FINAL.mp4" type="video/mp4">
-              </video>
+            <div class="smartphone-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_REEL_FINAL.mp4" data-video-title="Reel Vertical • Parcela 5 Hectáreas" data-video-desc="Formato cinematográfico vertical 9:16 diseñado para smartphones.">
+              <img class="reel-poster-img" src="images/posters/fundo5ha_reel.jpg" alt="Reel vertical de la Parcela de 5 Hectáreas en Isla Lemuy" loading="lazy">
+              <video class="reel-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_reel.jpg"></video>
+              <div class="reel-ui-scrim" aria-hidden="true"></div>
+              <button type="button" class="cinema-center-play-btn reel-center-play-btn" aria-label="Reproducir Reel vertical de la parcela de 5 hectáreas">
+                <span class="cinema-play-circle">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+                </span>
+                <span class="cinema-play-label">Reproducir Reel</span>
+              </button>
               <div class="reel-glass-pill">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.25rem;">
                   <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-dorado); text-transform: uppercase;">REEL 9:16 MÓVIL</span>
@@ -565,8 +571,8 @@
                 </div>
                 <p style="font-size: 0.78rem; line-height: 1.3; margin: 0 0 0.35rem; color: #ffffff;">Caminata in situ por las praderas y construcciones de las 5 Has.</p>
                 <button type="button" class="reel-action-inpage-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_REEL_FINAL.mp4" data-video-title="Reel Vertical • Parcela 5 Hectáreas" data-video-desc="Formato cinematográfico vertical 9:16 diseñado para smartphones." data-is-reel="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  Reproducir Reel In-Page
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                  Abrir en Modo Cine
                 </button>
               </div>
             </div>
@@ -1351,6 +1357,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=36.0"></script>
+  <script src="app.js?v=37.0"></script>
 </body>
 </html>

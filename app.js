@@ -288,10 +288,10 @@ function initVideoModal() {
 }
 
 function pauseInlineCinemaCards(exceptCard = null) {
-  document.querySelectorAll('.video-card-cinema.is-playing').forEach((card) => {
+  document.querySelectorAll('.video-card-cinema.is-playing, .video-card-reel.is-playing').forEach((card) => {
     if (exceptCard && card === exceptCard) return;
     card.classList.remove('is-playing');
-    const vid = card.querySelector('.cinema-inline-video');
+    const vid = card.querySelector('.cinema-inline-video, .reel-inline-video');
     if (vid) {
       vid.pause();
       vid.removeAttribute('src');
@@ -532,10 +532,10 @@ function initVideoDualSuite() {
     });
   }
 
-  // Reproducción directa in-card al presionar Play en la tarjeta horizontal rediseñada
+  // Reproducción directa in-card al presionar Play en tarjetas horizontales y verticales (Reels)
   function startInlineCinemaCard(wrap) {
-    const card = wrap.closest('.video-card-cinema');
-    const vid = wrap.querySelector('.cinema-inline-video');
+    const card = wrap.closest('.video-card-cinema, .video-card-reel');
+    const vid = wrap.querySelector('.cinema-inline-video, .reel-inline-video');
     const videoSrc = wrap.getAttribute('data-video-src');
     if (!card || !vid || !videoSrc) return;
 
@@ -589,11 +589,11 @@ function initVideoDualSuite() {
     }
   }
 
-  document.querySelectorAll('.cinema-screen-wrap[data-inline-video]').forEach(wrap => {
+  document.querySelectorAll('.cinema-screen-wrap[data-inline-video], .smartphone-screen-wrap[data-inline-video]').forEach(wrap => {
     wrap.addEventListener('click', (e) => {
-      const card = wrap.closest('.video-card-cinema');
+      const card = wrap.closest('.video-card-cinema, .video-card-reel');
       if (card && card.classList.contains('is-playing')) return;
-      if (e.target.closest('.cinema-audio-unmute-pill')) return;
+      if (e.target.closest('[data-open-inpage-video]') || e.target.closest('.cinema-audio-unmute-pill')) return;
       e.preventDefault();
       e.stopPropagation();
       startInlineCinemaCard(wrap);
@@ -891,54 +891,84 @@ const propertiesData = {
     location: "Isla Taucolón • Archipiélago de Chauques",
     title: "Parcela Costera 15,93 Has (410m de Playa)",
     description: "Parcela silvestre con 410 metros de playa protegida de piedrecilla y anfiteatro natural con vistas a los canales. Cuenta con vertientes de agua pura y tendido eléctrico.",
-    videoSrc: "HORIZONTAL/FRENTE_PLAYA.mp4",
-    poster: "images/taucolon/01_bahia_playa.jpg",
+    videoSrc: "https://github.com/iLyCoNs/lemuy/releases/download/videos/video.taucolon.mp4",
+    poster: "images/posters/taucolon_clip_03.jpg",
     hasGallery: true,
     photos: [
       {
         url: "images/taucolon/01_bahia_playa.jpg",
         thumb: "images/taucolon/01_bahia_playa.jpg",
-        caption: "Vista panorámica de la bahía y canal interior desde la orilla de Isla Taucolón"
+        caption: "1. Vista frontal de la bahía y canal interior"
+      },
+      {
+        url: "images/taucolon/10_archipielago_chauques_altura.jpg",
+        thumb: "images/taucolon/10_archipielago_chauques_altura.jpg",
+        caption: "2. Islas de las Chauques y canales desde la altura"
       },
       {
         url: "images/taucolon/02_orilla_410m.jpg",
         thumb: "images/taucolon/02_orilla_410m.jpg",
-        caption: "410 metros continuos de playa de piedrecilla fina y aguas calmas para desembarque"
+        caption: "3. 410 metros continuos de playa de piedrecilla fina"
+      },
+      {
+        url: "images/taucolon/11_pradera_flores_islas.jpg",
+        thumb: "images/taucolon/11_pradera_flores_islas.jpg",
+        caption: "4. Pradera florida en altura con vista al archipiélago"
       },
       {
         url: "images/taucolon/03_playa_bosque.jpg",
         thumb: "images/taucolon/03_playa_bosque.jpg",
-        caption: "Borde costero con suave pendiente ascendente hacia el bosque nativo templado"
+        caption: "5. Borde costero y ladera con bosque nativo"
+      },
+      {
+        url: "images/taucolon/12_bahia_lanchas_atardecer.jpg",
+        thumb: "images/taucolon/12_bahia_lanchas_atardecer.jpg",
+        caption: "6. Ensenada protegida y fondeo natural de embarcaciones"
       },
       {
         url: "images/taucolon/04_anfiteatro_canales.jpg",
         thumb: "images/taucolon/04_anfiteatro_canales.jpg",
-        caption: "Topografía en anfiteatro natural: vistas despejadas a canales e islas vecinas"
+        caption: "7. Topografía en anfiteatro natural hacia los canales"
+      },
+      {
+        url: "images/taucolon/13_playa_continua_piedrecilla.jpg",
+        thumb: "images/taucolon/13_playa_continua_piedrecilla.jpg",
+        caption: "8. Extensa playa limpia y canal navegado por aguas calmas"
       },
       {
         url: "images/taucolon/05_praderas_limpias.jpg",
         thumb: "images/taucolon/05_praderas_limpias.jpg",
-        caption: "Áreas despejadas y praderas limpias ideales para construcción sin talar"
+        caption: "9. Praderas limpias y áreas listas para edificar"
+      },
+      {
+        url: "images/taucolon/14_vista_mar_bosque_ladera.jpg",
+        thumb: "images/taucolon/14_vista_mar_bosque_ladera.jpg",
+        caption: "10. Ensenada, pradera y ladera boscosa vista desde el agua"
       },
       {
         url: "images/taucolon/06_vista_chauques.jpg",
         thumb: "images/taucolon/06_vista_chauques.jpg",
-        caption: "Orilla este con vista al archipiélago de las Chauques y navegación protegida"
+        caption: "11. Vista panorámica al archipiélago de las Chauques"
+      },
+      {
+        url: "images/taucolon/15_sendero_nalcas_bahia.jpg",
+        thumb: "images/taucolon/15_sendero_nalcas_bahia.jpg",
+        caption: "12. Sendero costero con nalcas gigantes junto a la playa"
       },
       {
         url: "images/taucolon/07_islas_mechuque_anihue.jpg",
         thumb: "images/taucolon/07_islas_mechuque_anihue.jpg",
-        caption: "Vista hacia las islas vecinas Mechuque y Añihué (a minutos en embarcación)"
+        caption: "13. Entorno insular: Mechuque y Añihué a minutos"
       },
       {
         url: "images/taucolon/08_sendero_bosque_nativo.jpg",
         thumb: "images/taucolon/08_sendero_bosque_nativo.jpg",
-        caption: "Sendero interior y bosque nativo maduro hasta la cumbre del cerro"
+        caption: "14. Sendero interior y bosque nativo maduro"
       },
       {
         url: "images/taucolon/09_vertientes_entorno.jpg",
         thumb: "images/taucolon/09_vertientes_entorno.jpg",
-        caption: "Entorno silvestre con vertientes naturales de agua dulce en la propiedad"
+        caption: "15. Vertientes de agua pura y naturaleza silvestre"
       }
     ],
     specs: [

@@ -4758,7 +4758,8 @@ body.video-modal-active .floating-whatsapp-btn {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 0.26rem 0.8rem;
+  white-space: nowrap;
+  padding: 0.26rem 0.85rem;
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
   transition: background 0.25s ease, color 0.25s ease;
@@ -5243,7 +5244,7 @@ body.video-modal-active .floating-whatsapp-btn {
   }
 }
 
-/* Marco Smartphone 9:16 Reel */
+/* Marco Smartphone 9:16 Reel (Con Botón Central de Play + Reproducción Directa) */
 .video-card-reel {
   display: flex;
   flex-direction: column;
@@ -5260,6 +5261,13 @@ body.video-modal-active .floating-whatsapp-btn {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 0 0 2px rgba(200, 169, 107, 0.35);
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card-reel:not(.is-playing):hover .smartphone-titanium-frame {
+  transform: translateY(-4px);
+  border-color: rgba(232, 207, 160, 0.72);
+  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.68), 0 0 28px rgba(200, 169, 107, 0.2), inset 0 0 0 2px rgba(232, 207, 160, 0.45);
 }
 
 .smartphone-dynamic-island {
@@ -5271,7 +5279,8 @@ body.video-modal-active .floating-whatsapp-btn {
   height: 20px;
   background: #000000;
   border-radius: 16px;
-  z-index: 10;
+  z-index: 12;
+  pointer-events: none;
 }
 
 .smartphone-screen-wrap {
@@ -5279,13 +5288,83 @@ body.video-modal-active .floating-whatsapp-btn {
   height: 100%;
   position: relative;
   overflow: hidden;
+  background: #040806;
+  cursor: pointer;
 }
 
-.smartphone-screen-wrap video {
+.reel-poster-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.3s ease, opacity 0.25s ease;
+  z-index: 1;
+}
+
+.video-card-reel:not(.is-playing):hover .reel-poster-img {
+  transform: scale(1.03);
+  filter: brightness(0.92);
+}
+
+.reel-inline-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000000;
+  display: none;
+  z-index: 9;
+}
+
+.video-card-reel.is-playing .reel-inline-video {
+  display: block;
+}
+
+.reel-ui-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 10, 7, 0.52) 0%, rgba(5, 10, 7, 0.14) 36%, rgba(5, 10, 7, 0.22) 60%, rgba(5, 10, 7, 0.85) 100%),
+    radial-gradient(circle at 50% 42%, rgba(5, 10, 7, 0.35) 0%, transparent 56%);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+
+.reel-center-play-btn {
+  top: 41%;
+}
+
+.smartphone-screen-wrap:hover .reel-center-play-btn,
+.reel-center-play-btn:hover,
+.reel-center-play-btn:focus-visible {
+  transform: translate(-50%, -50%) scale(1.06);
+  outline: none;
+}
+
+.smartphone-screen-wrap:hover .reel-center-play-btn .cinema-play-circle,
+.reel-center-play-btn:hover .cinema-play-circle {
+  background: linear-gradient(135deg, #D9BA7C 0%, #B79047 100%);
+  border-color: #FFF4D8;
+  color: #070d0a;
+}
+
+.smartphone-screen-wrap:hover .reel-center-play-btn .cinema-play-label,
+.reel-center-play-btn:hover .cinema-play-label {
+  background: #E8CFA0;
+  color: #070d0a;
+  border-color: #FFF4D8;
+}
+
+.video-card-reel.is-playing .reel-poster-img,
+.video-card-reel.is-playing .reel-ui-scrim,
+.video-card-reel.is-playing .reel-center-play-btn,
+.video-card-reel.is-playing .reel-glass-pill {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .reel-glass-pill {
@@ -5293,13 +5372,14 @@ body.video-modal-active .floating-whatsapp-btn {
   bottom: 14px;
   left: 12px;
   right: 12px;
-  background: rgba(11, 21, 16, 0.86);
+  background: rgba(11, 21, 16, 0.88);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(200, 169, 107, 0.25);
+  border: 1px solid rgba(200, 169, 107, 0.28);
   border-radius: 14px;
   padding: 0.65rem 0.85rem;
   color: #f4f0e8;
-  z-index: 5;
+  z-index: 7;
+  transition: opacity 0.25s ease;
 }
 
 .reel-action-inpage-btn {
