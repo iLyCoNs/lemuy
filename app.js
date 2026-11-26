@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPropertyTabs();
   initVideoModal();
   initVideoDualSuite();
+  initOwnerGalleryMarquee();
   initPhotoLightbox();
   initFaqAccordion();
   initContactForm();
@@ -286,6 +287,20 @@ function initVideoModal() {
   });
 }
 
+function pauseInlineCinemaCards(exceptCard = null) {
+  document.querySelectorAll('.video-card-cinema.is-playing').forEach((card) => {
+    if (exceptCard && card === exceptCard) return;
+    card.classList.remove('is-playing');
+    const vid = card.querySelector('.cinema-inline-video');
+    if (vid) {
+      vid.pause();
+      vid.removeAttribute('src');
+      vid.load();
+    }
+    card.querySelector('.cinema-audio-unmute-pill')?.remove();
+  });
+}
+
 function suspendBackgroundVideos() {
   if (restoreVideosTimer) {
     clearTimeout(restoreVideosTimer);
@@ -295,7 +310,11 @@ function suspendBackgroundVideos() {
   // Evita sobrescribir snapshots si ya hay una suspensión activa
   if (suspendedBackgroundVideos.length > 0) return;
 
-  const allVideos = Array.from(document.querySelectorAll('video')).filter(v => v !== modalVideo);
+  const allVideos = Array.from(document.querySelectorAll('video')).filter(v => {
+    if (v === modalVideo) return false;
+    // Ignorar videos inline inactivos que aún no tienen fuente cargada
+    return Boolean(v.getAttribute('src') || v.querySelector('source[src]'));
+  });
   suspendedBackgroundVideos = allVideos.map((v) => {
     const childSources = Array.from(v.querySelectorAll('source')).map(s => ({
       el: s,
@@ -386,6 +405,8 @@ function restoreBackgroundVideos() {
 function openVideoModal(src, title, desc, isYoutube = false, isReel = false) {
   if (!modalBackdrop) return;
 
+  pauseInlineCinemaCards();
+
   // 1. Liberar decodificadores de hardware y descargas en segundo plano ANTES de iniciar el modal
   suspendBackgroundVideos();
 
@@ -436,9 +457,12 @@ function openVideoModal(src, title, desc, isYoutube = false, isReel = false) {
       modalVideo.src = src;
       modalVideo.load();
       if (modalLoader) modalLoader.classList.add('is-visible');
-      modalVideo.play().catch(e => {
-        if (modalLoader) modalLoader.classList.remove('is-visible');
-        console.log('Reproducción requerida por usuario:', e);
+      modalVideo.play().catch(() => {
+        // Respaldo: si el navegador bloquea autoplay con audio, reproducir silenciado para que no quede detenido
+        modalVideo.muted = true;
+        modalVideo.play().catch(() => {
+          if (modalLoader) modalLoader.classList.remove('is-visible');
+        });
       });
     }
   }
@@ -508,11 +532,80 @@ function initVideoDualSuite() {
     });
   }
 
+  // Reproducción directa in-card al presionar Play en la tarjeta horizontal rediseñada
+  function startInlineCinemaCard(wrap) {
+    const card = wrap.closest('.video-card-cinema');
+    const vid = wrap.querySelector('.cinema-inline-video');
+    const videoSrc = wrap.getAttribute('data-video-src');
+    if (!card || !vid || !videoSrc) return;
+
+    pauseInlineCinemaCards(card);
+    card.querySelector('.cinema-media-error-pill')?.remove();
+    card.querySelector('.cinema-audio-unmute-pill')?.remove();
+
+    if (vid.getAttribute('src') !== videoSrc) {
+      vid.src = videoSrc;
+    }
+    vid.controls = true;
+    vid.playsInline = true;
+    vid.setAttribute('playsinline', '');
+    vid.muted = false;
+
+    const handleErr = () => {
+      card.classList.remove('is-playing');
+      vid.removeAttribute('src');
+      vid.load();
+      if (!wrap.querySelector('.cinema-media-error-pill')) {
+        const msg = document.createElement('div');
+        msg.className = 'cinema-media-error-pill';
+        msg.textContent = 'Video disponible solo en servidor remoto o no encontrado';
+        wrap.appendChild(msg);
+        setTimeout(() => msg.remove(), 4000);
+      }
+    };
+    vid.addEventListener('error', handleErr, { once: true });
+
+    card.classList.add('is-playing');
+    const playPromise = vid.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {
+        if (!card.classList.contains('is-playing')) return;
+        vid.muted = true;
+        vid.play().then(() => {
+          if (!wrap.querySelector('.cinema-audio-unmute-pill')) {
+            const unmuteBtn = document.createElement('button');
+            unmuteBtn.type = 'button';
+            unmuteBtn.className = 'cinema-audio-unmute-pill';
+            unmuteBtn.textContent = 'Activar audio';
+            unmuteBtn.addEventListener('click', (ev) => {
+              ev.stopPropagation();
+              vid.muted = false;
+              unmuteBtn.remove();
+            });
+            wrap.appendChild(unmuteBtn);
+          }
+        }).catch(() => {});
+      });
+    }
+  }
+
+  document.querySelectorAll('.cinema-screen-wrap[data-inline-video]').forEach(wrap => {
+    wrap.addEventListener('click', (e) => {
+      const card = wrap.closest('.video-card-cinema');
+      if (card && card.classList.contains('is-playing')) return;
+      if (e.target.closest('.cinema-audio-unmute-pill')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      startInlineCinemaCard(wrap);
+    });
+  });
+
   // Selector de Formato (16:9, 9:16 o Vista Dual Simultánea)
   const toolbars = document.querySelectorAll('.video-format-toolbar');
   toolbars.forEach(toolbar => {
     const buttons = toolbar.querySelectorAll('.video-format-btn');
-    const stage = toolbar.closest('section')?.querySelector('.video-dual-stage');
+    const section = toolbar.closest('section');
+    const stage = section?.querySelector('.video-dual-stage');
     if (!stage) return;
 
     buttons.forEach(btn => {
@@ -522,10 +615,14 @@ function initVideoDualSuite() {
         const format = btn.getAttribute('data-format');
 
         stage.classList.remove('view-cinema-only', 'view-reel-only');
+        section?.classList.remove('view-cinema-only', 'view-reel-only');
         if (format === '16-9') {
           stage.classList.add('view-cinema-only');
+          section?.classList.add('view-cinema-only');
         } else if (format === '9-16') {
           stage.classList.add('view-reel-only');
+          section?.classList.add('view-reel-only');
+          pauseInlineCinemaCards();
         }
         syncDualStagePlayback(stage);
       });
@@ -582,15 +679,6 @@ function initVideoDualSuite() {
     loopVideos.forEach(v => dualSuiteObserver.observe(v));
     if (heroVideo) dualSuiteObserver.observe(heroVideo);
   }
-
-  // Permitir tocar directamente el lienzo del video 16:9 para abrir Solo Video en pantalla completa
-  document.querySelectorAll('.cinema-screen-wrap').forEach(wrap => {
-    wrap.addEventListener('click', (e) => {
-      if (e.target.closest('button')) return;
-      const openBtn = wrap.querySelector('[data-open-inpage-video]');
-      if (openBtn) openBtn.click();
-    });
-  });
 
   // Botones de Apertura In-Page (Modo Cine y Modo Reel sin nuevas ventanas)
   document.querySelectorAll('[data-open-inpage-video]').forEach(btn => {
@@ -722,6 +810,69 @@ const propertiesData = {
     description: "Parcela de 50.000 m² con casa habitación, 2 bodegas, Agua Potable Rural (APR) operativa, vertiente natural (sin viabilizar), praderas limpias y bosque nativo silvestre.",
     videoSrc: "https://github.com/iLyCoNs/austral-drones/releases/download/videos/16_9_ISLA_LEMUY.mp4",
     poster: "images/posters/fundo5ha_16_9.jpg",
+    hasGallery: true,
+    photos: [
+      {
+        url: "images/fundo5ha/01_casa_principal_loma.jpg",
+        thumb: "images/fundo5ha/01_casa_principal_loma.jpg",
+        caption: "1. Casa principal sobre la loma con corredor y vista panorámica"
+      },
+      {
+        url: "images/fundo5ha/02_casa_bodega_mar_volcanes.jpg",
+        thumb: "images/fundo5ha/02_casa_bodega_mar_volcanes.jpg",
+        caption: "2. Casa y bodega frente al mar interior y volcanes nevados"
+      },
+      {
+        url: "images/fundo5ha/03_bodega_praderas_ovejas.jpg",
+        thumb: "images/fundo5ha/03_bodega_praderas_ovejas.jpg",
+        caption: "3. Bodega techada entre praderas limpias con vista al canal"
+      },
+      {
+        url: "images/fundo5ha/04_vista_aerea_playa_bosque.jpg",
+        thumb: "images/fundo5ha/04_vista_aerea_playa_bosque.jpg",
+        caption: "4. Vista aérea del borde costero y bosque nativo"
+      },
+      {
+        url: "images/fundo5ha/05_volcanes_nevados_mar.jpg",
+        thumb: "images/fundo5ha/05_volcanes_nevados_mar.jpg",
+        caption: "5. Volcanes nevados y cordillera frente al predio"
+      },
+      {
+        url: "images/fundo5ha/06_borde_costero_atardecer.jpg",
+        thumb: "images/fundo5ha/06_borde_costero_atardecer.jpg",
+        caption: "6. Orilla serena con vista a islas al atardecer"
+      },
+      {
+        url: "images/fundo5ha/07_playa_piedrecilla_costa.jpg",
+        thumb: "images/fundo5ha/07_playa_piedrecilla_costa.jpg",
+        caption: "7. Amplia playa de piedrecilla fina y bosque costero"
+      },
+      {
+        url: "images/fundo5ha/08_bosque_nalcas_orilla.jpg",
+        thumb: "images/fundo5ha/08_bosque_nalcas_orilla.jpg",
+        caption: "8. Nalcas gigantes, chilcos en flor y bosque en la orilla"
+      },
+      {
+        url: "images/fundo5ha/09_sendero_tranquera_mar.jpg",
+        thumb: "images/fundo5ha/09_sendero_tranquera_mar.jpg",
+        caption: "9. Sendero sombreado bajo árboles hacia el borde marino"
+      },
+      {
+        url: "images/fundo5ha/10_porton_salida_playa.jpg",
+        thumb: "images/fundo5ha/10_porton_salida_playa.jpg",
+        caption: "10. Tranquera rural y nalcas abriendo directo a la costa"
+      },
+      {
+        url: "images/fundo5ha/11_arrayanes_nativos_playa.jpg",
+        thumb: "images/fundo5ha/11_arrayanes_nativos_playa.jpg",
+        caption: "11. Arrayanes centenarios frente al canal interior"
+      },
+      {
+        url: "images/fundo5ha/12_pradera_arboleda_luz.jpg",
+        thumb: "images/fundo5ha/12_pradera_arboleda_luz.jpg",
+        caption: "12. Arboleda frutal y bosque con luz de mañana"
+      }
+    ],
     specs: [
       { label: "Superficie", val: "50.000 m² (5,0 ha)" },
       { label: "Infraestructura", val: "Casa + 2 Bodegas" },
@@ -1158,9 +1309,62 @@ function setupGalleryListeners() {
 }
 
 /* ==========================================================================
-   VISOR MODAL LIGHTBOX PARA FOTOS EN ALTA RESOLUCIÓN
+   GALERÍA EN MOVIMIENTO CONTINUO (FILAS PARALELAS PROPIEDAD 5 HAS)
    ========================================================================== */
-let photoModal, photoModalImg, photoModalCounter, photoModalCaption;
+function initOwnerGalleryMarquee() {
+  const rows = document.getElementById('ownerMarqueeRows');
+  const toggleBtn = document.getElementById('ownerMarqueeToggle');
+  if (!rows || !toggleBtn) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const paused = rows.classList.toggle('is-paused');
+    toggleBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+    toggleBtn.innerHTML = paused
+      ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg><span>Reanudar movimiento</span>`
+      : `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg><span>Pausar movimiento</span>`;
+  });
+}
+
+/* ==========================================================================
+   VISOR MODAL LIGHTBOX PARA FOTOS EN ALTA RESOLUCIÓN + ZOOM INTERACTIVO
+   ========================================================================== */
+let photoModal, photoModalImg, photoModalCounter, photoModalCaption, photoModalContent;
+let photoZoomState = { scale: 1, tx: 0, ty: 0, dragging: false, moved: false, startX: 0, startY: 0, origTx: 0, origTy: 0 };
+let photoZoomLevelBtn = null;
+
+function applyPhotoLightboxTransform() {
+  if (!photoModalImg) return;
+  const s = photoZoomState.scale;
+  photoModalImg.style.transform = `translate3d(${photoZoomState.tx}px, ${photoZoomState.ty}px, 0) scale(${s})`;
+  if (photoModalContent) {
+    photoModalContent.classList.toggle('is-zoomable', s === 1);
+    photoModalContent.classList.toggle('is-zoomed', s > 1);
+  }
+  if (photoZoomLevelBtn) {
+    photoZoomLevelBtn.textContent = `${Math.round(s * 100)}%`;
+    photoZoomLevelBtn.classList.toggle('is-active', s > 1);
+  }
+}
+
+function setPhotoLightboxZoom(nextScale) {
+  const clamped = Math.max(1, Math.min(3.5, Math.round(nextScale * 100) / 100));
+  photoZoomState.scale = clamped;
+  if (clamped <= 1) {
+    photoZoomState.tx = 0;
+    photoZoomState.ty = 0;
+  } else if (photoModalContent) {
+    const maxOffset = (clamped - 1) * 260;
+    photoZoomState.tx = Math.max(-maxOffset, Math.min(maxOffset, photoZoomState.tx));
+    photoZoomState.ty = Math.max(-maxOffset, Math.min(maxOffset, photoZoomState.ty));
+  }
+  applyPhotoLightboxTransform();
+}
+
+function resetPhotoLightboxZoom() {
+  photoZoomState = { scale: 1, tx: 0, ty: 0, dragging: false, moved: false, startX: 0, startY: 0, origTx: 0, origTy: 0 };
+  if (photoModalContent) photoModalContent.classList.remove('is-dragging');
+  applyPhotoLightboxTransform();
+}
 
 function initPhotoLightbox() {
   photoModal = document.getElementById('photoModal');
@@ -1169,10 +1373,92 @@ function initPhotoLightbox() {
   photoModalImg = document.getElementById('photoModalImg');
   photoModalCounter = document.getElementById('photoModalCounter');
   photoModalCaption = document.getElementById('photoModalCaption');
+  photoModalContent = photoModal.querySelector('.photo-lightbox-content');
 
+  const header = photoModal.querySelector('.photo-lightbox-header');
   const closeBtn = document.getElementById('closePhotoModal');
   const prevBtn = document.getElementById('photoModalPrev');
   const nextBtn = document.getElementById('photoModalNext');
+
+  if (header && !header.querySelector('.photo-lightbox-zoom-bar')) {
+    const zoomBar = document.createElement('div');
+    zoomBar.className = 'photo-lightbox-zoom-bar';
+    zoomBar.innerHTML = `
+      <button type="button" class="photo-zoom-btn" id="photoZoomOutBtn" aria-label="Alejar foto">&minus;</button>
+      <button type="button" class="photo-zoom-btn" id="photoZoomResetBtn" aria-label="Restablecer zoom">100%</button>
+      <button type="button" class="photo-zoom-btn" id="photoZoomInBtn" aria-label="Acercar foto">+</button>
+    `;
+    header.insertBefore(zoomBar, closeBtn || null);
+
+    photoZoomLevelBtn = zoomBar.querySelector('#photoZoomResetBtn');
+    zoomBar.querySelector('#photoZoomOutBtn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setPhotoLightboxZoom(photoZoomState.scale - 0.6);
+    });
+    zoomBar.querySelector('#photoZoomInBtn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setPhotoLightboxZoom(photoZoomState.scale + 0.6);
+    });
+    photoZoomLevelBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (photoZoomState.scale > 1) {
+        resetPhotoLightboxZoom();
+      } else {
+        setPhotoLightboxZoom(2);
+      }
+    });
+  }
+
+  if (photoModalContent && photoModalImg) {
+    photoModalImg.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      photoZoomState.dragging = true;
+      photoZoomState.moved = false;
+      photoZoomState.startX = e.clientX;
+      photoZoomState.startY = e.clientY;
+      photoZoomState.origTx = photoZoomState.tx;
+      photoZoomState.origTy = photoZoomState.ty;
+      if (photoZoomState.scale > 1) {
+        photoModalContent.classList.add('is-dragging');
+        photoModalImg.setPointerCapture?.(e.pointerId);
+      }
+    });
+
+    photoModalImg.addEventListener('pointermove', (e) => {
+      if (!photoZoomState.dragging) return;
+      const dx = e.clientX - photoZoomState.startX;
+      const dy = e.clientY - photoZoomState.startY;
+      if (Math.hypot(dx, dy) > 5) {
+        photoZoomState.moved = true;
+      }
+      if (photoZoomState.scale > 1) {
+        const maxOffset = (photoZoomState.scale - 1) * 320;
+        photoZoomState.tx = Math.max(-maxOffset, Math.min(maxOffset, photoZoomState.origTx + dx));
+        photoZoomState.ty = Math.max(-maxOffset, Math.min(maxOffset, photoZoomState.origTy + dy));
+        applyPhotoLightboxTransform();
+      }
+    });
+
+    const endDrag = () => {
+      photoZoomState.dragging = false;
+      photoModalContent.classList.remove('is-dragging');
+    };
+    photoModalImg.addEventListener('pointerup', (e) => {
+      const wasMoved = photoZoomState.moved;
+      endDrag();
+      if (!wasMoved) {
+        setPhotoLightboxZoom(photoZoomState.scale > 1 ? 1 : 2);
+      }
+    });
+    photoModalImg.addEventListener('pointercancel', endDrag);
+
+    photoModalContent.addEventListener('wheel', (e) => {
+      if (!photoModal.classList.contains('active')) return;
+      e.preventDefault();
+      const step = e.deltaY < 0 ? 0.35 : -0.35;
+      setPhotoLightboxZoom(photoZoomState.scale + step);
+    }, { passive: false });
+  }
 
   if (closeBtn) closeBtn.addEventListener('click', closePhotoLightbox);
 
@@ -1196,7 +1482,7 @@ function initPhotoLightbox() {
     }
   });
 
-  document.querySelectorAll('.taucolon-photo-card, .villarrica-photo-card').forEach(card => {
+  document.querySelectorAll('.taucolon-photo-card, .villarrica-photo-card, .owner-marquee-card').forEach(card => {
     card.addEventListener('click', () => {
       const propKey = card.getAttribute('data-gallery-prop') || (card.classList.contains('villarrica-photo-card') ? 'villarrica' : 'fundo17ha');
       if (propertiesData[propKey] && propertiesData[propKey].photos) {
@@ -1214,6 +1500,9 @@ function initPhotoLightbox() {
     if (e.key === 'Escape') closePhotoLightbox();
     if (e.key === 'ArrowLeft') navigatePhotoLightbox(currentGalleryIndex - 1);
     if (e.key === 'ArrowRight') navigatePhotoLightbox(currentGalleryIndex + 1);
+    if (e.key === '+' || e.key === '=') setPhotoLightboxZoom(photoZoomState.scale + 0.6);
+    if (e.key === '-' || e.key === '_') setPhotoLightboxZoom(photoZoomState.scale - 0.6);
+    if (e.key === '0') resetPhotoLightboxZoom();
   });
 }
 
@@ -1229,6 +1518,8 @@ function navigatePhotoLightbox(index) {
   if (index < 0) index = currentGalleryPhotos.length - 1;
   if (index >= currentGalleryPhotos.length) index = 0;
   currentGalleryIndex = index;
+
+  resetPhotoLightboxZoom();
 
   if (photoModalImg) {
     photoModalImg.src = currentGalleryPhotos[index].url;
@@ -1246,6 +1537,7 @@ function navigatePhotoLightbox(index) {
 
 function closePhotoLightbox() {
   if (!photoModal) return;
+  resetPhotoLightboxZoom();
   photoModal.classList.remove('active');
   document.body.style.overflow = '';
 }
@@ -1733,16 +2025,16 @@ function initScrollReveal() {
   const vh = window.innerHeight || 900;
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
         entry.target.classList.add('is-revealed');
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.01, rootMargin: '60px 0px 60px 0px' });
 
   targets.forEach(({ el }) => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < vh * 0.92) {
+    if (rect.top < vh * 0.98) {
       el.classList.add('is-revealed');
     } else {
       observer.observe(el);

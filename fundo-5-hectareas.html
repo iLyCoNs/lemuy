@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=35.0">
+  <link rel="stylesheet" href="styles.css?v=36.0">
 
   <style>
     html, body {
@@ -98,10 +98,11 @@
       <!-- Menú Escritorio -->
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html#propiedades" class="nav-link">&larr; Todas las Propiedades</a></li>
+          <li><a href="index.html#propiedades" class="nav-link">&larr; Propiedades</a></li>
+          <li><a href="#galeria-fotos" class="nav-link">Fotos (12)</a></li>
           <li><a href="#especificaciones" class="nav-link">Ficha & Atributos</a></li>
           <li><a href="#audiovisual" class="nav-link">Videos & Reels</a></li>
-          <li><a href="#entorno" class="nav-link">APR, Casa &amp; Suelos</a></li>
+          <li><a href="#entorno" class="nav-link">APR &amp; Casa</a></li>
           <li><a href="#ubicacion" class="nav-link">Ubicación GPS</a></li>
         </ul>
       </nav>
@@ -130,11 +131,12 @@
   <div class="mobile-nav-drawer" role="dialog" aria-modal="true">
     <ul class="mobile-drawer-links">
       <li><a href="index.html" class="mobile-drawer-link">&larr; Portal Principal <span>&rarr;</span></a></li>
+      <li><a href="#galeria-fotos" class="mobile-drawer-link">Fotos Reales (12) <span>&rarr;</span></a></li>
       <li><a href="#especificaciones" class="mobile-drawer-link">Ficha Técnica & Factibilidad <span>&rarr;</span></a></li>
       <li><a href="#audiovisual" class="mobile-drawer-link">Videos & Reels 4K <span>&rarr;</span></a></li>
       <li><a href="#entorno" class="mobile-drawer-link">Casa, Bodegas, APR &amp; Tierra <span>&rarr;</span></a></li>
       <li><a href="#ubicacion" class="mobile-drawer-link">Ubicación GPS & Rutas <span>&rarr;</span></a></li>
-      <li><a href="#contacto-propiedad" class="mobile-drawer-link">Contactar al Propietario <span>&rarr;</span></a></li>
+      <li><a href="#contacto-propiedad" class="mobile-drawer-link">Contacto Directo <span>&rarr;</span></a></li>
     </ul>
 
     <div class="mobile-drawer-cta-box">
@@ -143,7 +145,7 @@
         Consultar vía WhatsApp
       </a>
       <a href="#contacto-propiedad" class="btn btn-outline-white btn-lg" style="width: 100%;">
-        Coordinar Visita con el Dueño
+        Coordinar Visita Privada
       </a>
     </div>
   </div>
@@ -508,32 +510,41 @@
 
       <!-- Escenario Audiovisual Dual -->
       <div class="video-dual-stage">
-        <!-- Tarjeta Formato 16:9 (Cinema) -->
+        <!-- Tarjeta Formato 16:9 (Cinema Rediseñada) -->
         <article class="video-card-cinema">
-          <div class="cinema-screen-wrap">
-            <span class="cinema-screen-badge">16:9 Panorámica • 4K</span>
-            <video class="loop-video" muted loop playsinline preload="metadata" poster="images/posters/fundo5ha_16_9.jpg">
-              <source src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_HORIZONTAL_FINAL.mp4" type="video/mp4">
-            </video>
-            <div class="cinema-overlay-controls">
-              <button type="button" class="cinema-quick-action-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_HORIZONTAL_FINAL.mp4" data-video-title="Parcela 5 Hectáreas • Vista Panorámica 16:9" data-video-desc="Vuelo aéreo en 4K Ultra HD sobre las praderas limpias, casa, bodegas y bosque de las 5 hectáreas." data-is-reel="false">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                Abrir en Modo Cine
-              </button>
+          <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_HORIZONTAL_FINAL.mp4" data-video-title="Parcela 5 Hectáreas • Vista Panorámica 16:9" data-video-desc="Vuelo aéreo en 4K Ultra HD sobre las praderas limpias, casa, bodegas y bosque de las 5 hectáreas.">
+            <img class="cinema-poster-img" src="images/posters/fundo5ha_16_9.jpg" alt="Vuelo aéreo en video 16:9 de la Parcela de 5 Hectáreas en Isla Lemuy" loading="lazy">
+            <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_16_9.jpg"></video>
+            <div class="cinema-ui-scrim" aria-hidden="true"></div>
+            <div class="cinema-top-hud">
+              <span class="cinema-screen-badge">
+                <span class="cinema-rec-dot" aria-hidden="true"></span>
+                VIDEO 16:9 • 4K UHD
+              </span>
+              <span class="cinema-duration-pill">Vuelo Aéreo</span>
+            </div>
+            <button type="button" class="cinema-center-play-btn" aria-label="Reproducir vuelo aéreo 4K de la parcela de 5 hectáreas">
+              <span class="cinema-play-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+              </span>
+              <span class="cinema-play-label">Reproducir Video</span>
+            </button>
+            <div class="cinema-player-bar-cue" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+              <span class="cinema-cue-time">00:00</span>
+              <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+              <span class="cinema-cue-quality">4K • 16:9</span>
             </div>
           </div>
           <div class="cinema-footer-bar">
             <div class="cinema-footer-text">
               <h4>Recorrido Aéreo de Praderas &amp; Entorno</h4>
-              <p>Perspectiva horizontal 16:9 de las 5 hectáreas y sus linderos protegidos.</p>
+              <p>Perspectiva horizontal 16:9 de las 5 hectáreas, casa, bodegas y sus linderos.</p>
             </div>
-            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-              <button type="button" class="video-mute-toggle-btn btn btn-outline btn-sm" aria-label="Audio">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/></svg>
-                Audio desactivado
-              </button>
-              <button type="button" class="btn btn-accent btn-sm" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_HORIZONTAL_FINAL.mp4" data-video-title="Parcela 5 Hectáreas • Vista Panorámica 16:9" data-video-desc="Vuelo aéreo en 4K Ultra HD sobre las praderas limpias, casa, bodegas y bosque de las 5 hectáreas." data-is-reel="false">
-                Modo Cine &rarr;
+            <div class="cinema-footer-actions">
+              <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/LEMUY_HORIZONTAL_FINAL.mp4" data-video-title="Parcela 5 Hectáreas • Vista Panorámica 16:9" data-video-desc="Vuelo aéreo en 4K Ultra HD sobre las praderas limpias, casa, bodegas y bosque de las 5 hectáreas." data-is-reel="false">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                Modo Cine
               </button>
             </div>
           </div>
@@ -561,6 +572,464 @@
             </div>
           </div>
         </article>
+      </div>
+
+      <!-- VIDEOS PERSONALES DEL PROPIETARIO EN TERRENO (7 CLIPS ÚNICOS 16:9) -->
+      <div class="cinema-clips-wrap">
+        <div class="cinema-clips-header">
+          <div>
+            <div class="eyebrow-badge" style="margin-bottom: 0.45rem;">Registro Personal del Propietario</div>
+            <h3>Recorridos en Terreno &amp; Vistas al Canal (7 Videos)</h3>
+            <p>
+              Videos grabados directamente en la parcela recorriendo sus praderas, bodega, bosque nativo, volcanes nevados y el canal interior. Presiona Play en cualquier tarjeta para reproducir de inmediato.
+            </p>
+          </div>
+          <span class="cinema-clips-count-pill">7 Clips Horizontales 16:9 • Sin Intermediarios</span>
+        </div>
+
+        <div class="cinema-clips-grid">
+          <!-- Clip Destacado (0:49) -->
+          <article class="video-card-cinema video-card-cinema--featured">
+            <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.27.45.mp4" data-video-title="Recorrido Completo: Bodega, Praderas y Canal Interior" data-video-desc="Vista amplia desde las lomas limpias junto a la bodega y masa arbórea nativa hacia el mar interior de Isla Lemuy.">
+              <img class="cinema-poster-img" src="images/posters/fundo5ha_clip_07.jpg" alt="Recorrido en terreno con bodega, pradera verde y vista al canal interior" loading="lazy">
+              <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_clip_07.jpg"></video>
+              <div class="cinema-ui-scrim" aria-hidden="true"></div>
+              <div class="cinema-top-hud">
+                <span class="cinema-screen-badge">
+                  <span class="cinema-rec-dot" aria-hidden="true"></span>
+                  VIDEO DESTACADO • IN SITU
+                </span>
+                <span class="cinema-duration-pill">00:49 min</span>
+              </div>
+              <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video recorrido completo de bodega y praderas">
+                <span class="cinema-play-circle">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+                </span>
+                <span class="cinema-play-label">Reproducir Video</span>
+              </button>
+              <div class="cinema-player-bar-cue" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+                <span class="cinema-cue-time">00:00 / 00:49</span>
+                <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+                <span class="cinema-cue-quality">HD • 16:9</span>
+              </div>
+            </div>
+            <div class="cinema-footer-bar">
+              <div class="cinema-footer-text">
+                <h4>Recorrido Completo: Bodega, Praderas Limpias &amp; Canal Interior</h4>
+                <p>El recorrido más extenso en terreno (49 s): lomas despejadas, bodega techada, cipreses y salida panorámica al mar.</p>
+              </div>
+              <div class="cinema-footer-actions">
+                <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.27.45.mp4" data-video-title="Recorrido Completo: Bodega, Praderas y Canal Interior" data-video-desc="El recorrido más extenso en terreno (49 s): lomas despejadas, bodega techada y salida panorámica al mar." data-is-reel="false">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                  Modo Cine
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Clip 1 (0:05) -->
+          <article class="video-card-cinema">
+            <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.25.06.mp4" data-video-title="Vista al Volcán Nevado sobre el Mar Interior" data-video-desc="Encuadre natural entre arrayanes y arbustos silvestres mirando directo al volcán nevado sobre el océano.">
+              <img class="cinema-poster-img" src="images/posters/fundo5ha_clip_01.jpg" alt="Vista del volcán nevado sobre el mar entre arbustos nativos" loading="lazy">
+              <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_clip_01.jpg"></video>
+              <div class="cinema-ui-scrim" aria-hidden="true"></div>
+              <div class="cinema-top-hud">
+                <span class="cinema-screen-badge"><span class="cinema-rec-dot" aria-hidden="true"></span>VIDEO IN SITU</span>
+                <span class="cinema-duration-pill">00:05 s</span>
+              </div>
+              <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video vista al volcán nevado">
+                <span class="cinema-play-circle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+                <span class="cinema-play-label">Reproducir Video</span>
+              </button>
+              <div class="cinema-player-bar-cue" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+                <span class="cinema-cue-time">00:00 / 00:05</span>
+                <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+                <span class="cinema-cue-quality">HD • 16:9</span>
+              </div>
+            </div>
+            <div class="cinema-footer-bar">
+              <div class="cinema-footer-text">
+                <h4>Volcán Nevado en el Horizonte</h4>
+                <p>Vista despejada hacia la cordillera volcánica sobre el azul del mar interior.</p>
+              </div>
+              <div class="cinema-footer-actions">
+                <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.25.06.mp4" data-video-title="Vista al Volcán Nevado sobre el Mar Interior" data-video-desc="Encuadre natural entre arrayanes mirando directo al volcán nevado." data-is-reel="false">Modo Cine</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Clip 2 (0:24) -->
+          <article class="video-card-cinema">
+            <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.25.38.mp4" data-video-title="Paneo al Mar Interior e Islas Vecinas" data-video-desc="Recorrido visual amplio frente al canal de Chiloé bajo cielo despejado y vegetación nativa en primer plano.">
+              <img class="cinema-poster-img" src="images/posters/fundo5ha_clip_02.jpg" alt="Paneo frente al mar interior de Chiloé e islas vecinas" loading="lazy">
+              <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_clip_02.jpg"></video>
+              <div class="cinema-ui-scrim" aria-hidden="true"></div>
+              <div class="cinema-top-hud">
+                <span class="cinema-screen-badge"><span class="cinema-rec-dot" aria-hidden="true"></span>VIDEO IN SITU</span>
+                <span class="cinema-duration-pill">00:24 min</span>
+              </div>
+              <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video paneo al mar interior e islas">
+                <span class="cinema-play-circle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+                <span class="cinema-play-label">Reproducir Video</span>
+              </button>
+              <div class="cinema-player-bar-cue" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+                <span class="cinema-cue-time">00:00 / 00:24</span>
+                <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+                <span class="cinema-cue-quality">HD • 16:9</span>
+              </div>
+            </div>
+            <div class="cinema-footer-bar">
+              <div class="cinema-footer-text">
+                <h4>Horizonte Marino e Islas del Archipiélago</h4>
+                <p>Paneo abierto por todo el frente del canal insular desde lo alto del terreno.</p>
+              </div>
+              <div class="cinema-footer-actions">
+                <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.25.38.mp4" data-video-title="Paneo al Mar Interior e Islas Vecinas" data-video-desc="Recorrido visual frente al canal de Chiloé desde lo alto del predio." data-is-reel="false">Modo Cine</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Clip 3 (0:13) -->
+          <article class="video-card-cinema">
+            <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.25.49.mp4" data-video-title="Mirador Natural Entre Árboles Nativos" data-video-desc="Transparencia visual del mar interior entre renovales altos y siluetas de árboles chilotes.">
+              <img class="cinema-poster-img" src="images/posters/fundo5ha_clip_03.jpg" alt="Mirador entre árboles nativos frente al canal de Chiloé" loading="lazy">
+              <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_clip_03.jpg"></video>
+              <div class="cinema-ui-scrim" aria-hidden="true"></div>
+              <div class="cinema-top-hud">
+                <span class="cinema-screen-badge"><span class="cinema-rec-dot" aria-hidden="true"></span>VIDEO IN SITU</span>
+                <span class="cinema-duration-pill">00:13 s</span>
+              </div>
+              <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video mirador entre árboles nativos">
+                <span class="cinema-play-circle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+                <span class="cinema-play-label">Reproducir Video</span>
+              </button>
+              <div class="cinema-player-bar-cue" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+                <span class="cinema-cue-time">00:00 / 00:13</span>
+                <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+                <span class="cinema-cue-quality">HD • 16:9</span>
+              </div>
+            </div>
+            <div class="cinema-footer-bar">
+              <div class="cinema-footer-text">
+                <h4>Bosque Alto &amp; Aguas Calmas</h4>
+                <p>Refugio arbóreo con sombra natural y perspectiva directa al canal azul.</p>
+              </div>
+              <div class="cinema-footer-actions">
+                <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.25.49.mp4" data-video-title="Mirador Natural Entre Árboles Nativos" data-video-desc="Transparencia visual del mar interior entre renovales altos." data-is-reel="false">Modo Cine</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Clip 4 (0:18) -->
+          <article class="video-card-cinema">
+            <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.26.10.mp4" data-video-title="Dosel Forestal & Acceso Panorámico al Mar" data-video-desc="Vistas hacia el mar enmarcadas por árboles adultos que protegen del viento en la isla.">
+              <img class="cinema-poster-img" src="images/posters/fundo5ha_clip_04.jpg" alt="Dosel forestal y vista panorámica del canal" loading="lazy">
+              <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_clip_04.jpg"></video>
+              <div class="cinema-ui-scrim" aria-hidden="true"></div>
+              <div class="cinema-top-hud">
+                <span class="cinema-screen-badge"><span class="cinema-rec-dot" aria-hidden="true"></span>VIDEO IN SITU</span>
+                <span class="cinema-duration-pill">00:18 s</span>
+              </div>
+              <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video dosel forestal y acceso panorámico">
+                <span class="cinema-play-circle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+                <span class="cinema-play-label">Reproducir Video</span>
+              </button>
+              <div class="cinema-player-bar-cue" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+                <span class="cinema-cue-time">00:00 / 00:18</span>
+                <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+                <span class="cinema-cue-quality">HD • 16:9</span>
+              </div>
+            </div>
+            <div class="cinema-footer-bar">
+              <div class="cinema-footer-text">
+                <h4>Arboleda Protectora Frente a la Costa</h4>
+                <p>Cortina natural de árboles altos resguardando la privacidad de la ladera.</p>
+              </div>
+              <div class="cinema-footer-actions">
+                <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.26.10.mp4" data-video-title="Dosel Forestal & Acceso Panorámico al Mar" data-video-desc="Vistas hacia el mar enmarcadas por árboles adultos." data-is-reel="false">Modo Cine</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Clip 5 (0:33) -->
+          <article class="video-card-cinema">
+            <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.26.50.mp4" data-video-title="Praderas Limpias y Lomajes del Predio" data-video-desc="Caminata por las extensas praderas despejadas y renoval de monte nativo al fondo de las 5 hectáreas.">
+              <img class="cinema-poster-img" src="images/posters/fundo5ha_clip_05.jpg" alt="Praderas limpias y lomajes verdes con bosque al fondo" loading="lazy">
+              <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_clip_05.jpg"></video>
+              <div class="cinema-ui-scrim" aria-hidden="true"></div>
+              <div class="cinema-top-hud">
+                <span class="cinema-screen-badge"><span class="cinema-rec-dot" aria-hidden="true"></span>VIDEO IN SITU</span>
+                <span class="cinema-duration-pill">00:33 min</span>
+              </div>
+              <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video praderas limpias y lomajes">
+                <span class="cinema-play-circle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+                <span class="cinema-play-label">Reproducir Video</span>
+              </button>
+              <div class="cinema-player-bar-cue" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+                <span class="cinema-cue-time">00:00 / 00:33</span>
+                <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+                <span class="cinema-cue-quality">HD • 16:9</span>
+              </div>
+            </div>
+            <div class="cinema-footer-bar">
+              <div class="cinema-footer-text">
+                <h4>Praderas Despejadas &amp; Sector Alto</h4>
+                <p>Amplia superficie utilizable de lomajes suaves rodeados de renoval nativo.</p>
+              </div>
+              <div class="cinema-footer-actions">
+                <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.26.50.mp4" data-video-title="Praderas Limpias y Lomajes del Predio" data-video-desc="Extensas praderas despejadas y bosque nativo de las 5 hectáreas." data-is-reel="false">Modo Cine</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Clip 6 (0:23) -->
+          <article class="video-card-cinema">
+            <div class="cinema-screen-wrap" data-inline-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.27.10.mp4" data-video-title="Bosque Silvestre Descendiendo al Canal" data-video-desc="Frondosa masa arbórea silvestre en excelente estado de conservación mirando al paso de lanchas en el canal.">
+              <img class="cinema-poster-img" src="images/posters/fundo5ha_clip_06.jpg" alt="Bosque silvestre y vista al canal navegable desde la parcela" loading="lazy">
+              <video class="cinema-inline-video" playsinline controls preload="none" poster="images/posters/fundo5ha_clip_06.jpg"></video>
+              <div class="cinema-ui-scrim" aria-hidden="true"></div>
+              <div class="cinema-top-hud">
+                <span class="cinema-screen-badge"><span class="cinema-rec-dot" aria-hidden="true"></span>VIDEO IN SITU</span>
+                <span class="cinema-duration-pill">00:23 min</span>
+              </div>
+              <button type="button" class="cinema-center-play-btn" aria-label="Reproducir video bosque silvestre descendiendo al canal">
+                <span class="cinema-play-circle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+                <span class="cinema-play-label">Reproducir Video</span>
+              </button>
+              <div class="cinema-player-bar-cue" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"/></svg>
+                <span class="cinema-cue-time">00:00 / 00:23</span>
+                <div class="cinema-cue-track"><span class="cinema-cue-fill"></span></div>
+                <span class="cinema-cue-quality">HD • 16:9</span>
+              </div>
+            </div>
+            <div class="cinema-footer-bar">
+              <div class="cinema-footer-text">
+                <h4>Bosque Silvestre &amp; Ruta Náutica</h4>
+                <p>Verde intenso de bosque nativo con vistas directas al canal navegable.</p>
+              </div>
+              <div class="cinema-footer-actions">
+                <button type="button" class="btn btn-accent btn-sm cinema-fullscreen-btn" data-open-inpage-video data-video-src="https://github.com/iLyCoNs/lemuy/releases/download/videos/WhatsApp.Video.2026-11-16.at.18.27.10.mp4" data-video-title="Bosque Silvestre Descendiendo al Canal" data-video-desc="Frondoso bosque nativo frente al canal de Chiloé." data-is-reel="false">Modo Cine</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA DINÁMICA EN MOVIMIENTO: 12 FOTOGRAFÍAS PERSONALES DEL PROPIETARIO -->
+  <section id="galeria-fotos" class="section-padding owner-marquee-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="eyebrow-badge" style="background: rgba(200, 169, 107, 0.16); border: 1px solid rgba(200, 169, 107, 0.45); color: var(--color-dorado);">
+          Galería Personal del Propietario • 12 Fotografías Reales
+        </div>
+        <h2 class="section-title" style="color: #ffffff;">Recorrido Fotográfico en Movimiento • Haz Clic para Zoom</h2>
+        <p class="section-desc" style="color: #c8d8cd;">
+          Dos filas panorámicas en movimiento continuo con las construcciones, praderas, borde costero y volcanes nevados vistos desde la parcela. Pasa el cursor para pausar o toca cualquier fotografía para abrirla con zoom de alta resolución.
+        </p>
+      </div>
+
+      <div class="owner-marquee-controls">
+        <button type="button" id="ownerMarqueeToggle" class="owner-marquee-toggle-btn" aria-pressed="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          <span>Pausar movimiento</span>
+        </button>
+        <span class="owner-marquee-hint-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          Clic en cualquier foto para ampliar y hacer zoom
+        </span>
+      </div>
+    </div>
+
+    <div class="owner-marquee-rows" id="ownerMarqueeRows">
+      <!-- Fila 1: Desplazamiento hacia la izquierda (Fotos 1 a 6) -->
+      <div class="owner-marquee-viewport">
+        <div class="owner-marquee-track dir-left">
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="0" aria-label="Ampliar foto 1: Casa habitación sobre la loma">
+            <img src="images/fundo5ha/01_casa_principal_loma.jpg" alt="Casa habitación principal ubicada en lo alto de la loma" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">1. Casa principal sobre la loma con corredor</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="1" aria-label="Ampliar foto 2: Casa, bodega, mar y volcanes nevados">
+            <img src="images/fundo5ha/02_casa_bodega_mar_volcanes.jpg" alt="Casa y bodega con vista al mar y cordillera nevada" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">2. Casa y bodega frente al mar y volcanes nevados</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="2" aria-label="Ampliar foto 3: Bodega, praderas y canal">
+            <img src="images/fundo5ha/03_bodega_praderas_ovejas.jpg" alt="Bodega techada sobre pradera verde mirando el canal de Chiloé" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">3. Bodega techada entre praderas limpias y vista al mar</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="3" aria-label="Ampliar foto 4: Vista aérea borde costero y bosque">
+            <img src="images/fundo5ha/04_vista_aerea_playa_bosque.jpg" alt="Vista cenital del bosque costero y aguas turquesa" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">4. Vista aérea del borde de playa y bosque nativo</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="4" aria-label="Ampliar foto 5: Volcanes nevados en el horizonte marino">
+            <img src="images/fundo5ha/05_volcanes_nevados_mar.jpg" alt="Doble volcán nevado sobre el mar interior de Chiloé" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">5. Volcanes nevados y cordillera frente al predio</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="5" aria-label="Ampliar foto 6: Borde costero al atardecer">
+            <img src="images/fundo5ha/06_borde_costero_atardecer.jpg" alt="Borde costero y olas suaves al atardecer" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">6. Orilla serena con vista a islas al atardecer</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <!-- Copia continua para bucle infinito fluido -->
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="0" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/01_casa_principal_loma.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">1. Casa principal sobre la loma con corredor</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="1" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/02_casa_bodega_mar_volcanes.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">2. Casa y bodega frente al mar y volcanes nevados</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="2" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/03_bodega_praderas_ovejas.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">3. Bodega techada entre praderas limpias y vista al mar</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="3" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/04_vista_aerea_playa_bosque.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">4. Vista aérea del borde de playa y bosque nativo</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="4" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/05_volcanes_nevados_mar.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">5. Volcanes nevados y cordillera frente al predio</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="5" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/06_borde_costero_atardecer.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">6. Orilla serena con vista a islas al atardecer</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Fila 2: Desplazamiento inverso hacia la derecha (Fotos 7 a 12) -->
+      <div class="owner-marquee-viewport">
+        <div class="owner-marquee-track dir-right">
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="6" aria-label="Ampliar foto 7: Extensa playa de piedrecilla volcánica">
+            <img src="images/fundo5ha/07_playa_piedrecilla_costa.jpg" alt="Amplia playa limpia y bosque costero bajo cielo despejado" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">7. Amplia playa y bosque costero bajo cielo limpio</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="7" aria-label="Ampliar foto 8: Nalcas y flora costera junto a la playa">
+            <img src="images/fundo5ha/08_bosque_nalcas_orilla.jpg" alt="Bosque costero con nalcas gigantes y chilcos en la playa" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">8. Nalcas gigantes, chilcos en flor y árboles en la orilla</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="8" aria-label="Ampliar foto 9: Sendero y tranquera abierta al mar">
+            <img src="images/fundo5ha/09_sendero_tranquera_mar.jpg" alt="Sendero sombreado y tranquera de madera hacia el mar" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">9. Sendero sombreado bajo árboles hacia el borde marino</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="9" aria-label="Ampliar foto 10: Portón rural directo a la costa">
+            <img src="images/fundo5ha/10_porton_salida_playa.jpg" alt="Tranquera rural abriendo directo a la playa" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">10. Tranquera rural y nalcas abriendo directo a la costa</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="10" aria-label="Ampliar foto 11: Arrayanes nativos junto al canal">
+            <img src="images/fundo5ha/11_arrayanes_nativos_playa.jpg" alt="Bosque de arrayanes nativos enmarcando la vista al canal" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">11. Arrayanes centenarios y nalcas frente al canal</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="11" aria-label="Ampliar foto 12: Arboleda frutal y pradera con luz de mañana">
+            <img src="images/fundo5ha/12_pradera_arboleda_luz.jpg" alt="Arboleda frutal y bosque con luz de mañana sobre el pasto" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">12. Arboleda frutal y bosque bañado en luz matinal</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <!-- Copia continua para bucle infinito fluido -->
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="6" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/07_playa_piedrecilla_costa.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">7. Amplia playa y bosque costero bajo cielo limpio</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="7" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/08_bosque_nalcas_orilla.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">8. Nalcas gigantes, chilcos en flor y árboles en la orilla</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="8" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/09_sendero_tranquera_mar.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">9. Sendero sombreado bajo árboles hacia el borde marino</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="9" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/10_porton_salida_playa.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">10. Tranquera rural y nalcas abriendo directo a la costa</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="10" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/11_arrayanes_nativos_playa.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">11. Arrayanes centenarios y nalcas frente al canal</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+          <button type="button" class="owner-marquee-card" data-gallery-prop="fundo5ha" data-gallery-index="11" aria-hidden="true" tabindex="-1">
+            <img src="images/fundo5ha/12_pradera_arboleda_luz.jpg" alt="" loading="eager">
+            <div class="taucolon-photo-overlay">
+              <span class="taucolon-photo-caption">12. Arboleda frutal y bosque bañado en luz matinal</span>
+              <span class="taucolon-photo-zoom-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -820,6 +1289,34 @@
     </div>
   </footer>
 
+  <!-- Modal Lightbox para Fotos en Pantalla Completa con Zoom -->
+  <div id="photoModal" class="photo-lightbox-modal" role="dialog" aria-modal="true" aria-label="Visor fotográfico en alta resolución">
+    <div class="photo-lightbox-box">
+      <div class="photo-lightbox-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 0.825rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase;">Parcela 5 Hectáreas • Galería Real</span>
+          <span id="photoModalCounter" style="font-size: 0.8rem; color: #a0b2a5;">1 / 12</span>
+        </div>
+        <button type="button" class="video-modal-close" id="closePhotoModal" aria-label="Cerrar foto">
+          <span>Cerrar</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="photo-lightbox-content">
+        <button type="button" class="prop-gallery-arrow prev" id="photoModalPrev" aria-label="Foto anterior">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <img id="photoModalImg" class="photo-lightbox-img" src="" alt="Foto real de la Parcela de 5 Hectáreas en Isla Lemuy">
+        <button type="button" class="prop-gallery-arrow next" id="photoModalNext" aria-label="Foto siguiente">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="photo-lightbox-footer">
+        <p id="photoModalCaption" style="margin: 0; color: #d1dfd5;"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL DE VIDEO DUAL / CINE 4K IN-PAGE -->
   <div id="videoModal" class="video-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="video-modal-box">
@@ -854,6 +1351,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=35.0"></script>
+  <script src="app.js?v=36.0"></script>
 </body>
 </html>
