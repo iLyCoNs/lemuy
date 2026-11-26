@@ -1588,9 +1588,12 @@ section {
 }
 
 .prop-title {
-  font-size: 1.65rem;
-  line-height: 1.2;
-  color: #F4F0E8;
+  font-family: var(--font-body);
+  font-size: 1.48rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #FFFFFF;
   margin-bottom: 0.65rem;
 }
 
@@ -2241,12 +2244,13 @@ section {
 }
 
 .reason-title {
-  font-family: var(--font-title) !important;
-  font-size: 1.45rem !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.24rem !important;
   font-weight: 700 !important;
-  color: #F4F0E8 !important;
+  letter-spacing: -0.02em;
+  color: #FFFFFF !important;
   margin-bottom: 0.85rem !important;
-  line-height: 1.3 !important;
+  line-height: 1.32 !important;
 }
 
 .reason-card p {
@@ -2290,10 +2294,11 @@ section {
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.56) !important;
 }
 #entorno .feature-card h4 {
-  color: #F4F0E8 !important;
-  font-family: var(--font-title) !important;
-  font-size: 1.35rem !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.2rem !important;
   font-weight: 700 !important;
+  letter-spacing: -0.02em;
   margin-bottom: 0.75rem !important;
 }
 #entorno .feature-card p {
@@ -2344,9 +2349,11 @@ section {
 }
 
 .route-step-time {
-  font-family: var(--font-formal);
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.015em;
   color: var(--color-accent);
 }
 
@@ -4076,12 +4083,11 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .weather-place-name {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #FFFFFF !important;
-  letter-spacing: -0.01em;
-  font-family: var(--font-title);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  letter-spacing: -0.015em;
+  font-family: var(--font-body);
 }
 
 .weather-coords {
@@ -4094,13 +4100,12 @@ body.video-modal-active .floating-whatsapp-btn {
 .weather-api-badge {
   font-size: 0.72rem;
   color: #F8E9C6 !important;
-  background: rgba(200, 169, 107, 0.22) !important;
+  background: rgba(200, 169, 107, 0.24) !important;
   border: 1.5px solid rgba(200, 169, 107, 0.5) !important;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -4126,14 +4131,13 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .weather-temp-val {
-  font-size: 2.85rem;
+  font-size: 2.65rem;
   font-weight: 800;
-  font-family: var(--font-title);
+  font-family: var(--font-body);
+  font-feature-settings: "tnum";
+  letter-spacing: -0.025em;
   line-height: 1.05;
-  background: linear-gradient(180deg, #FFFFFF 20%, #E8D5B5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+  color: #FFFFFF;
 }
 
 .weather-condition-text {
@@ -4141,7 +4145,6 @@ body.video-modal-active .floating-whatsapp-btn {
   color: #FFFFFF !important;
   font-weight: 600;
   margin-top: 0.2rem;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .weather-metrics-grid {
@@ -4151,21 +4154,19 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .weather-metric-item {
-  background: rgba(11, 21, 16, 0.72) !important;
-  border: 1.5px solid rgba(200, 169, 107, 0.24) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: #0D1A13 !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.3) !important;
   border-radius: 14px;
   padding: 0.85rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 6px 16px rgba(0, 0, 0, 0.3);
   transition: all var(--transition-fast);
 }
 
 .weather-metric-item:hover {
-  background: rgba(16, 32, 24, 0.88) !important;
+  background: #12231A !important;
   border-color: rgba(200, 169, 107, 0.55) !important;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
@@ -4176,16 +4177,15 @@ body.video-modal-active .floating-whatsapp-btn {
   color: #C8A96B !important; /* Dorado champagne: máximo contraste y elegancia */
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .metric-val {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #FFFFFF !important;
-  font-weight: 800;
-  font-family: var(--font-title);
+  font-weight: 700;
+  font-family: var(--font-body);
   font-feature-settings: "tnum";
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 
 /* Botón Desplegable para Pronóstico Extendido */
@@ -4289,22 +4289,21 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .forecast-card {
-  background: rgba(8, 22, 28, 0.8) !important;
-  border: 1.5px solid rgba(200, 169, 107, 0.4) !important;
+  background: #0B191E !important;
+  border: 1.5px solid rgba(200, 169, 107, 0.42) !important;
   border-radius: 16px;
   padding: 1.1rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
   transition: all var(--transition-fast);
-  backdrop-filter: blur(14px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .forecast-card:hover {
   border-color: #C8A96B !important;
   transform: translateY(-3px);
-  background: rgba(8, 22, 28, 0.95) !important;
+  background: #0D2027 !important;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4), 0 0 16px rgba(200, 169, 107, 0.25);
 }
 
@@ -4313,7 +4312,7 @@ body.video-modal-active .floating-whatsapp-btn {
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-  font-weight: 750;
+  font-weight: 700;
   color: #F8E9C6 !important;
   text-transform: capitalize;
 }
@@ -4331,11 +4330,12 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .forecast-temps {
-  font-size: 1.3rem;
+  font-size: 1.22rem;
   font-weight: 800;
   color: #FFFFFF !important;
-  font-family: var(--font-title);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  font-family: var(--font-body);
+  font-feature-settings: "tnum";
+  letter-spacing: -0.015em;
 }
 
 .forecast-temps .temp-min {
@@ -4876,9 +4876,11 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .cinema-footer-text h4 {
-  font-family: var(--font-formal);
-  font-size: 1.18rem;
-  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #FFFFFF;
   margin-bottom: 0.2rem;
 }
 
@@ -5610,9 +5612,10 @@ body.video-modal-active .floating-whatsapp-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-title);
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1rem;
+  font-feature-settings: "tnum";
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(31, 78, 95, 0.18);
 }
@@ -5638,12 +5641,13 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .spec-card-title, .spec-card h3 {
-  font-family: var(--font-title);
-  font-size: 1.35rem;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #F4F0E8;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
   margin-bottom: 0.65rem;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 .spec-card-desc, .spec-card p {
@@ -5791,14 +5795,13 @@ body.video-modal-active .floating-whatsapp-btn {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(7, 13, 10, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(7, 13, 10, 0.94);
   color: var(--color-dorado);
-  border: 1px solid rgba(200, 169, 107, 0.42);
+  border: 1px solid rgba(200, 169, 107, 0.48);
+  font-family: var(--font-body);
   font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
@@ -5810,14 +5813,14 @@ body.video-modal-active .floating-whatsapp-btn {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: rgba(7, 13, 10, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(7, 13, 10, 0.95);
   color: #FFFFFF;
-  border: 1.5px solid rgba(200, 169, 107, 0.52);
-  font-size: 0.88rem;
-  font-weight: 750;
-  font-family: var(--font-title);
+  border: 1.5px solid rgba(200, 169, 107, 0.56);
+  font-size: 0.86rem;
+  font-weight: 800;
+  font-family: var(--font-body);
+  font-feature-settings: "tnum";
+  letter-spacing: -0.01em;
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-sm);
   z-index: 2;
@@ -5846,16 +5849,17 @@ body.video-modal-active .floating-whatsapp-btn {
   display: inline-block;
   padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  font-weight: 750;
+  font-weight: 700;
   margin-bottom: 0.55rem;
 }
 
 .property-preview-title {
-  font-size: 1.55rem !important;
-  color: #F4F0E8 !important;
+  font-size: 1.38rem !important;
+  color: #FFFFFF !important;
   margin: 0 !important;
-  font-family: var(--font-title) !important;
+  font-family: var(--font-body) !important;
   font-weight: 700 !important;
+  letter-spacing: -0.02em;
   line-height: 1.25;
 }
 
@@ -5913,19 +5917,20 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .spec-cell-label {
-  font-size: 0.65rem;
+  font-size: 0.66rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #93A99E;
+  letter-spacing: 0.05em;
+  color: #A7BBB0;
   font-weight: 700;
   line-height: 1.25;
 }
 
 .spec-cell-val {
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  color: #F4F0E8;
-  line-height: 1.25;
+  color: #FFFFFF;
+  line-height: 1.28;
+  font-feature-settings: "tnum";
   overflow-wrap: break-word;
 }
 
@@ -6048,12 +6053,11 @@ body.video-modal-active .floating-whatsapp-btn {
   }
 }
 
-/* --- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES 3D (SISTEMA ARQUITECTÓNICO) --- */
+/* --- SECCIÓN MAESTRA UNIFICADA: ATRIBUTOS & ESPECIFICACIONES (NITIDEZ TOTAL SIN 3D) --- */
 .taucolon-master-section,
 .master-attr-section {
   background-color: #0B1510 !important;
   position: relative;
-  perspective: 1200px;
 }
 
 .master-attr-section.is-marfil-canvas {
@@ -6130,14 +6134,13 @@ body.video-modal-active .floating-whatsapp-btn {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.28s ease, background 0.28s ease, color 0.28s ease;
+  transition: background 0.28s ease, color 0.28s ease;
 }
 
 .dossier-kpi-item:hover .dossier-kpi-icon,
 .dossier-kpi-item.is-active .dossier-kpi-icon {
   background: #C8A96B;
   color: #143541;
-  transform: scale(1.06);
 }
 
 .dossier-kpi-text {
@@ -6157,11 +6160,13 @@ body.video-modal-active .floating-whatsapp-btn {
 }
 
 .dossier-kpi-val {
-  font-family: var(--font-title);
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #F6F2EA;
-  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-feature-settings: "tnum";
+  color: #FFFFFF;
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6185,7 +6190,6 @@ body.video-modal-active .floating-whatsapp-btn {
   gap: 2rem;
   margin-top: 2.35rem;
   width: 100%;
-  perspective: 1400px;
 }
 
 .taucolon-3d-card,
@@ -6198,28 +6202,19 @@ body.video-modal-active .floating-whatsapp-btn {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  transform-style: preserve-3d;
-  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(0px) scale(1);
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.35s ease,
-              opacity 0.3s ease;
+  transform: none;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.28s ease,
+              opacity 0.28s ease;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.42),
               0 24px 48px -12px rgba(0, 0, 0, 0.52),
               inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
-  will-change: transform;
-}
-
-.taucolon-3d-card.is-tilting,
-.master-3d-card.is-tilting {
-  transition: transform 0.08s linear,
-              box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.35s ease;
 }
 
 .taucolon-3d-card:hover,
 .master-3d-card:hover {
-  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-8px) scale(1.015);
+  transform: translateY(-6px);
   border-color: #C8A96B !important;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55),
               0 30px 64px -12px rgba(0, 0, 0, 0.68),
@@ -6230,7 +6225,7 @@ body.video-modal-active .floating-whatsapp-btn {
 /* Estados interactivos vinculados desde la Barra KPI */
 .taucolon-3d-card.is-kpi-highlighted,
 .master-3d-card.is-kpi-highlighted {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-7px);
   border-color: #C8A96B !important;
   box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.35),
               0 24px 50px -8px rgba(0, 0, 0, 0.65),
@@ -6241,7 +6236,7 @@ body.video-modal-active .floating-whatsapp-btn {
 .taucolon-3d-card.is-kpi-dimmed,
 .master-3d-card.is-kpi-dimmed {
   opacity: 0.62;
-  transform: scale(0.988);
+  transform: none;
 }
 
 /* Capa de Reflejo Champagne & Borde Superior Metálico (sin romper preserve-3d) */
@@ -6303,7 +6298,6 @@ body.video-modal-active .floating-whatsapp-btn {
   color: rgba(200, 169, 107, 0.2);
   pointer-events: none;
   user-select: none;
-  transform: translateZ(10px);
   transition: color 0.35s ease, transform 0.35s ease;
   z-index: 1;
 }
@@ -6311,14 +6305,13 @@ body.video-modal-active .floating-whatsapp-btn {
 .taucolon-3d-card:hover .card-3d-num,
 .master-3d-card:hover .card-3d-num {
   color: rgba(200, 169, 107, 0.42);
-  transform: translateZ(18px) translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .taucolon-3d-card > div:not(.card-3d-glare),
 .master-3d-card > div:not(.card-3d-glare) {
   position: relative;
   z-index: 2;
-  transform-style: preserve-3d;
 }
 
 .taucolon-3d-card-top {
@@ -6328,10 +6321,9 @@ body.video-modal-active .floating-whatsapp-btn {
   gap: 0.85rem;
   padding-right: 3.1rem;
   margin-bottom: 1.35rem;
-  transform: translateZ(16px);
 }
 
-/* Contenedor 3D de icono minimalista premium monocromo */
+/* Contenedor de icono minimalista premium monocromo (sin perspectiva 3D borrosa) */
 .taucolon-3d-icon-badge {
   width: 52px;
   height: 52px;
@@ -6345,13 +6337,11 @@ body.video-modal-active .floating-whatsapp-btn {
   justify-content: center;
   color: #E8CFA0;
   flex-shrink: 0;
-  transform: translateZ(12px);
-  transition: all 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .taucolon-3d-card:hover .taucolon-3d-icon-badge,
 .master-3d-card:hover .taucolon-3d-icon-badge {
-  transform: scale(1.08) translateZ(26px);
   background: linear-gradient(135deg, #C8A96B 0%, #DFC389 100%);
   color: #08110C;
   border-color: #E8CFA0;
@@ -6364,38 +6354,36 @@ body.video-modal-active .floating-whatsapp-btn {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #E8CFA0;
-  background: rgba(8, 17, 12, 0.72);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(200, 169, 107, 0.44);
+  color: #F2DBAD;
+  background: #08110C;
+  border: 1px solid rgba(200, 169, 107, 0.48);
   padding: 0.32rem 0.82rem;
   border-radius: var(--radius-full);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
 }
 
 .taucolon-3d-title {
-  font-family: var(--font-title) !important;
-  font-size: 1.36rem !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.22rem !important;
   font-weight: 700 !important;
-  color: #F4F0E8 !important;
+  color: #FFFFFF !important;
   margin: 0 0 0.75rem !important;
-  line-height: 1.28 !important;
-  letter-spacing: -0.01em;
-  transform: translateZ(14px);
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em;
+  font-feature-settings: "tnum";
 }
 
 .taucolon-3d-desc {
   font-family: var(--font-body) !important;
   font-size: 0.94rem !important;
   line-height: 1.7 !important;
-  color: #C5D2CB !important;
+  color: #C9D6CF !important;
   margin: 0 !important;
   font-weight: 450;
-  transform: translateZ(10px);
 }
 
 .taucolon-3d-desc strong {
-  color: #E8CFA0;
+  color: #EED7A5;
   font-weight: 700;
 }
 
@@ -6407,10 +6395,9 @@ body.video-modal-active .floating-whatsapp-btn {
   align-items: center;
   gap: 0.55rem;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: #E8CFA0;
-  transform: translateZ(12px);
+  color: #EDD6A4;
 }
 
 .taucolon-3d-footer svg {
@@ -6467,12 +6454,12 @@ body.video-modal-active .floating-whatsapp-btn {
 
 .is-dark-3d .taucolon-pill-tag {
   color: #F8EED9;
-  background: rgba(20, 53, 65, 0.65);
-  border-color: rgba(200, 169, 107, 0.48);
+  background: #0F2730;
+  border-color: rgba(200, 169, 107, 0.52);
 }
 
 .is-dark-3d .taucolon-3d-title {
-  color: #F6F2EA !important;
+  color: #FFFFFF !important;
 }
 
 .is-dark-3d .taucolon-3d-desc {
@@ -6620,7 +6607,7 @@ html.reveal-ready [data-reveal] {
 
 html.reveal-ready [data-reveal].is-revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6787,16 +6774,17 @@ html.reveal-ready [data-reveal].is-revealed {
 }
 
 .compare-prop-name {
-  font-family: var(--font-title);
-  font-size: 1.12rem;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
   font-weight: 700;
-  color: #F4F0E8;
+  color: #FFFFFF;
+  letter-spacing: -0.015em;
   display: block;
 }
 
 .compare-prop-sub {
   font-size: 0.74rem;
-  color: #93A99E;
+  color: #9EB4A8;
   font-weight: 600;
 }
 
@@ -6828,7 +6816,6 @@ html.reveal-ready [data-reveal].is-revealed {
 .secure-steps-grid.is-timeline {
   position: relative;
   gap: 1.5rem;
-  perspective: 1200px;
 }
 
 @media (min-width: 1025px) {
@@ -6882,11 +6869,10 @@ html.reveal-ready [data-reveal].is-revealed {
   align-items: center;
   justify-content: center;
   box-shadow: 0 6px 16px rgba(31, 78, 95, 0.22);
-  transition: transform 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .secure-step-card.is-luxury-step:hover .secure-step-icon-pill {
-  transform: scale(1.08);
   background: linear-gradient(135deg, #C8A96B 0%, #dfc48d 100%);
   color: #143541;
 }
@@ -6900,9 +6886,11 @@ html.reveal-ready [data-reveal].is-revealed {
 }
 
 .secure-step-card.is-luxury-step .secure-step-title {
-  font-family: var(--font-title);
-  font-size: 1.32rem;
-  color: #1F4E5F;
+  font-family: var(--font-body);
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #143541;
   position: relative;
   z-index: 2;
 }

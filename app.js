@@ -1782,24 +1782,13 @@ function initMaster3DCards() {
         const relX = (e.clientX - rect.left) / rect.width;
         const relY = (e.clientY - rect.top) / rect.height;
 
-        const rx = ((0.5 - relY) * 7.5).toFixed(2);
-        const ry = ((relX - 0.5) * 7.5).toFixed(2);
-        const mx = (relX * 100).toFixed(1);
-        const my = (relY * 100).toFixed(1);
-
-        card.classList.add('is-tilting');
-        card.style.setProperty('--rx', `${rx}deg`);
-        card.style.setProperty('--ry', `${ry}deg`);
-        card.style.setProperty('--mx', `${mx}%`);
-        card.style.setProperty('--my', `${my}%`);
+        card.style.setProperty('--mx', `${(relX * 100).toFixed(1)}%`);
+        card.style.setProperty('--my', `${(relY * 100).toFixed(1)}%`);
       });
     });
 
     card.addEventListener('pointerleave', () => {
       if (rafId) cancelAnimationFrame(rafId);
-      card.classList.remove('is-tilting');
-      card.style.setProperty('--rx', '0deg');
-      card.style.setProperty('--ry', '0deg');
     });
   });
 
